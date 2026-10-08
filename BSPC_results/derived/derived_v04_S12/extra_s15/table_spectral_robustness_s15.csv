@@ -1,0 +1,7 @@
+variant,description,swd_BIDMC,swd_next_vendor,swd_next,swd_ratio,frechet_BIDMC,frechet_next_vendor,frechet_next,frechet_ratio,rank_BIDMC_swd,rank_BIDMC_frechet,BIDMC_inside_hull,pc1_share,pc1_pc2_share
+raw,as in Table tab:spectral,0.1299,HK,0.0773,1.68,1.6993,HK,0.7447,2.28,1,1,0,0.990,0.998
+drop_bin0,lowest radial bin (DC and its neighbours) removed,0.0959,RUNMC,0.0606,1.58,1.0272,RUNMC,0.4799,2.14,1,1,0,0.990,0.998
+centred,each profile minus its own mean,0.1149,HK,0.0674,1.70,1.3755,HK,0.5909,2.33,1,1,0,0.993,0.998
+standardised,each profile centred and scaled to unit variance: spectral shape only,0.1536,RUNMC,0.1072,1.43,2.5165,RUNMC,1.1759,2.14,1,1,0,0.951,0.977
+above_fda_band,"bins 6-63 only, i.e. above the band FDA swaps at beta = 0.05",0.0409,RUNMC,0.0273,1.50,0.1477,RUNMC,0.1035,1.43,1,1,0,0.974,0.997
+standardised_no_bin0,"shape only, lowest bin removed first",0.1251,RUNMC,0.0722,1.73,1.5376,RUNMC,0.6519,2.36,1,1,0,0.842,0.938

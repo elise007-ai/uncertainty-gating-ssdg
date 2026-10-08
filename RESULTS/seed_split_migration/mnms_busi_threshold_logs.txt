@@ -1,0 +1,4 @@
+# M&Ms and BUSI fixmatch (threshold), seed-split protocol, 3 seeds (best avg student Dice)
+mnms_fixmatch_s1337: 0.807008    mnms_fixmatch_s2024: 0.808239   mnms_fixmatch_s42: 0.809903
+busi_fixmatch_s1337: 0.703234    busi_fixmatch_s2024: 0.714094   busi_fixmatch_s42: 0.688449
+# 3-seed mean: M&Ms 80.84±0.15 ; BUSI 70.19±1.29

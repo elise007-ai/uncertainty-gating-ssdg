@@ -1,0 +1,324 @@
+{
+ "run": "v18B_prostate_medl_s1337",
+ "ckpt": "../model/prostate/train_fourierfuse_v16/v18B_prostate_medl_s1337/best_student.pth",
+ "ckpt_sha256": "a55635d0d3676f1978b6ab8903870569c1865b372ace920bd2d82d63d09b8a5a",
+ "iter": 32500,
+ "best_avg_dice": 0.8465553304808321,
+ "n_images_per_domain": 8,
+ "n_images_total": 48,
+ "weights": {
+  "student_net1": {
+   "max_abs": 9.91755199432373,
+   "l2_norm": 370.92699587386164,
+   "n_nonfinite": 0,
+   "n_params": 31036546
+  },
+  "student_net2": {
+   "max_abs": 9.334964752197266,
+   "l2_norm": 411.6059049650405,
+   "n_nonfinite": 0,
+   "n_params": 31736898
+  },
+  "ema_net1": {
+   "max_abs": 9.8954439163208,
+   "l2_norm": 369.2805243339165,
+   "n_nonfinite": 0,
+   "n_params": 31036546
+  },
+  "ema_net2": {
+   "max_abs": 9.303592681884766,
+   "l2_norm": 409.6224084933448,
+   "n_nonfinite": 0,
+   "n_params": 31736898
+  }
+ },
+ "forward": {
+  "student_net1": {
+   "fp32": {
+    "n_nonfinite_logits": 0,
+    "n_over_fp16max": 0,
+    "n_nonfinite_u": 0,
+    "logit_min": -1359.088623046875,
+    "logit_max": 4958.40283203125,
+    "evidence_max": 4958.40283203125,
+    "S_min": 10.466886520385742,
+    "S_max": 4960.40283203125,
+    "n_images": 48
+   },
+   "fp16": {
+    "n_nonfinite_logits": 0,
+    "n_over_fp16max": 0,
+    "n_nonfinite_u": 0,
+    "logit_min": -1359.0,
+    "logit_max": 4960.0,
+    "evidence_max": 4960.0,
+    "S_min": 10.4775972366333,
+    "S_max": 4962.0,
+    "n_images": 48
+   }
+  },
+  "student_net2": {
+   "fp32": {
+    "n_nonfinite_logits": 0,
+    "n_over_fp16max": 0,
+    "n_nonfinite_u": 0,
+    "logit_min": -849.8765869140625,
+    "logit_max": 571.8361206054688,
+    "evidence_max": 571.8361206054688,
+    "S_min": 2.0421669483184814,
+    "S_max": 573.8361206054688,
+    "n_images": 48
+   },
+   "fp16": {
+    "n_nonfinite_logits": 0,
+    "n_over_fp16max": 0,
+    "n_nonfinite_u": 0,
+    "logit_min": -850.0,
+    "logit_max": 571.5,
+    "evidence_max": 571.5,
+    "S_min": 2.0480332374572754,
+    "S_max": 573.5,
+    "n_images": 48
+   }
+  },
+  "ema_net1": {
+   "fp32": {
+    "n_nonfinite_logits": 0,
+    "n_over_fp16max": 0,
+    "n_nonfinite_u": 0,
+    "logit_min": -1549.58544921875,
+    "logit_max": 5668.02783203125,
+    "evidence_max": 5668.02783203125,
+    "S_min": 10.146424293518066,
+    "S_max": 5670.02783203125,
+    "n_images": 48
+   },
+   "fp16": {
+    "n_nonfinite_logits": 0,
+    "n_over_fp16max": 0,
+    "n_nonfinite_u": 0,
+    "logit_min": -1549.0,
+    "logit_max": 5668.0,
+    "evidence_max": 5668.0,
+    "S_min": 10.143905639648438,
+    "S_max": 5670.0,
+    "n_images": 48
+   }
+  },
+  "ema_net2": {
+   "fp32": {
+    "n_nonfinite_logits": 0,
+    "n_over_fp16max": 0,
+    "n_nonfinite_u": 0,
+    "logit_min": -777.6554565429688,
+    "logit_max": 582.0435180664062,
+    "evidence_max": 582.0435180664062,
+    "S_min": 7.917925834655762,
+    "S_max": 584.0435180664062,
+    "n_images": 48
+   },
+   "fp16": {
+    "n_nonfinite_logits": 0,
+    "n_over_fp16max": 0,
+    "n_nonfinite_u": 0,
+    "logit_min": -777.5,
+    "logit_max": 582.5,
+    "evidence_max": 582.5,
+    "S_min": 7.962758541107178,
+    "S_max": 584.5,
+    "n_images": 48
+   }
+  }
+ },
+ "terms": {
+  "fp32": {
+   "caef_Z_min": {
+    "value": 0.014041435264516622,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "caef_b_fused_max": {
+    "value": 0.9999975139896075,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "caef_u_fused_mean": {
+    "value": 0.00016264736041193828,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "reliability_mean": {
+    "value": 0.9999458231031895,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "reliability_min": {
+    "value": 0.9108124536772569,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "omega_mean": {
+    "value": 1.0,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net1_risk_mse": {
+    "value": 0.004605891231525068,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net1_kl": {
+    "value": 0.007328251558647025,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net1_dice": {
+    "value": 0.22218962262074152,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net1_logfisher": {
+    "value": -11.023733178774515,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net1_iedl": {
+    "value": 1.105311358968417,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net1_omega_iedl": {
+    "value": 1.105311358968417,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net2_risk_mse": {
+    "value": 0.003754611590920831,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net2_kl": {
+    "value": 0.007417404012812767,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net2_dice": {
+    "value": 0.18978600949048996,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net2_logfisher": {
+    "value": -11.698277393976847,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net2_iedl": {
+    "value": 1.1724106594920158,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net2_omega_iedl": {
+    "value": 1.1724106594920158,
+    "finite": true,
+    "first_nonfinite_domain": null
+   }
+  },
+  "fp16": {
+   "caef_Z_min": {
+    "value": 0.014038403208057085,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "caef_b_fused_max": {
+    "value": 0.9999975127478441,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "caef_u_fused_mean": {
+    "value": 0.0001626341387842937,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "reliability_mean": {
+    "value": 0.9999458330372969,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "reliability_min": {
+    "value": 0.9108219866951307,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "omega_mean": {
+    "value": 1.0,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net1_risk_mse": {
+    "value": 0.004606198856587677,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net1_kl": {
+    "value": 0.007329511039036636,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net1_dice": {
+    "value": 0.22223669911424318,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net1_logfisher": {
+    "value": -11.023365219434103,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net1_iedl": {
+    "value": 1.1052742873628933,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net1_omega_iedl": {
+    "value": 1.1052742873628933,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net2_risk_mse": {
+    "value": 0.0037552624447319736,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net2_kl": {
+    "value": 0.007419240178326921,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net2_dice": {
+    "value": 0.18984230483571687,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net2_logfisher": {
+    "value": -11.698095838228861,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net2_iedl": {
+    "value": 1.1723929246266682,
+    "finite": true,
+    "first_nonfinite_domain": null
+   },
+   "net2_omega_iedl": {
+    "value": 1.1723929246266682,
+    "finite": true,
+    "first_nonfinite_domain": null
+   }
+  }
+ },
+ "verdict": {
+  "verdict": "NOT_REPRODUCED"
+ },
+ "time": "2026-10-07 18:18:51",
+ "note": "forward-only on weak test images; the training inputs (strong view + CutMix) can overflow earlier"
+}

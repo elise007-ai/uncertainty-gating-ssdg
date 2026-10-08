@@ -1,0 +1,13 @@
+{
+ "split_seed": 43,
+ "lb_domain": 4,
+ "lb_num": 5,
+ "data_num": 550,
+ "lb_idxs": [
+  39,
+  147,
+  292,
+  378,
+  473
+ ]
+}

@@ -1,0 +1,3 @@
+# RESULTS: records of the original (submission-time) experiments
+
+Per-seed digests of the original runs whose training logs no longer exist (`adaptive_threshold/*.txt`: Prostate and Fundus, both gates; `seed_split_migration/mnms_busi_threshold_logs.txt`: threshold gate on M&Ms and BUSI), and the summaries of the fixed-split experiments that the paper reports qualitatively (term-removal rows, component ablation, alternative gates, calibration probe). The analysis scripts under `CODE/source/make_extra_s1*.py` read the digests from here. Everything measured during the revision lives under `BSPC_results/`.

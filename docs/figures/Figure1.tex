@@ -1,0 +1,57 @@
+% Figure 1 of the manuscript, redrawn in S19 (the submitted Figure1.pdf had no source: label collision, legend line styles that did not match
+% the drawing, bitmap fonts, and loss names that differed from Eqn. (loss)).   pdflatex Figure1.tex
+\documentclass[tikz,border=4pt]{standalone}
+\usepackage{amsmath,amssymb}
+\usetikzlibrary{arrows.meta,calc}
+\begin{document}
+\begin{tikzpicture}[font=\small, >={Stealth[length=2.2mm]},
+  data/.style={draw, rounded corners=2pt, fill=blue!8, minimum height=9mm, minimum width=24mm, inner xsep=4pt, align=center},
+  net/.style={draw, rounded corners=3pt, fill=black!8, minimum height=10mm, minimum width=27mm, align=center},
+  head/.style={draw, rounded corners=2pt, fill=green!12, minimum height=10mm, inner xsep=5pt, align=center},
+  gate/.style={draw, rounded corners=2pt, fill=orange!22, minimum height=10mm, inner xsep=5pt, align=center},
+  loss/.style={draw, rounded corners=2pt, fill=red!10, minimum height=9mm, inner xsep=6pt, align=center},
+  aux/.style={draw, rounded corners=2pt, fill=purple!9, minimum height=9mm, inner xsep=5pt, align=center},
+  flow/.style={->, line width=0.7pt},
+  ema/.style={->, dashed, line width=0.9pt, black!55},
+  pl/.style={->, dashed, line width=0.9pt, teal!75!black},
+  swad/.style={->, dashed, line width=0.9pt, purple!85!black},
+  mix/.style={->, densely dotted, line width=0.7pt}]
+% data and views
+\node[data] (L)  at (0,2.7)   {labeled batch\\$(X,Y)$};
+\node[data] (U)  at (0,0)     {unlabeled batch\\$U$};
+\node[data] (Us) at (3.4,1.35) {strong view $U^{s}$\\{\footnotesize FDA + CutMix}};
+\node[data] (Uw) at (3.4,0)   {weak view $U^{w}$};
+% networks, head, gate
+\node[net]  (S)  at (7.1,2.7) {\textbf{Student} $f_{\theta}$};
+\node[net]  (T)  at (7.1,0)   {\textbf{Teacher} $f_{\theta'}$};
+\node[head] (H)  at (10.6,0)  {Dirichlet mean\\and uncertainties};
+\node[gate] (G)  at (14.0,0)  {gate: DAEP\\or threshold};
+% objective and SWAD
+\node[loss, minimum width=98mm] (O) at (9.4,4.9)
+  {$\mathcal{L}=\mathcal{L}_{\mathrm{sup}}+\lambda(t)\bigl[\mathcal{L}_{\mathrm{pl}}(\hat Y;w)+0.1\,\mathcal{L}_{\mathrm{ent}}\bigr]+\lambda_{\mathrm{spec}}\,\mathcal{L}_{\mathrm{spec}}$};
+\node[aux] (W) at (0.9,4.9) {SWAD: $\bar\theta$ = running\\mean of $\theta$ from $T_{\mathrm{swad}}$};
+% forward passes
+\draw[flow] ([yshift=1.8mm]L.east) -- ([yshift=1.8mm]S.west);
+\draw[flow] ([xshift=-4mm]U.north) |- ([yshift=-1.6mm]Us.west);
+\draw[mix]  ([xshift=4mm]L.south) |- ([yshift=1.6mm]Us.west);
+\draw[flow] (U.east) -- (Uw.west);
+\draw[flow] (Us.east) -- ++(0.55,0) |- ([yshift=-1.8mm]S.west);
+\draw[flow] (Uw.east) -- (T.west);
+\draw[flow] (T.east) -- (H.west);
+\draw[flow] (H.east) -- (G.west);
+\draw[flow] (S.north) -- (S.north |- O.south) node[midway, right, font=\footnotesize] {predictions};
+% special flows
+\draw[ema]  (S.south) -- (T.north) node[midway, right, font=\footnotesize, black!70] {EMA};
+\draw[pl]   (H.north) -- (H.north |- O.south) node[pos=0.45, right, font=\footnotesize] {$\hat Y$};
+\draw[flow] (G.north) -- (G.north |- O.south) node[pos=0.45, right, font=\footnotesize] {$w$};
+\draw[swad] ([xshift=-9mm]S.north) -- ++(0,0.75) -| (W.south);
+% legend
+\begin{scope}[shift={(0.2,-1.35)}, font=\footnotesize]
+  \draw[flow] (0,0) -- (0.9,0);   \node[right] at (0.95,0) {forward pass};
+  \draw[mix]  (3.3,0) -- (4.2,0); \node[right] at (4.25,0) {style and patch from $X$};
+  \draw[ema]  (7.6,0) -- (8.5,0); \node[right] at (8.55,0) {EMA update};
+  \draw[pl]   (10.9,0) -- (11.8,0); \node[right] at (11.85,0) {pseudo-label};
+  \draw[swad] (14.3,0) -- (15.2,0); \node[right] at (15.25,0) {SWAD};
+\end{scope}
+\end{tikzpicture}
+\end{document}

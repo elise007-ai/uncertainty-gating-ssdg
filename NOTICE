@@ -1,0 +1,10 @@
+uncertainty-gating-ssdg
+Copyright 2026 the authors of "When Does Uncertainty-Aware Pseudo-Labeling Help? A Foundation-Free Study of
+Semi-Supervised Domain Generalization in Medical Image Segmentation".
+
+This repository is a derivative work of SynFoC (https://github.com/MQinghe/SynFoC, Apache License 2.0), which is itself
+based on SSL4MIS (https://github.com/HiLab-git/SSL4MIS) and SAMed (https://github.com/hitachinsk/SAMed).
+Files taken from SynFoC and modified: CODE/source/dataloaders/*, CODE/source/utils/* (data loading, augmentation, losses,
+metrics, ramps). The training scripts (train_fourierfuse_*.py) follow the structure of SynFoC's train.py.
+No foundation-model code or weights (SAM, MedSAM) are included or required.
+All other files were written by the authors and are released under the same licence.

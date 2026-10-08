@@ -1,0 +1,9 @@
+# v17 alternative-gate runs (seed-split testbed). Best avg student Dice + per-domain.
+# --- Fundus (s1337) ---
+v17_fundus_consistency_gate_s1337: avg=0.874049 cup(d1-4)=0.807224,0.796712,0.858437,0.819472 disc(d1-4)=0.948538,0.867565,0.957136,0.937306
+v17_fundus_percentile_gate_s1337:  avg=0.869729 cup(d1-4)=0.756820,0.793095,0.852698,0.840157 disc(d1-4)=0.947414,0.868800,0.958338,0.940508
+# --- Prostate (s1337) ---
+v17_prostate_consistency_gate_s1337: avg=0.679500 base(d1-6)=0.401274,0.848716,0.343442,0.852518,0.789951,0.841100  DSDV=0.0479 (UNSTABLE: d1,d3 collapsed)
+v17_prostate_percentile_gate_s1337:  avg=0.856300 (best@iter26500; near fixmatch)
+# --- adaptive (3 seeds) from prior round ---
+# Fundus adaptive: 87.75,88.41,88.34 -> 88.17±0.36 ; Prostate adaptive: 83.18,83.04,84.58 -> 83.60±0.85

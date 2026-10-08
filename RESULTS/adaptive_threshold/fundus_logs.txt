@@ -1,0 +1,11 @@
+# Fundus — adaptive-threshold comparison (3 gates x 3 seeds), best avg student Dice + per-domain cup/disc
+# Parsed values used in Table 5 / ANALYSIS.md
+adaptive_s1337: avg=0.877535  cup(d1-4)=0.824809,0.805868,0.860911,0.853527
+adaptive_s2024: avg=0.884139  cup(d1-4)=0.847052,0.795311,0.859254,0.870967
+adaptive_s42:   avg=0.883363  cup(d1-4)=0.859037,0.787973,0.856957,0.863980
+daep_s1337:     avg=0.885190  cup(d1-4)=0.827053,0.816326,0.861577,0.865720
+daep_s2024:     avg=0.887170  cup(d1-4)=0.845504,0.807547,0.855946,0.861703
+daep_s42:       avg=0.883793  cup(d1-4)=0.862909,0.783793,0.862402,0.844140
+fixmatch_s1337: avg=0.882202  cup(d1-4)=0.823471,0.812523,0.863028,0.855641
+fixmatch_s2024: avg=0.886827  cup(d1-4)=0.845698,0.796334,0.862454,0.869835
+fixmatch_s42:   avg=0.885062  cup(d1-4)=0.859137,0.787360,0.861052,0.854633

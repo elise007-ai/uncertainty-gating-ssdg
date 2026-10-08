@@ -1,0 +1,62 @@
+{
+  "summary": {
+    "dataset": "prostate",
+    "ckpt": "/home/yahyaisaac/root_eli/ProtoSynFoC/model/prostate/train_fourierfuse_v16/v16_prostate_s42/best_student.pth",
+    "shifted_domain": 1,
+    "mean_auroc_mismatch": 0.355894120343456,
+    "mean_auroc_lowconf": 0.8402203065062901,
+    "shifted_mismatch_beats_conf": false,
+    "shifted_mismatch_beats_vac": false,
+    "VERDICT": "P1 FAILED \u2014 mismatch is not better than confidence; stop, ship Option A"
+  },
+  "per_domain": {
+    "1": {
+      "error_rate": 0.00913888867944479,
+      "auroc_mismatch_vs_error": 0.33775070491819065,
+      "auroc_lowconf_vs_error": 0.8313980746792773,
+      "auroc_vacuity_vs_error": 0.8313873595648991,
+      "mismatch_beats_conf": false,
+      "mismatch_beats_vac": false
+    },
+    "2": {
+      "error_rate": 0.009541139006614685,
+      "auroc_mismatch_vs_error": 0.36477781388757285,
+      "auroc_lowconf_vs_error": 0.7525625839310988,
+      "auroc_vacuity_vs_error": 0.7525528981342681,
+      "mismatch_beats_conf": false,
+      "mismatch_beats_vac": false
+    },
+    "3": {
+      "error_rate": 0.004806817974895239,
+      "auroc_mismatch_vs_error": 0.23987277551715314,
+      "auroc_lowconf_vs_error": 0.916498958795355,
+      "auroc_vacuity_vs_error": 0.9164764186846882,
+      "mismatch_beats_conf": false,
+      "mismatch_beats_vac": false
+    },
+    "4": {
+      "error_rate": 0.01008947379887104,
+      "auroc_mismatch_vs_error": 0.6219861122700879,
+      "auroc_lowconf_vs_error": 0.9309157893202075,
+      "auroc_vacuity_vs_error": 0.9309336409600917,
+      "mismatch_beats_conf": false,
+      "mismatch_beats_vac": false
+    },
+    "5": {
+      "error_rate": 0.0076987952925264835,
+      "auroc_mismatch_vs_error": 0.29606955838659754,
+      "auroc_lowconf_vs_error": 0.8072773247358156,
+      "auroc_vacuity_vs_error": 0.8072591989246015,
+      "mismatch_beats_conf": false,
+      "mismatch_beats_vac": false
+    },
+    "6": {
+      "error_rate": 0.005023809615522623,
+      "auroc_mismatch_vs_error": 0.27490775708113396,
+      "auroc_lowconf_vs_error": 0.8026691075759863,
+      "auroc_vacuity_vs_error": 0.802670050305762,
+      "mismatch_beats_conf": false,
+      "mismatch_beats_vac": false
+    }
+  }
+}

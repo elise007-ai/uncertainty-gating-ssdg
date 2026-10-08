@@ -1,0 +1,27 @@
+# Python package requirements for FourierFuse code release.
+#
+# These versions match the environment used to train and evaluate the
+# models in the paper. Newer versions of most packages should work, but
+# we list known-good versions for reproducibility.
+#
+# Install with:
+#   pip install -r requirements.txt
+#
+# CUDA 11.8 + PyTorch 2.0+ are recommended. Adjust the torch/torchvision
+# index URL to match your CUDA version (see https://pytorch.org).
+
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24,<2.1                 # NumPy 2.0 supported by the v16 calibration script
+scipy>=1.10
+scikit-image>=0.21
+opencv-python>=4.8
+Pillow>=10.0
+h5py>=3.9
+SimpleITK>=2.3
+medpy>=0.4.0
+matplotlib>=3.7
+tqdm>=4.65
+tensorboardX>=2.6
+icecream>=2.1
+safetensors>=0.3

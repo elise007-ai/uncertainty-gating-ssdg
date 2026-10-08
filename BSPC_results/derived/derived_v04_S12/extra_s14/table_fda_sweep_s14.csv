@@ -1,0 +1,11 @@
+kind,param,value,run,best_avg,BIDMC,BMC,HK,I2CVB,RUNMC,UCL,d_avg_vs_default,d_bidmc_vs_default
+default,init,1337,v18B_prostate_fixmatch_split1337_init1337,0.8620,0.8083,0.8787,0.8988,0.8599,0.8447,0.8816,+0.0000,+0.0000
+default,init,43,v18B_prostate_fixmatch_split1337_init43,0.8597,0.8378,0.8688,0.8805,0.8675,0.8282,0.8754,-0.0023,+0.0295
+default,init,44,v18B_prostate_fixmatch_split1337_init44,0.8621,0.8263,0.8639,0.8951,0.8721,0.8294,0.8857,+0.0001,+0.0180
+sweep,beta,0.01,v18C_prostate_fixmatch_beta0.01_s1337,0.8534,0.8235,0.8625,0.8938,0.8444,0.8193,0.8767,-0.0086,+0.0152
+sweep,beta,0.02,v18C_prostate_fixmatch_beta0.02_s1337,0.8669,0.8512,0.8760,0.8931,0.8674,0.8427,0.8708,+0.0049,+0.0429
+sweep,beta,0.1,v18C_prostate_fixmatch_beta0.10_s1337,0.8630,0.8412,0.8778,0.8740,0.8588,0.8388,0.8875,+0.0010,+0.0329
+sweep,beta,0.2,v18C_prostate_fixmatch_beta0.20_s1337,0.8461,0.8247,0.8516,0.8548,0.8435,0.8166,0.8852,-0.0159,+0.0164
+sweep,pfda,0.25,v18C_prostate_fixmatch_pfda0.25_s1337,0.8626,0.8315,0.8647,0.8994,0.8687,0.8197,0.8914,+0.0006,+0.0232
+sweep,pfda,0.75,v18C_prostate_fixmatch_pfda0.75_s1337,0.8579,0.8308,0.8674,0.8813,0.8620,0.8433,0.8625,-0.0041,+0.0225
+sweep,pfda,1,v18C_prostate_fixmatch_pfda1.0_s1337,0.8148,0.6576,0.8412,0.8345,0.8727,0.8153,0.8673,-0.0472,-0.1507

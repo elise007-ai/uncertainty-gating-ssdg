@@ -1,0 +1,1138 @@
+[00:57:52.642] python train_fourierfuse_v18_revision.py --dataset fundus --lb_num 20 --lb_domain 3 --domain_num 4 --max_iterations 30000 --num_eval_iter 500 --base_lr 0.0005 --label_bs 4 --unlabel_bs 4 --swad_start_iter 10000 --swad_update_every 100 --swad_bn_recalib_batches 20 --warmup --warmup_period 150 --AdamW --amp 1 --ff_base_features 64 --ff_spec_consistency_weight 0.5 --ff_fda_beta 0.05 --consistency 1.0 --consistency_rampup 150.0 --ema_decay 0.995 --daep_alpha 1.0 --daep_beta 1.0 --daep_gamma 1.0 --proto_per_domain 2 --proto_ema 0.99 --evid_lambda_kl_max 0.02 --evid_anneal_iters 10000 --save_model --overwrite --method fixmatch --split_seed 1337 --seed 44 --save_name v18B_fundus_fixmatch_split1337_init44 --gpu 1
+[00:57:52.642] Namespace(dataset='fundus', save_name='v18B_fundus_fixmatch_split1337_init44', overwrite=True, max_iterations=30000, num_eval_iter=500, deterministic=1, base_lr=0.0005, seed=44, gpu='1', amp=1, label_bs=4, unlabel_bs=4, test_bs=1, domain_num=4, lb_domain=3, lb_num=20, lb_ratio=0, ema_decay=0.995, consistency=1.0, consistency_rampup=150.0, consistency_weight_cap=0.5, save_model=True, img_size=512, AdamW=True, warmup=True, warmup_period=150, ff_base_features=64, ff_bilinear=False, ff_spec_consistency_weight=0.5, ff_fda_beta=0.05, ff_fda_prob=0.5, ff_no_fda=False, ff_no_spec_consistency=False, swad_enable=True, swad_start_iter=10000, swad_update_every=100, swad_bn_recalib_batches=20, daep_alpha=1.0, daep_beta=1.0, daep_gamma=1.0, daep_no_ale=False, daep_no_epi=False, daep_no_dom=False, daep_threshold_baseline=False, method='fixmatch', cadg_n_bins=20, cadg_refit_every=200, cadg_min_count=50000, cadg_recalibrate_ale=False, cadg_seed_split=True, cg_n_views=3, cg_agree_frac=1.0, cg_conf_floor=0.0, pg_keep_frac=0.8, proto_per_domain=2, proto_ema=0.99, evid_lambda_kl_max=0.02, evid_anneal_iters=10000, split_seed=1337, head='evidential', evid_activation='softplus', evid_loss='mse', evid_kl_schedule='linear', evid_prior_w=1.0, evid_temperature=1.0, evid_max_evidence=0.0, mc_dropout_p=0.0, mc_dropout_place='uamt', mc_target='teacher', mc_T=8, devis_beta0=0.01, devis_cup_weight=1.0, devis_gate='soft', devis_u_thr=0.2, medl_arch2='resunet', medl_xi=1.0, medl_rel_thr=0.5, medl_lambda_fisher=0.1, medl_lambda1=0.5, medl_report='net1', resume='auto', resume_every_epochs=2, die_after_epoch=-1, grad_clip=5.0, _resume_from=None)
+[00:57:52.682] [v16 DATASET] fundus: num_classes=2, K=3, num_channels=3, patch_size=256, min_v/max_v=0.5/1.5, fillcolor=255, lb_bs=4, ulb_bs=4
+[00:57:54.018] [v18 CFG] head=evidential act=softplus loss=mse kl=linear/0.02/10000 W=1.0 T=1.0 cap=0.0 dropout=0.0 place=uamt mc_target=teacher method=fixmatch split_seed=1337
+[00:57:54.018] [v16 MODEL] trainable params = 31,037,763 (SynFoC foundation-backed ~ 6x this)
+[00:57:54.018] [v16 DAEP] alpha=1.0, beta=1.0, gamma=1.0 | ablations: no_ale=False, no_epi=False, no_dom=False, threshold_baseline=False
+[00:57:54.018] [v16 OPT] base_lr=0.0005, AdamW=True, warmup=True, warmup_period=150, amp=1, grad_clip=5.0
+[00:57:54.019] [v16 CW] consistency=1.0, rampup=150.0, cap=0.5
+[00:57:54.019] [CADG] disabled (method=fixmatch).
+[00:57:54.020] [seed_split] seed=1337 data_num=320 lb_num=20 labeled_idxs=[33, 55, 84, 104, 157, 170, 178, 184, 186, 187, 196, 200, 204, 206, 217, 258, 273, 292, 299, 316]
+[00:57:54.202] 500 iterations per epoch, 60 epochs total, max_iterations=30000
+[01:04:24.399] iter 500: loss=1.0057, sup=0.9950, unsup=0.9301, spec=0.0071, cw=0.007, w_mean=0.208, w_min=0.000, U_ale=0.095, U_epi=0.547, U_dom=0.029, S_mean=7.43
+[01:04:24.402] Testing student...
+[01:04:28.637] domain1 epoch 1: val_cup_dice=0.6552 val_disc_dice=0.8453 hd=25.85 hd=21.46
+[01:04:33.100] domain2 epoch 1: val_cup_dice=0.4252 val_disc_dice=0.5272 hd=45.24 hd=48.04
+[01:04:39.579] domain3 epoch 1: val_cup_dice=0.7951 val_disc_dice=0.9276 hd=9.10 hd=17.80
+[01:04:46.112] domain4 epoch 1: val_cup_dice=0.3802 val_disc_dice=0.5868 hd=71.42 hd=69.13
+[01:04:46.114] epoch 1: avg val_cup_dice=0.5639 val_disc_dice=0.7217 DSDV=0.0281
+[01:04:46.115] Testing EMA teacher...
+[01:04:49.220] domain1 epoch 1: val_cup_dice=0.0004 val_disc_dice=0.0038 hd=100.00 hd=98.68
+[01:04:53.468] domain2 epoch 1: val_cup_dice=0.0008 val_disc_dice=0.0093 hd=100.00 hd=97.87
+[01:04:59.288] domain3 epoch 1: val_cup_dice=0.0100 val_disc_dice=0.3846 hd=92.24 hd=56.74
+[01:05:04.762] domain4 epoch 1: val_cup_dice=0.0406 val_disc_dice=0.0537 hd=79.05 hd=81.82
+[01:05:04.763] epoch 1: avg val_cup_dice=0.0129 val_disc_dice=0.1128 DSDV=0.0063
+[01:05:05.696] [epoch 1] student_avg=0.6428  ema_avg=0.0629  best_avg=0.6428 @ iter 500  swad_best=0.0000 @ iter -1  best_DSDV=0.0281
+[01:11:40.197] iter 1000: loss=0.5649, sup=0.5583, unsup=0.6722, spec=0.0011, cw=0.008, w_mean=0.522, w_min=0.000, U_ale=0.035, U_epi=0.307, U_dom=0.005, S_mean=13.84
+[01:11:40.239] Testing student...
+[01:11:44.935] domain1 epoch 2: val_cup_dice=0.6759 val_disc_dice=0.8341 hd=24.31 hd=21.11
+[01:11:50.396] domain2 epoch 2: val_cup_dice=0.3948 val_disc_dice=0.5588 hd=46.64 hd=40.37
+[01:11:57.653] domain3 epoch 2: val_cup_dice=0.8374 val_disc_dice=0.9208 hd=7.96 hd=8.79
+[01:12:04.908] domain4 epoch 2: val_cup_dice=0.5966 val_disc_dice=0.8445 hd=27.62 hd=18.69
+[01:12:04.909] epoch 2: avg val_cup_dice=0.6262 val_disc_dice=0.7896 DSDV=0.0213
+[01:12:04.910] Testing EMA teacher...
+[01:12:08.148] domain1 epoch 2: val_cup_dice=0.0057 val_disc_dice=0.0245 hd=97.91 hd=96.54
+[01:12:11.612] domain2 epoch 2: val_cup_dice=0.0008 val_disc_dice=0.0236 hd=100.00 hd=95.85
+[01:12:17.461] domain3 epoch 2: val_cup_dice=0.5322 val_disc_dice=0.7315 hd=28.81 hd=28.84
+[01:12:23.436] domain4 epoch 2: val_cup_dice=0.2406 val_disc_dice=0.4745 hd=54.84 hd=37.67
+[01:12:23.437] epoch 2: avg val_cup_dice=0.1948 val_disc_dice=0.3135 DSDV=0.0673
+[01:12:24.387] [epoch 2] student_avg=0.7079  ema_avg=0.2542  best_avg=0.7079 @ iter 1000  swad_best=0.0000 @ iter -1  best_DSDV=0.0213
+[01:12:26.176] [resume] state saved at iter 1000 (epoch 2)
+[01:18:59.250] iter 1500: loss=0.4218, sup=0.4147, unsup=0.6435, spec=0.0007, cw=0.010, w_mean=0.991, w_min=0.000, U_ale=0.014, U_epi=0.186, U_dom=0.003, S_mean=20.87
+[01:18:59.278] Testing student...
+[01:19:03.463] domain1 epoch 3: val_cup_dice=0.6648 val_disc_dice=0.8765 hd=21.64 hd=19.64
+[01:19:07.896] domain2 epoch 3: val_cup_dice=0.4224 val_disc_dice=0.5883 hd=46.44 hd=37.53
+[01:19:14.818] domain3 epoch 3: val_cup_dice=0.8449 val_disc_dice=0.9230 hd=8.17 hd=11.93
+[01:19:21.777] domain4 epoch 3: val_cup_dice=0.6048 val_disc_dice=0.8856 hd=24.67 hd=15.50
+[01:19:21.779] epoch 3: avg val_cup_dice=0.6342 val_disc_dice=0.8183 DSDV=0.0190
+[01:19:21.780] Testing EMA teacher...
+[01:19:26.132] domain1 epoch 3: val_cup_dice=0.4878 val_disc_dice=0.8081 hd=34.40 hd=27.22
+[01:19:31.007] domain2 epoch 3: val_cup_dice=0.2744 val_disc_dice=0.4921 hd=58.97 hd=45.23
+[01:19:38.020] domain3 epoch 3: val_cup_dice=0.7099 val_disc_dice=0.8759 hd=13.34 hd=15.72
+[01:19:44.965] domain4 epoch 3: val_cup_dice=0.6118 val_disc_dice=0.8479 hd=20.98 hd=13.18
+[01:19:44.966] epoch 3: avg val_cup_dice=0.5210 val_disc_dice=0.7560 DSDV=0.0244
+[01:19:46.067] [epoch 3] student_avg=0.7263  ema_avg=0.6385  best_avg=0.7263 @ iter 1500  swad_best=0.0000 @ iter -1  best_DSDV=0.0190
+[01:26:33.322] iter 2000: loss=0.3372, sup=0.3301, unsup=0.5696, spec=0.0005, cw=0.011, w_mean=0.993, w_min=0.000, U_ale=0.007, U_epi=0.128, U_dom=0.003, S_mean=28.86
+[01:26:33.325] Testing student...
+[01:26:37.678] domain1 epoch 4: val_cup_dice=0.6623 val_disc_dice=0.8660 hd=24.48 hd=19.46
+[01:26:42.229] domain2 epoch 4: val_cup_dice=0.4314 val_disc_dice=0.5886 hd=43.78 hd=41.45
+[01:26:48.412] domain3 epoch 4: val_cup_dice=0.8468 val_disc_dice=0.9441 hd=7.64 hd=7.44
+[01:26:54.766] domain4 epoch 4: val_cup_dice=0.6508 val_disc_dice=0.8534 hd=23.23 hd=17.51
+[01:26:54.768] epoch 4: avg val_cup_dice=0.6478 val_disc_dice=0.8130 DSDV=0.0194
+[01:26:54.769] Testing EMA teacher...
+[01:26:59.237] domain1 epoch 4: val_cup_dice=0.6507 val_disc_dice=0.9059 hd=22.64 hd=13.95
+[01:27:04.006] domain2 epoch 4: val_cup_dice=0.4355 val_disc_dice=0.6241 hd=44.21 hd=39.24
+[01:27:10.971] domain3 epoch 4: val_cup_dice=0.8147 val_disc_dice=0.9271 hd=8.62 hd=22.13
+[01:27:17.587] domain4 epoch 4: val_cup_dice=0.6758 val_disc_dice=0.7263 hd=15.09 hd=70.63
+[01:27:17.588] epoch 4: avg val_cup_dice=0.6442 val_disc_dice=0.7958 DSDV=0.0157
+[01:27:18.621] [epoch 4] student_avg=0.7304  ema_avg=0.7200  best_avg=0.7304 @ iter 2000  swad_best=0.0000 @ iter -1  best_DSDV=0.0194
+[01:27:20.664] [resume] state saved at iter 2000 (epoch 4)
+[01:34:25.446] iter 2500: loss=0.2877, sup=0.2800, unsup=0.5257, spec=0.0006, cw=0.014, w_mean=0.994, w_min=0.000, U_ale=0.004, U_epi=0.094, U_dom=0.004, S_mean=37.82
+[01:34:25.449] Testing student...
+[01:34:30.253] domain1 epoch 5: val_cup_dice=0.6636 val_disc_dice=0.8939 hd=24.66 hd=13.96
+[01:34:35.912] domain2 epoch 5: val_cup_dice=0.4896 val_disc_dice=0.6316 hd=38.76 hd=33.18
+[01:34:43.702] domain3 epoch 5: val_cup_dice=0.8358 val_disc_dice=0.9433 hd=8.12 hd=6.51
+[01:34:51.115] domain4 epoch 5: val_cup_dice=0.6597 val_disc_dice=0.8509 hd=20.59 hd=17.59
+[01:34:51.119] epoch 5: avg val_cup_dice=0.6622 val_disc_dice=0.8299 DSDV=0.0140
+[01:34:51.121] Testing EMA teacher...
+[01:34:55.889] domain1 epoch 5: val_cup_dice=0.6175 val_disc_dice=0.8486 hd=28.36 hd=19.52
+[01:35:00.472] domain2 epoch 5: val_cup_dice=0.4027 val_disc_dice=0.4738 hd=51.14 hd=47.60
+[01:35:07.180] domain3 epoch 5: val_cup_dice=0.8314 val_disc_dice=0.9413 hd=8.66 hd=6.80
+[01:35:14.103] domain4 epoch 5: val_cup_dice=0.5791 val_disc_dice=0.8239 hd=29.85 hd=23.01
+[01:35:14.104] epoch 5: avg val_cup_dice=0.6077 val_disc_dice=0.7719 DSDV=0.0260
+[01:35:15.227] [epoch 5] student_avg=0.7461  ema_avg=0.6898  best_avg=0.7461 @ iter 2500  swad_best=0.0000 @ iter -1  best_DSDV=0.0140
+[01:42:08.593] iter 3000: loss=0.2352, sup=0.2275, unsup=0.4609, spec=0.0004, cw=0.016, w_mean=0.994, w_min=0.000, U_ale=0.002, U_epi=0.072, U_dom=0.005, S_mean=48.35
+[01:42:08.614] Testing student...
+[01:42:13.632] domain1 epoch 6: val_cup_dice=0.6925 val_disc_dice=0.8752 hd=20.41 hd=17.72
+[01:42:19.077] domain2 epoch 6: val_cup_dice=0.4467 val_disc_dice=0.4879 hd=42.43 hd=43.29
+[01:42:27.673] domain3 epoch 6: val_cup_dice=0.8402 val_disc_dice=0.9440 hd=7.81 hd=6.31
+[01:42:35.551] domain4 epoch 6: val_cup_dice=0.6502 val_disc_dice=0.8682 hd=21.68 hd=15.25
+[01:42:35.552] epoch 6: avg val_cup_dice=0.6574 val_disc_dice=0.7938 DSDV=0.0247
+[01:42:35.554] Testing EMA teacher...
+[01:42:40.302] domain1 epoch 6: val_cup_dice=0.5858 val_disc_dice=0.8452 hd=30.36 hd=21.62
+[01:42:45.961] domain2 epoch 6: val_cup_dice=0.4221 val_disc_dice=0.4984 hd=40.25 hd=40.15
+[01:42:54.128] domain3 epoch 6: val_cup_dice=0.8405 val_disc_dice=0.9438 hd=6.89 hd=7.80
+[01:43:01.620] domain4 epoch 6: val_cup_dice=0.6762 val_disc_dice=0.8285 hd=18.69 hd=32.51
+[01:43:01.622] epoch 6: avg val_cup_dice=0.6312 val_disc_dice=0.7790 DSDV=0.0243
+[01:43:01.623] [epoch 6] student_avg=0.7256  ema_avg=0.7051  best_avg=0.7461 @ iter 2500  swad_best=0.0000 @ iter -1  best_DSDV=0.0140
+[01:43:03.652] [resume] state saved at iter 3000 (epoch 6)
+[01:50:21.023] iter 3500: loss=0.2006, sup=0.1926, unsup=0.4086, spec=0.0004, cw=0.018, w_mean=0.995, w_min=0.000, U_ale=0.001, U_epi=0.057, U_dom=0.005, S_mean=60.09
+[01:50:21.046] Testing student...
+[01:50:25.832] domain1 epoch 7: val_cup_dice=0.6945 val_disc_dice=0.8992 hd=21.49 hd=15.54
+[01:50:30.642] domain2 epoch 7: val_cup_dice=0.5561 val_disc_dice=0.5778 hd=32.50 hd=37.19
+[01:50:37.400] domain3 epoch 7: val_cup_dice=0.8403 val_disc_dice=0.9432 hd=7.34 hd=6.37
+[01:50:44.847] domain4 epoch 7: val_cup_dice=0.7228 val_disc_dice=0.9084 hd=13.94 hd=11.00
+[01:50:44.848] epoch 7: avg val_cup_dice=0.7034 val_disc_dice=0.8321 DSDV=0.0147
+[01:50:44.850] Testing EMA teacher...
+[01:50:49.523] domain1 epoch 7: val_cup_dice=0.7128 val_disc_dice=0.9149 hd=20.12 hd=12.40
+[01:50:54.598] domain2 epoch 7: val_cup_dice=0.5608 val_disc_dice=0.6545 hd=32.22 hd=31.03
+[01:51:01.454] domain3 epoch 7: val_cup_dice=0.8451 val_disc_dice=0.9452 hd=7.54 hd=8.54
+[01:51:08.471] domain4 epoch 7: val_cup_dice=0.7150 val_disc_dice=0.8867 hd=15.79 hd=13.34
+[01:51:08.471] epoch 7: avg val_cup_dice=0.7084 val_disc_dice=0.8503 DSDV=0.0111
+[01:51:09.523] [epoch 7] student_avg=0.7678  ema_avg=0.7794  best_avg=0.7678 @ iter 3500  swad_best=0.0000 @ iter -1  best_DSDV=0.0147
+[01:57:58.529] iter 4000: loss=0.1729, sup=0.1645, unsup=0.3757, spec=0.0003, cw=0.021, w_mean=0.996, w_min=0.000, U_ale=0.001, U_epi=0.046, U_dom=0.005, S_mean=73.53
+[01:57:58.531] Testing student...
+[01:58:02.750] domain1 epoch 8: val_cup_dice=0.7184 val_disc_dice=0.9209 hd=19.82 hd=11.74
+[01:58:07.398] domain2 epoch 8: val_cup_dice=0.5048 val_disc_dice=0.5832 hd=36.92 hd=38.67
+[01:58:14.035] domain3 epoch 8: val_cup_dice=0.8349 val_disc_dice=0.9330 hd=8.15 hd=8.22
+[01:58:20.362] domain4 epoch 8: val_cup_dice=0.6334 val_disc_dice=0.8739 hd=20.81 hd=17.22
+[01:58:20.363] epoch 8: avg val_cup_dice=0.6729 val_disc_dice=0.8277 DSDV=0.0163
+[01:58:20.364] Testing EMA teacher...
+[01:58:24.738] domain1 epoch 8: val_cup_dice=0.6581 val_disc_dice=0.9016 hd=22.77 hd=13.61
+[01:58:29.268] domain2 epoch 8: val_cup_dice=0.4810 val_disc_dice=0.5849 hd=38.36 hd=36.65
+[01:58:35.670] domain3 epoch 8: val_cup_dice=0.8382 val_disc_dice=0.9422 hd=8.41 hd=7.82
+[01:58:42.330] domain4 epoch 8: val_cup_dice=0.7009 val_disc_dice=0.8720 hd=15.09 hd=16.38
+[01:58:42.332] epoch 8: avg val_cup_dice=0.6696 val_disc_dice=0.8252 DSDV=0.0172
+[01:58:42.333] [epoch 8] student_avg=0.7503  ema_avg=0.7474  best_avg=0.7678 @ iter 3500  swad_best=0.0000 @ iter -1  best_DSDV=0.0147
+[01:58:44.316] [resume] state saved at iter 4000 (epoch 8)
+[02:05:31.676] iter 4500: loss=0.1528, sup=0.1437, unsup=0.3509, spec=0.0003, cw=0.025, w_mean=0.996, w_min=0.000, U_ale=0.001, U_epi=0.038, U_dom=0.007, S_mean=87.96
+[02:05:31.679] Testing student...
+[02:05:36.289] domain1 epoch 9: val_cup_dice=0.7433 val_disc_dice=0.9121 hd=18.90 hd=11.29
+[02:05:42.103] domain2 epoch 9: val_cup_dice=0.5978 val_disc_dice=0.6613 hd=30.22 hd=28.45
+[02:05:49.197] domain3 epoch 9: val_cup_dice=0.8561 val_disc_dice=0.9458 hd=7.02 hd=6.74
+[02:05:56.173] domain4 epoch 9: val_cup_dice=0.7424 val_disc_dice=0.8848 hd=21.47 hd=17.11
+[02:05:56.174] epoch 9: avg val_cup_dice=0.7349 val_disc_dice=0.8510 DSDV=0.0100
+[02:05:56.176] Testing EMA teacher...
+[02:06:00.617] domain1 epoch 9: val_cup_dice=0.7276 val_disc_dice=0.9142 hd=18.50 hd=11.11
+[02:06:05.864] domain2 epoch 9: val_cup_dice=0.6017 val_disc_dice=0.6824 hd=28.81 hd=29.95
+[02:06:12.687] domain3 epoch 9: val_cup_dice=0.8468 val_disc_dice=0.9436 hd=7.44 hd=6.91
+[02:06:19.341] domain4 epoch 9: val_cup_dice=0.7940 val_disc_dice=0.9015 hd=11.48 hd=10.94
+[02:06:19.342] epoch 9: avg val_cup_dice=0.7425 val_disc_dice=0.8604 DSDV=0.0092
+[02:06:20.352] [epoch 9] student_avg=0.7929  ema_avg=0.8015  best_avg=0.7929 @ iter 4500  swad_best=0.0000 @ iter -1  best_DSDV=0.0100
+[02:13:08.636] iter 5000: loss=0.1373, sup=0.1278, unsup=0.3225, spec=0.0003, cw=0.028, w_mean=0.996, w_min=0.000, U_ale=0.000, U_epi=0.032, U_dom=0.006, S_mean=103.26
+[02:13:08.701] Testing student...
+[02:13:13.311] domain1 epoch 10: val_cup_dice=0.7164 val_disc_dice=0.9351 hd=19.34 hd=11.58
+[02:13:18.432] domain2 epoch 10: val_cup_dice=0.6126 val_disc_dice=0.7081 hd=27.32 hd=25.48
+[02:13:24.755] domain3 epoch 10: val_cup_dice=0.8403 val_disc_dice=0.9397 hd=8.43 hd=7.14
+[02:13:31.221] domain4 epoch 10: val_cup_dice=0.7711 val_disc_dice=0.9186 hd=10.20 hd=8.50
+[02:13:31.222] epoch 10: avg val_cup_dice=0.7351 val_disc_dice=0.8754 DSDV=0.0075
+[02:13:31.223] Testing EMA teacher...
+[02:13:35.517] domain1 epoch 10: val_cup_dice=0.7232 val_disc_dice=0.9278 hd=17.53 hd=12.31
+[02:13:40.077] domain2 epoch 10: val_cup_dice=0.6070 val_disc_dice=0.7034 hd=24.99 hd=26.53
+[02:13:46.787] domain3 epoch 10: val_cup_dice=0.8389 val_disc_dice=0.9400 hd=7.76 hd=7.05
+[02:13:53.545] domain4 epoch 10: val_cup_dice=0.7939 val_disc_dice=0.9164 hd=10.16 hd=8.59
+[02:13:53.546] epoch 10: avg val_cup_dice=0.7407 val_disc_dice=0.8719 DSDV=0.0081
+[02:13:54.575] [epoch 10] student_avg=0.8052  ema_avg=0.8063  best_avg=0.8052 @ iter 5000  swad_best=0.0000 @ iter -1  best_DSDV=0.0075
+[02:13:56.551] [resume] state saved at iter 5000 (epoch 10)
+[02:20:18.593] iter 5500: loss=0.1239, sup=0.1139, unsup=0.2945, spec=0.0002, cw=0.032, w_mean=0.997, w_min=0.000, U_ale=0.000, U_epi=0.027, U_dom=0.005, S_mean=119.14
+[02:20:18.597] Testing student...
+[02:20:23.455] domain1 epoch 11: val_cup_dice=0.7399 val_disc_dice=0.9120 hd=17.60 hd=14.38
+[02:20:28.072] domain2 epoch 11: val_cup_dice=0.5958 val_disc_dice=0.6275 hd=28.94 hd=31.00
+[02:20:34.904] domain3 epoch 11: val_cup_dice=0.8562 val_disc_dice=0.9415 hd=7.16 hd=6.68
+[02:20:41.207] domain4 epoch 11: val_cup_dice=0.7386 val_disc_dice=0.8719 hd=13.31 hd=21.28
+[02:20:41.208] epoch 11: avg val_cup_dice=0.7326 val_disc_dice=0.8382 DSDV=0.0113
+[02:20:41.209] Testing EMA teacher...
+[02:20:45.558] domain1 epoch 11: val_cup_dice=0.7367 val_disc_dice=0.9202 hd=17.53 hd=16.44
+[02:20:50.351] domain2 epoch 11: val_cup_dice=0.5736 val_disc_dice=0.6275 hd=30.70 hd=34.75
+[02:20:56.707] domain3 epoch 11: val_cup_dice=0.8524 val_disc_dice=0.9401 hd=6.52 hd=7.76
+[02:21:02.776] domain4 epoch 11: val_cup_dice=0.7944 val_disc_dice=0.9224 hd=10.77 hd=8.34
+[02:21:02.777] epoch 11: avg val_cup_dice=0.7393 val_disc_dice=0.8525 DSDV=0.0133
+[02:21:02.778] [epoch 11] student_avg=0.7854  ema_avg=0.7959  best_avg=0.8052 @ iter 5000  swad_best=0.0000 @ iter -1  best_DSDV=0.0075
+[02:27:29.892] iter 6000: loss=0.1152, sup=0.1042, unsup=0.2829, spec=0.0003, cw=0.037, w_mean=0.997, w_min=0.000, U_ale=0.000, U_epi=0.024, U_dom=0.005, S_mean=136.07
+[02:27:29.929] Testing student...
+[02:27:33.927] domain1 epoch 12: val_cup_dice=0.7382 val_disc_dice=0.9283 hd=18.14 hd=10.50
+[02:27:38.426] domain2 epoch 12: val_cup_dice=0.5954 val_disc_dice=0.6946 hd=28.60 hd=25.16
+[02:27:44.982] domain3 epoch 12: val_cup_dice=0.8400 val_disc_dice=0.9442 hd=6.99 hd=6.52
+[02:27:51.467] domain4 epoch 12: val_cup_dice=0.7882 val_disc_dice=0.9254 hd=8.54 hd=7.62
+[02:27:51.468] epoch 12: avg val_cup_dice=0.7404 val_disc_dice=0.8731 DSDV=0.0092
+[02:27:51.469] Testing EMA teacher...
+[02:27:55.522] domain1 epoch 12: val_cup_dice=0.7537 val_disc_dice=0.9340 hd=16.09 hd=9.17
+[02:28:00.197] domain2 epoch 12: val_cup_dice=0.6418 val_disc_dice=0.6989 hd=22.44 hd=26.14
+[02:28:07.079] domain3 epoch 12: val_cup_dice=0.8504 val_disc_dice=0.9459 hd=7.34 hd=6.80
+[02:28:13.444] domain4 epoch 12: val_cup_dice=0.8245 val_disc_dice=0.9277 hd=8.77 hd=7.27
+[02:28:13.445] epoch 12: avg val_cup_dice=0.7676 val_disc_dice=0.8766 DSDV=0.0080
+[02:28:14.485] [epoch 12] student_avg=0.8068  ema_avg=0.8221  best_avg=0.8068 @ iter 6000  swad_best=0.0000 @ iter -1  best_DSDV=0.0092
+[02:28:16.511] [resume] state saved at iter 6000 (epoch 12)
+[02:34:49.137] iter 6500: loss=0.1051, sup=0.0935, unsup=0.2624, spec=0.0002, cw=0.043, w_mean=0.997, w_min=0.000, U_ale=0.000, U_epi=0.021, U_dom=0.004, S_mean=153.95
+[02:34:49.141] Testing student...
+[02:34:53.731] domain1 epoch 13: val_cup_dice=0.7430 val_disc_dice=0.9298 hd=17.63 hd=11.34
+[02:34:58.489] domain2 epoch 13: val_cup_dice=0.6640 val_disc_dice=0.7269 hd=20.43 hd=23.89
+[02:35:05.061] domain3 epoch 13: val_cup_dice=0.8510 val_disc_dice=0.9463 hd=7.42 hd=6.23
+[02:35:11.222] domain4 epoch 13: val_cup_dice=0.8249 val_disc_dice=0.9329 hd=7.47 hd=8.21
+[02:35:11.223] epoch 13: avg val_cup_dice=0.7707 val_disc_dice=0.8840 DSDV=0.0063
+[02:35:11.224] Testing EMA teacher...
+[02:35:15.268] domain1 epoch 13: val_cup_dice=0.7613 val_disc_dice=0.9303 hd=16.65 hd=9.66
+[02:35:20.049] domain2 epoch 13: val_cup_dice=0.6685 val_disc_dice=0.7290 hd=20.06 hd=23.08
+[02:35:26.501] domain3 epoch 13: val_cup_dice=0.8588 val_disc_dice=0.9504 hd=7.01 hd=6.06
+[02:35:32.782] domain4 epoch 13: val_cup_dice=0.8349 val_disc_dice=0.9321 hd=7.70 hd=7.37
+[02:35:32.783] epoch 13: avg val_cup_dice=0.7809 val_disc_dice=0.8855 DSDV=0.0065
+[02:35:33.724] [epoch 13] student_avg=0.8274  ema_avg=0.8332  best_avg=0.8274 @ iter 6500  swad_best=0.0000 @ iter -1  best_DSDV=0.0063
+[02:41:54.515] iter 7000: loss=0.0985, sup=0.0862, unsup=0.2458, spec=0.0002, cw=0.048, w_mean=0.997, w_min=0.000, U_ale=0.000, U_epi=0.018, U_dom=0.003, S_mean=173.57
+[02:41:54.516] Testing student...
+[02:41:59.544] domain1 epoch 14: val_cup_dice=0.7578 val_disc_dice=0.9312 hd=17.35 hd=9.68
+[02:42:04.756] domain2 epoch 14: val_cup_dice=0.6659 val_disc_dice=0.7198 hd=20.95 hd=23.52
+[02:42:11.440] domain3 epoch 14: val_cup_dice=0.8540 val_disc_dice=0.9450 hd=7.93 hd=6.34
+[02:42:18.463] domain4 epoch 14: val_cup_dice=0.8019 val_disc_dice=0.9066 hd=12.61 hd=13.83
+[02:42:18.464] epoch 14: avg val_cup_dice=0.7699 val_disc_dice=0.8757 DSDV=0.0061
+[02:42:18.465] Testing EMA teacher...
+[02:42:22.567] domain1 epoch 14: val_cup_dice=0.7456 val_disc_dice=0.9340 hd=17.73 hd=10.61
+[02:42:27.131] domain2 epoch 14: val_cup_dice=0.6610 val_disc_dice=0.7243 hd=19.81 hd=24.31
+[02:42:33.667] domain3 epoch 14: val_cup_dice=0.8549 val_disc_dice=0.9507 hd=7.24 hd=6.14
+[02:42:40.001] domain4 epoch 14: val_cup_dice=0.8126 val_disc_dice=0.9296 hd=8.74 hd=7.69
+[02:42:40.002] epoch 14: avg val_cup_dice=0.7685 val_disc_dice=0.8846 DSDV=0.0065
+[02:42:40.003] [epoch 14] student_avg=0.8228  ema_avg=0.8266  best_avg=0.8274 @ iter 6500  swad_best=0.0000 @ iter -1  best_DSDV=0.0061
+[02:42:41.932] [resume] state saved at iter 7000 (epoch 14)
+[02:49:07.456] iter 7500: loss=0.0933, sup=0.0800, unsup=0.2329, spec=0.0002, cw=0.055, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.016, U_dom=0.003, S_mean=193.91
+[02:49:07.461] Testing student...
+[02:49:11.880] domain1 epoch 15: val_cup_dice=0.7846 val_disc_dice=0.9338 hd=14.76 hd=8.86
+[02:49:16.675] domain2 epoch 15: val_cup_dice=0.6708 val_disc_dice=0.7299 hd=20.93 hd=24.55
+[02:49:23.448] domain3 epoch 15: val_cup_dice=0.8540 val_disc_dice=0.9473 hd=7.31 hd=6.68
+[02:49:30.203] domain4 epoch 15: val_cup_dice=0.8437 val_disc_dice=0.8955 hd=9.15 hd=15.72
+[02:49:30.205] epoch 15: avg val_cup_dice=0.7883 val_disc_dice=0.8766 DSDV=0.0060
+[02:49:30.206] Testing EMA teacher...
+[02:49:34.614] domain1 epoch 15: val_cup_dice=0.7580 val_disc_dice=0.9270 hd=16.91 hd=12.64
+[02:49:39.217] domain2 epoch 15: val_cup_dice=0.6622 val_disc_dice=0.7212 hd=23.01 hd=24.61
+[02:49:45.604] domain3 epoch 15: val_cup_dice=0.8586 val_disc_dice=0.9488 hd=6.32 hd=6.21
+[02:49:52.064] domain4 epoch 15: val_cup_dice=0.8370 val_disc_dice=0.9251 hd=7.16 hd=7.22
+[02:49:52.065] epoch 15: avg val_cup_dice=0.7789 val_disc_dice=0.8805 DSDV=0.0068
+[02:49:53.118] [epoch 15] student_avg=0.8325  ema_avg=0.8297  best_avg=0.8325 @ iter 7500  swad_best=0.0000 @ iter -1  best_DSDV=0.0060
+[02:56:15.595] iter 8000: loss=0.0875, sup=0.0737, unsup=0.2146, spec=0.0001, cw=0.062, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.015, U_dom=0.002, S_mean=216.62
+[02:56:15.598] Testing student...
+[02:56:20.640] domain1 epoch 16: val_cup_dice=0.7783 val_disc_dice=0.9346 hd=15.11 hd=8.62
+[02:56:25.746] domain2 epoch 16: val_cup_dice=0.6787 val_disc_dice=0.7488 hd=20.27 hd=20.85
+[02:56:32.545] domain3 epoch 16: val_cup_dice=0.8642 val_disc_dice=0.9474 hd=6.97 hd=6.25
+[02:56:39.174] domain4 epoch 16: val_cup_dice=0.8365 val_disc_dice=0.9314 hd=8.47 hd=8.74
+[02:56:39.175] epoch 16: avg val_cup_dice=0.7894 val_disc_dice=0.8905 DSDV=0.0056
+[02:56:39.176] Testing EMA teacher...
+[02:56:43.638] domain1 epoch 16: val_cup_dice=0.7669 val_disc_dice=0.9374 hd=15.75 hd=9.14
+[02:56:48.519] domain2 epoch 16: val_cup_dice=0.7093 val_disc_dice=0.7720 hd=15.74 hd=19.54
+[02:56:55.288] domain3 epoch 16: val_cup_dice=0.8574 val_disc_dice=0.9505 hd=7.19 hd=6.01
+[02:57:01.751] domain4 epoch 16: val_cup_dice=0.8354 val_disc_dice=0.9331 hd=8.39 hd=8.61
+[02:57:01.752] epoch 16: avg val_cup_dice=0.7923 val_disc_dice=0.8983 DSDV=0.0040
+[02:57:02.753] [epoch 16] student_avg=0.8400  ema_avg=0.8453  best_avg=0.8400 @ iter 8000  swad_best=0.0000 @ iter -1  best_DSDV=0.0056
+[02:57:04.655] [resume] state saved at iter 8000 (epoch 16)
+[03:03:34.604] iter 8500: loss=0.0837, sup=0.0688, unsup=0.2051, spec=0.0001, cw=0.071, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.013, U_dom=0.002, S_mean=239.94
+[03:03:34.608] Testing student...
+[03:03:38.920] domain1 epoch 17: val_cup_dice=0.7851 val_disc_dice=0.9361 hd=18.95 hd=13.22
+[03:03:43.608] domain2 epoch 17: val_cup_dice=0.7502 val_disc_dice=0.8284 hd=12.54 hd=15.83
+[03:03:50.180] domain3 epoch 17: val_cup_dice=0.8653 val_disc_dice=0.9555 hd=6.30 hd=6.69
+[03:03:56.616] domain4 epoch 17: val_cup_dice=0.8416 val_disc_dice=0.9424 hd=8.93 hd=8.91
+[03:03:56.617] epoch 17: avg val_cup_dice=0.8105 val_disc_dice=0.9156 DSDV=0.0021
+[03:03:56.618] Testing EMA teacher...
+[03:04:01.295] domain1 epoch 17: val_cup_dice=0.7725 val_disc_dice=0.9259 hd=18.62 hd=16.80
+[03:04:05.998] domain2 epoch 17: val_cup_dice=0.7598 val_disc_dice=0.8232 hd=11.30 hd=13.80
+[03:04:12.415] domain3 epoch 17: val_cup_dice=0.8665 val_disc_dice=0.9547 hd=6.15 hd=6.01
+[03:04:18.927] domain4 epoch 17: val_cup_dice=0.8384 val_disc_dice=0.9405 hd=8.89 hd=7.84
+[03:04:18.928] epoch 17: avg val_cup_dice=0.8093 val_disc_dice=0.9111 DSDV=0.0021
+[03:04:19.906] [epoch 17] student_avg=0.8631  ema_avg=0.8602  best_avg=0.8631 @ iter 8500  swad_best=0.0000 @ iter -1  best_DSDV=0.0021
+[03:10:48.099] iter 9000: loss=0.0799, sup=0.0640, unsup=0.1942, spec=0.0001, cw=0.079, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.012, U_dom=0.002, S_mean=264.77
+[03:10:48.103] Testing student...
+[03:10:52.479] domain1 epoch 18: val_cup_dice=0.7760 val_disc_dice=0.9388 hd=15.59 hd=11.05
+[03:10:57.263] domain2 epoch 18: val_cup_dice=0.6945 val_disc_dice=0.7570 hd=18.81 hd=20.60
+[03:11:03.736] domain3 epoch 18: val_cup_dice=0.8636 val_disc_dice=0.9537 hd=6.40 hd=5.82
+[03:11:10.175] domain4 epoch 18: val_cup_dice=0.8572 val_disc_dice=0.9484 hd=6.64 hd=5.49
+[03:11:10.176] epoch 18: avg val_cup_dice=0.7978 val_disc_dice=0.8995 DSDV=0.0054
+[03:11:10.178] Testing EMA teacher...
+[03:11:14.645] domain1 epoch 18: val_cup_dice=0.7800 val_disc_dice=0.9376 hd=15.86 hd=9.68
+[03:11:19.296] domain2 epoch 18: val_cup_dice=0.7224 val_disc_dice=0.7853 hd=14.96 hd=17.91
+[03:11:25.586] domain3 epoch 18: val_cup_dice=0.8662 val_disc_dice=0.9539 hd=6.26 hd=6.14
+[03:11:31.962] domain4 epoch 18: val_cup_dice=0.8469 val_disc_dice=0.9486 hd=5.14 hd=4.41
+[03:11:31.963] epoch 18: avg val_cup_dice=0.8039 val_disc_dice=0.9064 DSDV=0.0038
+[03:11:31.965] [epoch 18] student_avg=0.8487  ema_avg=0.8551  best_avg=0.8631 @ iter 8500  swad_best=0.0000 @ iter -1  best_DSDV=0.0021
+[03:11:33.948] [resume] state saved at iter 9000 (epoch 18)
+[03:18:15.379] iter 9500: loss=0.0770, sup=0.0600, unsup=0.1835, spec=0.0001, cw=0.090, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.011, U_dom=0.002, S_mean=290.52
+[03:18:15.383] Testing student...
+[03:18:20.346] domain1 epoch 19: val_cup_dice=0.7841 val_disc_dice=0.9311 hd=18.62 hd=10.72
+[03:18:26.410] domain2 epoch 19: val_cup_dice=0.7325 val_disc_dice=0.7911 hd=14.15 hd=17.86
+[03:18:34.125] domain3 epoch 19: val_cup_dice=0.8638 val_disc_dice=0.9556 hd=8.28 hd=5.85
+[03:18:41.023] domain4 epoch 19: val_cup_dice=0.8591 val_disc_dice=0.9439 hd=6.56 hd=6.09
+[03:18:41.025] epoch 19: avg val_cup_dice=0.8099 val_disc_dice=0.9054 DSDV=0.0035
+[03:18:41.026] Testing EMA teacher...
+[03:18:45.019] domain1 epoch 19: val_cup_dice=0.7824 val_disc_dice=0.9363 hd=15.54 hd=8.19
+[03:18:49.606] domain2 epoch 19: val_cup_dice=0.7374 val_disc_dice=0.8007 hd=14.07 hd=16.42
+[03:18:55.807] domain3 epoch 19: val_cup_dice=0.8661 val_disc_dice=0.9570 hd=6.24 hd=5.38
+[03:19:01.687] domain4 epoch 19: val_cup_dice=0.8589 val_disc_dice=0.9463 hd=4.91 hd=4.55
+[03:19:01.688] epoch 19: avg val_cup_dice=0.8112 val_disc_dice=0.9101 DSDV=0.0032
+[03:19:01.689] [epoch 19] student_avg=0.8576  ema_avg=0.8606  best_avg=0.8631 @ iter 8500  swad_best=0.0000 @ iter -1  best_DSDV=0.0021
+[03:25:32.426] iter 10000: loss=0.0741, sup=0.0560, unsup=0.1760, spec=0.0001, cw=0.100, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.010, U_dom=0.002, S_mean=318.42
+[03:25:32.457] Testing student...
+[03:25:37.812] domain1 epoch 20: val_cup_dice=0.7174 val_disc_dice=0.8910 hd=49.74 hd=36.10
+[03:25:43.262] domain2 epoch 20: val_cup_dice=0.7131 val_disc_dice=0.7707 hd=17.22 hd=18.79
+[03:25:50.423] domain3 epoch 20: val_cup_dice=0.8633 val_disc_dice=0.9499 hd=7.97 hd=9.69
+[03:25:57.571] domain4 epoch 20: val_cup_dice=0.8290 val_disc_dice=0.9517 hd=5.37 hd=6.11
+[03:25:57.572] epoch 20: avg val_cup_dice=0.7807 val_disc_dice=0.8908 DSDV=0.0045
+[03:25:57.574] Testing EMA teacher...
+[03:26:01.717] domain1 epoch 20: val_cup_dice=0.7717 val_disc_dice=0.9353 hd=16.80 hd=11.51
+[03:26:06.469] domain2 epoch 20: val_cup_dice=0.7216 val_disc_dice=0.7853 hd=16.29 hd=18.66
+[03:26:12.976] domain3 epoch 20: val_cup_dice=0.8641 val_disc_dice=0.9538 hd=7.09 hd=6.21
+[03:26:19.294] domain4 epoch 20: val_cup_dice=0.8590 val_disc_dice=0.9446 hd=4.91 hd=4.83
+[03:26:19.295] epoch 20: avg val_cup_dice=0.8041 val_disc_dice=0.9048 DSDV=0.0039
+[03:26:19.296] [epoch 20] student_avg=0.8358  ema_avg=0.8544  best_avg=0.8631 @ iter 8500  swad_best=0.0000 @ iter -1  best_DSDV=0.0021
+[03:26:21.636] [resume] state saved at iter 10000 (epoch 20)
+[03:32:49.109] iter 10500: loss=0.0720, sup=0.0530, unsup=0.1644, spec=0.0001, cw=0.112, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.009, U_dom=0.002, S_mean=347.00
+[03:32:49.116] Testing student...
+[03:32:54.353] domain1 epoch 21: val_cup_dice=0.7912 val_disc_dice=0.9431 hd=15.18 hd=8.53
+[03:33:00.180] domain2 epoch 21: val_cup_dice=0.7688 val_disc_dice=0.8329 hd=10.94 hd=13.00
+[03:33:07.359] domain3 epoch 21: val_cup_dice=0.8692 val_disc_dice=0.9564 hd=6.23 hd=5.63
+[03:33:14.482] domain4 epoch 21: val_cup_dice=0.8602 val_disc_dice=0.9488 hd=4.91 hd=4.50
+[03:33:14.483] epoch 21: avg val_cup_dice=0.8223 val_disc_dice=0.9203 DSDV=0.0020
+[03:33:14.484] Testing EMA teacher...
+[03:33:18.736] domain1 epoch 21: val_cup_dice=0.7729 val_disc_dice=0.9398 hd=16.35 hd=8.78
+[03:33:23.563] domain2 epoch 21: val_cup_dice=0.7662 val_disc_dice=0.8245 hd=11.35 hd=14.09
+[03:33:30.061] domain3 epoch 21: val_cup_dice=0.8685 val_disc_dice=0.9575 hd=6.27 hd=5.28
+[03:33:36.439] domain4 epoch 21: val_cup_dice=0.8643 val_disc_dice=0.9502 hd=6.42 hd=5.64
+[03:33:36.441] epoch 21: avg val_cup_dice=0.8180 val_disc_dice=0.9180 DSDV=0.0022
+[03:33:48.145] Testing SWAD (snapshots=6)...
+[03:33:52.551] domain1 epoch 21: val_cup_dice=0.7689 val_disc_dice=0.9401 hd=16.87 hd=8.10
+[03:33:57.292] domain2 epoch 21: val_cup_dice=0.7305 val_disc_dice=0.7857 hd=13.41 hd=16.78
+[03:34:04.024] domain3 epoch 21: val_cup_dice=0.8674 val_disc_dice=0.9561 hd=6.22 hd=5.23
+[03:34:10.600] domain4 epoch 21: val_cup_dice=0.8315 val_disc_dice=0.9380 hd=11.51 hd=9.96
+[03:34:10.601] epoch 21: avg val_cup_dice=0.7995 val_disc_dice=0.9050 DSDV=0.0034
+[03:34:11.046] [epoch 21] student_avg=0.8713  ema_avg=0.8680  best_avg=0.8713 @ iter 10500  swad_best=0.8523 @ iter 10500  best_DSDV=0.0020
+[03:40:39.875] iter 11000: loss=0.0704, sup=0.0500, unsup=0.1589, spec=0.0001, cw=0.125, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.008, U_dom=0.002, S_mean=378.66
+[03:40:39.884] Testing student...
+[03:40:46.282] domain1 epoch 22: val_cup_dice=0.7824 val_disc_dice=0.9435 hd=14.79 hd=8.11
+[03:40:52.100] domain2 epoch 22: val_cup_dice=0.7450 val_disc_dice=0.8112 hd=23.87 hd=30.73
+[03:41:00.126] domain3 epoch 22: val_cup_dice=0.8694 val_disc_dice=0.9570 hd=6.30 hd=5.60
+[03:41:07.831] domain4 epoch 22: val_cup_dice=0.8625 val_disc_dice=0.9504 hd=4.86 hd=5.65
+[03:41:07.833] epoch 22: avg val_cup_dice=0.8148 val_disc_dice=0.9155 DSDV=0.0029
+[03:41:07.833] Testing EMA teacher...
+[03:41:12.048] domain1 epoch 22: val_cup_dice=0.7733 val_disc_dice=0.9455 hd=15.57 hd=7.26
+[03:41:17.219] domain2 epoch 22: val_cup_dice=0.7327 val_disc_dice=0.7999 hd=14.08 hd=16.48
+[03:41:23.906] domain3 epoch 22: val_cup_dice=0.8687 val_disc_dice=0.9581 hd=6.28 hd=4.55
+[03:41:30.610] domain4 epoch 22: val_cup_dice=0.8520 val_disc_dice=0.9514 hd=5.03 hd=4.19
+[03:41:30.612] epoch 22: avg val_cup_dice=0.8067 val_disc_dice=0.9137 DSDV=0.0033
+[03:41:41.053] Testing SWAD (snapshots=11)...
+[03:41:45.637] domain1 epoch 22: val_cup_dice=0.7747 val_disc_dice=0.9414 hd=16.39 hd=7.88
+[03:41:50.488] domain2 epoch 22: val_cup_dice=0.7377 val_disc_dice=0.7872 hd=12.91 hd=15.85
+[03:41:57.443] domain3 epoch 22: val_cup_dice=0.8679 val_disc_dice=0.9565 hd=6.17 hd=5.35
+[03:42:03.875] domain4 epoch 22: val_cup_dice=0.8332 val_disc_dice=0.9401 hd=8.54 hd=6.60
+[03:42:03.877] epoch 22: avg val_cup_dice=0.8034 val_disc_dice=0.9063 DSDV=0.0032
+[03:42:04.397] [epoch 22] student_avg=0.8652  ema_avg=0.8602  best_avg=0.8713 @ iter 10500  swad_best=0.8548 @ iter 11000  best_DSDV=0.0020
+[03:42:06.781] [resume] state saved at iter 11000 (epoch 22)
+[03:48:45.239] iter 11500: loss=0.0693, sup=0.0475, unsup=0.1520, spec=0.0001, cw=0.139, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.008, U_dom=0.002, S_mean=410.47
+[03:48:45.246] Testing student...
+[03:48:49.884] domain1 epoch 23: val_cup_dice=0.7891 val_disc_dice=0.9428 hd=14.92 hd=7.62
+[03:48:55.394] domain2 epoch 23: val_cup_dice=0.7658 val_disc_dice=0.8212 hd=11.08 hd=14.12
+[03:49:03.019] domain3 epoch 23: val_cup_dice=0.8657 val_disc_dice=0.9565 hd=6.24 hd=5.43
+[03:49:10.130] domain4 epoch 23: val_cup_dice=0.8524 val_disc_dice=0.9443 hd=6.72 hd=6.09
+[03:49:10.132] epoch 23: avg val_cup_dice=0.8183 val_disc_dice=0.9162 DSDV=0.0021
+[03:49:10.133] Testing EMA teacher...
+[03:49:14.488] domain1 epoch 23: val_cup_dice=0.7870 val_disc_dice=0.9458 hd=15.18 hd=7.23
+[03:49:19.758] domain2 epoch 23: val_cup_dice=0.7706 val_disc_dice=0.8363 hd=9.73 hd=12.60
+[03:49:26.254] domain3 epoch 23: val_cup_dice=0.8633 val_disc_dice=0.9553 hd=6.42 hd=5.15
+[03:49:33.033] domain4 epoch 23: val_cup_dice=0.8433 val_disc_dice=0.9509 hd=6.77 hd=4.22
+[03:49:33.033] epoch 23: avg val_cup_dice=0.8160 val_disc_dice=0.9221 DSDV=0.0017
+[03:49:44.656] Testing SWAD (snapshots=16)...
+[03:49:49.113] domain1 epoch 23: val_cup_dice=0.7796 val_disc_dice=0.9411 hd=15.89 hd=8.12
+[03:49:53.926] domain2 epoch 23: val_cup_dice=0.7414 val_disc_dice=0.7910 hd=13.08 hd=15.58
+[03:50:00.761] domain3 epoch 23: val_cup_dice=0.8683 val_disc_dice=0.9566 hd=6.84 hd=5.38
+[03:50:07.085] domain4 epoch 23: val_cup_dice=0.8117 val_disc_dice=0.9275 hd=14.29 hd=12.09
+[03:50:07.086] epoch 23: avg val_cup_dice=0.8002 val_disc_dice=0.9040 DSDV=0.0028
+[03:50:07.087] [epoch 23] student_avg=0.8672  ema_avg=0.8691  best_avg=0.8713 @ iter 10500  swad_best=0.8548 @ iter 11000  best_DSDV=0.0020
+[03:56:41.196] iter 12000: loss=0.0679, sup=0.0449, unsup=0.1456, spec=0.0001, cw=0.154, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.007, U_dom=0.002, S_mean=443.41
+[03:56:41.200] Testing student...
+[03:56:46.609] domain1 epoch 24: val_cup_dice=0.8045 val_disc_dice=0.9406 hd=13.70 hd=8.72
+[03:56:52.043] domain2 epoch 24: val_cup_dice=0.7519 val_disc_dice=0.8215 hd=11.71 hd=13.61
+[03:56:59.860] domain3 epoch 24: val_cup_dice=0.8661 val_disc_dice=0.9571 hd=6.36 hd=6.03
+[03:57:07.031] domain4 epoch 24: val_cup_dice=0.8354 val_disc_dice=0.9526 hd=5.33 hd=4.61
+[03:57:07.032] epoch 24: avg val_cup_dice=0.8145 val_disc_dice=0.9180 DSDV=0.0023
+[03:57:07.033] Testing EMA teacher...
+[03:57:11.320] domain1 epoch 24: val_cup_dice=0.7936 val_disc_dice=0.9424 hd=14.76 hd=8.66
+[03:57:16.179] domain2 epoch 24: val_cup_dice=0.7798 val_disc_dice=0.8456 hd=9.80 hd=11.76
+[03:57:22.529] domain3 epoch 24: val_cup_dice=0.8665 val_disc_dice=0.9557 hd=6.28 hd=6.34
+[03:57:28.706] domain4 epoch 24: val_cup_dice=0.8495 val_disc_dice=0.9519 hd=7.43 hd=7.05
+[03:57:28.707] epoch 24: avg val_cup_dice=0.8223 val_disc_dice=0.9239 DSDV=0.0015
+[03:57:38.612] Testing SWAD (snapshots=21)...
+[03:57:42.875] domain1 epoch 24: val_cup_dice=0.7830 val_disc_dice=0.9413 hd=15.56 hd=7.95
+[03:57:48.195] domain2 epoch 24: val_cup_dice=0.7436 val_disc_dice=0.7906 hd=12.68 hd=15.80
+[03:57:54.981] domain3 epoch 24: val_cup_dice=0.8679 val_disc_dice=0.9569 hd=6.37 hd=5.29
+[03:58:01.280] domain4 epoch 24: val_cup_dice=0.8125 val_disc_dice=0.9269 hd=13.57 hd=10.01
+[03:58:01.281] epoch 24: avg val_cup_dice=0.8017 val_disc_dice=0.9039 DSDV=0.0028
+[03:58:01.282] [epoch 24] student_avg=0.8662  ema_avg=0.8731  best_avg=0.8713 @ iter 10500  swad_best=0.8548 @ iter 11000  best_DSDV=0.0020
+[03:58:03.646] [resume] state saved at iter 12000 (epoch 24)
+[04:04:32.881] iter 12500: loss=0.0674, sup=0.0430, unsup=0.1392, spec=0.0001, cw=0.171, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.007, U_dom=0.002, S_mean=478.21
+[04:04:32.886] Testing student...
+[04:04:37.994] domain1 epoch 25: val_cup_dice=0.8029 val_disc_dice=0.9425 hd=13.99 hd=9.25
+[04:04:43.803] domain2 epoch 25: val_cup_dice=0.7780 val_disc_dice=0.8405 hd=9.38 hd=12.28
+[04:04:50.975] domain3 epoch 25: val_cup_dice=0.8673 val_disc_dice=0.9572 hd=6.28 hd=5.52
+[04:04:58.612] domain4 epoch 25: val_cup_dice=0.8302 val_disc_dice=0.9520 hd=5.36 hd=5.32
+[04:04:58.614] epoch 25: avg val_cup_dice=0.8196 val_disc_dice=0.9231 DSDV=0.0015
+[04:04:58.615] Testing EMA teacher...
+[04:05:03.234] domain1 epoch 25: val_cup_dice=0.8059 val_disc_dice=0.9387 hd=13.30 hd=7.69
+[04:05:08.112] domain2 epoch 25: val_cup_dice=0.7813 val_disc_dice=0.8448 hd=9.43 hd=12.09
+[04:05:14.501] domain3 epoch 25: val_cup_dice=0.8675 val_disc_dice=0.9578 hd=6.28 hd=5.49
+[04:05:20.924] domain4 epoch 25: val_cup_dice=0.8513 val_disc_dice=0.9539 hd=5.15 hd=5.52
+[04:05:20.925] epoch 25: avg val_cup_dice=0.8265 val_disc_dice=0.9238 DSDV=0.0015
+[04:05:34.367] Testing SWAD (snapshots=26)...
+[04:05:38.648] domain1 epoch 25: val_cup_dice=0.7873 val_disc_dice=0.9408 hd=15.20 hd=7.97
+[04:05:43.848] domain2 epoch 25: val_cup_dice=0.7424 val_disc_dice=0.7877 hd=12.73 hd=15.93
+[04:05:50.438] domain3 epoch 25: val_cup_dice=0.8679 val_disc_dice=0.9570 hd=6.87 hd=5.27
+[04:05:56.450] domain4 epoch 25: val_cup_dice=0.7947 val_disc_dice=0.9163 hd=21.20 hd=16.45
+[04:05:56.451] epoch 25: avg val_cup_dice=0.7981 val_disc_dice=0.9005 DSDV=0.0028
+[04:05:56.452] [epoch 25] student_avg=0.8713  ema_avg=0.8752  best_avg=0.8713 @ iter 12500  swad_best=0.8548 @ iter 11000  best_DSDV=0.0015
+[04:12:19.402] iter 13000: loss=0.0670, sup=0.0413, unsup=0.1338, spec=0.0001, cw=0.187, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.006, U_dom=0.002, S_mean=512.94
+[04:12:19.407] Testing student...
+[04:12:24.690] domain1 epoch 26: val_cup_dice=0.7922 val_disc_dice=0.9393 hd=14.64 hd=7.80
+[04:12:30.041] domain2 epoch 26: val_cup_dice=0.7907 val_disc_dice=0.8478 hd=8.92 hd=11.25
+[04:12:37.676] domain3 epoch 26: val_cup_dice=0.8648 val_disc_dice=0.9572 hd=6.38 hd=5.19
+[04:12:45.050] domain4 epoch 26: val_cup_dice=0.8641 val_disc_dice=0.9527 hd=4.95 hd=6.22
+[04:12:45.051] epoch 26: avg val_cup_dice=0.8279 val_disc_dice=0.9243 DSDV=0.0014
+[04:12:45.053] Testing EMA teacher...
+[04:12:49.480] domain1 epoch 26: val_cup_dice=0.7939 val_disc_dice=0.9361 hd=14.63 hd=11.55
+[04:12:54.294] domain2 epoch 26: val_cup_dice=0.7924 val_disc_dice=0.8406 hd=8.77 hd=12.22
+[04:13:01.036] domain3 epoch 26: val_cup_dice=0.8654 val_disc_dice=0.9588 hd=6.31 hd=5.10
+[04:13:07.263] domain4 epoch 26: val_cup_dice=0.8584 val_disc_dice=0.9513 hd=4.96 hd=5.69
+[04:13:07.264] epoch 26: avg val_cup_dice=0.8275 val_disc_dice=0.9217 DSDV=0.0014
+[04:13:18.815] Testing SWAD (snapshots=31)...
+[04:13:22.999] domain1 epoch 26: val_cup_dice=0.7902 val_disc_dice=0.9412 hd=14.97 hd=7.91
+[04:13:27.569] domain2 epoch 26: val_cup_dice=0.7469 val_disc_dice=0.7939 hd=12.56 hd=15.76
+[04:13:34.447] domain3 epoch 26: val_cup_dice=0.8680 val_disc_dice=0.9572 hd=6.85 hd=5.26
+[04:13:40.863] domain4 epoch 26: val_cup_dice=0.8305 val_disc_dice=0.9341 hd=11.23 hd=9.07
+[04:13:40.864] epoch 26: avg val_cup_dice=0.8089 val_disc_dice=0.9066 DSDV=0.0028
+[04:13:41.377] [epoch 26] student_avg=0.8761  ema_avg=0.8746  best_avg=0.8761 @ iter 13000  swad_best=0.8577 @ iter 13000  best_DSDV=0.0014
+[04:13:43.825] [resume] state saved at iter 13000 (epoch 26)
+[04:20:05.254] iter 13500: loss=0.0667, sup=0.0393, unsup=0.1291, spec=0.0001, cw=0.207, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.006, U_dom=0.002, S_mean=549.41
+[04:20:05.259] Testing student...
+[04:20:09.541] domain1 epoch 27: val_cup_dice=0.7982 val_disc_dice=0.9425 hd=14.34 hd=7.30
+[04:20:14.307] domain2 epoch 27: val_cup_dice=0.7926 val_disc_dice=0.8484 hd=8.97 hd=11.39
+[04:20:20.699] domain3 epoch 27: val_cup_dice=0.8671 val_disc_dice=0.9566 hd=6.35 hd=5.61
+[04:20:26.723] domain4 epoch 27: val_cup_dice=0.8490 val_disc_dice=0.9509 hd=5.08 hd=4.19
+[04:20:26.724] epoch 27: avg val_cup_dice=0.8267 val_disc_dice=0.9246 DSDV=0.0012
+[04:20:26.725] Testing EMA teacher...
+[04:20:31.220] domain1 epoch 27: val_cup_dice=0.7972 val_disc_dice=0.9435 hd=14.32 hd=7.46
+[04:20:35.991] domain2 epoch 27: val_cup_dice=0.7885 val_disc_dice=0.8427 hd=9.03 hd=12.04
+[04:20:42.740] domain3 epoch 27: val_cup_dice=0.8673 val_disc_dice=0.9579 hd=6.28 hd=5.34
+[04:20:49.418] domain4 epoch 27: val_cup_dice=0.8586 val_disc_dice=0.9529 hd=4.96 hd=3.96
+[04:20:49.418] epoch 27: avg val_cup_dice=0.8279 val_disc_dice=0.9242 DSDV=0.0015
+[04:20:59.165] Testing SWAD (snapshots=36)...
+[04:21:03.338] domain1 epoch 27: val_cup_dice=0.7907 val_disc_dice=0.9409 hd=14.91 hd=7.96
+[04:21:08.105] domain2 epoch 27: val_cup_dice=0.7481 val_disc_dice=0.7971 hd=12.56 hd=15.72
+[04:21:14.728] domain3 epoch 27: val_cup_dice=0.8679 val_disc_dice=0.9574 hd=6.83 hd=5.23
+[04:21:21.419] domain4 epoch 27: val_cup_dice=0.8336 val_disc_dice=0.9362 hd=11.05 hd=8.92
+[04:21:21.420] epoch 27: avg val_cup_dice=0.8101 val_disc_dice=0.9079 DSDV=0.0028
+[04:21:21.964] [epoch 27] student_avg=0.8757  ema_avg=0.8761  best_avg=0.8761 @ iter 13000  swad_best=0.8590 @ iter 13500  best_DSDV=0.0012
+[04:27:46.169] iter 14000: loss=0.0660, sup=0.0379, unsup=0.1211, spec=0.0001, cw=0.226, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.005, U_dom=0.002, S_mean=585.66
+[04:27:46.184] Testing student...
+[04:27:50.661] domain1 epoch 28: val_cup_dice=0.7961 val_disc_dice=0.9427 hd=14.18 hd=7.39
+[04:27:55.572] domain2 epoch 28: val_cup_dice=0.8067 val_disc_dice=0.8495 hd=8.29 hd=11.61
+[04:28:02.747] domain3 epoch 28: val_cup_dice=0.8661 val_disc_dice=0.9587 hd=6.30 hd=5.24
+[04:28:09.192] domain4 epoch 28: val_cup_dice=0.8597 val_disc_dice=0.9531 hd=4.99 hd=4.14
+[04:28:09.193] epoch 28: avg val_cup_dice=0.8321 val_disc_dice=0.9260 DSDV=0.0011
+[04:28:09.194] Testing EMA teacher...
+[04:28:13.247] domain1 epoch 28: val_cup_dice=0.7951 val_disc_dice=0.9414 hd=14.44 hd=7.43
+[04:28:18.137] domain2 epoch 28: val_cup_dice=0.8032 val_disc_dice=0.8514 hd=8.55 hd=11.32
+[04:28:24.833] domain3 epoch 28: val_cup_dice=0.8650 val_disc_dice=0.9586 hd=6.34 hd=5.19
+[04:28:31.122] domain4 epoch 28: val_cup_dice=0.8587 val_disc_dice=0.9554 hd=4.94 hd=3.87
+[04:28:31.123] epoch 28: avg val_cup_dice=0.8305 val_disc_dice=0.9267 DSDV=0.0012
+[04:28:43.377] Testing SWAD (snapshots=41)...
+[04:28:47.904] domain1 epoch 28: val_cup_dice=0.7921 val_disc_dice=0.9410 hd=14.81 hd=7.94
+[04:28:53.058] domain2 epoch 28: val_cup_dice=0.7598 val_disc_dice=0.8101 hd=11.12 hd=14.27
+[04:28:59.728] domain3 epoch 28: val_cup_dice=0.8678 val_disc_dice=0.9578 hd=6.86 hd=5.16
+[04:29:06.206] domain4 epoch 28: val_cup_dice=0.8347 val_disc_dice=0.9374 hd=11.02 hd=8.39
+[04:29:06.207] epoch 28: avg val_cup_dice=0.8136 val_disc_dice=0.9116 DSDV=0.0023
+[04:29:06.746] [epoch 28] student_avg=0.8791  ema_avg=0.8786  best_avg=0.8791 @ iter 14000  swad_best=0.8626 @ iter 14000  best_DSDV=0.0011
+[04:29:09.140] [resume] state saved at iter 14000 (epoch 28)
+[04:35:43.082] iter 14500: loss=0.0668, sup=0.0367, unsup=0.1183, spec=0.0001, cw=0.248, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.005, U_dom=0.002, S_mean=622.93
+[04:35:43.094] Testing student...
+[04:35:47.993] domain1 epoch 29: val_cup_dice=0.7839 val_disc_dice=0.9411 hd=15.71 hd=10.01
+[04:35:52.838] domain2 epoch 29: val_cup_dice=0.7298 val_disc_dice=0.7756 hd=17.39 hd=19.32
+[04:35:59.652] domain3 epoch 29: val_cup_dice=0.8645 val_disc_dice=0.9581 hd=6.35 hd=5.31
+[04:36:06.524] domain4 epoch 29: val_cup_dice=0.8528 val_disc_dice=0.9522 hd=5.20 hd=4.02
+[04:36:06.526] epoch 29: avg val_cup_dice=0.8077 val_disc_dice=0.9068 DSDV=0.0040
+[04:36:06.526] Testing EMA teacher...
+[04:36:10.757] domain1 epoch 29: val_cup_dice=0.7901 val_disc_dice=0.9432 hd=14.81 hd=7.44
+[04:36:15.563] domain2 epoch 29: val_cup_dice=0.7498 val_disc_dice=0.8022 hd=14.47 hd=17.08
+[04:36:22.025] domain3 epoch 29: val_cup_dice=0.8673 val_disc_dice=0.9586 hd=6.26 hd=5.15
+[04:36:28.425] domain4 epoch 29: val_cup_dice=0.8605 val_disc_dice=0.9546 hd=4.92 hd=3.91
+[04:36:28.426] epoch 29: avg val_cup_dice=0.8169 val_disc_dice=0.9146 DSDV=0.0030
+[04:36:41.861] Testing SWAD (snapshots=46)...
+[04:36:46.829] domain1 epoch 29: val_cup_dice=0.7915 val_disc_dice=0.9409 hd=14.85 hd=7.89
+[04:36:52.003] domain2 epoch 29: val_cup_dice=0.7537 val_disc_dice=0.7998 hd=12.36 hd=15.69
+[04:36:58.737] domain3 epoch 29: val_cup_dice=0.8677 val_disc_dice=0.9580 hd=6.18 hd=5.14
+[04:37:05.579] domain4 epoch 29: val_cup_dice=0.8477 val_disc_dice=0.9437 hd=9.83 hd=7.49
+[04:37:05.580] epoch 29: avg val_cup_dice=0.8152 val_disc_dice=0.9106 DSDV=0.0028
+[04:37:06.218] [epoch 29] student_avg=0.8572  ema_avg=0.8658  best_avg=0.8791 @ iter 14000  swad_best=0.8629 @ iter 14500  best_DSDV=0.0011
+[04:43:43.892] iter 15000: loss=0.0670, sup=0.0353, unsup=0.1147, spec=0.0001, cw=0.270, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.005, U_dom=0.002, S_mean=659.43
+[04:43:43.895] Testing student...
+[04:43:48.381] domain1 epoch 30: val_cup_dice=0.7772 val_disc_dice=0.9375 hd=17.86 hd=10.50
+[04:43:53.657] domain2 epoch 30: val_cup_dice=0.7842 val_disc_dice=0.8478 hd=13.41 hd=14.78
+[04:44:00.583] domain3 epoch 30: val_cup_dice=0.8673 val_disc_dice=0.9576 hd=6.33 hd=5.53
+[04:44:06.907] domain4 epoch 30: val_cup_dice=0.8501 val_disc_dice=0.9459 hd=8.02 hd=8.14
+[04:44:06.908] epoch 30: avg val_cup_dice=0.8197 val_disc_dice=0.9222 DSDV=0.0014
+[04:44:06.909] Testing EMA teacher...
+[04:44:11.208] domain1 epoch 30: val_cup_dice=0.7819 val_disc_dice=0.9368 hd=15.69 hd=8.75
+[04:44:16.350] domain2 epoch 30: val_cup_dice=0.7781 val_disc_dice=0.8484 hd=10.32 hd=12.42
+[04:44:23.479] domain3 epoch 30: val_cup_dice=0.8653 val_disc_dice=0.9552 hd=7.10 hd=5.91
+[04:44:29.890] domain4 epoch 30: val_cup_dice=0.8614 val_disc_dice=0.9547 hd=4.88 hd=4.40
+[04:44:29.891] epoch 30: avg val_cup_dice=0.8217 val_disc_dice=0.9238 DSDV=0.0016
+[04:44:40.130] Testing SWAD (snapshots=51)...
+[04:44:44.417] domain1 epoch 30: val_cup_dice=0.7907 val_disc_dice=0.9408 hd=14.94 hd=7.88
+[04:44:49.866] domain2 epoch 30: val_cup_dice=0.7536 val_disc_dice=0.7997 hd=11.31 hd=14.78
+[04:44:56.441] domain3 epoch 30: val_cup_dice=0.8677 val_disc_dice=0.9579 hd=6.85 hd=5.09
+[04:45:02.760] domain4 epoch 30: val_cup_dice=0.8490 val_disc_dice=0.9433 hd=10.32 hd=7.75
+[04:45:02.762] epoch 30: avg val_cup_dice=0.8152 val_disc_dice=0.9104 DSDV=0.0028
+[04:45:02.763] [epoch 30] student_avg=0.8710  ema_avg=0.8727  best_avg=0.8791 @ iter 14000  swad_best=0.8629 @ iter 14500  best_DSDV=0.0011
+[04:45:05.090] [resume] state saved at iter 15000 (epoch 30)
+[04:51:52.401] iter 15500: loss=0.0674, sup=0.0342, unsup=0.1101, spec=0.0001, cw=0.294, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.004, U_dom=0.002, S_mean=696.99
+[04:51:52.417] Testing student...
+[04:51:56.581] domain1 epoch 31: val_cup_dice=0.7916 val_disc_dice=0.9403 hd=14.59 hd=9.76
+[04:52:01.477] domain2 epoch 31: val_cup_dice=0.7710 val_disc_dice=0.8294 hd=11.34 hd=21.38
+[04:52:07.732] domain3 epoch 31: val_cup_dice=0.8630 val_disc_dice=0.9584 hd=6.53 hd=5.29
+[04:52:13.874] domain4 epoch 31: val_cup_dice=0.8377 val_disc_dice=0.9476 hd=5.41 hd=6.00
+[04:52:13.876] epoch 31: avg val_cup_dice=0.8158 val_disc_dice=0.9189 DSDV=0.0018
+[04:52:13.876] Testing EMA teacher...
+[04:52:17.972] domain1 epoch 31: val_cup_dice=0.7907 val_disc_dice=0.9335 hd=15.20 hd=8.08
+[04:52:22.657] domain2 epoch 31: val_cup_dice=0.7857 val_disc_dice=0.8260 hd=9.90 hd=14.06
+[04:52:29.096] domain3 epoch 31: val_cup_dice=0.8648 val_disc_dice=0.9579 hd=6.36 hd=5.13
+[04:52:35.668] domain4 epoch 31: val_cup_dice=0.8556 val_disc_dice=0.9535 hd=5.05 hd=3.94
+[04:52:35.669] epoch 31: avg val_cup_dice=0.8242 val_disc_dice=0.9177 DSDV=0.0018
+[04:52:47.067] Testing SWAD (snapshots=56)...
+[04:52:51.517] domain1 epoch 31: val_cup_dice=0.7936 val_disc_dice=0.9411 hd=14.68 hd=7.92
+[04:52:56.663] domain2 epoch 31: val_cup_dice=0.7635 val_disc_dice=0.8105 hd=10.95 hd=14.32
+[04:53:03.301] domain3 epoch 31: val_cup_dice=0.8680 val_disc_dice=0.9581 hd=6.20 hd=5.08
+[04:53:09.936] domain4 epoch 31: val_cup_dice=0.8514 val_disc_dice=0.9445 hd=10.09 hd=7.17
+[04:53:09.937] epoch 31: avg val_cup_dice=0.8191 val_disc_dice=0.9135 DSDV=0.0024
+[04:53:10.469] [epoch 31] student_avg=0.8674  ema_avg=0.8710  best_avg=0.8791 @ iter 14000  swad_best=0.8663 @ iter 15500  best_DSDV=0.0011
+[05:00:29.305] iter 16000: loss=0.0670, sup=0.0329, unsup=0.1045, spec=0.0001, cw=0.318, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.004, U_dom=0.002, S_mean=731.72
+[05:00:29.309] Testing student...
+[05:00:35.248] domain1 epoch 32: val_cup_dice=0.7900 val_disc_dice=0.9331 hd=18.46 hd=13.35
+[05:00:41.678] domain2 epoch 32: val_cup_dice=0.8029 val_disc_dice=0.8475 hd=8.60 hd=11.28
+[05:00:50.684] domain3 epoch 32: val_cup_dice=0.8628 val_disc_dice=0.9570 hd=7.93 hd=5.98
+[05:00:59.896] domain4 epoch 32: val_cup_dice=0.8625 val_disc_dice=0.9534 hd=4.96 hd=3.98
+[05:00:59.897] epoch 32: avg val_cup_dice=0.8295 val_disc_dice=0.9227 DSDV=0.0012
+[05:00:59.897] Testing EMA teacher...
+[05:01:05.612] domain1 epoch 32: val_cup_dice=0.7943 val_disc_dice=0.9400 hd=14.50 hd=7.52
+[05:01:12.515] domain2 epoch 32: val_cup_dice=0.7973 val_disc_dice=0.8445 hd=9.02 hd=12.25
+[05:01:22.291] domain3 epoch 32: val_cup_dice=0.8641 val_disc_dice=0.9584 hd=6.43 hd=5.19
+[05:01:31.665] domain4 epoch 32: val_cup_dice=0.8551 val_disc_dice=0.9526 hd=5.05 hd=3.92
+[05:01:31.666] epoch 32: avg val_cup_dice=0.8277 val_disc_dice=0.9239 DSDV=0.0013
+[05:01:46.847] Testing SWAD (snapshots=61)...
+[05:01:52.966] domain1 epoch 32: val_cup_dice=0.7945 val_disc_dice=0.9413 hd=14.59 hd=7.76
+[05:02:00.035] domain2 epoch 32: val_cup_dice=0.7691 val_disc_dice=0.8174 hd=10.73 hd=13.83
+[05:02:08.826] domain3 epoch 32: val_cup_dice=0.8677 val_disc_dice=0.9583 hd=6.20 hd=5.05
+[05:02:18.639] domain4 epoch 32: val_cup_dice=0.8560 val_disc_dice=0.9462 hd=8.45 hd=6.18
+[05:02:18.641] epoch 32: avg val_cup_dice=0.8218 val_disc_dice=0.9158 DSDV=0.0022
+[05:02:19.186] [epoch 32] student_avg=0.8761  ema_avg=0.8758  best_avg=0.8791 @ iter 14000  swad_best=0.8688 @ iter 16000  best_DSDV=0.0011
+[05:02:21.652] [resume] state saved at iter 16000 (epoch 32)
+[05:10:14.485] iter 16500: loss=0.0685, sup=0.0321, unsup=0.1029, spec=0.0001, cw=0.345, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.004, U_dom=0.002, S_mean=768.13
+[05:10:14.487] Testing student...
+[05:10:19.662] domain1 epoch 33: val_cup_dice=0.8004 val_disc_dice=0.9416 hd=13.79 hd=7.67
+[05:10:25.671] domain2 epoch 33: val_cup_dice=0.7890 val_disc_dice=0.8392 hd=9.24 hd=12.01
+[05:10:33.353] domain3 epoch 33: val_cup_dice=0.8682 val_disc_dice=0.9566 hd=6.26 hd=5.20
+[05:10:41.469] domain4 epoch 33: val_cup_dice=0.8758 val_disc_dice=0.9514 hd=4.51 hd=4.10
+[05:10:41.470] epoch 33: avg val_cup_dice=0.8334 val_disc_dice=0.9222 DSDV=0.0016
+[05:10:41.471] Testing EMA teacher...
+[05:10:46.476] domain1 epoch 33: val_cup_dice=0.8049 val_disc_dice=0.9393 hd=13.51 hd=7.94
+[05:10:52.582] domain2 epoch 33: val_cup_dice=0.7993 val_disc_dice=0.8429 hd=8.19 hd=11.49
+[05:11:00.146] domain3 epoch 33: val_cup_dice=0.8668 val_disc_dice=0.9583 hd=6.29 hd=4.93
+[05:11:07.897] domain4 epoch 33: val_cup_dice=0.8669 val_disc_dice=0.9533 hd=4.74 hd=3.87
+[05:11:07.898] epoch 33: avg val_cup_dice=0.8345 val_disc_dice=0.9235 DSDV=0.0014
+[05:11:20.215] Testing SWAD (snapshots=66)...
+[05:11:26.060] domain1 epoch 33: val_cup_dice=0.7946 val_disc_dice=0.9410 hd=14.59 hd=7.78
+[05:11:31.915] domain2 epoch 33: val_cup_dice=0.7731 val_disc_dice=0.8264 hd=10.61 hd=13.34
+[05:11:40.195] domain3 epoch 33: val_cup_dice=0.8677 val_disc_dice=0.9584 hd=6.21 hd=4.98
+[05:11:47.697] domain4 epoch 33: val_cup_dice=0.8593 val_disc_dice=0.9470 hd=7.32 hd=5.64
+[05:11:47.698] epoch 33: avg val_cup_dice=0.8237 val_disc_dice=0.9182 DSDV=0.0020
+[05:11:48.264] [epoch 33] student_avg=0.8778  ema_avg=0.8790  best_avg=0.8791 @ iter 14000  swad_best=0.8709 @ iter 16500  best_DSDV=0.0011
+[05:19:21.570] iter 17000: loss=0.0702, sup=0.0314, unsup=0.1022, spec=0.0001, cw=0.371, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.004, U_dom=0.002, S_mean=802.95
+[05:19:21.584] Testing student...
+[05:19:27.518] domain1 epoch 34: val_cup_dice=0.8098 val_disc_dice=0.9408 hd=13.15 hd=7.77
+[05:19:33.916] domain2 epoch 34: val_cup_dice=0.7958 val_disc_dice=0.8517 hd=8.61 hd=11.75
+[05:19:42.769] domain3 epoch 34: val_cup_dice=0.8675 val_disc_dice=0.9584 hd=6.33 hd=4.93
+[05:19:51.270] domain4 epoch 34: val_cup_dice=0.8749 val_disc_dice=0.9500 hd=4.53 hd=4.15
+[05:19:51.271] epoch 34: avg val_cup_dice=0.8370 val_disc_dice=0.9252 DSDV=0.0013
+[05:19:51.272] Testing EMA teacher...
+[05:19:56.653] domain1 epoch 34: val_cup_dice=0.8129 val_disc_dice=0.9417 hd=13.06 hd=7.55
+[05:20:02.706] domain2 epoch 34: val_cup_dice=0.7932 val_disc_dice=0.8419 hd=8.76 hd=11.54
+[05:20:10.588] domain3 epoch 34: val_cup_dice=0.8651 val_disc_dice=0.9593 hd=6.34 hd=4.76
+[05:20:17.821] domain4 epoch 34: val_cup_dice=0.8710 val_disc_dice=0.9528 hd=4.66 hd=3.94
+[05:20:17.823] epoch 34: avg val_cup_dice=0.8356 val_disc_dice=0.9239 DSDV=0.0015
+[05:20:33.519] Testing SWAD (snapshots=71)...
+[05:20:39.035] domain1 epoch 34: val_cup_dice=0.7958 val_disc_dice=0.9407 hd=14.52 hd=7.84
+[05:20:45.017] domain2 epoch 34: val_cup_dice=0.7725 val_disc_dice=0.8240 hd=10.59 hd=13.50
+[05:20:53.087] domain3 epoch 34: val_cup_dice=0.8678 val_disc_dice=0.9584 hd=6.20 hd=4.97
+[05:21:00.924] domain4 epoch 34: val_cup_dice=0.8615 val_disc_dice=0.9475 hd=7.14 hd=5.62
+[05:21:00.925] epoch 34: avg val_cup_dice=0.8244 val_disc_dice=0.9177 DSDV=0.0020
+[05:21:01.437] [epoch 34] student_avg=0.8811  ema_avg=0.8797  best_avg=0.8811 @ iter 17000  swad_best=0.8710 @ iter 17000  best_DSDV=0.0013
+[05:21:03.864] [resume] state saved at iter 17000 (epoch 34)
+[05:28:18.621] iter 17500: loss=0.0705, sup=0.0305, unsup=0.0979, spec=0.0001, cw=0.400, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.004, U_dom=0.002, S_mean=837.48
+[05:28:18.626] Testing student...
+[05:28:23.375] domain1 epoch 35: val_cup_dice=0.8118 val_disc_dice=0.9399 hd=12.92 hd=7.77
+[05:28:29.468] domain2 epoch 35: val_cup_dice=0.8017 val_disc_dice=0.8500 hd=8.25 hd=11.08
+[05:28:36.959] domain3 epoch 35: val_cup_dice=0.8640 val_disc_dice=0.9594 hd=6.49 hd=4.81
+[05:28:43.909] domain4 epoch 35: val_cup_dice=0.8692 val_disc_dice=0.9523 hd=4.69 hd=4.03
+[05:28:43.911] epoch 35: avg val_cup_dice=0.8367 val_disc_dice=0.9254 DSDV=0.0012
+[05:28:43.912] Testing EMA teacher...
+[05:28:48.599] domain1 epoch 35: val_cup_dice=0.8077 val_disc_dice=0.9412 hd=13.25 hd=7.69
+[05:28:53.839] domain2 epoch 35: val_cup_dice=0.8031 val_disc_dice=0.8501 hd=8.20 hd=11.07
+[05:29:00.883] domain3 epoch 35: val_cup_dice=0.8672 val_disc_dice=0.9589 hd=6.32 hd=4.41
+[05:29:07.414] domain4 epoch 35: val_cup_dice=0.8717 val_disc_dice=0.9532 hd=4.61 hd=3.87
+[05:29:07.415] epoch 35: avg val_cup_dice=0.8374 val_disc_dice=0.9259 DSDV=0.0013
+[05:29:17.980] Testing SWAD (snapshots=76)...
+[05:29:22.579] domain1 epoch 35: val_cup_dice=0.7968 val_disc_dice=0.9406 hd=14.39 hd=7.98
+[05:29:27.680] domain2 epoch 35: val_cup_dice=0.7716 val_disc_dice=0.8153 hd=10.59 hd=13.88
+[05:29:34.778] domain3 epoch 35: val_cup_dice=0.8681 val_disc_dice=0.9584 hd=6.19 hd=4.92
+[05:29:41.531] domain4 epoch 35: val_cup_dice=0.8626 val_disc_dice=0.9477 hd=7.13 hd=5.62
+[05:29:41.532] epoch 35: avg val_cup_dice=0.8248 val_disc_dice=0.9155 DSDV=0.0022
+[05:29:41.533] [epoch 35] student_avg=0.8810  ema_avg=0.8816  best_avg=0.8811 @ iter 17000  swad_best=0.8710 @ iter 17000  best_DSDV=0.0012
+[05:36:31.146] iter 18000: loss=0.0695, sup=0.0296, unsup=0.0911, spec=0.0001, cw=0.428, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.004, U_dom=0.002, S_mean=870.75
+[05:36:31.150] Testing student...
+[05:36:36.171] domain1 epoch 36: val_cup_dice=0.8212 val_disc_dice=0.9422 hd=12.78 hd=7.69
+[05:36:41.623] domain2 epoch 36: val_cup_dice=0.7985 val_disc_dice=0.8541 hd=8.27 hd=10.65
+[05:36:48.803] domain3 epoch 36: val_cup_dice=0.8626 val_disc_dice=0.9588 hd=6.56 hd=4.85
+[05:36:56.250] domain4 epoch 36: val_cup_dice=0.8682 val_disc_dice=0.9528 hd=4.76 hd=3.88
+[05:36:56.251] epoch 36: avg val_cup_dice=0.8376 val_disc_dice=0.9270 DSDV=0.0012
+[05:36:56.252] Testing EMA teacher...
+[05:37:00.520] domain1 epoch 36: val_cup_dice=0.8214 val_disc_dice=0.9456 hd=12.71 hd=7.40
+[05:37:05.472] domain2 epoch 36: val_cup_dice=0.7980 val_disc_dice=0.8567 hd=8.24 hd=10.51
+[05:37:11.930] domain3 epoch 36: val_cup_dice=0.8635 val_disc_dice=0.9590 hd=6.48 hd=4.78
+[05:37:18.521] domain4 epoch 36: val_cup_dice=0.8697 val_disc_dice=0.9516 hd=4.74 hd=3.95
+[05:37:18.522] epoch 36: avg val_cup_dice=0.8382 val_disc_dice=0.9282 DSDV=0.0012
+[05:37:29.333] Testing SWAD (snapshots=81)...
+[05:37:33.628] domain1 epoch 36: val_cup_dice=0.7982 val_disc_dice=0.9406 hd=14.34 hd=7.85
+[05:37:38.989] domain2 epoch 36: val_cup_dice=0.7761 val_disc_dice=0.8289 hd=10.45 hd=13.19
+[05:37:45.580] domain3 epoch 36: val_cup_dice=0.8676 val_disc_dice=0.9585 hd=6.21 hd=4.89
+[05:37:51.870] domain4 epoch 36: val_cup_dice=0.8625 val_disc_dice=0.9476 hd=7.26 hd=5.63
+[05:37:51.871] epoch 36: avg val_cup_dice=0.8261 val_disc_dice=0.9189 DSDV=0.0019
+[05:37:52.372] [epoch 36] student_avg=0.8823  ema_avg=0.8832  best_avg=0.8823 @ iter 18000  swad_best=0.8725 @ iter 18000  best_DSDV=0.0012
+[05:37:54.657] [resume] state saved at iter 18000 (epoch 36)
+[05:44:24.180] iter 18500: loss=0.0704, sup=0.0285, unsup=0.0892, spec=0.0001, cw=0.459, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=903.02
+[05:44:24.186] Testing student...
+[05:44:29.226] domain1 epoch 37: val_cup_dice=0.8175 val_disc_dice=0.9432 hd=13.11 hd=7.63
+[05:44:34.757] domain2 epoch 37: val_cup_dice=0.8047 val_disc_dice=0.8623 hd=8.18 hd=10.05
+[05:44:42.446] domain3 epoch 37: val_cup_dice=0.8641 val_disc_dice=0.9580 hd=6.62 hd=5.08
+[05:44:50.097] domain4 epoch 37: val_cup_dice=0.8613 val_disc_dice=0.9501 hd=4.98 hd=4.16
+[05:44:50.098] epoch 37: avg val_cup_dice=0.8369 val_disc_dice=0.9284 DSDV=0.0009
+[05:44:50.099] Testing EMA teacher...
+[05:44:54.359] domain1 epoch 37: val_cup_dice=0.8160 val_disc_dice=0.9433 hd=13.09 hd=7.49
+[05:44:59.260] domain2 epoch 37: val_cup_dice=0.8059 val_disc_dice=0.8612 hd=8.14 hd=10.02
+[05:45:05.914] domain3 epoch 37: val_cup_dice=0.8655 val_disc_dice=0.9585 hd=6.48 hd=4.86
+[05:45:12.284] domain4 epoch 37: val_cup_dice=0.8709 val_disc_dice=0.9511 hd=4.68 hd=3.94
+[05:45:12.285] epoch 37: avg val_cup_dice=0.8396 val_disc_dice=0.9285 DSDV=0.0010
+[05:45:23.702] Testing SWAD (snapshots=86)...
+[05:45:27.961] domain1 epoch 37: val_cup_dice=0.7998 val_disc_dice=0.9411 hd=14.17 hd=7.77
+[05:45:33.167] domain2 epoch 37: val_cup_dice=0.7758 val_disc_dice=0.8297 hd=10.42 hd=13.11
+[05:45:39.743] domain3 epoch 37: val_cup_dice=0.8675 val_disc_dice=0.9587 hd=6.21 hd=4.89
+[05:45:46.660] domain4 epoch 37: val_cup_dice=0.8642 val_disc_dice=0.9488 hd=6.53 hd=5.50
+[05:45:46.662] epoch 37: avg val_cup_dice=0.8268 val_disc_dice=0.9196 DSDV=0.0019
+[05:45:47.269] [epoch 37] student_avg=0.8826  ema_avg=0.8841  best_avg=0.8826 @ iter 18500  swad_best=0.8732 @ iter 18500  best_DSDV=0.0009
+[05:52:24.388] iter 19000: loss=0.0726, sup=0.0282, unsup=0.0888, spec=0.0001, cw=0.488, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=933.51
+[05:52:24.391] Testing student...
+[05:52:29.494] domain1 epoch 38: val_cup_dice=0.8187 val_disc_dice=0.9428 hd=12.64 hd=7.73
+[05:52:35.171] domain2 epoch 38: val_cup_dice=0.8022 val_disc_dice=0.8517 hd=8.25 hd=11.07
+[05:52:42.541] domain3 epoch 38: val_cup_dice=0.8637 val_disc_dice=0.9590 hd=6.57 hd=4.79
+[05:52:50.356] domain4 epoch 38: val_cup_dice=0.8657 val_disc_dice=0.9520 hd=4.76 hd=4.99
+[05:52:50.357] epoch 38: avg val_cup_dice=0.8376 val_disc_dice=0.9264 DSDV=0.0012
+[05:52:50.357] Testing EMA teacher...
+[05:52:54.636] domain1 epoch 38: val_cup_dice=0.8116 val_disc_dice=0.9438 hd=13.35 hd=7.49
+[05:52:59.618] domain2 epoch 38: val_cup_dice=0.7972 val_disc_dice=0.8518 hd=8.98 hd=10.83
+[05:53:06.522] domain3 epoch 38: val_cup_dice=0.8634 val_disc_dice=0.9590 hd=6.58 hd=4.87
+[05:53:12.871] domain4 epoch 38: val_cup_dice=0.8603 val_disc_dice=0.9495 hd=4.89 hd=4.19
+[05:53:12.872] epoch 38: avg val_cup_dice=0.8331 val_disc_dice=0.9260 DSDV=0.0012
+[05:53:23.856] Testing SWAD (snapshots=91)...
+[05:53:28.411] domain1 epoch 38: val_cup_dice=0.8008 val_disc_dice=0.9411 hd=14.10 hd=7.79
+[05:53:33.637] domain2 epoch 38: val_cup_dice=0.7774 val_disc_dice=0.8326 hd=10.37 hd=13.04
+[05:53:40.742] domain3 epoch 38: val_cup_dice=0.8676 val_disc_dice=0.9587 hd=6.23 hd=4.88
+[05:53:47.173] domain4 epoch 38: val_cup_dice=0.8643 val_disc_dice=0.9484 hd=6.64 hd=5.54
+[05:53:47.174] epoch 38: avg val_cup_dice=0.8276 val_disc_dice=0.9202 DSDV=0.0018
+[05:53:47.662] [epoch 38] student_avg=0.8820  ema_avg=0.8796  best_avg=0.8826 @ iter 18500  swad_best=0.8739 @ iter 19000  best_DSDV=0.0009
+[05:53:50.228] [resume] state saved at iter 19000 (epoch 38)
+[06:00:19.240] iter 19500: loss=0.0724, sup=0.0277, unsup=0.0873, spec=0.0001, cw=0.500, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=961.54
+[06:00:19.243] Testing student...
+[06:00:24.333] domain1 epoch 39: val_cup_dice=0.8236 val_disc_dice=0.9415 hd=12.50 hd=7.69
+[06:00:29.997] domain2 epoch 39: val_cup_dice=0.8170 val_disc_dice=0.8624 hd=7.72 hd=10.06
+[06:00:37.320] domain3 epoch 39: val_cup_dice=0.8617 val_disc_dice=0.9590 hd=6.68 hd=5.02
+[06:00:44.838] domain4 epoch 39: val_cup_dice=0.8652 val_disc_dice=0.9509 hd=4.82 hd=4.15
+[06:00:44.839] epoch 39: avg val_cup_dice=0.8419 val_disc_dice=0.9285 DSDV=0.0008
+[06:00:44.841] Testing EMA teacher...
+[06:00:49.484] domain1 epoch 39: val_cup_dice=0.8233 val_disc_dice=0.9426 hd=12.41 hd=7.46
+[06:00:54.504] domain2 epoch 39: val_cup_dice=0.8102 val_disc_dice=0.8572 hd=7.98 hd=10.34
+[06:01:01.579] domain3 epoch 39: val_cup_dice=0.8625 val_disc_dice=0.9583 hd=6.60 hd=5.14
+[06:01:08.335] domain4 epoch 39: val_cup_dice=0.8660 val_disc_dice=0.9504 hd=4.80 hd=4.21
+[06:01:08.336] epoch 39: avg val_cup_dice=0.8405 val_disc_dice=0.9271 DSDV=0.0010
+[06:01:19.949] Testing SWAD (snapshots=96)...
+[06:01:24.333] domain1 epoch 39: val_cup_dice=0.8018 val_disc_dice=0.9416 hd=14.00 hd=7.74
+[06:01:29.386] domain2 epoch 39: val_cup_dice=0.7796 val_disc_dice=0.8381 hd=10.22 hd=12.70
+[06:01:36.115] domain3 epoch 39: val_cup_dice=0.8676 val_disc_dice=0.9587 hd=6.25 hd=4.85
+[06:01:42.781] domain4 epoch 39: val_cup_dice=0.8646 val_disc_dice=0.9494 hd=6.50 hd=5.45
+[06:01:42.782] epoch 39: avg val_cup_dice=0.8284 val_disc_dice=0.9220 DSDV=0.0017
+[06:01:43.289] [epoch 39] student_avg=0.8852  ema_avg=0.8838  best_avg=0.8852 @ iter 19500  swad_best=0.8752 @ iter 19500  best_DSDV=0.0008
+[06:08:13.005] iter 20000: loss=0.0703, sup=0.0268, unsup=0.0850, spec=0.0001, cw=0.500, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=989.12
+[06:08:13.007] Testing student...
+[06:08:18.260] domain1 epoch 40: val_cup_dice=0.8215 val_disc_dice=0.9444 hd=13.18 hd=7.54
+[06:08:23.771] domain2 epoch 40: val_cup_dice=0.8089 val_disc_dice=0.8527 hd=8.11 hd=11.13
+[06:08:31.374] domain3 epoch 40: val_cup_dice=0.8604 val_disc_dice=0.9591 hd=6.69 hd=4.76
+[06:08:38.518] domain4 epoch 40: val_cup_dice=0.8627 val_disc_dice=0.9481 hd=6.52 hd=5.63
+[06:08:38.519] epoch 40: avg val_cup_dice=0.8384 val_disc_dice=0.9261 DSDV=0.0010
+[06:08:38.520] Testing EMA teacher...
+[06:08:42.762] domain1 epoch 40: val_cup_dice=0.8261 val_disc_dice=0.9413 hd=12.29 hd=7.63
+[06:08:47.713] domain2 epoch 40: val_cup_dice=0.8016 val_disc_dice=0.8464 hd=8.56 hd=11.41
+[06:08:54.346] domain3 epoch 40: val_cup_dice=0.8623 val_disc_dice=0.9589 hd=6.60 hd=5.02
+[06:09:00.914] domain4 epoch 40: val_cup_dice=0.8687 val_disc_dice=0.9505 hd=6.34 hd=4.72
+[06:09:00.915] epoch 40: avg val_cup_dice=0.8397 val_disc_dice=0.9242 DSDV=0.0012
+[06:09:12.577] Testing SWAD (snapshots=101)...
+[06:09:16.836] domain1 epoch 40: val_cup_dice=0.8019 val_disc_dice=0.9415 hd=13.98 hd=7.76
+[06:09:22.240] domain2 epoch 40: val_cup_dice=0.7809 val_disc_dice=0.8388 hd=10.15 hd=12.60
+[06:09:29.071] domain3 epoch 40: val_cup_dice=0.8676 val_disc_dice=0.9588 hd=6.26 hd=4.83
+[06:09:35.596] domain4 epoch 40: val_cup_dice=0.8647 val_disc_dice=0.9498 hd=6.47 hd=5.44
+[06:09:35.598] epoch 40: avg val_cup_dice=0.8288 val_disc_dice=0.9222 DSDV=0.0017
+[06:09:36.120] [epoch 40] student_avg=0.8822  ema_avg=0.8820  best_avg=0.8852 @ iter 19500  swad_best=0.8755 @ iter 20000  best_DSDV=0.0008
+[06:09:38.424] [resume] state saved at iter 20000 (epoch 40)
+[06:16:03.284] iter 20500: loss=0.0695, sup=0.0262, unsup=0.0846, spec=0.0001, cw=0.500, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1013.12
+[06:16:03.286] Testing student...
+[06:16:08.585] domain1 epoch 41: val_cup_dice=0.8229 val_disc_dice=0.9430 hd=12.51 hd=7.46
+[06:16:14.251] domain2 epoch 41: val_cup_dice=0.8089 val_disc_dice=0.8586 hd=7.76 hd=10.49
+[06:16:21.570] domain3 epoch 41: val_cup_dice=0.8605 val_disc_dice=0.9588 hd=6.71 hd=4.46
+[06:16:28.950] domain4 epoch 41: val_cup_dice=0.8502 val_disc_dice=0.9474 hd=5.13 hd=4.38
+[06:16:28.951] epoch 41: avg val_cup_dice=0.8356 val_disc_dice=0.9270 DSDV=0.0008
+[06:16:28.951] Testing EMA teacher...
+[06:16:33.533] domain1 epoch 41: val_cup_dice=0.8231 val_disc_dice=0.9413 hd=12.54 hd=7.72
+[06:16:38.712] domain2 epoch 41: val_cup_dice=0.8105 val_disc_dice=0.8573 hd=7.82 hd=10.64
+[06:16:45.292] domain3 epoch 41: val_cup_dice=0.8618 val_disc_dice=0.9588 hd=6.68 hd=4.82
+[06:16:51.664] domain4 epoch 41: val_cup_dice=0.8587 val_disc_dice=0.9495 hd=4.96 hd=5.34
+[06:16:51.665] epoch 41: avg val_cup_dice=0.8385 val_disc_dice=0.9267 DSDV=0.0009
+[06:17:01.905] Testing SWAD (snapshots=106)...
+[06:17:06.190] domain1 epoch 41: val_cup_dice=0.8032 val_disc_dice=0.9417 hd=13.89 hd=7.74
+[06:17:10.920] domain2 epoch 41: val_cup_dice=0.7836 val_disc_dice=0.8438 hd=10.06 hd=12.01
+[06:17:17.789] domain3 epoch 41: val_cup_dice=0.8677 val_disc_dice=0.9588 hd=6.25 hd=4.83
+[06:17:25.066] domain4 epoch 41: val_cup_dice=0.8650 val_disc_dice=0.9497 hd=6.49 hd=5.43
+[06:17:25.067] epoch 41: avg val_cup_dice=0.8299 val_disc_dice=0.9235 DSDV=0.0016
+[06:17:25.667] [epoch 41] student_avg=0.8813  ema_avg=0.8826  best_avg=0.8852 @ iter 19500  swad_best=0.8767 @ iter 20500  best_DSDV=0.0008
+[06:24:02.570] iter 21000: loss=0.0667, sup=0.0256, unsup=0.0802, spec=0.0001, cw=0.500, w_mean=0.999, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1037.54
+[06:24:02.575] Testing student...
+[06:24:06.916] domain1 epoch 42: val_cup_dice=0.8281 val_disc_dice=0.9423 hd=12.26 hd=7.66
+[06:24:11.752] domain2 epoch 42: val_cup_dice=0.8090 val_disc_dice=0.8562 hd=7.92 hd=10.55
+[06:24:18.390] domain3 epoch 42: val_cup_dice=0.8630 val_disc_dice=0.9588 hd=6.69 hd=4.99
+[06:24:24.990] domain4 epoch 42: val_cup_dice=0.8608 val_disc_dice=0.9494 hd=6.49 hd=5.49
+[06:24:24.991] epoch 42: avg val_cup_dice=0.8402 val_disc_dice=0.9267 DSDV=0.0010
+[06:24:24.992] Testing EMA teacher...
+[06:24:29.334] domain1 epoch 42: val_cup_dice=0.8164 val_disc_dice=0.9412 hd=12.96 hd=7.80
+[06:24:34.113] domain2 epoch 42: val_cup_dice=0.8110 val_disc_dice=0.8568 hd=7.81 hd=10.48
+[06:24:40.707] domain3 epoch 42: val_cup_dice=0.8634 val_disc_dice=0.9589 hd=6.65 hd=4.94
+[06:24:47.268] domain4 epoch 42: val_cup_dice=0.8624 val_disc_dice=0.9489 hd=6.41 hd=5.54
+[06:24:47.269] epoch 42: avg val_cup_dice=0.8383 val_disc_dice=0.9264 DSDV=0.0009
+[06:24:58.616] Testing SWAD (snapshots=111)...
+[06:25:02.812] domain1 epoch 42: val_cup_dice=0.8033 val_disc_dice=0.9416 hd=13.86 hd=7.73
+[06:25:07.612] domain2 epoch 42: val_cup_dice=0.7865 val_disc_dice=0.8463 hd=9.93 hd=11.57
+[06:25:14.090] domain3 epoch 42: val_cup_dice=0.8671 val_disc_dice=0.9587 hd=6.29 hd=4.84
+[06:25:20.482] domain4 epoch 42: val_cup_dice=0.8643 val_disc_dice=0.9495 hd=6.51 hd=5.44
+[06:25:20.483] epoch 42: avg val_cup_dice=0.8303 val_disc_dice=0.9240 DSDV=0.0015
+[06:25:21.027] [epoch 42] student_avg=0.8834  ema_avg=0.8824  best_avg=0.8852 @ iter 19500  swad_best=0.8772 @ iter 21000  best_DSDV=0.0008
+[06:25:23.439] [resume] state saved at iter 21000 (epoch 42)
+[06:31:53.428] iter 21500: loss=0.0666, sup=0.0254, unsup=0.0805, spec=0.0001, cw=0.500, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1058.72
+[06:31:53.452] Testing student...
+[06:31:57.637] domain1 epoch 43: val_cup_dice=0.8130 val_disc_dice=0.9428 hd=13.21 hd=7.75
+[06:32:02.356] domain2 epoch 43: val_cup_dice=0.8112 val_disc_dice=0.8602 hd=7.77 hd=10.21
+[06:32:09.080] domain3 epoch 43: val_cup_dice=0.8626 val_disc_dice=0.9586 hd=6.69 hd=4.85
+[06:32:15.380] domain4 epoch 43: val_cup_dice=0.8575 val_disc_dice=0.9478 hd=4.98 hd=4.35
+[06:32:15.381] epoch 43: avg val_cup_dice=0.8361 val_disc_dice=0.9273 DSDV=0.0009
+[06:32:15.382] Testing EMA teacher...
+[06:32:19.385] domain1 epoch 43: val_cup_dice=0.8204 val_disc_dice=0.9426 hd=12.63 hd=7.67
+[06:32:23.957] domain2 epoch 43: val_cup_dice=0.8109 val_disc_dice=0.8601 hd=7.81 hd=10.14
+[06:32:30.439] domain3 epoch 43: val_cup_dice=0.8635 val_disc_dice=0.9587 hd=6.67 hd=4.80
+[06:32:36.420] domain4 epoch 43: val_cup_dice=0.8593 val_disc_dice=0.9483 hd=4.91 hd=4.33
+[06:32:36.421] epoch 43: avg val_cup_dice=0.8385 val_disc_dice=0.9274 DSDV=0.0009
+[06:32:47.864] Testing SWAD (snapshots=116)...
+[06:32:52.237] domain1 epoch 43: val_cup_dice=0.8032 val_disc_dice=0.9417 hd=13.82 hd=7.71
+[06:32:57.161] domain2 epoch 43: val_cup_dice=0.7859 val_disc_dice=0.8434 hd=9.95 hd=12.02
+[06:33:04.475] domain3 epoch 43: val_cup_dice=0.8670 val_disc_dice=0.9588 hd=6.27 hd=4.84
+[06:33:11.518] domain4 epoch 43: val_cup_dice=0.8642 val_disc_dice=0.9498 hd=6.46 hd=5.42
+[06:33:11.520] epoch 43: avg val_cup_dice=0.8301 val_disc_dice=0.9234 DSDV=0.0015
+[06:33:11.521] [epoch 43] student_avg=0.8817  ema_avg=0.8830  best_avg=0.8852 @ iter 19500  swad_best=0.8772 @ iter 21000  best_DSDV=0.0008
+[06:39:47.855] iter 22000: loss=0.0640, sup=0.0249, unsup=0.0763, spec=0.0001, cw=0.500, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1077.35
+[06:39:47.871] Testing student...
+[06:39:52.146] domain1 epoch 44: val_cup_dice=0.8064 val_disc_dice=0.9427 hd=13.56 hd=7.58
+[06:39:56.869] domain2 epoch 44: val_cup_dice=0.8158 val_disc_dice=0.8630 hd=7.72 hd=11.27
+[06:40:03.196] domain3 epoch 44: val_cup_dice=0.8585 val_disc_dice=0.9585 hd=6.89 hd=4.85
+[06:40:09.521] domain4 epoch 44: val_cup_dice=0.8464 val_disc_dice=0.9461 hd=5.37 hd=4.52
+[06:40:09.522] epoch 44: avg val_cup_dice=0.8318 val_disc_dice=0.9276 DSDV=0.0007
+[06:40:09.528] Testing EMA teacher...
+[06:40:13.499] domain1 epoch 44: val_cup_dice=0.8086 val_disc_dice=0.9420 hd=13.24 hd=7.80
+[06:40:18.818] domain2 epoch 44: val_cup_dice=0.8145 val_disc_dice=0.8609 hd=7.75 hd=10.23
+[06:40:26.116] domain3 epoch 44: val_cup_dice=0.8606 val_disc_dice=0.9585 hd=6.83 hd=4.84
+[06:40:32.591] domain4 epoch 44: val_cup_dice=0.8551 val_disc_dice=0.9467 hd=5.01 hd=4.43
+[06:40:32.592] epoch 44: avg val_cup_dice=0.8347 val_disc_dice=0.9270 DSDV=0.0008
+[06:40:45.625] Testing SWAD (snapshots=121)...
+[06:40:50.014] domain1 epoch 44: val_cup_dice=0.8042 val_disc_dice=0.9419 hd=13.75 hd=7.71
+[06:40:55.256] domain2 epoch 44: val_cup_dice=0.7866 val_disc_dice=0.8449 hd=9.92 hd=11.68
+[06:41:01.870] domain3 epoch 44: val_cup_dice=0.8670 val_disc_dice=0.9588 hd=6.28 hd=4.83
+[06:41:08.776] domain4 epoch 44: val_cup_dice=0.8644 val_disc_dice=0.9502 hd=6.42 hd=5.37
+[06:41:08.777] epoch 44: avg val_cup_dice=0.8306 val_disc_dice=0.9240 DSDV=0.0015
+[06:41:09.269] [epoch 44] student_avg=0.8797  ema_avg=0.8809  best_avg=0.8852 @ iter 19500  swad_best=0.8773 @ iter 22000  best_DSDV=0.0007
+[06:41:11.678] [resume] state saved at iter 22000 (epoch 44)
+[06:47:35.281] iter 22500: loss=0.0640, sup=0.0244, unsup=0.0774, spec=0.0001, cw=0.500, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1095.97
+[06:47:35.284] Testing student...
+[06:47:39.753] domain1 epoch 45: val_cup_dice=0.8210 val_disc_dice=0.9421 hd=12.47 hd=7.53
+[06:47:44.646] domain2 epoch 45: val_cup_dice=0.8118 val_disc_dice=0.8585 hd=7.86 hd=10.25
+[06:47:51.116] domain3 epoch 45: val_cup_dice=0.8623 val_disc_dice=0.9582 hd=6.63 hd=4.82
+[06:47:57.345] domain4 epoch 45: val_cup_dice=0.8516 val_disc_dice=0.9473 hd=5.17 hd=4.39
+[06:47:57.347] epoch 45: avg val_cup_dice=0.8367 val_disc_dice=0.9265 DSDV=0.0008
+[06:47:57.347] Testing EMA teacher...
+[06:48:01.580] domain1 epoch 45: val_cup_dice=0.8242 val_disc_dice=0.9431 hd=12.24 hd=7.62
+[06:48:06.423] domain2 epoch 45: val_cup_dice=0.8111 val_disc_dice=0.8602 hd=7.94 hd=10.13
+[06:48:12.762] domain3 epoch 45: val_cup_dice=0.8643 val_disc_dice=0.9584 hd=6.62 hd=4.84
+[06:48:19.011] domain4 epoch 45: val_cup_dice=0.8586 val_disc_dice=0.9475 hd=5.00 hd=4.31
+[06:48:19.012] epoch 45: avg val_cup_dice=0.8396 val_disc_dice=0.9273 DSDV=0.0009
+[06:48:29.191] Testing SWAD (snapshots=126)...
+[06:48:33.868] domain1 epoch 45: val_cup_dice=0.8032 val_disc_dice=0.9421 hd=13.77 hd=7.65
+[06:48:38.868] domain2 epoch 45: val_cup_dice=0.7811 val_disc_dice=0.8330 hd=10.10 hd=12.90
+[06:48:45.399] domain3 epoch 45: val_cup_dice=0.8670 val_disc_dice=0.9588 hd=6.29 hd=4.82
+[06:48:52.290] domain4 epoch 45: val_cup_dice=0.8651 val_disc_dice=0.9512 hd=6.35 hd=5.33
+[06:48:52.291] epoch 45: avg val_cup_dice=0.8291 val_disc_dice=0.9213 DSDV=0.0018
+[06:48:52.292] [epoch 45] student_avg=0.8816  ema_avg=0.8834  best_avg=0.8852 @ iter 19500  swad_best=0.8773 @ iter 22000  best_DSDV=0.0007
+[06:55:19.691] iter 23000: loss=0.0632, sup=0.0240, unsup=0.0767, spec=0.0001, cw=0.500, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1109.71
+[06:55:19.694] Testing student...
+[06:55:24.034] domain1 epoch 46: val_cup_dice=0.8260 val_disc_dice=0.9420 hd=12.32 hd=7.68
+[06:55:29.112] domain2 epoch 46: val_cup_dice=0.8106 val_disc_dice=0.8607 hd=8.01 hd=10.15
+[06:55:35.658] domain3 epoch 46: val_cup_dice=0.8638 val_disc_dice=0.9590 hd=6.65 hd=4.74
+[06:55:42.364] domain4 epoch 46: val_cup_dice=0.8608 val_disc_dice=0.9476 hd=4.91 hd=4.43
+[06:55:42.365] epoch 46: avg val_cup_dice=0.8403 val_disc_dice=0.9273 DSDV=0.0009
+[06:55:42.366] Testing EMA teacher...
+[06:55:46.648] domain1 epoch 46: val_cup_dice=0.8266 val_disc_dice=0.9398 hd=12.27 hd=7.90
+[06:55:51.551] domain2 epoch 46: val_cup_dice=0.8105 val_disc_dice=0.8584 hd=8.02 hd=10.28
+[06:55:58.430] domain3 epoch 46: val_cup_dice=0.8620 val_disc_dice=0.9588 hd=6.71 hd=4.83
+[06:56:04.690] domain4 epoch 46: val_cup_dice=0.8576 val_disc_dice=0.9482 hd=5.01 hd=4.35
+[06:56:04.691] epoch 46: avg val_cup_dice=0.8392 val_disc_dice=0.9263 DSDV=0.0009
+[06:56:15.742] Testing SWAD (snapshots=131)...
+[06:56:20.040] domain1 epoch 46: val_cup_dice=0.8041 val_disc_dice=0.9421 hd=13.71 hd=7.62
+[06:56:24.894] domain2 epoch 46: val_cup_dice=0.7880 val_disc_dice=0.8460 hd=9.82 hd=11.55
+[06:56:31.394] domain3 epoch 46: val_cup_dice=0.8668 val_disc_dice=0.9589 hd=6.34 hd=4.82
+[06:56:37.938] domain4 epoch 46: val_cup_dice=0.8646 val_disc_dice=0.9507 hd=6.34 hd=5.33
+[06:56:37.939] epoch 46: avg val_cup_dice=0.8309 val_disc_dice=0.9244 DSDV=0.0015
+[06:56:38.496] [epoch 46] student_avg=0.8838  ema_avg=0.8827  best_avg=0.8852 @ iter 19500  swad_best=0.8776 @ iter 23000  best_DSDV=0.0007
+[06:56:40.850] [resume] state saved at iter 23000 (epoch 46)
+[07:03:10.203] iter 23500: loss=0.0617, sup=0.0237, unsup=0.0740, spec=0.0001, cw=0.500, w_mean=0.999, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1124.62
+[07:03:10.205] Testing student...
+[07:03:14.766] domain1 epoch 47: val_cup_dice=0.8300 val_disc_dice=0.9433 hd=11.97 hd=7.47
+[07:03:19.834] domain2 epoch 47: val_cup_dice=0.8092 val_disc_dice=0.8559 hd=8.17 hd=10.76
+[07:03:26.489] domain3 epoch 47: val_cup_dice=0.8620 val_disc_dice=0.9589 hd=6.62 hd=4.76
+[07:03:32.914] domain4 epoch 47: val_cup_dice=0.8512 val_disc_dice=0.9474 hd=5.18 hd=4.37
+[07:03:32.915] epoch 47: avg val_cup_dice=0.8381 val_disc_dice=0.9264 DSDV=0.0009
+[07:03:32.916] Testing EMA teacher...
+[07:03:37.377] domain1 epoch 47: val_cup_dice=0.8278 val_disc_dice=0.9436 hd=12.09 hd=7.51
+[07:03:42.127] domain2 epoch 47: val_cup_dice=0.8068 val_disc_dice=0.8568 hd=8.15 hd=10.68
+[07:03:49.135] domain3 epoch 47: val_cup_dice=0.8631 val_disc_dice=0.9587 hd=6.65 hd=4.38
+[07:03:56.047] domain4 epoch 47: val_cup_dice=0.8603 val_disc_dice=0.9474 hd=4.94 hd=4.41
+[07:03:56.048] epoch 47: avg val_cup_dice=0.8395 val_disc_dice=0.9266 DSDV=0.0010
+[07:04:05.633] Testing SWAD (snapshots=136)...
+[07:04:10.153] domain1 epoch 47: val_cup_dice=0.8046 val_disc_dice=0.9420 hd=13.66 hd=7.66
+[07:04:15.315] domain2 epoch 47: val_cup_dice=0.7878 val_disc_dice=0.8446 hd=9.83 hd=11.83
+[07:04:21.980] domain3 epoch 47: val_cup_dice=0.8668 val_disc_dice=0.9590 hd=6.32 hd=4.82
+[07:04:28.430] domain4 epoch 47: val_cup_dice=0.8644 val_disc_dice=0.9509 hd=6.36 hd=5.33
+[07:04:28.431] epoch 47: avg val_cup_dice=0.8309 val_disc_dice=0.9241 DSDV=0.0015
+[07:04:28.431] [epoch 47] student_avg=0.8822  ema_avg=0.8831  best_avg=0.8852 @ iter 19500  swad_best=0.8776 @ iter 23000  best_DSDV=0.0007
+[07:10:56.201] iter 24000: loss=0.0607, sup=0.0234, unsup=0.0727, spec=0.0001, cw=0.500, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1136.98
+[07:10:56.219] Testing student...
+[07:11:00.965] domain1 epoch 48: val_cup_dice=0.8213 val_disc_dice=0.9425 hd=12.61 hd=7.61
+[07:11:06.067] domain2 epoch 48: val_cup_dice=0.8144 val_disc_dice=0.8581 hd=7.88 hd=10.83
+[07:11:12.565] domain3 epoch 48: val_cup_dice=0.8617 val_disc_dice=0.9588 hd=6.75 hd=4.84
+[07:11:18.800] domain4 epoch 48: val_cup_dice=0.8601 val_disc_dice=0.9499 hd=4.98 hd=4.18
+[07:11:18.801] epoch 48: avg val_cup_dice=0.8394 val_disc_dice=0.9273 DSDV=0.0009
+[07:11:18.802] Testing EMA teacher...
+[07:11:23.275] domain1 epoch 48: val_cup_dice=0.8247 val_disc_dice=0.9430 hd=12.38 hd=7.66
+[07:11:28.441] domain2 epoch 48: val_cup_dice=0.8143 val_disc_dice=0.8580 hd=7.91 hd=10.59
+[07:11:35.338] domain3 epoch 48: val_cup_dice=0.8618 val_disc_dice=0.9589 hd=6.73 hd=4.83
+[07:11:41.667] domain4 epoch 48: val_cup_dice=0.8561 val_disc_dice=0.9499 hd=5.08 hd=4.21
+[07:11:41.668] epoch 48: avg val_cup_dice=0.8392 val_disc_dice=0.9275 DSDV=0.0008
+[07:11:52.729] Testing SWAD (snapshots=141)...
+[07:11:57.056] domain1 epoch 48: val_cup_dice=0.8061 val_disc_dice=0.9423 hd=13.59 hd=7.56
+[07:12:02.103] domain2 epoch 48: val_cup_dice=0.7903 val_disc_dice=0.8480 hd=8.48 hd=11.43
+[07:12:08.448] domain3 epoch 48: val_cup_dice=0.8668 val_disc_dice=0.9589 hd=6.35 hd=4.82
+[07:12:15.021] domain4 epoch 48: val_cup_dice=0.8648 val_disc_dice=0.9506 hd=6.36 hd=5.33
+[07:12:15.022] epoch 48: avg val_cup_dice=0.8320 val_disc_dice=0.9250 DSDV=0.0014
+[07:12:15.586] [epoch 48] student_avg=0.8833  ema_avg=0.8833  best_avg=0.8852 @ iter 19500  swad_best=0.8785 @ iter 24000  best_DSDV=0.0007
+[07:12:18.092] [resume] state saved at iter 24000 (epoch 48)
+[07:18:43.629] iter 24500: loss=0.0605, sup=0.0231, unsup=0.0730, spec=0.0001, cw=0.500, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1147.89
+[07:18:43.632] Testing student...
+[07:18:48.034] domain1 epoch 49: val_cup_dice=0.8347 val_disc_dice=0.9429 hd=12.12 hd=7.62
+[07:18:52.994] domain2 epoch 49: val_cup_dice=0.8088 val_disc_dice=0.8527 hd=8.32 hd=11.17
+[07:18:59.584] domain3 epoch 49: val_cup_dice=0.8610 val_disc_dice=0.9587 hd=6.75 hd=4.85
+[07:19:05.928] domain4 epoch 49: val_cup_dice=0.8503 val_disc_dice=0.9480 hd=5.22 hd=4.32
+[07:19:05.929] epoch 49: avg val_cup_dice=0.8387 val_disc_dice=0.9256 DSDV=0.0009
+[07:19:05.930] Testing EMA teacher...
+[07:19:10.107] domain1 epoch 49: val_cup_dice=0.8323 val_disc_dice=0.9441 hd=12.01 hd=7.44
+[07:19:15.491] domain2 epoch 49: val_cup_dice=0.8078 val_disc_dice=0.8550 hd=8.29 hd=10.89
+[07:19:22.013] domain3 epoch 49: val_cup_dice=0.8611 val_disc_dice=0.9587 hd=6.78 hd=4.89
+[07:19:28.588] domain4 epoch 49: val_cup_dice=0.8561 val_disc_dice=0.9476 hd=5.06 hd=4.37
+[07:19:28.589] epoch 49: avg val_cup_dice=0.8393 val_disc_dice=0.9263 DSDV=0.0009
+[07:19:39.861] Testing SWAD (snapshots=146)...
+[07:19:44.298] domain1 epoch 49: val_cup_dice=0.8060 val_disc_dice=0.9425 hd=13.57 hd=7.55
+[07:19:49.373] domain2 epoch 49: val_cup_dice=0.7899 val_disc_dice=0.8477 hd=9.71 hd=11.45
+[07:19:56.075] domain3 epoch 49: val_cup_dice=0.8669 val_disc_dice=0.9589 hd=6.34 hd=4.81
+[07:20:02.405] domain4 epoch 49: val_cup_dice=0.8646 val_disc_dice=0.9509 hd=6.37 hd=5.33
+[07:20:02.406] epoch 49: avg val_cup_dice=0.8318 val_disc_dice=0.9250 DSDV=0.0014
+[07:20:02.407] [epoch 49] student_avg=0.8821  ema_avg=0.8828  best_avg=0.8852 @ iter 19500  swad_best=0.8785 @ iter 24000  best_DSDV=0.0007
+[07:26:31.137] iter 25000: loss=0.0604, sup=0.0229, unsup=0.0732, spec=0.0001, cw=0.500, w_mean=0.998, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1155.58
+[07:26:31.142] Testing student...
+[07:26:35.283] domain1 epoch 50: val_cup_dice=0.8218 val_disc_dice=0.9430 hd=12.93 hd=7.64
+[07:26:40.052] domain2 epoch 50: val_cup_dice=0.8115 val_disc_dice=0.8609 hd=8.15 hd=10.26
+[07:26:46.123] domain3 epoch 50: val_cup_dice=0.8589 val_disc_dice=0.9587 hd=6.79 hd=4.77
+[07:26:52.147] domain4 epoch 50: val_cup_dice=0.8523 val_disc_dice=0.9474 hd=5.21 hd=5.53
+[07:26:52.148] epoch 50: avg val_cup_dice=0.8361 val_disc_dice=0.9275 DSDV=0.0008
+[07:26:52.149] Testing EMA teacher...
+[07:26:56.153] domain1 epoch 50: val_cup_dice=0.8298 val_disc_dice=0.9419 hd=12.33 hd=7.76
+[07:27:01.367] domain2 epoch 50: val_cup_dice=0.8103 val_disc_dice=0.8564 hd=8.12 hd=10.83
+[07:27:07.484] domain3 epoch 50: val_cup_dice=0.8599 val_disc_dice=0.9583 hd=6.80 hd=4.91
+[07:27:13.519] domain4 epoch 50: val_cup_dice=0.8535 val_disc_dice=0.9483 hd=5.18 hd=4.36
+[07:27:13.520] epoch 50: avg val_cup_dice=0.8384 val_disc_dice=0.9262 DSDV=0.0009
+[07:27:22.998] Testing SWAD (snapshots=151)...
+[07:27:27.326] domain1 epoch 50: val_cup_dice=0.8061 val_disc_dice=0.9425 hd=13.59 hd=7.56
+[07:27:31.896] domain2 epoch 50: val_cup_dice=0.7899 val_disc_dice=0.8467 hd=9.71 hd=11.51
+[07:27:38.063] domain3 epoch 50: val_cup_dice=0.8666 val_disc_dice=0.9589 hd=6.35 hd=4.80
+[07:27:43.939] domain4 epoch 50: val_cup_dice=0.8641 val_disc_dice=0.9511 hd=6.37 hd=5.28
+[07:27:43.940] epoch 50: avg val_cup_dice=0.8317 val_disc_dice=0.9248 DSDV=0.0014
+[07:27:43.942] [epoch 50] student_avg=0.8818  ema_avg=0.8823  best_avg=0.8852 @ iter 19500  swad_best=0.8785 @ iter 24000  best_DSDV=0.0007
+[07:27:46.054] [resume] state saved at iter 25000 (epoch 50)
+[07:34:11.174] iter 25500: loss=0.0591, sup=0.0229, unsup=0.0706, spec=0.0001, cw=0.500, w_mean=0.999, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1163.98
+[07:34:11.192] Testing student...
+[07:34:15.425] domain1 epoch 51: val_cup_dice=0.8307 val_disc_dice=0.9430 hd=12.23 hd=7.58
+[07:34:20.364] domain2 epoch 51: val_cup_dice=0.8074 val_disc_dice=0.8583 hd=8.20 hd=10.64
+[07:34:26.513] domain3 epoch 51: val_cup_dice=0.8601 val_disc_dice=0.9587 hd=6.81 hd=4.81
+[07:34:32.713] domain4 epoch 51: val_cup_dice=0.8540 val_disc_dice=0.9473 hd=5.19 hd=4.47
+[07:34:32.714] epoch 51: avg val_cup_dice=0.8381 val_disc_dice=0.9268 DSDV=0.0009
+[07:34:32.715] Testing EMA teacher...
+[07:34:36.603] domain1 epoch 51: val_cup_dice=0.8292 val_disc_dice=0.9437 hd=12.43 hd=7.52
+[07:34:40.975] domain2 epoch 51: val_cup_dice=0.8099 val_disc_dice=0.8583 hd=8.13 hd=10.59
+[07:34:47.902] domain3 epoch 51: val_cup_dice=0.8603 val_disc_dice=0.9586 hd=6.78 hd=4.82
+[07:34:53.884] domain4 epoch 51: val_cup_dice=0.8562 val_disc_dice=0.9472 hd=5.15 hd=4.47
+[07:34:53.886] epoch 51: avg val_cup_dice=0.8389 val_disc_dice=0.9270 DSDV=0.0009
+[07:35:04.329] Testing SWAD (snapshots=156)...
+[07:35:08.288] domain1 epoch 51: val_cup_dice=0.8063 val_disc_dice=0.9422 hd=13.55 hd=7.60
+[07:35:12.922] domain2 epoch 51: val_cup_dice=0.7950 val_disc_dice=0.8503 hd=8.24 hd=11.22
+[07:35:19.859] domain3 epoch 51: val_cup_dice=0.8665 val_disc_dice=0.9589 hd=6.35 hd=4.81
+[07:35:26.039] domain4 epoch 51: val_cup_dice=0.8632 val_disc_dice=0.9511 hd=6.38 hd=5.29
+[07:35:26.040] epoch 51: avg val_cup_dice=0.8328 val_disc_dice=0.9256 DSDV=0.0013
+[07:35:26.522] [epoch 51] student_avg=0.8824  ema_avg=0.8829  best_avg=0.8852 @ iter 19500  swad_best=0.8792 @ iter 25500  best_DSDV=0.0007
+[07:41:52.170] iter 26000: loss=0.0587, sup=0.0224, unsup=0.0708, spec=0.0001, cw=0.500, w_mean=0.999, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1170.04
+[07:41:52.199] Testing student...
+[07:41:56.623] domain1 epoch 52: val_cup_dice=0.8295 val_disc_dice=0.9430 hd=12.34 hd=7.57
+[07:42:01.339] domain2 epoch 52: val_cup_dice=0.8090 val_disc_dice=0.8604 hd=8.27 hd=10.09
+[07:42:07.446] domain3 epoch 52: val_cup_dice=0.8610 val_disc_dice=0.9586 hd=6.83 hd=4.81
+[07:42:13.550] domain4 epoch 52: val_cup_dice=0.8543 val_disc_dice=0.9455 hd=5.25 hd=4.60
+[07:42:13.552] epoch 52: avg val_cup_dice=0.8384 val_disc_dice=0.9269 DSDV=0.0008
+[07:42:13.553] Testing EMA teacher...
+[07:42:17.644] domain1 epoch 52: val_cup_dice=0.8282 val_disc_dice=0.9422 hd=12.40 hd=7.67
+[07:42:22.409] domain2 epoch 52: val_cup_dice=0.8074 val_disc_dice=0.8595 hd=8.33 hd=10.45
+[07:42:28.765] domain3 epoch 52: val_cup_dice=0.8607 val_disc_dice=0.9587 hd=6.81 hd=4.77
+[07:42:35.075] domain4 epoch 52: val_cup_dice=0.8538 val_disc_dice=0.9462 hd=5.22 hd=4.55
+[07:42:35.076] epoch 52: avg val_cup_dice=0.8375 val_disc_dice=0.9266 DSDV=0.0009
+[07:42:45.938] Testing SWAD (snapshots=161)...
+[07:42:50.083] domain1 epoch 52: val_cup_dice=0.8072 val_disc_dice=0.9424 hd=13.54 hd=7.53
+[07:42:54.866] domain2 epoch 52: val_cup_dice=0.8002 val_disc_dice=0.8511 hd=8.07 hd=11.26
+[07:43:01.053] domain3 epoch 52: val_cup_dice=0.8665 val_disc_dice=0.9590 hd=6.36 hd=4.83
+[07:43:07.434] domain4 epoch 52: val_cup_dice=0.8631 val_disc_dice=0.9512 hd=6.38 hd=5.23
+[07:43:07.435] epoch 52: avg val_cup_dice=0.8342 val_disc_dice=0.9259 DSDV=0.0012
+[07:43:07.886] [epoch 52] student_avg=0.8826  ema_avg=0.8821  best_avg=0.8852 @ iter 19500  swad_best=0.8801 @ iter 26000  best_DSDV=0.0007
+[07:43:10.122] [resume] state saved at iter 26000 (epoch 52)
+[07:49:31.041] iter 26500: loss=0.0591, sup=0.0224, unsup=0.0715, spec=0.0001, cw=0.500, w_mean=0.999, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1175.76
+[07:49:31.044] Testing student...
+[07:49:35.266] domain1 epoch 53: val_cup_dice=0.8320 val_disc_dice=0.9423 hd=12.21 hd=7.67
+[07:49:40.769] domain2 epoch 53: val_cup_dice=0.8127 val_disc_dice=0.8580 hd=8.04 hd=10.46
+[07:49:47.262] domain3 epoch 53: val_cup_dice=0.8600 val_disc_dice=0.9588 hd=6.85 hd=4.78
+[07:49:53.870] domain4 epoch 53: val_cup_dice=0.8502 val_disc_dice=0.9472 hd=5.35 hd=4.48
+[07:49:53.871] epoch 53: avg val_cup_dice=0.8387 val_disc_dice=0.9266 DSDV=0.0008
+[07:49:53.872] Testing EMA teacher...
+[07:49:57.823] domain1 epoch 53: val_cup_dice=0.8297 val_disc_dice=0.9427 hd=12.38 hd=7.63
+[07:50:02.359] domain2 epoch 53: val_cup_dice=0.8120 val_disc_dice=0.8581 hd=8.10 hd=10.47
+[07:50:08.456] domain3 epoch 53: val_cup_dice=0.8605 val_disc_dice=0.9586 hd=6.81 hd=4.43
+[07:50:14.355] domain4 epoch 53: val_cup_dice=0.8506 val_disc_dice=0.9468 hd=5.34 hd=4.49
+[07:50:14.356] epoch 53: avg val_cup_dice=0.8382 val_disc_dice=0.9266 DSDV=0.0008
+[07:50:24.236] Testing SWAD (snapshots=166)...
+[07:50:28.394] domain1 epoch 53: val_cup_dice=0.8069 val_disc_dice=0.9422 hd=13.53 hd=7.62
+[07:50:33.045] domain2 epoch 53: val_cup_dice=0.7987 val_disc_dice=0.8530 hd=8.05 hd=11.21
+[07:50:39.106] domain3 epoch 53: val_cup_dice=0.8662 val_disc_dice=0.9589 hd=6.37 hd=4.82
+[07:50:45.403] domain4 epoch 53: val_cup_dice=0.8624 val_disc_dice=0.9506 hd=6.41 hd=5.31
+[07:50:45.404] epoch 53: avg val_cup_dice=0.8336 val_disc_dice=0.9262 DSDV=0.0012
+[07:50:45.405] [epoch 53] student_avg=0.8827  ema_avg=0.8824  best_avg=0.8852 @ iter 19500  swad_best=0.8801 @ iter 26000  best_DSDV=0.0007
+[07:57:20.076] iter 27000: loss=0.0577, sup=0.0223, unsup=0.0692, spec=0.0001, cw=0.500, w_mean=0.999, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1178.54
+[07:57:20.097] Testing student...
+[07:57:24.864] domain1 epoch 54: val_cup_dice=0.8308 val_disc_dice=0.9427 hd=12.15 hd=7.66
+[07:57:30.226] domain2 epoch 54: val_cup_dice=0.8126 val_disc_dice=0.8583 hd=8.00 hd=10.45
+[07:57:37.539] domain3 epoch 54: val_cup_dice=0.8595 val_disc_dice=0.9584 hd=6.83 hd=4.76
+[07:57:44.310] domain4 epoch 54: val_cup_dice=0.8469 val_disc_dice=0.9469 hd=5.40 hd=4.49
+[07:57:44.311] epoch 54: avg val_cup_dice=0.8375 val_disc_dice=0.9266 DSDV=0.0008
+[07:57:44.312] Testing EMA teacher...
+[07:57:48.951] domain1 epoch 54: val_cup_dice=0.8320 val_disc_dice=0.9424 hd=12.00 hd=7.68
+[07:57:54.328] domain2 epoch 54: val_cup_dice=0.8115 val_disc_dice=0.8579 hd=8.12 hd=10.45
+[07:58:01.558] domain3 epoch 54: val_cup_dice=0.8610 val_disc_dice=0.9586 hd=6.77 hd=4.74
+[07:58:08.404] domain4 epoch 54: val_cup_dice=0.8524 val_disc_dice=0.9474 hd=5.27 hd=4.45
+[07:58:08.405] epoch 54: avg val_cup_dice=0.8392 val_disc_dice=0.9266 DSDV=0.0008
+[07:58:18.700] Testing SWAD (snapshots=171)...
+[07:58:23.305] domain1 epoch 54: val_cup_dice=0.8080 val_disc_dice=0.9424 hd=13.45 hd=7.52
+[07:58:28.465] domain2 epoch 54: val_cup_dice=0.8015 val_disc_dice=0.8509 hd=8.04 hd=11.20
+[07:58:35.267] domain3 epoch 54: val_cup_dice=0.8662 val_disc_dice=0.9590 hd=6.37 hd=4.81
+[07:58:42.083] domain4 epoch 54: val_cup_dice=0.8625 val_disc_dice=0.9514 hd=6.38 hd=5.19
+[07:58:42.084] epoch 54: avg val_cup_dice=0.8345 val_disc_dice=0.9259 DSDV=0.0012
+[07:58:42.589] [epoch 54] student_avg=0.8820  ema_avg=0.8829  best_avg=0.8852 @ iter 19500  swad_best=0.8802 @ iter 27000  best_DSDV=0.0007
+[07:58:44.973] [resume] state saved at iter 27000 (epoch 54)
+[08:05:40.953] iter 27500: loss=0.0575, sup=0.0222, unsup=0.0690, spec=0.0001, cw=0.500, w_mean=0.999, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1180.98
+[08:05:40.974] Testing student...
+[08:05:46.054] domain1 epoch 55: val_cup_dice=0.8327 val_disc_dice=0.9434 hd=12.16 hd=7.64
+[08:05:50.921] domain2 epoch 55: val_cup_dice=0.8141 val_disc_dice=0.8607 hd=7.91 hd=10.29
+[08:05:57.109] domain3 epoch 55: val_cup_dice=0.8595 val_disc_dice=0.9584 hd=6.79 hd=4.79
+[08:06:03.496] domain4 epoch 55: val_cup_dice=0.8460 val_disc_dice=0.9466 hd=5.41 hd=4.49
+[08:06:03.497] epoch 55: avg val_cup_dice=0.8381 val_disc_dice=0.9273 DSDV=0.0007
+[08:06:03.499] Testing EMA teacher...
+[08:06:07.864] domain1 epoch 55: val_cup_dice=0.8335 val_disc_dice=0.9434 hd=12.12 hd=7.63
+[08:06:12.508] domain2 epoch 55: val_cup_dice=0.8129 val_disc_dice=0.8607 hd=7.96 hd=10.29
+[08:06:19.729] domain3 epoch 55: val_cup_dice=0.8601 val_disc_dice=0.9584 hd=6.77 hd=4.79
+[08:06:25.917] domain4 epoch 55: val_cup_dice=0.8474 val_disc_dice=0.9467 hd=5.40 hd=4.47
+[08:06:25.918] epoch 55: avg val_cup_dice=0.8385 val_disc_dice=0.9273 DSDV=0.0008
+[08:06:37.106] Testing SWAD (snapshots=176)...
+[08:06:41.238] domain1 epoch 55: val_cup_dice=0.8075 val_disc_dice=0.9424 hd=13.47 hd=7.53
+[08:06:45.896] domain2 epoch 55: val_cup_dice=0.7948 val_disc_dice=0.8472 hd=8.27 hd=11.48
+[08:06:52.376] domain3 epoch 55: val_cup_dice=0.8661 val_disc_dice=0.9590 hd=6.38 hd=4.81
+[08:06:59.233] domain4 epoch 55: val_cup_dice=0.8615 val_disc_dice=0.9514 hd=6.38 hd=5.19
+[08:06:59.235] epoch 55: avg val_cup_dice=0.8325 val_disc_dice=0.9250 DSDV=0.0013
+[08:06:59.236] [epoch 55] student_avg=0.8827  ema_avg=0.8829  best_avg=0.8852 @ iter 19500  swad_best=0.8802 @ iter 27000  best_DSDV=0.0007
+[08:13:38.650] iter 28000: loss=0.0574, sup=0.0219, unsup=0.0693, spec=0.0001, cw=0.500, w_mean=0.999, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1183.76
+[08:13:38.674] Testing student...
+[08:13:43.423] domain1 epoch 56: val_cup_dice=0.8324 val_disc_dice=0.9432 hd=12.09 hd=7.58
+[08:13:48.731] domain2 epoch 56: val_cup_dice=0.8141 val_disc_dice=0.8567 hd=7.95 hd=10.70
+[08:13:55.492] domain3 epoch 56: val_cup_dice=0.8604 val_disc_dice=0.9588 hd=6.81 hd=4.77
+[08:14:03.087] domain4 epoch 56: val_cup_dice=0.8487 val_disc_dice=0.9468 hd=5.37 hd=4.49
+[08:14:03.089] epoch 56: avg val_cup_dice=0.8389 val_disc_dice=0.9264 DSDV=0.0008
+[08:14:03.090] Testing EMA teacher...
+[08:14:08.292] domain1 epoch 56: val_cup_dice=0.8324 val_disc_dice=0.9430 hd=12.08 hd=7.60
+[08:14:13.636] domain2 epoch 56: val_cup_dice=0.8140 val_disc_dice=0.8569 hd=7.95 hd=10.65
+[08:14:20.961] domain3 epoch 56: val_cup_dice=0.8601 val_disc_dice=0.9588 hd=6.80 hd=4.76
+[08:14:28.171] domain4 epoch 56: val_cup_dice=0.8481 val_disc_dice=0.9468 hd=5.40 hd=4.50
+[08:14:28.172] epoch 56: avg val_cup_dice=0.8386 val_disc_dice=0.9264 DSDV=0.0008
+[08:14:38.744] Testing SWAD (snapshots=181)...
+[08:14:43.316] domain1 epoch 56: val_cup_dice=0.8075 val_disc_dice=0.9425 hd=13.45 hd=7.51
+[08:14:48.807] domain2 epoch 56: val_cup_dice=0.7950 val_disc_dice=0.8466 hd=8.26 hd=11.58
+[08:14:56.218] domain3 epoch 56: val_cup_dice=0.8660 val_disc_dice=0.9589 hd=6.39 hd=4.81
+[08:15:03.435] domain4 epoch 56: val_cup_dice=0.8615 val_disc_dice=0.9514 hd=6.39 hd=5.19
+[08:15:03.437] epoch 56: avg val_cup_dice=0.8325 val_disc_dice=0.9249 DSDV=0.0013
+[08:15:03.438] [epoch 56] student_avg=0.8826  ema_avg=0.8825  best_avg=0.8852 @ iter 19500  swad_best=0.8802 @ iter 27000  best_DSDV=0.0007
+[08:15:06.054] [resume] state saved at iter 28000 (epoch 56)
+[08:22:20.882] iter 28500: loss=0.0582, sup=0.0220, unsup=0.0707, spec=0.0001, cw=0.500, w_mean=0.999, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1184.77
+[08:22:20.885] Testing student...
+[08:22:25.933] domain1 epoch 57: val_cup_dice=0.8281 val_disc_dice=0.9426 hd=12.53 hd=7.67
+[08:22:31.690] domain2 epoch 57: val_cup_dice=0.8140 val_disc_dice=0.8586 hd=7.98 hd=10.45
+[08:22:39.703] domain3 epoch 57: val_cup_dice=0.8586 val_disc_dice=0.9585 hd=6.91 hd=4.84
+[08:22:48.696] domain4 epoch 57: val_cup_dice=0.8458 val_disc_dice=0.9470 hd=5.42 hd=4.45
+[08:22:48.697] epoch 57: avg val_cup_dice=0.8366 val_disc_dice=0.9267 DSDV=0.0008
+[08:22:48.698] Testing EMA teacher...
+[08:22:54.574] domain1 epoch 57: val_cup_dice=0.8293 val_disc_dice=0.9425 hd=12.43 hd=7.69
+[08:23:01.116] domain2 epoch 57: val_cup_dice=0.8136 val_disc_dice=0.8583 hd=7.98 hd=10.48
+[08:23:09.196] domain3 epoch 57: val_cup_dice=0.8590 val_disc_dice=0.9584 hd=6.89 hd=4.84
+[08:23:17.230] domain4 epoch 57: val_cup_dice=0.8472 val_disc_dice=0.9473 hd=5.39 hd=4.42
+[08:23:17.231] epoch 57: avg val_cup_dice=0.8373 val_disc_dice=0.9267 DSDV=0.0008
+[08:23:30.590] Testing SWAD (snapshots=186)...
+[08:23:35.776] domain1 epoch 57: val_cup_dice=0.8083 val_disc_dice=0.9424 hd=13.41 hd=7.51
+[08:23:41.354] domain2 epoch 57: val_cup_dice=0.8035 val_disc_dice=0.8497 hd=8.06 hd=11.33
+[08:23:49.612] domain3 epoch 57: val_cup_dice=0.8658 val_disc_dice=0.9589 hd=6.41 hd=4.82
+[08:23:57.161] domain4 epoch 57: val_cup_dice=0.8609 val_disc_dice=0.9512 hd=6.39 hd=5.19
+[08:23:57.162] epoch 57: avg val_cup_dice=0.8346 val_disc_dice=0.9256 DSDV=0.0011
+[08:23:57.163] [epoch 57] student_avg=0.8817  ema_avg=0.8820  best_avg=0.8852 @ iter 19500  swad_best=0.8802 @ iter 27000  best_DSDV=0.0007
+[08:30:58.069] iter 29000: loss=0.0582, sup=0.0219, unsup=0.0708, spec=0.0001, cw=0.500, w_mean=0.999, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1186.33
+[08:30:58.072] Testing student...
+[08:31:03.199] domain1 epoch 58: val_cup_dice=0.8316 val_disc_dice=0.9431 hd=12.25 hd=7.62
+[08:31:08.834] domain2 epoch 58: val_cup_dice=0.8118 val_disc_dice=0.8591 hd=8.07 hd=10.44
+[08:31:16.176] domain3 epoch 58: val_cup_dice=0.8602 val_disc_dice=0.9586 hd=6.82 hd=4.80
+[08:31:23.408] domain4 epoch 58: val_cup_dice=0.8484 val_disc_dice=0.9462 hd=5.41 hd=4.55
+[08:31:23.409] epoch 58: avg val_cup_dice=0.8380 val_disc_dice=0.9268 DSDV=0.0008
+[08:31:23.410] Testing EMA teacher...
+[08:31:28.065] domain1 epoch 58: val_cup_dice=0.8311 val_disc_dice=0.9431 hd=12.30 hd=7.64
+[08:31:33.392] domain2 epoch 58: val_cup_dice=0.8123 val_disc_dice=0.8590 hd=8.03 hd=10.45
+[08:31:40.167] domain3 epoch 58: val_cup_dice=0.8601 val_disc_dice=0.9587 hd=6.82 hd=4.79
+[08:31:46.985] domain4 epoch 58: val_cup_dice=0.8481 val_disc_dice=0.9461 hd=5.40 hd=4.55
+[08:31:46.986] epoch 58: avg val_cup_dice=0.8379 val_disc_dice=0.9267 DSDV=0.0008
+[08:31:58.987] Testing SWAD (snapshots=191)...
+[08:32:03.205] domain1 epoch 58: val_cup_dice=0.8091 val_disc_dice=0.9427 hd=13.35 hd=7.48
+[08:32:08.028] domain2 epoch 58: val_cup_dice=0.8017 val_disc_dice=0.8499 hd=8.09 hd=11.27
+[08:32:14.807] domain3 epoch 58: val_cup_dice=0.8662 val_disc_dice=0.9589 hd=6.41 hd=4.81
+[08:32:21.598] domain4 epoch 58: val_cup_dice=0.8613 val_disc_dice=0.9515 hd=6.38 hd=5.16
+[08:32:21.599] epoch 58: avg val_cup_dice=0.8346 val_disc_dice=0.9258 DSDV=0.0012
+[08:32:21.600] [epoch 58] student_avg=0.8824  ema_avg=0.8823  best_avg=0.8852 @ iter 19500  swad_best=0.8802 @ iter 27000  best_DSDV=0.0007
+[08:32:24.100] [resume] state saved at iter 29000 (epoch 58)
+[08:39:13.173] iter 29500: loss=0.0581, sup=0.0220, unsup=0.0705, spec=0.0001, cw=0.500, w_mean=0.999, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1186.11
+[08:39:13.177] Testing student...
+[08:39:18.089] domain1 epoch 59: val_cup_dice=0.8325 val_disc_dice=0.9428 hd=12.25 hd=7.71
+[08:39:23.834] domain2 epoch 59: val_cup_dice=0.8119 val_disc_dice=0.8598 hd=8.07 hd=10.35
+[08:39:31.130] domain3 epoch 59: val_cup_dice=0.8597 val_disc_dice=0.9584 hd=6.82 hd=4.85
+[08:39:38.298] domain4 epoch 59: val_cup_dice=0.8468 val_disc_dice=0.9463 hd=5.44 hd=4.53
+[08:39:38.300] epoch 59: avg val_cup_dice=0.8377 val_disc_dice=0.9268 DSDV=0.0008
+[08:39:38.301] Testing EMA teacher...
+[08:39:43.158] domain1 epoch 59: val_cup_dice=0.8326 val_disc_dice=0.9428 hd=12.24 hd=7.71
+[08:39:48.422] domain2 epoch 59: val_cup_dice=0.8119 val_disc_dice=0.8599 hd=8.07 hd=10.34
+[08:39:55.624] domain3 epoch 59: val_cup_dice=0.8597 val_disc_dice=0.9584 hd=6.82 hd=4.85
+[08:40:02.246] domain4 epoch 59: val_cup_dice=0.8470 val_disc_dice=0.9463 hd=5.43 hd=4.53
+[08:40:02.247] epoch 59: avg val_cup_dice=0.8378 val_disc_dice=0.9268 DSDV=0.0008
+[08:40:13.162] Testing SWAD (snapshots=196)...
+[08:40:17.955] domain1 epoch 59: val_cup_dice=0.8090 val_disc_dice=0.9425 hd=13.38 hd=7.52
+[08:40:23.069] domain2 epoch 59: val_cup_dice=0.8057 val_disc_dice=0.8546 hd=7.92 hd=11.04
+[08:40:30.134] domain3 epoch 59: val_cup_dice=0.8659 val_disc_dice=0.9589 hd=6.42 hd=4.84
+[08:40:36.885] domain4 epoch 59: val_cup_dice=0.8600 val_disc_dice=0.9513 hd=6.41 hd=5.18
+[08:40:36.886] epoch 59: avg val_cup_dice=0.8351 val_disc_dice=0.9268 DSDV=0.0011
+[08:40:37.514] [epoch 59] student_avg=0.8823  ema_avg=0.8823  best_avg=0.8852 @ iter 19500  swad_best=0.8810 @ iter 29500  best_DSDV=0.0007
+[08:47:35.480] iter 30000: loss=0.0580, sup=0.0220, unsup=0.0702, spec=0.0001, cw=0.500, w_mean=0.999, w_min=0.000, U_ale=0.000, U_epi=0.003, U_dom=0.002, S_mean=1185.74
+[08:47:35.495] Testing student...
+[08:47:40.750] domain1 epoch 60: val_cup_dice=0.8309 val_disc_dice=0.9424 hd=12.29 hd=7.72
+[08:47:46.801] domain2 epoch 60: val_cup_dice=0.8101 val_disc_dice=0.8524 hd=8.20 hd=11.17
+[08:47:54.698] domain3 epoch 60: val_cup_dice=0.8598 val_disc_dice=0.9588 hd=6.85 hd=4.76
+[08:48:02.018] domain4 epoch 60: val_cup_dice=0.8472 val_disc_dice=0.9462 hd=5.40 hd=4.56
+[08:48:02.019] epoch 60: avg val_cup_dice=0.8370 val_disc_dice=0.9250 DSDV=0.0009
+[08:48:02.020] Testing EMA teacher...
+[08:48:06.569] domain1 epoch 60: val_cup_dice=0.8309 val_disc_dice=0.9424 hd=12.29 hd=7.72
+[08:48:11.857] domain2 epoch 60: val_cup_dice=0.8101 val_disc_dice=0.8525 hd=8.19 hd=11.17
+[08:48:18.991] domain3 epoch 60: val_cup_dice=0.8598 val_disc_dice=0.9588 hd=6.85 hd=4.76
+[08:48:25.742] domain4 epoch 60: val_cup_dice=0.8472 val_disc_dice=0.9462 hd=5.40 hd=4.56
+[08:48:25.743] epoch 60: avg val_cup_dice=0.8370 val_disc_dice=0.9250 DSDV=0.0009
+[08:48:37.733] Testing SWAD (snapshots=201)...
+[08:48:42.183] domain1 epoch 60: val_cup_dice=0.8097 val_disc_dice=0.9424 hd=13.34 hd=7.55
+[08:48:47.235] domain2 epoch 60: val_cup_dice=0.8074 val_disc_dice=0.8544 hd=7.89 hd=11.07
+[08:48:54.194] domain3 epoch 60: val_cup_dice=0.8658 val_disc_dice=0.9590 hd=6.43 hd=4.83
+[08:49:01.200] domain4 epoch 60: val_cup_dice=0.8599 val_disc_dice=0.9512 hd=6.41 hd=5.17
+[08:49:01.201] epoch 60: avg val_cup_dice=0.8357 val_disc_dice=0.9267 DSDV=0.0010
+[08:49:01.822] [epoch 60] student_avg=0.8810  ema_avg=0.8810  best_avg=0.8852 @ iter 19500  swad_best=0.8812 @ iter 30000  best_DSDV=0.0007
+[08:49:01.910] ============================================================
+[08:49:01.910] TRAINING COMPLETE — FourierFuse v16 summary
+[08:49:01.910]   Best avg dice (student): 0.885166 at iter 19500
+[08:49:01.910]   Best cup dice: 0.841882
+[08:49:01.910]   Best disc dice: 0.928450
+[08:49:01.910]   Best DSDV: 0.000689
+[08:49:01.910]   Best SWAD dice: 0.881211 at iter 30000
+[08:49:01.910]   SWAD - student best delta: -0.003955
+[08:49:01.911]   --- Per-domain metrics at best avg dice (iter 19500) ---
+[08:49:01.911]     Domain 1 — cup: Dice=0.823596, HD95=12.5017, ASD=5.8084
+[08:49:01.911]     Domain 1 — disc: Dice=0.941507, HD95=7.6897, ASD=3.4373
+[08:49:01.911]     Domain 2 — cup: Dice=0.817004, HD95=7.7244, ASD=4.0851
+[08:49:01.911]     Domain 2 — disc: Dice=0.862417, HD95=10.0595, ASD=6.6450
+[08:49:01.911]     Domain 3 — cup: Dice=0.861736, HD95=6.6821, ASD=3.1092
+[08:49:01.911]     Domain 3 — disc: Dice=0.958958, HD95=5.0158, ASD=2.0095
+[08:49:01.911]     Domain 4 — cup: Dice=0.865191, HD95=4.8210, ASD=2.1931
+[08:49:01.911]     Domain 4 — disc: Dice=0.950919, HD95=4.1458, ASD=1.7440
+[08:49:01.911] ============================================================

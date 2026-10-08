@@ -1,0 +1,7 @@
+dataset,run,mc_entropy_auroc_edt5,mc_entropy_range80_edt5,mc_mi_auroc_edt5,mc_mi_range80_edt5
+prostate,v18B_prostate_mcdropout2_s1337,0.6927,1.223e-02,0.6495,9.763e-05
+prostate,v18B_prostate_mcdropout2_s42,0.6551,1.729e-02,0.6374,1.800e-04
+prostate,v18B_prostate_mcdropout2_s2024,0.6721,1.271e-02,0.6384,1.343e-04
+fundus,v18B_fundus_mcdropout2_s1337,0.5661,1.372e-02,0.5578,2.559e-04
+fundus,v18B_fundus_mcdropout2_s42,0.6000,1.565e-02,0.5765,3.317e-04
+fundus,v18B_fundus_mcdropout2_s2024,0.6054,1.189e-02,0.5906,2.641e-04

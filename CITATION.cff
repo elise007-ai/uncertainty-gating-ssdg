@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this code or these measurements, please cite the paper."
+title: "When Does Uncertainty-Aware Pseudo-Labeling Help? A Foundation-Free Study of Semi-Supervised Domain Generalization in Medical Image Segmentation"
+type: software
+authors:
+  - family-names: "Kasereka Kiombwe"
+    given-names: "Elise"
+  - family-names: "Zhao"
+    given-names: "Qingling"
+repository-code: "https://github.com/elise007-ai/uncertainty-gating-ssdg"
+license: Apache-2.0

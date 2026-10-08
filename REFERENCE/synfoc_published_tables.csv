@@ -1,0 +1,49 @@
+dataset,labels,method,labelled_domain,class_values,published_avg_dsc,source_table
+prostate,20,FixMatch,RUNMC,81.69,60.41,Table 3
+prostate,20,FixMatch,BMC,65.27,60.41,Table 3
+prostate,20,FixMatch,HCRUDB,53.70,60.41,Table 3
+prostate,20,FixMatch,UCL,70.40,60.41,Table 3
+prostate,20,FixMatch,BIDMC,10.20,60.41,Table 3
+prostate,20,FixMatch,HK,81.22,60.41,Table 3
+prostate,20,SynFoC-UNet,RUNMC,88.09,86.90,Table 3
+prostate,20,SynFoC-UNet,BMC,85.22,86.90,Table 3
+prostate,20,SynFoC-UNet,HCRUDB,84.97,86.90,Table 3
+prostate,20,SynFoC-UNet,UCL,87.74,86.90,Table 3
+prostate,20,SynFoC-UNet,BIDMC,87.63,86.90,Table 3
+prostate,20,SynFoC-UNet,HK,87.74,86.90,Table 3
+prostate,20,SynFoC-MedSAM,RUNMC,88.54,87.16,Table 3
+prostate,20,SynFoC-MedSAM,BMC,85.74,87.16,Table 3
+prostate,20,SynFoC-MedSAM,HCRUDB,84.89,87.16,Table 3
+prostate,20,SynFoC-MedSAM,UCL,87.51,87.16,Table 3
+prostate,20,SynFoC-MedSAM,BIDMC,87.92,87.16,Table 3
+prostate,20,SynFoC-MedSAM,HK,88.34,87.16,Table 3
+fundus,20,FixMatch,Domain 1,81.18/91.29,83.39,Table 4
+fundus,20,FixMatch,Domain 2,72.04/87.60,83.39,Table 4
+fundus,20,FixMatch,Domain 3,80.41/92.95,83.39,Table 4
+fundus,20,FixMatch,Domain 4,74.58/87.07,83.39,Table 4
+fundus,20,SynFoC-UNet,Domain 1,84.26/92.78,87.50,Table 4
+fundus,20,SynFoC-UNet,Domain 2,78.51/90.12,87.50,Table 4
+fundus,20,SynFoC-UNet,Domain 3,85.33/93.05,87.50,Table 4
+fundus,20,SynFoC-UNet,Domain 4,82.05/93.88,87.50,Table 4
+fundus,20,SynFoC-MedSAM,Domain 1,85.44/93.29,88.60,Table 4
+fundus,20,SynFoC-MedSAM,Domain 2,82.50/90.52,88.60,Table 4
+fundus,20,SynFoC-MedSAM,Domain 3,85.51/93.56,88.60,Table 4
+fundus,20,SynFoC-MedSAM,Domain 4,83.78/94.23,88.60,Table 4
+MNMS,5,FixMatch,Vendor A,80.57/66.29/65.13,77.81,Table 5
+MNMS,5,FixMatch,Vendor B,87.88/79.77/77.01,77.81,Table 5
+MNMS,5,FixMatch,Vendor C,83.37/75.47/71.89,77.81,Table 5
+MNMS,5,FixMatch,Vendor D,89.13/78.83/78.34,77.81,Table 5
+MNMS,5,SynFoC-UNet,Vendor A,85.81/76.80/73.71,79.55,Table 5
+MNMS,5,SynFoC-UNet,Vendor B,86.70/78.23/74.29,79.55,Table 5
+MNMS,5,SynFoC-UNet,Vendor C,85.88/76.61/74.77,79.55,Table 5
+MNMS,5,SynFoC-UNet,Vendor D,87.90/78.32/75.54,79.55,Table 5
+MNMS,5,SynFoC-MedSAM,Vendor A,85.65/76.40/76.18,80.84,Table 5
+MNMS,5,SynFoC-MedSAM,Vendor B,88.03/78.42/75.40,80.84,Table 5
+MNMS,5,SynFoC-MedSAM,Vendor C,87.09/78.63/77.71,80.84,Table 5
+MNMS,5,SynFoC-MedSAM,Vendor D,89.51/79.90/77.13,80.84,Table 5
+BUSI,64,FixMatch,Benign,59.49,64.65,Table 6
+BUSI,64,FixMatch,Malignant,69.80,64.65,Table 6
+BUSI,64,SynFoC-UNet,Benign,59.56,66.13,Table 6
+BUSI,64,SynFoC-UNet,Malignant,72.69,66.13,Table 6
+BUSI,64,SynFoC-MedSAM,Benign,70.16,71.61,Table 6
+BUSI,64,SynFoC-MedSAM,Malignant,73.05,71.61,Table 6

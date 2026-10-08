@@ -1,0 +1,122 @@
+[22:00:18.486] python train_fourierfuse_v18_revision.py --dataset prostate --lb_num 20 --lb_domain 5 --domain_num 6 --max_iterations 60000 --num_eval_iter 500 --base_lr 0.0005 --label_bs 4 --unlabel_bs 4 --swad_start_iter 15000 --swad_update_every 100 --swad_bn_recalib_batches 20 --warmup --warmup_period 150 --AdamW --amp 1 --ff_base_features 64 --ff_spec_consistency_weight 0.5 --ff_fda_beta 0.05 --consistency 1.0 --consistency_rampup 150.0 --ema_decay 0.995 --daep_alpha 1.0 --daep_beta 1.0 --daep_gamma 1.0 --proto_per_domain 2 --proto_ema 0.99 --evid_lambda_kl_max 0.02 --evid_anneal_iters 10000 --save_model --overwrite --method mcdropout --mc_dropout_p 0.5 --mc_T 8 --mc_target teacher --mc_dropout_place uamt --seed 1337 --save_name v18B_prostate_mcdropout2_s1337 --gpu 0
+[22:00:18.486] Namespace(dataset='prostate', save_name='v18B_prostate_mcdropout2_s1337', overwrite=True, max_iterations=60000, num_eval_iter=500, deterministic=1, base_lr=0.0005, seed=1337, gpu='0', amp=1, label_bs=4, unlabel_bs=4, test_bs=1, domain_num=6, lb_domain=5, lb_num=20, lb_ratio=0, ema_decay=0.995, consistency=1.0, consistency_rampup=150.0, consistency_weight_cap=0.5, save_model=True, img_size=512, AdamW=True, warmup=True, warmup_period=150, ff_base_features=64, ff_bilinear=False, ff_spec_consistency_weight=0.5, ff_fda_beta=0.05, ff_fda_prob=0.5, ff_no_fda=False, ff_no_spec_consistency=False, swad_enable=True, swad_start_iter=15000, swad_update_every=100, swad_bn_recalib_batches=20, daep_alpha=1.0, daep_beta=1.0, daep_gamma=1.0, daep_no_ale=False, daep_no_epi=False, daep_no_dom=False, daep_threshold_baseline=False, method='mcdropout', cadg_n_bins=20, cadg_refit_every=200, cadg_min_count=50000, cadg_recalibrate_ale=False, cadg_seed_split=True, cg_n_views=3, cg_agree_frac=1.0, cg_conf_floor=0.0, pg_keep_frac=0.8, proto_per_domain=2, proto_ema=0.99, evid_lambda_kl_max=0.02, evid_anneal_iters=10000, split_seed=-1, head='evidential', evid_activation='softplus', evid_loss='mse', evid_kl_schedule='linear', evid_prior_w=1.0, evid_temperature=1.0, evid_max_evidence=0.0, mc_dropout_p=0.5, mc_dropout_place='uamt', mc_target='teacher', mc_T=8, devis_beta0=0.01, devis_cup_weight=1.0, devis_gate='soft', devis_u_thr=0.2, medl_arch2='resunet', medl_xi=1.0, medl_rel_thr=0.5, medl_lambda_fisher=0.1, medl_lambda1=0.5, medl_report='net1', resume='auto', resume_every_epochs=2, die_after_epoch=-1, grad_clip=5.0, _resume_from=None)
+[22:00:18.532] [v16 DATASET] prostate: num_classes=1, K=2, num_channels=1, patch_size=384, min_v/max_v=0.1/2, fillcolor=255, lb_bs=4, ulb_bs=4
+[22:00:19.773] [v18 CFG] head=evidential act=softplus loss=mse kl=linear/0.02/10000 W=1.0 T=1.0 cap=0.0 dropout=0.5 place=uamt mc_target=teacher method=mcdropout split_seed=-1
+[22:00:19.773] [v16 MODEL] trainable params = 31,036,546 (SynFoC foundation-backed ~ 6x this)
+[22:00:19.773] [v16 DAEP] alpha=1.0, beta=1.0, gamma=1.0 | ablations: no_ale=False, no_epi=False, no_dom=False, threshold_baseline=False
+[22:00:19.773] [v16 OPT] base_lr=0.0005, AdamW=True, warmup=True, warmup_period=150, amp=1, grad_clip=5.0
+[22:00:19.773] [v16 CW] consistency=1.0, rampup=150.0, cap=0.5
+[22:00:19.773] [CADG] disabled (method=mcdropout).
+[22:00:19.774] [seed_split] seed=1337 data_num=338 lb_num=20 labeled_idxs=[33, 55, 84, 104, 157, 170, 184, 186, 187, 196, 200, 204, 217, 258, 273, 292, 299, 316, 325, 336]
+[22:00:21.167] 500 iterations per epoch, 120 epochs total, max_iterations=60000
+[22:08:13.971] iter 500: loss=1.1308, sup=1.0903, unsup=1.0955, spec=0.0651, cw=0.007, w_mean=0.239, w_min=0.000, U_ale=0.098, U_epi=0.541, U_dom=0.026, S_mean=4.84, mc_entropy_mean=0.6476, mc_h_thr=0.5211
+[22:08:13.997] Testing student...
+[22:08:16.443] domain1 epoch 1: val_base_dice=0.0003 hd=99.46
+[22:08:20.398] domain2 epoch 1: val_base_dice=0.2561 hd=76.12
+[22:08:21.569] domain3 epoch 1: val_base_dice=0.0072 hd=94.89
+[22:08:27.003] domain4 epoch 1: val_base_dice=0.4459 hd=106.94
+[22:08:31.941] domain5 epoch 1: val_base_dice=0.4388 hd=147.01
+[22:08:34.496] domain6 epoch 1: val_base_dice=0.3872 hd=56.25
+[22:08:34.497] epoch 1: avg val_base_dice=0.2559 DSDV=0.0357
+[22:08:34.498] Testing EMA teacher...
+[22:08:35.634] domain1 epoch 1: val_base_dice=0.0003 hd=100.00
+[22:08:39.203] domain2 epoch 1: val_base_dice=0.0002 hd=100.00
+[22:08:39.910] domain3 epoch 1: val_base_dice=0.0003 hd=100.00
+[22:08:43.583] domain4 epoch 1: val_base_dice=0.0003 hd=100.00
+[22:08:46.791] domain5 epoch 1: val_base_dice=0.0004 hd=100.00
+[22:08:48.817] domain6 epoch 1: val_base_dice=0.0005 hd=100.00
+[22:08:48.818] epoch 1: avg val_base_dice=0.0003 DSDV=0.0000
+[22:08:50.216] [epoch 1] student_avg=0.2559  ema_avg=0.0003  best_avg=0.2559 @ iter 500  swad_best=0.0000 @ iter -1  best_DSDV=0.0357
+[22:17:29.712] iter 1000: loss=0.7029, sup=0.6866, unsup=0.9273, spec=0.0185, cw=0.007, w_mean=0.925, w_min=0.472, U_ale=0.038, U_epi=0.304, U_dom=0.177, S_mean=9.36, mc_entropy_mean=0.4316, mc_h_thr=0.5212
+[22:17:29.782] Testing student...
+[22:17:32.715] domain1 epoch 2: val_base_dice=0.0003 hd=100.00
+[22:17:37.885] domain2 epoch 2: val_base_dice=0.1752 hd=91.04
+[22:17:39.672] domain3 epoch 2: val_base_dice=0.0003 hd=99.05
+[22:17:48.775] domain4 epoch 2: val_base_dice=0.5995 hd=58.13
+[22:17:54.913] domain5 epoch 2: val_base_dice=0.5672 hd=76.73
+[22:17:58.680] domain6 epoch 2: val_base_dice=0.1727 hd=81.35
+[22:17:58.681] epoch 2: avg val_base_dice=0.2526 DSDV=0.0598
+[22:17:58.682] Testing EMA teacher...
+[22:17:59.964] domain1 epoch 2: val_base_dice=0.0003 hd=100.00
+[22:18:02.679] domain2 epoch 2: val_base_dice=0.0002 hd=100.00
+[22:18:03.610] domain3 epoch 2: val_base_dice=0.0003 hd=100.00
+[22:18:07.205] domain4 epoch 2: val_base_dice=0.0003 hd=100.00
+[22:18:10.669] domain5 epoch 2: val_base_dice=0.0004 hd=100.00
+[22:18:12.479] domain6 epoch 2: val_base_dice=0.0005 hd=100.00
+[22:18:12.480] epoch 2: avg val_base_dice=0.0003 DSDV=0.0000
+[22:18:12.481] [epoch 2] student_avg=0.2526  ema_avg=0.0003  best_avg=0.2559 @ iter 500  swad_best=0.0000 @ iter -1  best_DSDV=0.0357
+[22:18:14.072] [resume] state saved at iter 1000 (epoch 2)
+[22:26:49.307] iter 1500: loss=0.5348, sup=0.5186, unsup=0.8450, spec=0.0185, cw=0.008, w_mean=1.000, w_min=0.802, U_ale=0.015, U_epi=0.180, U_dom=0.192, S_mean=14.53, mc_entropy_mean=0.2962, mc_h_thr=0.5213
+[22:26:49.332] Testing student...
+[22:26:50.531] domain1 epoch 3: val_base_dice=0.0003 hd=101.32
+[22:26:54.872] domain2 epoch 3: val_base_dice=0.3974 hd=81.92
+[22:26:55.770] domain3 epoch 3: val_base_dice=0.0705 hd=88.29
+[22:27:01.632] domain4 epoch 3: val_base_dice=0.2928 hd=115.84
+[22:27:06.345] domain5 epoch 3: val_base_dice=0.5652 hd=109.90
+[22:27:08.442] domain6 epoch 3: val_base_dice=0.5482 hd=91.95
+[22:27:08.443] epoch 3: avg val_base_dice=0.3124 DSDV=0.0472
+[22:27:08.444] Testing EMA teacher...
+[22:27:09.895] domain1 epoch 3: val_base_dice=0.0003 hd=100.00
+[22:27:13.384] domain2 epoch 3: val_base_dice=0.3146 hd=73.16
+[22:27:14.040] domain3 epoch 3: val_base_dice=0.0105 hd=96.14
+[22:27:19.488] domain4 epoch 3: val_base_dice=0.2181 hd=91.61
+[22:27:24.168] domain5 epoch 3: val_base_dice=0.5239 hd=84.04
+[22:27:26.396] domain6 epoch 3: val_base_dice=0.3769 hd=76.26
+[22:27:26.397] epoch 3: avg val_base_dice=0.2407 DSDV=0.0359
+[22:27:27.504] [epoch 3] student_avg=0.3124  ema_avg=0.2407  best_avg=0.3124 @ iter 1500  swad_best=0.0000 @ iter -1  best_DSDV=0.0472
+[22:36:01.768] iter 2000: loss=0.4176, sup=0.4061, unsup=0.7555, spec=0.0095, cw=0.009, w_mean=0.996, w_min=0.036, U_ale=0.007, U_epi=0.122, U_dom=0.203, S_mean=20.66, mc_entropy_mean=0.2339, mc_h_thr=0.5214
+[22:36:01.814] Testing student...
+[22:36:03.909] domain1 epoch 4: val_base_dice=0.0003 hd=100.31
+[22:36:09.419] domain2 epoch 4: val_base_dice=0.2466 hd=81.07
+[22:36:10.936] domain3 epoch 4: val_base_dice=0.0112 hd=95.47
+[22:36:17.768] domain4 epoch 4: val_base_dice=0.3880 hd=78.81
+[22:36:22.419] domain5 epoch 4: val_base_dice=0.6883 hd=53.17
+[22:36:25.330] domain6 epoch 4: val_base_dice=0.3579 hd=75.84
+[22:36:25.337] epoch 4: avg val_base_dice=0.2821 DSDV=0.0560
+[22:36:25.341] Testing EMA teacher...
+[22:36:26.639] domain1 epoch 4: val_base_dice=0.0003 hd=104.95
+[22:36:30.068] domain2 epoch 4: val_base_dice=0.1429 hd=85.01
+[22:36:30.710] domain3 epoch 4: val_base_dice=0.0188 hd=91.92
+[22:36:35.583] domain4 epoch 4: val_base_dice=0.3140 hd=75.44
+[22:36:40.073] domain5 epoch 4: val_base_dice=0.6160 hd=50.89
+[22:36:42.303] domain6 epoch 4: val_base_dice=0.2852 hd=65.54
+[22:36:42.304] epoch 4: avg val_base_dice=0.2295 DSDV=0.0440
+[22:36:42.305] [epoch 4] student_avg=0.2821  ema_avg=0.2295  best_avg=0.3124 @ iter 1500  swad_best=0.0000 @ iter -1  best_DSDV=0.0472
+[22:36:44.335] [resume] state saved at iter 2000 (epoch 4)
+[22:45:25.715] iter 2500: loss=0.3535, sup=0.3426, unsup=0.7102, spec=0.0079, cw=0.009, w_mean=0.999, w_min=0.272, U_ale=0.004, U_epi=0.090, U_dom=0.201, S_mean=27.41, mc_entropy_mean=0.1855, mc_h_thr=0.5215
+[22:45:25.728] Testing student...
+[22:45:27.672] domain1 epoch 5: val_base_dice=0.0223 hd=80.51
+[22:45:32.061] domain2 epoch 5: val_base_dice=0.3295 hd=126.73
+[22:45:33.727] domain3 epoch 5: val_base_dice=0.2043 hd=62.36
+[22:45:40.738] domain4 epoch 5: val_base_dice=0.3557 hd=79.45
+[22:45:47.171] domain5 epoch 5: val_base_dice=0.5345 hd=145.71
+[22:45:51.132] domain6 epoch 5: val_base_dice=0.3857 hd=114.29
+[22:45:51.133] epoch 5: avg val_base_dice=0.3053 DSDV=0.0254
+[22:45:51.134] Testing EMA teacher...
+[22:45:52.418] domain1 epoch 5: val_base_dice=0.0003 hd=100.00
+[22:45:55.706] domain2 epoch 5: val_base_dice=0.1700 hd=83.10
+[22:45:56.620] domain3 epoch 5: val_base_dice=0.0073 hd=97.98
+[22:46:01.890] domain4 epoch 5: val_base_dice=0.5143 hd=35.09
+[22:46:05.773] domain5 epoch 5: val_base_dice=0.4980 hd=46.96
+[22:46:07.334] domain6 epoch 5: val_base_dice=0.1509 hd=75.70
+[22:46:07.335] epoch 5: avg val_base_dice=0.2235 DSDV=0.0441
+[22:46:07.336] [epoch 5] student_avg=0.3053  ema_avg=0.2235  best_avg=0.3124 @ iter 1500  swad_best=0.0000 @ iter -1  best_DSDV=0.0254
+[22:54:33.615] iter 3000: loss=0.2870, sup=0.2776, unsup=0.6433, spec=0.0054, cw=0.010, w_mean=0.998, w_min=0.100, U_ale=0.002, U_epi=0.069, U_dom=0.205, S_mean=34.90, mc_entropy_mean=0.1531, mc_h_thr=0.5217
+[22:54:33.632] Testing student...
+[22:54:35.030] domain1 epoch 6: val_base_dice=0.0003 hd=100.00
+[22:54:38.696] domain2 epoch 6: val_base_dice=0.2711 hd=73.72
+[22:54:39.343] domain3 epoch 6: val_base_dice=0.0092 hd=95.46
+[22:54:44.503] domain4 epoch 6: val_base_dice=0.5865 hd=63.22
+[22:54:48.933] domain5 epoch 6: val_base_dice=0.7205 hd=63.59
+[22:54:51.001] domain6 epoch 6: val_base_dice=0.4531 hd=58.37
+[22:54:51.002] epoch 6: avg val_base_dice=0.3401 DSDV=0.0746
+[22:54:51.003] Testing EMA teacher...
+[22:54:52.283] domain1 epoch 6: val_base_dice=0.0003 hd=103.19
+[22:54:55.989] domain2 epoch 6: val_base_dice=0.3260 hd=84.23
+[22:54:56.709] domain3 epoch 6: val_base_dice=0.0220 hd=91.13
+[22:55:01.995] domain4 epoch 6: val_base_dice=0.5508 hd=71.42
+[22:55:06.746] domain5 epoch 6: val_base_dice=0.7304 hd=83.57
+[22:55:09.224] domain6 epoch 6: val_base_dice=0.5914 hd=78.58
+[22:55:09.225] epoch 6: avg val_base_dice=0.3701 DSDV=0.0785
+[22:55:10.343] [epoch 6] student_avg=0.3401  ema_avg=0.3701  best_avg=0.3401 @ iter 3000  swad_best=0.0000 @ iter -1  best_DSDV=0.0746
+[22:55:12.398] [resume] state saved at iter 3000 (epoch 6)

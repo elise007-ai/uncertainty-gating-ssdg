@@ -1,0 +1,17 @@
+dataset,seed,daep,threshold,daep_source,threshold_source
+MNMS,1337,0.803936,0.807008,"held logs (RETURNS/S06; the only copies on the server, S16 finder)",submission digest
+MNMS,2024,0.809154,0.808239,"held logs (RETURNS/S06; the only copies on the server, S16 finder)",submission digest
+MNMS,42,0.812512,0.809903,"held logs (RETURNS/S06; the only copies on the server, S16 finder)",submission digest
+MNMS,paired,80.853400,80.838333,sd 0.432,sd 0.145; diff +0.015; t 0.089; p 0.9369
+prostate,1337,0.857467,0.862933,submission digest,submission digest
+prostate,2024,0.856812,0.856871,submission digest,submission digest
+prostate,42,0.847105,0.851439,submission digest,submission digest
+prostate,paired,85.379467,85.708100,sd 0.580,sd 0.575; diff -0.329; t -1.996; p 0.1840
+fundus,1337,0.885190,0.882202,submission digest,submission digest
+fundus,2024,0.887170,0.886827,submission digest,submission digest
+fundus,42,0.883793,0.885062,submission digest,submission digest
+fundus,paired,88.538433,88.469700,sd 0.170,sd 0.233; diff +0.069; t 0.554; p 0.6353
+BUSI,1337,0.703192,0.703234,"held logs (RETURNS/S06; the only copies on the server, S16 finder)",submission digest
+BUSI,2024,0.723923,0.714094,"held logs (RETURNS/S06; the only copies on the server, S16 finder)",submission digest
+BUSI,42,0.697749,0.688449,"held logs (RETURNS/S06; the only copies on the server, S16 finder)",submission digest
+BUSI,paired,70.828800,70.192567,sd 1.381,sd 1.287; diff +0.636; t 1.985; p 0.1856

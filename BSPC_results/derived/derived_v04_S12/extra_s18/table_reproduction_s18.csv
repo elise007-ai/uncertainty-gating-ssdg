@@ -1,0 +1,6 @@
+configuration,revision_run,revision_best,original_best,abs_diff_points,within_first_pair,within_max_pair
+"Prostate, DAEP",v18A_prostate_daep_default_s1337,0.863008,0.857467,0.554100,False,False
+"Prostate, threshold",v18B_prostate_fixmatch_split1337_init1337,0.861977,0.862933,0.095600,False,True
+"Fundus, threshold",v18B_fundus_fixmatch_split1337_init1337,0.882081,0.882202,0.012100,True,True
+"M&Ms, threshold",v18B_MNMS_fixmatch_s1337,0.804198,0.807008,0.281000,False,True
+"BUSI, threshold",v18B_BUSI_fixmatch_s1337,0.708880,0.703234,0.564600,False,False

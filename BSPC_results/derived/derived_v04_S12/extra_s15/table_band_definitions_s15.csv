@@ -1,0 +1,18 @@
+band,label,daep_default_s1337,threshold_mean_3_seed_splits,threshold_min,threshold_max
+edt1,"Euclidean, 1 px",0.5695,0.5676,0.5639,0.5741
+edt2,"Euclidean, 2 px",0.6001,0.5981,0.5929,0.6083
+edt3,"Euclidean, 3 px",0.6313,0.6290,0.6214,0.6432
+edt5,"Euclidean, 5 px (main analysis)",0.6810,0.6754,0.6627,0.6968
+edt8,"Euclidean, 8 px",0.7302,0.7204,0.6997,0.7451
+edt12,"Euclidean, 12 px",0.7733,0.7600,0.7349,0.7817
+cheb5,"Chebyshev, 5 px",0.7046,0.6966,0.6800,0.7211
+pred5,"around the predicted boundary, 5 px",0.7067,0.7005,0.6810,0.7296
+union5,"around either boundary, 5 px",0.6992,0.6907,0.6741,0.7157
+rel5,5 % of the equivalent radius,0.5995,0.5968,0.5907,0.6079
+rel10,10 % of the equivalent radius,0.6573,0.6532,0.6417,0.6744
+mm0.5,0.5 mm,0.5586,0.5561,0.5528,0.5615
+mm1,1 mm,0.5950,0.5928,0.5880,0.6022
+mm2,2 mm,0.6562,0.6526,0.6426,0.6715
+mm3,3 mm,0.7019,0.6947,0.6785,0.7191
+mm5,5 mm,0.7605,0.7485,0.7245,0.7722
+all,all pixels,0.8827,0.8705,0.8286,0.9015

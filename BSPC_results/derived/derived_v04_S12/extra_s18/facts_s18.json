@@ -1,0 +1,124 @@
+{
+ "ramp": {
+  "shift_over_first_pair": 12.732447817832998,
+  "shift_over_max_replicate_diff": 1.5058348294434014,
+  "shift_points": 0.6709999999999994,
+  "short": -0.567899999999999,
+  "whole": 0.10310000000000041
+ },
+ "replicates": {
+  "auroc_all": [
+   0.8826553117049468,
+   0.893524996885014,
+   0.8666188752039824
+  ],
+  "auroc_band5": [
+   0.6809912701094193,
+   0.6980826764177016,
+   0.6969891387073582
+  ],
+  "best": [
+   86.3008,
+   86.35350000000001,
+   85.9079
+  ],
+  "best_iter": [
+   49000,
+   40000,
+   41500
+  ],
+  "first_pair": 0.052700000000015734,
+  "max_pair": 0.4456000000000131,
+  "pairwise_abs_diff_points": {
+   "0-1": 0.052700000000015734,
+   "0-2": 0.39289999999999736,
+   "1-2": 0.4456000000000131
+  },
+  "per_vendor_range_max": 2.081399999999988,
+  "per_vendor_range_points": {
+   "BIDMC": 1.477400000000003,
+   "BMC": 0.787700000000001,
+   "HK": 0.6975999999999942,
+   "I2CVB": 2.081399999999988,
+   "RUNMC": 0.9993000000000052,
+   "UCL": 1.1199000000000012
+  },
+  "range": 0.4456000000000131,
+  "range80": [
+   7.751441444270317e-05,
+   5.1472001359798014e-05,
+   0.00010291894044106208
+  ],
+  "script_sha": [
+   "ee2b724266a3",
+   "a27315640534",
+   "ec1d4732e81d"
+  ],
+  "sd": 0.24348410625747602
+ },
+ "reproduction": {
+  "max": 0.5645999999999929,
+  "min": 0.012100000000003774,
+  "n_within_first_pair": 1,
+  "n_within_max_pair": 3,
+  "prostate_daep_original_below_lowest_replicate_by": 0.1611999999999938,
+  "prostate_daep_original_vs_three_replicates": [
+   0.5540999999999912,
+   0.6068000000000069,
+   0.1611999999999938
+  ],
+  "rows": {
+   "BUSI, threshold": {
+    "abs_diff_points": 0.5645999999999929,
+    "original": 0.703234,
+    "revision": 0.70888,
+    "within_first_pair": false,
+    "within_max_pair": false
+   },
+   "Fundus, threshold": {
+    "abs_diff_points": 0.012100000000003774,
+    "original": 0.882202,
+    "revision": 0.882081,
+    "within_first_pair": true,
+    "within_max_pair": true
+   },
+   "M&Ms, threshold": {
+    "abs_diff_points": 0.2809999999999979,
+    "original": 0.807008,
+    "revision": 0.804198,
+    "within_first_pair": false,
+    "within_max_pair": true
+   },
+   "Prostate, DAEP": {
+    "abs_diff_points": 0.5541000000000018,
+    "original": 0.857467,
+    "revision": 0.863008,
+    "within_first_pair": false,
+    "within_max_pair": false
+   },
+   "Prostate, threshold": {
+    "abs_diff_points": 0.09559999999999569,
+    "original": 0.862933,
+    "revision": 0.861977,
+    "within_first_pair": false,
+    "within_max_pair": true
+   }
+  }
+ },
+ "sendback": {
+  "args_differing_from_rep2": [
+   "gpu",
+   "save_name"
+  ],
+  "files": 14,
+  "harness_iter": 41500,
+  "harness_timestamp": "2026-10-08 06:20:01",
+  "quarantined": [
+   "diag_out/STALE_25500_prostate__v18R_prostate_fixmatch_ramp10_s1337__ema.json.bak"
+  ],
+  "rep3_best": 0.859079,
+  "rep3_best_iter": 41500,
+  "runner": "DONE: 1/1 PASS",
+  "training_end": "06:05:11"
+ }
+}

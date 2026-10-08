@@ -1,0 +1,2 @@
+run_a,run_b,best_avg_a,best_avg_b,abs_diff,best_iter_a,best_iter_b,dom1_diff,dom2_diff,dom3_diff,dom4_diff,dom5_diff,dom6_diff
+v18A_prostate_daep_default_s1337,v18A_prostate_daep_default_s1337_rep2,0.8630,0.8635,0.0005,49000,40000,0.0131,-0.0013,0.0070,-0.0208,0.0100,-0.0112
