@@ -62,3 +62,19 @@ evidence deflation observed in all MEDL runs (student mean Dirichlet strength 42
 threshold run, ADJUDICATION_S10 O-02 iii) is what the −λ₂ log|I(α)| term does by construction (minimising it
 maximises |I|, i.e. pushes α down) — a property of the published objective, not a bug.
 
+## Comparison of the DEviS objective with the authors' released code (added 2026-10-09)
+Read: `models/TrustworthySeg.py`, `models/criterions.py` and `trainUMIS.py` of `https://github.com/Cocofeat/DEviS` (downloaded 2026-10-09). Compared with `revision_modules.py` and the `--method devis` branch of `train_fourierfuse_v18_revision.py` in this repository.
+
+| Term | Released code | This repository |
+|---|---|---|
+| Evidence and Dirichlet | softplus, alpha = evidence + 1 | same |
+| Bayes risk | sum_k y_k (digamma(S) - digamma(alpha_k)) | same expression |
+| KL expression | KL(Dir(alpha~) || Dir(1)), alpha~ = y + (1 - y) alpha | same expression (a numpy transcription of both agrees to 2e-15) |
+| KL weight | min(1, epoch / 50) with 99 epochs by default: 0 to 1 over the first half of training | 0.02, constant |
+| beta_t | 0.01 * exp(-ln(0.01) t / T) | same expression |
+| Dice weight | 1 - beta_t | same |
+| Dice form | Tversky-type loss on softmax(evidence), weights clamped to [0.2, 0.8] | soft Dice on the Dirichlet mean |
+| Calibration penalty | correct pixels: -p_max log(1 - u), weight beta_t; incorrect pixels: -(1 - p_max) log(u), weight 1 - beta_t; mean over all pixels | correct: -(sum_c b_c) log(1 - u); incorrect: -(sum_c (1 - b_c)) log(u); means over the correct and over the incorrect pixels separately |
+| Semi-supervised part | none in the released code | gate weight w = 1 - u (our reading of the paper) |
+
+The rows "DEviS obj. (published form)" of the paper's Table `baselines` use the form in the right-hand column. The rows "DEviS obj. (released form)" use the form of the released code, re-implemented in `revision_modules.py` (`devis_released_sup_loss`, selected by `--devis_variant released`) and checked against the released functions on a CPU (`parity_cpu_s24.py`; output `extra_s23/parity_cpu_s24.txt`). For MEDL we found no released implementation.

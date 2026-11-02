@@ -1,0 +1,7 @@
+dataset,run,seed,complete,n_evals,n_headers,n_resumes_log,n_resume_events_cfg,n_nonfinite_skips,parse_ok,r34_flag,config_ok,args_equal_d28_except_gate_name_gpu,args_that_differ_from_d28,hashes_ok,n_v11_notice_lines,n_gate_soft_notice_lines,split_equals_reference_and_d28,harness_meta_ok,torch,hostname,n_runner_attempts,postflight,start,end
+prostate,v18E_prostate_devisrel_belief_s1337,1337,1,120,1,0,0,0,1,ok,1,1,devis_gate;save_name,1,2,1,1,1,2.5.1+cu121,interactive85860,1,PASS,2026-10-12 07:51:06,2026-10-12 20:34:36
+prostate,v18E_prostate_devisrel_belief_s42,42,1,120,1,0,0,0,1,ok,1,1,devis_gate;save_name,1,2,1,1,1,2.5.1+cu121,interactive85860,1,PASS,2026-10-12 07:51:26,2026-10-12 20:34:33
+prostate,v18E_prostate_devisrel_belief_s2024,2024,1,120,1,0,0,0,1,ok,1,1,devis_gate;gpu;save_name,1,2,1,1,1,2.5.1+cu121,interactive85860,1,PASS,2026-10-12 07:51:46,2026-10-12 18:57:14
+fundus,v18E_fundus_devisrel_belief_s1337,1337,1,60,1,0,0,0,1,ok,1,1,devis_gate;save_name,1,2,1,1,1,2.5.1+cu121,interactive85860,1,PASS,2026-10-12 07:52:06,2026-10-12 15:10:50
+fundus,v18E_fundus_devisrel_belief_s42,42,1,60,1,0,0,0,1,ok,1,1,devis_gate;gpu;save_name,1,2,1,1,1,2.5.1+cu121,interactive85860,1,PASS,2026-10-12 15:10:51,2026-10-12 22:09:20
+fundus,v18E_fundus_devisrel_belief_s2024,2024,1,60,1,0,0,0,1,ok,1,1,devis_gate;save_name,1,2,1,1,1,2.5.1+cu121,interactive85860,1,PASS,2026-10-12 18:57:14,2026-10-13 01:38:32

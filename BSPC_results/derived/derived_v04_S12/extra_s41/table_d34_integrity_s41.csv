@@ -1,0 +1,7 @@
+dataset,run,seed,complete,n_evals_in_log,n_launches,resumed_at_iters,n_nonfinite_skips,r34_flag,config_ok,cmd_keys_differing_from_job_line,arg_keys_differing_from_d31,hashes_ok,harness_meta_ok,n_gate_windows_trained,torch,hostname
+prostate,v18I_prostate_pctmatch_s1337,1337,1,120,1,,0,ok,1,--gpu,gpu;pg_keep_frac;save_name,1,1,120,2.5.1+cu121,interactive85860
+prostate,v18I_prostate_pctmatch_s42,42,1,120,1,,0,ok,1,--gpu,gpu;pg_keep_frac;save_name,1,1,120,2.5.1+cu121,interactive85860
+prostate,v18I_prostate_pctmatch_s2024,2024,1,120,1,,0,ok,1,--gpu,pg_keep_frac;save_name,1,1,120,2.5.1+cu121,interactive85860
+fundus,v18I_fundus_pctmatch_s1337,1337,1,60,1,,0,ok,1,--gpu,pg_keep_frac;save_name,1,1,60,2.5.1+cu121,interactive85860
+fundus,v18I_fundus_pctmatch_s42,42,1,60,1,,0,ok,1,--gpu,pg_keep_frac;save_name,1,1,60,2.5.1+cu121,interactive85860
+fundus,v18I_fundus_pctmatch_s2024,2024,1,61,2,27000,0,ok,1,--gpu,pg_keep_frac;save_name,1,1,60,2.5.1+cu121,interactive85860

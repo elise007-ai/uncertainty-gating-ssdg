@@ -1,0 +1,142 @@
+{
+ "session": "S44",
+ "reader": "make_extra_s44.py",
+ "continued": {
+  "fundus|v18I_fundus_pctmatch_s2024": {
+   "resumed_from": [
+    27000
+   ],
+   "best_iter": 18000,
+   "best": 0.886617
+  },
+  "prostate|v18B_prostate_devis_s1337": {
+   "resumed_from": [
+    28000
+   ],
+   "best_iter": 60000,
+   "best": 0.860116
+  },
+  "prostate|v18B_prostate_devis_s42": {
+   "resumed_from": [
+    12000
+   ],
+   "best_iter": 4000,
+   "best": 0.254182
+  },
+  "prostate|v18B_prostate_medl_s1337": {
+   "resumed_from": [
+    20000,
+    29000
+   ],
+   "best_iter": 32500,
+   "best": 0.846555
+  }
+ },
+ "medl_fused": {
+  "best_iter": 32000,
+  "best": 0.8461
+ },
+ "d34_lr": {
+  "actual_min": 0.9755282581475768,
+  "intended_max": 0.024471741852423234,
+  "medl_first_skip": 29039,
+  "medl_skip_pct": "42"
+ },
+ "n_logs": 141,
+ "train": {
+  "weight_decay": 0.01,
+  "batch": {
+   "BUSI": [
+    "4",
+    "4"
+   ],
+   "fundus": [
+    "4",
+    "4"
+   ],
+   "MNMS": [
+    "2",
+    "2"
+   ],
+   "prostate": [
+    "4",
+    "4"
+   ]
+  }
+ },
+ "harness": {
+  "n": 157,
+  "best_checkpoint": 157
+ },
+ "softmax_band": {
+  "prostate": [
+   "0.71",
+   "0.72"
+  ],
+  "fundus": [
+   "0.70",
+   "0.72"
+  ]
+ },
+ "ensemble_gain": [
+  "0.02",
+  "0.04"
+ ],
+ "d34": {
+  "kept_after_fifth": {
+   "prostate": "99.6",
+   "fundus": "99.0"
+  },
+  "prostate_best_minus_last": [
+   5.058200000000001,
+   19.513800000000003,
+   19.9342
+  ],
+  "ref_max": "10.4"
+ },
+ "fda_rule": {
+  "n_settings": 7,
+  "n_met": 6
+ },
+ "s9": {
+  "n": 124,
+  "testbed": 91,
+  "devis_medl": 30,
+  "clamped": 1,
+  "ensembles": 2
+ },
+ "assertions_passed": [
+  "exactly four held runs were continued from a saved state, from the registered iterations (E-92): [('fundus', 'v18I_fundus_pctmatch_s2024'), ('prostate', 'v18B_prostate_devis_s1337'), ('prostate', 'v18B_prostate_devis_s42'), ('prostate', 'v18B_prostate_medl_s1337')]",
+  "the best checkpoint follows the continuation in two runs: the published-form DEviS run under its own gate and the MEDL run, both Prostate seed 1337",
+  "trainer v12 builds its scheduler at every launch and neither saves nor restores it (E-92)",
+  "MEDL Prostate seed 1337: its first skipped update follows its last continuation",
+  "MEDL Prostate seed 1337 is the run that skipped 42 % of its updates (42 %; Section 4.4 states 42 and 21)",
+  "MEDL Prostate seed 1337: the best fused value of the log is the 84.61 of Table 7 (84.61 at 32000)",
+  "its fused best (32000) also lies after the first continuation",
+  "MEDL seed 2024 was never continued and skipped updates as well",
+  "the continued D-34 segment ran at 0.976 or more of the peak learning rate where the schedule gives 0.024 or less",
+  "every held training log (141, smoke runs excluded) records its arguments (without: [])",
+  "every held log trains with AdamW, learning rate 5e-4 and a 150-iteration warm-up (exceptions [])",
+  "batches of 4 labeled and 4 unlabeled images, 2 and 2 on M&Ms ({'BUSI': {('4', '4')}, 'fundus': {('4', '4')}, 'MNMS': {('2', '2')}, 'prostate': {('4', '4')}})",
+  "train_fourierfuse_v16.py: AdamW with weight decay 0.01; linear warm-up, then cosine decay to zero",
+  "v12\\train_fourierfuse_v18_revision.py: AdamW with weight decay 0.01; linear warm-up, then cosine decay to zero",
+  "every harness JSON with a complete held log measured best_student.pth at the best iteration (157 of 157)",
+  "the oracle meets the criterion at the best checkpoint on both benchmarks and at one of the four test-free checkpoints (Fundus, last iteration)",
+  "positive at every checkpoint",
+  "three softmax-head teachers on each of Prostate and Fundus",
+  "softmax band AUROC {'prostate': ['0.71', '0.72'], 'fundus': ['0.70', '0.72']}",
+  "prostate: ensemble 0.720 against members [0.6912, 0.6947, 0.6969] (Section 4.6)",
+  "fundus: ensemble 0.652 against members [0.6137, 0.6247, 0.6256] (Section 4.6)",
+  "the ensemble raises the band ranking over its members by 0.02 to 0.04",
+  "the Prostate ensemble passes the 0.70 line of the Phase-A rule and the Fundus one does not (E-95)",
+  "prostate: the three D-34 runs have the same median kept share after the first fifth (0.996, 0.996)",
+  "fundus: the three D-34 runs have the same median kept share after the first fifth (0.99, 0.99)",
+  "D-34 kept 99.6 % (Prostate) and 99.0 % (Fundus) of the pseudo-label term after the first fifth ({'prostate': '99.6', 'fundus': '99.0'})",
+  "two of the three D-34 Prostate runs end about 20 points below their best ([5.058200000000001, 19.513800000000003, 19.9342])",
+  "the threshold references end at most 10.4 points below theirs (Section 4.2 states 10.4)",
+  "six of the seven FDA settings meet the registered rule on BIDMC (> +1.5 points over the default run): 6 of 7",
+  "the one setting that does not meet it is p_fda = 1",
+  "S9: 124 = 91 testbed objective + 30 DEviS/MEDL + 1 clamped exponential + 2 ensembles (124, 30, 91)",
+  "the clamped-exponential teacher and both ensembles break the identity"
+ ]
+}

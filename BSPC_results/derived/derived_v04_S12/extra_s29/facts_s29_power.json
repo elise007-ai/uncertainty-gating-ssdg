@@ -1,0 +1,81 @@
+{
+ "margin_points": 0.5,
+ "alpha": 0.05,
+ "power": 0.8,
+ "source": "table_main_gate_tests_s17.csv",
+ "benchmarks": {
+  "prostate": {
+   "n": 3,
+   "diffs_points": [
+    -0.5466,
+    -0.0059,
+    -0.4334
+   ],
+   "mean_diff": -0.3286,
+   "sd_diff": 0.2852,
+   "p_paired": 0.184,
+   "ci90": [
+    -0.809,
+    0.152
+   ],
+   "p_tost_0.5": 0.2036,
+   "equivalent_at_0.5": false,
+   "mde_alpha05_power80": 0.931
+  },
+  "fundus": {
+   "n": 3,
+   "diffs_points": [
+    0.2988,
+    0.0343,
+    -0.1269
+   ],
+   "mean_diff": 0.0687,
+   "sd_diff": 0.2149,
+   "p_paired": 0.6353,
+   "ci90": [
+    -0.294,
+    0.431
+   ],
+   "p_tost_0.5": 0.0369,
+   "equivalent_at_0.5": true,
+   "mde_alpha05_power80": 0.702
+  },
+  "MNMS": {
+   "n": 3,
+   "diffs_points": [
+    -0.3072,
+    0.0915,
+    0.2609
+   ],
+   "mean_diff": 0.0151,
+   "sd_diff": 0.2917,
+   "p_paired": 0.9369,
+   "ci90": [
+    -0.477,
+    0.507
+   ],
+   "p_tost_0.5": 0.0512,
+   "equivalent_at_0.5": false,
+   "mde_alpha05_power80": 0.952
+  },
+  "BUSI": {
+   "n": 3,
+   "diffs_points": [
+    -0.0042,
+    0.9829,
+    0.93
+   ],
+   "mean_diff": 0.6362,
+   "sd_diff": 0.5553,
+   "p_paired": 0.1856,
+   "ci90": [
+    -0.3,
+    1.572
+   ],
+   "p_tost_0.5": 0.6439,
+   "equivalent_at_0.5": false,
+   "mde_alpha05_power80": 1.812
+  }
+ },
+ "assertions": 22
+}

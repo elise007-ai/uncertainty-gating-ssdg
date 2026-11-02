@@ -1,0 +1,7 @@
+dataset,run,seed,complete,n_evals,n_headers,n_resumes_log,n_resume_events_cfg,n_nonfinite_skips,parse_ok,r34_flag,config_ok,hashes_ok,n_v11_notice_lines,split_equals_reference,harness_meta_ok,torch,hostname,n_runner_attempts,first_attempt,last_attempt,last_start,last_end
+prostate,v18D_prostate_devisrel_threshold_s1337,1337,1,120,1,0,0,0,1,ok,1,1,2,1,1,2.5.1+cu121,interactive85860,1,PASS,PASS,2026-10-10 20:38:45,2026-10-11 09:27:58
+prostate,v18D_prostate_devisrel_threshold_s42,42,1,120,1,0,0,0,1,ok,1,1,2,1,1,2.5.1+cu121,interactive85860,1,PASS,PASS,2026-10-10 20:39:05,2026-10-11 09:28:04
+prostate,v18D_prostate_devisrel_threshold_s2024,2024,1,120,1,0,0,0,1,ok,1,1,2,1,1,2.5.1+cu121,interactive85860,2,FAIL,PASS,2026-10-11 17:27:57,2026-10-12 03:24:52
+fundus,v18D_fundus_devisrel_threshold_s1337,1337,1,60,1,0,0,0,1,ok,1,1,2,1,1,2.5.1+cu121,interactive85860,1,PASS,PASS,2026-10-10 20:39:45,2026-10-11 03:53:18
+fundus,v18D_fundus_devisrel_threshold_s42,42,1,60,1,0,0,0,1,ok,1,1,2,1,1,2.5.1+cu121,interactive85860,2,FAIL,PASS,2026-10-11 17:28:17,2026-10-11 23:42:47
+fundus,v18D_fundus_devisrel_threshold_s2024,2024,1,60,1,0,0,0,1,ok,1,1,2,1,1,2.5.1+cu121,interactive85860,2,FAIL,PASS,2026-10-11 17:28:37,2026-10-11 23:38:58

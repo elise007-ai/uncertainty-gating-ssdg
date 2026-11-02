@@ -1,0 +1,5 @@
+dataset,comparison,mean_dice,std_dice,ref_mean,ref_std,delta_points,per_seed_delta_points_1337_42_2024,p_paired,n_seeds_positive,sign_test_p_two_sided,ci90_points,p_tost_0.5,mde_points,verdict
+prostate,ungated_minus_threshold (rule 1),0.8578,0.0066,0.8590,0.0026,-0.12,-0.38;+0.62;-0.60,0.7752,1,1.0000,-1.22;+0.97,0.2098,2.12,within seed noise
+prostate,percentile_minus_ungated (rule 3),0.8312,0.0341,0.8578,0.0066,-2.66,-0.23;-7.19;-0.55,0.3618,0,0.2500,-9.28;+3.96,0.7792,12.82,within seed noise
+fundus,ungated_minus_threshold (rule 1),0.8843,0.0022,0.8853,0.0028,-0.10,+0.09;-0.43;+0.06,0.6226,2,1.0000,-0.59;+0.39,0.0694,0.95,within seed noise
+fundus,percentile_minus_ungated (rule 3),0.8756,0.0053,0.8843,0.0022,-0.87,-1.15;-0.92;-0.53,0.0413,0,0.2500,-1.40;-0.33,0.9090,1.03,below the ungated runs

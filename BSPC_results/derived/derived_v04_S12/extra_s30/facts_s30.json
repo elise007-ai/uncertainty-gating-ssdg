@@ -1,0 +1,952 @@
+{
+ "session": "S31",
+ "reader": "make_extra_s30_d32.py",
+ "preregistration": "DOCS/D32_PREREGISTRATION_S30.md (+ Amendment 1)",
+ "code_sha256": {
+  "train_fourierfuse_v18_revision.py": "20d39982c157ff0e",
+  "revision_modules.py": "a6fe4357a39d0020",
+  "fourierfuse_v16_modules.py": "4a343f191bbbf1e0",
+  "diag_uncertainty_harness_v18.py": "7eb2db7ec9353de7"
+ },
+ "manifest_files_verified": 65,
+ "runner": {
+  "jobs": 6,
+  "final_pass": 6,
+  "first_start": "2026-10-21 03:40:18",
+  "last_end": "2026-10-21 20:34:56",
+  "hours_per_job": {
+   "v18G_fundus_ungated_s1337": 6.89,
+   "v18G_prostate_ungated_s2024": 10.77,
+   "v18G_prostate_ungated_s42": 12.29,
+   "v18G_prostate_ungated_s1337": 12.35,
+   "v18G_fundus_ungated_s42": 6.63,
+   "v18G_fundus_ungated_s2024": 6.13
+  },
+  "wall_clock_hours": 16.91
+ },
+ "prostate_rule1": {
+  "mean": 0.8577973333333334,
+  "std": 0.006624157028130722,
+  "ref_mean": 0.85902,
+  "ref_std": 0.0026139982784998015,
+  "delta": -0.0012226666666666681,
+  "per_seed_delta": [
+   -0.0038120000000000376,
+   0.006164000000000058,
+   -0.006020000000000025
+  ],
+  "t": -0.3262244759500817,
+  "p": 0.7752271723719669,
+  "n_pos": 1,
+  "sign_p_greater": 0.875,
+  "sign_p_two_sided": 1.0,
+  "beats": false,
+  "verdict": "within seed noise",
+  "mean_points": -0.12226666666666682,
+  "sd_points": 0.649160606732525,
+  "ci90_points": [
+   -1.216656971333542,
+   0.9721236380002084
+  ],
+  "p_tost_0.5": 0.2098209904768728,
+  "equivalent_at_0.5": false,
+  "mde_points": 2.118888491102017,
+  "r34_flags": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "unstable": [
+   false,
+   false,
+   false
+  ]
+ },
+ "prostate_rule3_percentile_minus_ungated": {
+  "mean": 0.831211,
+  "std": 0.034078012574092396,
+  "ref_mean": 0.8577973333333334,
+  "ref_std": 0.006624157028130722,
+  "delta": -0.02658633333333338,
+  "per_seed_delta": [
+   -0.0023090000000000055,
+   -0.07190800000000008,
+   -0.005542000000000047
+  ],
+  "t": -1.1722346502933212,
+  "p": 0.36183440491653873,
+  "n_pos": 0,
+  "sign_p_greater": 1.0,
+  "sign_p_two_sided": 0.25,
+  "beats": false,
+  "verdict": "within seed noise",
+  "mean_points": -2.658633333333338,
+  "sd_points": 3.928298835798183,
+  "ci90_points": [
+   -9.281173449208037,
+   3.9639067825413603
+  ],
+  "p_tost_0.5": 0.77916840348236,
+  "equivalent_at_0.5": false,
+  "mde_points": 12.822138476144204
+ },
+ "prostate_per_seed": {
+  "1337": {
+   "run": "v18G_prostate_ungated_s1337",
+   "best": 0.858165,
+   "best_iter": 43500,
+   "last": 0.7849,
+   "last10": 0.7843333333333332,
+   "swad_best": 0.85422,
+   "ref": 0.861977,
+   "refname": "v18B_prostate_fixmatch_split1337_init1337",
+   "ref_last": 0.8593,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "n_windows": 120,
+   "pct": 0.855856,
+   "pct_last": 0.8252,
+   "at_best": {
+    "BIDMC": 0.833576,
+    "BMC": 0.862383,
+    "HK": 0.895399,
+    "I2CVB": 0.858071,
+    "RUNMC": 0.825187,
+    "UCL": 0.874377
+   },
+   "ref_at_best": {
+    "BIDMC": 0.80826,
+    "BMC": 0.878652,
+    "HK": 0.898773,
+    "I2CVB": 0.859933,
+    "RUNMC": 0.844686,
+    "UCL": 0.88156
+   }
+  },
+  "42": {
+   "run": "v18G_prostate_ungated_s42",
+   "best": 0.86423,
+   "best_iter": 44000,
+   "last": 0.8557,
+   "last10": 0.8549083333333335,
+   "swad_best": 0.818995,
+   "ref": 0.858066,
+   "refname": "v18B_prostate_fixmatch_s42",
+   "ref_last": 0.8212,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "n_windows": 120,
+   "pct": 0.792322,
+   "pct_last": 0.6302,
+   "at_best": {
+    "BIDMC": 0.850113,
+    "BMC": 0.881045,
+    "HK": 0.897108,
+    "I2CVB": 0.835241,
+    "RUNMC": 0.860204,
+    "UCL": 0.861672
+   },
+   "ref_at_best": {
+    "BIDMC": 0.843439,
+    "BMC": 0.862413,
+    "HK": 0.892514,
+    "I2CVB": 0.817403,
+    "RUNMC": 0.866726,
+    "UCL": 0.865898
+   }
+  },
+  "2024": {
+   "run": "v18G_prostate_ungated_s2024",
+   "best": 0.850997,
+   "best_iter": 33000,
+   "last": 0.7728,
+   "last10": 0.7749083333333333,
+   "swad_best": 0.849836,
+   "ref": 0.857017,
+   "refname": "v18B_prostate_fixmatch_s2024",
+   "ref_last": 0.7526,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "n_windows": 120,
+   "pct": 0.845455,
+   "pct_last": 0.6831,
+   "at_best": {
+    "BIDMC": 0.818459,
+    "BMC": 0.862583,
+    "HK": 0.890443,
+    "I2CVB": 0.823166,
+    "RUNMC": 0.840076,
+    "UCL": 0.871255
+   },
+   "ref_at_best": {
+    "BIDMC": 0.814601,
+    "BMC": 0.86114,
+    "HK": 0.880514,
+    "I2CVB": 0.858489,
+    "RUNMC": 0.844323,
+    "UCL": 0.883037
+   }
+  }
+ },
+ "prostate_descriptive": {
+  "best_minus_last_points": [
+   7.326499999999991,
+   0.8530000000000038,
+   7.819699999999996
+  ],
+  "ref_best_minus_last_points": [
+   0.26770000000000405,
+   3.6865999999999954,
+   10.441699999999997
+  ],
+  "best_frac": [
+   0.725,
+   0.7333333333333333,
+   0.55
+  ]
+ },
+ "fundus_rule1": {
+  "mean": 0.884294,
+  "std": 0.0021913724010308943,
+  "ref_mean": 0.8852633333333332,
+  "ref_std": 0.002820431586359304,
+  "delta": -0.0009693333333333035,
+  "per_seed_delta": [
+   0.0008540000000000214,
+   -0.004328999999999916,
+   0.0005669999999999842
+  ],
+  "t": -0.5763408287200054,
+  "p": 0.6226021682370022,
+  "n_pos": 2,
+  "sign_p_greater": 0.5,
+  "sign_p_two_sided": 1.0,
+  "beats": false,
+  "verdict": "within seed noise",
+  "mean_points": -0.09693333333333036,
+  "sd_points": 0.2913093258605544,
+  "ci90_points": [
+   -0.5880384598219939,
+   0.39417179315533313
+  ],
+  "p_tost_0.5": 0.0693858216291053,
+  "equivalent_at_0.5": false,
+  "mde_points": 0.9508463260324478,
+  "r34_flags": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "unstable": [
+   false,
+   false,
+   false
+  ]
+ },
+ "fundus_rule3_percentile_minus_ungated": {
+  "mean": 0.8756436666666666,
+  "std": 0.005269269430702264,
+  "ref_mean": 0.884294,
+  "ref_std": 0.0021913724010308943,
+  "delta": -0.008650333333333352,
+  "per_seed_delta": [
+   -0.011467000000000005,
+   -0.009226000000000067,
+   -0.005257999999999985
+  ],
+  "t": -4.76511041488283,
+  "p": 0.04132961190171417,
+  "n_pos": 0,
+  "sign_p_greater": 1.0,
+  "sign_p_two_sided": 0.25,
+  "beats": false,
+  "verdict": "below the ungated runs",
+  "mean_points": -0.8650333333333352,
+  "sd_points": 0.3144274850157574,
+  "ci90_points": [
+   -1.3951123115603936,
+   -0.3349543551062768
+  ],
+  "p_tost_0.5": 0.908980361714157,
+  "equivalent_at_0.5": false,
+  "mde_points": 1.0263050043031205
+ },
+ "fundus_per_seed": {
+  "1337": {
+   "run": "v18G_fundus_ungated_s1337",
+   "best": 0.882935,
+   "best_iter": 17000,
+   "last": 0.8781,
+   "last10": 0.8786166666666665,
+   "swad_best": 0.876976,
+   "ref": 0.882081,
+   "refname": "v18B_fundus_fixmatch_split1337_init1337",
+   "ref_last": 0.8787,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "n_windows": 60,
+   "pct": 0.871468,
+   "pct_last": 0.8275,
+   "at_best": {
+    "Domain1": 0.879799,
+    "Domain2": 0.8343225000000001,
+    "Domain3": 0.9106505,
+    "Domain4": 0.9069674999999999
+   },
+   "ref_at_best": {
+    "Domain1": 0.8892945,
+    "Domain2": 0.838482,
+    "Domain3": 0.9062665,
+    "Domain4": 0.8942825
+   }
+  },
+  "42": {
+   "run": "v18G_fundus_ungated_s42",
+   "best": 0.883125,
+   "best_iter": 19500,
+   "last": 0.8805,
+   "last10": 0.8803,
+   "swad_best": 0.879134,
+   "ref": 0.887454,
+   "refname": "v18B_fundus_fixmatch_s42",
+   "ref_last": 0.8848,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "n_windows": 60,
+   "pct": 0.873899,
+   "pct_last": 0.8668,
+   "at_best": {
+    "Domain1": 0.9024265,
+    "Domain2": 0.826497,
+    "Domain3": 0.906403,
+    "Domain4": 0.8971735
+   },
+   "ref_at_best": {
+    "Domain1": 0.9068320000000001,
+    "Domain2": 0.8324355,
+    "Domain3": 0.9097865,
+    "Domain4": 0.9007615
+   }
+  },
+  "2024": {
+   "run": "v18G_fundus_ungated_s2024",
+   "best": 0.886822,
+   "best_iter": 18500,
+   "last": 0.8831,
+   "last10": 0.8829666666666666,
+   "swad_best": 0.882736,
+   "ref": 0.886255,
+   "refname": "v18B_fundus_fixmatch_s2024",
+   "ref_last": 0.8821,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "n_windows": 60,
+   "pct": 0.881564,
+   "pct_last": 0.8583,
+   "at_best": {
+    "Domain1": 0.8893545,
+    "Domain2": 0.8358315000000001,
+    "Domain3": 0.9080520000000001,
+    "Domain4": 0.9140495
+   },
+   "ref_at_best": {
+    "Domain1": 0.893667,
+    "Domain2": 0.8342965,
+    "Domain3": 0.90718,
+    "Domain4": 0.9098765
+   }
+  }
+ },
+ "fundus_descriptive": {
+  "best_minus_last_points": [
+   0.48350000000000337,
+   0.26250000000000995,
+   0.3722000000000003
+  ],
+  "ref_best_minus_last_points": [
+   0.33809999999999674,
+   0.2653999999999934,
+   0.415500000000002
+  ],
+  "best_frac": [
+   0.5666666666666667,
+   0.65,
+   0.6166666666666667
+  ]
+ },
+ "expectation": {
+  "registered": "within seed noise of the threshold reference on both benchmarks",
+  "failed_on": [],
+  "holds": true
+ },
+ "checkpoints": {
+  "prostate_ungated_minus_threshold_best": {
+   "delta_points": -0.12226666666666682,
+   "p": 0.7752271723719669,
+   "per_seed_points": [
+    -0.38120000000000376,
+    0.6164000000000058,
+    -0.6020000000000025
+   ]
+  },
+  "prostate_percentile_minus_ungated_best": {
+   "delta_points": -2.658633333333338,
+   "p": 0.36183440491653873,
+   "per_seed_points": [
+    -0.23090000000000055,
+    -7.190800000000008,
+    -0.5542000000000047
+   ]
+  },
+  "prostate_ungated_minus_threshold_last": {
+   "delta_points": -0.6566666666666647,
+   "p": 0.8653365613678926,
+   "per_seed_points": [
+    -7.439999999999991,
+    3.4499999999999975,
+    2.0199999999999996
+   ]
+  },
+  "prostate_percentile_minus_ungated_last": {
+   "delta_points": -9.163333333333334,
+   "p": 0.3548464223505685,
+   "per_seed_points": [
+    4.03,
+    -22.550000000000004,
+    -8.97
+   ]
+  },
+  "prostate_ungated_minus_threshold_swad": {
+   "delta_points": 0.49944444444444125,
+   "p": 0.2550958018274376,
+   "per_seed_points": [
+    0.2283333333333526,
+    1.1299999999999866,
+    0.13999999999998458
+   ]
+  },
+  "prostate_percentile_minus_ungated_swad": {
+   "delta_points": -6.449444444444441,
+   "p": 0.25428309539080657,
+   "per_seed_points": [
+    -0.48000000000001375,
+    -14.238333333333319,
+    -4.62999999999999
+   ]
+  },
+  "fundus_ungated_minus_threshold_best": {
+   "delta_points": -0.09693333333333035,
+   "p": 0.6226021682370022,
+   "per_seed_points": [
+    0.08540000000000214,
+    -0.4328999999999916,
+    0.05669999999999842
+   ]
+  },
+  "fundus_percentile_minus_ungated_best": {
+   "delta_points": -0.8650333333333352,
+   "p": 0.04132961190171417,
+   "per_seed_points": [
+    -1.1467000000000005,
+    -0.9226000000000067,
+    -0.5257999999999985
+   ]
+  },
+  "fundus_ungated_minus_threshold_last": {
+   "delta_points": -0.13000000000000417,
+   "p": 0.49461339834887763,
+   "per_seed_points": [
+    -0.060000000000004494,
+    -0.43000000000000815,
+    0.10000000000000009
+   ]
+  },
+  "fundus_percentile_minus_ungated_last": {
+   "delta_points": -2.969999999999999,
+   "p": 0.11295054818147612,
+   "per_seed_points": [
+    -5.059999999999998,
+    -1.3699999999999934,
+    -2.4800000000000044
+   ]
+  },
+  "fundus_ungated_minus_threshold_swad": {
+   "delta_points": -0.0066666666666659324,
+   "p": 0.9873017072773326,
+   "per_seed_points": [
+    0.5250000000000088,
+    -0.7212499999999955,
+    0.17624999999998892
+   ]
+  },
+  "fundus_percentile_minus_ungated_swad": {
+   "delta_points": -1.2945833333333323,
+   "p": 0.12908495834420305,
+   "per_seed_points": [
+    -2.290000000000003,
+    -1.0362500000000052,
+    -0.5574999999999886
+   ]
+  }
+ },
+ "selection": {
+  "prostate": {
+   "n": 58,
+   "median": 1.6956000000000027,
+   "n_gt1": 36,
+   "n_gt5": 15,
+   "n_s30": 55,
+   "median_s30": 1.6716000000000064,
+   "n_gt5_s30": 13
+  },
+  "fundus": {
+   "n": 40,
+   "median": 0.28639999999999777,
+   "n_gt1": 3,
+   "n_gt5": 0,
+   "n_s30": 37,
+   "median_s30": 0.27840000000000087,
+   "n_gt5_s30": 0
+  },
+  "MNMS": {
+   "n": 11,
+   "median": 0.2797999999999967,
+   "n_gt1": 1,
+   "n_gt5": 1,
+   "n_s30": 11,
+   "median_s30": 0.2797999999999967,
+   "n_gt5_s30": 1
+  },
+  "BUSI": {
+   "n": 11,
+   "median": 0.854099999999991,
+   "n_gt1": 5,
+   "n_gt5": 1,
+   "n_s30": 11,
+   "median_s30": 0.854099999999991,
+   "n_gt5_s30": 1
+  }
+ },
+ "n_logs": 127,
+ "signal": {
+  "prostate_s1337": {
+   "u_epi_all": 0.8758,
+   "u_epi_band": 0.6965,
+   "u_epi_range80": 7.642e-05,
+   "conf_all": 0.8758,
+   "conf_band": 0.6968,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "prostate_s42": {
+   "u_epi_all": 0.9083,
+   "u_epi_band": 0.6849,
+   "u_epi_range80": 8.829e-05,
+   "conf_all": 0.9083,
+   "conf_band": 0.6852,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "prostate_s2024": {
+   "u_epi_all": 0.9092,
+   "u_epi_band": 0.6742,
+   "u_epi_range80": 7.143e-05,
+   "conf_all": 0.9092,
+   "conf_band": 0.6746,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "fundus_s1337": {
+   "u_epi_all": 0.9089,
+   "u_epi_band": 0.6399,
+   "u_epi_range80": 0.0005387,
+   "conf_all": 0.909,
+   "conf_band": 0.6403,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "fundus_s42": {
+   "u_epi_all": 0.8649,
+   "u_epi_band": 0.6454,
+   "u_epi_range80": 0.0003592,
+   "conf_all": 0.8649,
+   "conf_band": 0.6453,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "fundus_s2024": {
+   "u_epi_all": 0.8674,
+   "u_epi_band": 0.6352,
+   "u_epi_range80": 0.0005013,
+   "conf_all": 0.8673,
+   "conf_band": 0.6352,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  }
+ },
+ "s9": {
+  "n_all": 112,
+  "n_testbed": 79,
+  "n_testbed_identity_holds": 78,
+  "per_benchmark": {
+   "prostate": 44,
+   "fundus": 21,
+   "MNMS": 7,
+   "BUSI": 7
+  },
+  "testbed_band_min_max": [
+   0.5565,
+   0.7265
+  ]
+ },
+ "runs_trained": {
+  "before_d32": 107,
+  "d32": 6,
+  "total": 113
+ },
+ "gate_density": {
+  "prostate_s1337_threshold": {
+   "run": "v18B_prostate_fixmatch_split1337_init1337",
+   "first_window": 0.225,
+   "first_fifth_mean": 0.9638333333333332,
+   "first_fifth_min": 0.225,
+   "after_fifth_mean": 0.9996041666666667,
+   "after_fifth_min": 0.999
+  },
+  "prostate_s1337_daep": {
+   "run": "v18A_prostate_daep_default_s1337",
+   "first_window": 0.608,
+   "first_fifth_mean": 0.9434583333333334,
+   "first_fifth_min": 0.608,
+   "after_fifth_mean": 0.9956875000000002,
+   "after_fifth_min": 0.988
+  },
+  "prostate_s42_threshold": {
+   "run": "v18B_prostate_fixmatch_s42",
+   "first_window": 0.431,
+   "first_fifth_mean": 0.9747916666666666,
+   "first_fifth_min": 0.431,
+   "after_fifth_mean": 0.9994479166666667,
+   "after_fifth_min": 0.999
+  },
+  "prostate_s42_daep": {
+   "run": "v18A_prostate_daep_default_s42",
+   "first_window": 0.655,
+   "first_fifth_mean": 0.9430833333333334,
+   "first_fifth_min": 0.655,
+   "after_fifth_mean": 0.9898020833333335,
+   "after_fifth_min": 0.972
+  },
+  "prostate_s2024_threshold": {
+   "run": "v18B_prostate_fixmatch_s2024",
+   "first_window": 0.348,
+   "first_fifth_mean": 0.970875,
+   "first_fifth_min": 0.348,
+   "after_fifth_mean": 0.9994895833333334,
+   "after_fifth_min": 0.999
+  },
+  "prostate_s2024_daep": {
+   "run": "v18A_prostate_daep_default_s2024",
+   "first_window": 0.632,
+   "first_fifth_mean": 0.9362499999999999,
+   "first_fifth_min": 0.632,
+   "after_fifth_mean": 0.9868541666666665,
+   "after_fifth_min": 0.973
+  },
+  "fundus_s1337_threshold": {
+   "run": "v18B_fundus_fixmatch_split1337_init1337",
+   "first_window": 0.206,
+   "first_fifth_mean": 0.89075,
+   "first_fifth_min": 0.206,
+   "after_fifth_mean": 0.9980625,
+   "after_fifth_min": 0.997
+  },
+  "fundus_s1337_daep": {
+   "run": "v18A_fundus_daep_default_s1337",
+   "first_window": 0.601,
+   "first_fifth_mean": 0.89525,
+   "first_fifth_min": 0.601,
+   "after_fifth_mean": 0.9918125,
+   "after_fifth_min": 0.976
+  },
+  "fundus_s42_threshold": {
+   "run": "v18B_fundus_fixmatch_s42",
+   "first_window": 0.207,
+   "first_fifth_mean": 0.89575,
+   "first_fifth_min": 0.207,
+   "after_fifth_mean": 0.9982291666666666,
+   "after_fifth_min": 0.997
+  },
+  "fundus_s42_daep": {
+   "run": "v18A_fundus_daep_default_s42",
+   "first_window": 0.616,
+   "first_fifth_mean": 0.9028333333333333,
+   "first_fifth_min": 0.616,
+   "after_fifth_mean": 0.993125,
+   "after_fifth_min": 0.98
+  },
+  "fundus_s2024_threshold": {
+   "run": "v18B_fundus_fixmatch_s2024",
+   "first_window": 0.203,
+   "first_fifth_mean": 0.8971666666666667,
+   "first_fifth_min": 0.203,
+   "after_fifth_mean": 0.9981874999999999,
+   "after_fifth_min": 0.997
+  },
+  "fundus_s2024_daep": {
+   "run": "v18A_fundus_daep_default_s2024",
+   "first_window": 0.586,
+   "first_fifth_mean": 0.8911666666666666,
+   "first_fifth_min": 0.586,
+   "after_fifth_mean": 0.9888541666666667,
+   "after_fifth_min": 0.974
+  },
+  "prostate_s1337_percentile": {
+   "run": "v18F_prostate_percentile_s1337",
+   "first_window": 0.844,
+   "first_fifth_mean": 0.8407916666666666,
+   "first_fifth_min": 0.839,
+   "after_fifth_mean": 0.8381562499999999,
+   "after_fifth_min": 0.835
+  },
+  "prostate_s42_percentile": {
+   "run": "v18F_prostate_percentile_s42",
+   "first_window": 0.846,
+   "first_fifth_mean": 0.843,
+   "first_fifth_min": 0.841,
+   "after_fifth_mean": 0.8426354166666666,
+   "after_fifth_min": 0.84
+  },
+  "prostate_s2024_percentile": {
+   "run": "v18F_prostate_percentile_s2024",
+   "first_window": 0.844,
+   "first_fifth_mean": 0.8417916666666666,
+   "first_fifth_min": 0.839,
+   "after_fifth_mean": 0.8407708333333334,
+   "after_fifth_min": 0.839
+  },
+  "fundus_s1337_percentile": {
+   "run": "v18F_fundus_percentile_s1337",
+   "first_window": 0.858,
+   "first_fifth_mean": 0.84025,
+   "first_fifth_min": 0.837,
+   "after_fifth_mean": 0.8354166666666667,
+   "after_fifth_min": 0.832
+  },
+  "fundus_s42_percentile": {
+   "run": "v18F_fundus_percentile_s42",
+   "first_window": 0.861,
+   "first_fifth_mean": 0.84725,
+   "first_fifth_min": 0.843,
+   "after_fifth_mean": 0.843375,
+   "after_fifth_min": 0.839
+  },
+  "fundus_s2024_percentile": {
+   "run": "v18F_fundus_percentile_s2024",
+   "first_window": 0.86,
+   "first_fifth_mean": 0.8429166666666666,
+   "first_fifth_min": 0.839,
+   "after_fifth_mean": 0.8398333333333333,
+   "after_fifth_min": 0.838
+  }
+ },
+ "coverage_summary": {
+  "threshold": {
+   "first_window": [
+    0.203,
+    0.431
+   ],
+   "first_fifth_mean": [
+    0.89075,
+    0.9747916666666666
+   ],
+   "after_fifth_mean": [
+    0.9980625,
+    0.9996041666666667
+   ]
+  },
+  "daep": {
+   "first_window": [
+    0.586,
+    0.655
+   ],
+   "first_fifth_mean": [
+    0.8911666666666666,
+    0.9434583333333334
+   ],
+   "after_fifth_mean": [
+    0.9868541666666665,
+    0.9956875000000002
+   ]
+  },
+  "percentile": {
+   "first_window": [
+    0.844,
+    0.861
+   ],
+   "first_fifth_mean": [
+    0.84025,
+    0.84725
+   ],
+   "after_fifth_mean": [
+    0.8354166666666667,
+    0.843375
+   ]
+  },
+  "max_removed_after_fifth_threshold_daep": 0.013145833333333523
+ },
+ "nogate_vs_daep": {
+  "prostate_best": {
+   "delta_points": -0.47243333333333304,
+   "p": 0.3117396013003959,
+   "per_seed_points": [
+    -0.48430000000000417,
+    0.14330000000000176,
+    -1.0762999999999967
+   ]
+  },
+  "prostate_last": {
+   "delta_points": -4.3799999999999955,
+   "p": 0.22183294193745595,
+   "per_seed_points": [
+    -7.139999999999991,
+    0.6099999999999994,
+    -6.609999999999994
+   ]
+  },
+  "prostate_swad": {
+   "delta_points": -1.0927777777777683,
+   "p": 0.30267388421958974,
+   "per_seed_points": [
+    0.188333333333357,
+    -2.5466666666666637,
+    -0.9199999999999986
+   ]
+  },
+  "fundus_best": {
+   "delta_points": 0.1003666666666699,
+   "p": 0.42948249609178624,
+   "per_seed_points": [
+    0.27800000000000047,
+    -0.07589999999999542,
+    0.09900000000000464
+   ]
+  },
+  "fundus_last": {
+   "delta_points": -0.023333333333334462,
+   "p": 0.8566644727387406,
+   "per_seed_points": [
+    0.07000000000000339,
+    -0.2500000000000058,
+    0.10999999999999899
+   ]
+  },
+  "fundus_swad": {
+   "delta_points": -0.07374999999999465,
+   "p": 0.6810655494416211,
+   "per_seed_points": [
+    -0.012499999999993072,
+    -0.3674999999999873,
+    0.1587499999999964
+   ]
+  }
+ },
+ "assertions_passed": [
+  "every file of the S30 sendback (65, four parts) is in the results tier and matches its part manifest (size and sha256)",
+  "no file of an earlier training was sent again (the collector used HELD_MANIFEST_S30.txt)",
+  "the job lists that ran are the registered ones (tools v16)",
+  "step 0 on record: the six hashes, the 1,269-line held manifest, no runner lock, no D-32 run before the launch",
+  "step 1 on record: the server self-test passed and was written to a file",
+  "the smoke file log.txt equals the bytes filed in S30 turn 4",
+  "the smoke file status_jobs_D32smoke.csv equals the bytes filed in S30 turn 4",
+  "runner: six jobs, one attempt each, each PASS (no failure branch, no relaunch)",
+  "no first-attempt folder; the runner preflight is GREEN",
+  "v18G_prostate_ungated_s1337: one training from iteration 0 to the last iteration, no resume event",
+  "v18G_prostate_ungated_s1337: configuration = percentile rule with keep fraction 1.0 (no gate), headline settings",
+  "v18G_prostate_ungated_s1337: the command in its log equals its line of jobs_D32.txt (the runner adds only the GPU index)",
+  "v18G_prostate_ungated_s1337: recorded arguments = those of the D-31 run of the same seed except the keep fraction (and name, GPU)",
+  "v18G_prostate_ungated_s1337: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18G_prostate_ungated_s1337: labeled slices identical to those of its threshold reference (v18B_prostate_fixmatch_split1337_init1337)",
+  "v18G_prostate_ungated_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18G_prostate_ungated_s1337: rule 0 (Amendment 1): all 120 logged windows show w_mean=1.000, so every pixel enters the pseudo-label term",
+  "v18G_prostate_ungated_s42: one training from iteration 0 to the last iteration, no resume event",
+  "v18G_prostate_ungated_s42: configuration = percentile rule with keep fraction 1.0 (no gate), headline settings",
+  "v18G_prostate_ungated_s42: the command in its log equals its line of jobs_D32.txt (the runner adds only the GPU index)",
+  "v18G_prostate_ungated_s42: recorded arguments = those of the D-31 run of the same seed except the keep fraction (and name, GPU)",
+  "v18G_prostate_ungated_s42: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18G_prostate_ungated_s42: labeled slices identical to those of its threshold reference (v18B_prostate_fixmatch_s42)",
+  "v18G_prostate_ungated_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18G_prostate_ungated_s42: rule 0 (Amendment 1): all 120 logged windows show w_mean=1.000, so every pixel enters the pseudo-label term",
+  "v18G_prostate_ungated_s2024: one training from iteration 0 to the last iteration, no resume event",
+  "v18G_prostate_ungated_s2024: configuration = percentile rule with keep fraction 1.0 (no gate), headline settings",
+  "v18G_prostate_ungated_s2024: the command in its log equals its line of jobs_D32.txt (the runner adds only the GPU index)",
+  "v18G_prostate_ungated_s2024: recorded arguments = those of the D-31 run of the same seed except the keep fraction (and name, GPU)",
+  "v18G_prostate_ungated_s2024: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18G_prostate_ungated_s2024: labeled slices identical to those of its threshold reference (v18B_prostate_fixmatch_s2024)",
+  "v18G_prostate_ungated_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18G_prostate_ungated_s2024: rule 0 (Amendment 1): all 120 logged windows show w_mean=1.000, so every pixel enters the pseudo-label term",
+  "v18G_fundus_ungated_s1337: one training from iteration 0 to the last iteration, no resume event",
+  "v18G_fundus_ungated_s1337: configuration = percentile rule with keep fraction 1.0 (no gate), headline settings",
+  "v18G_fundus_ungated_s1337: the command in its log equals its line of jobs_D32.txt (the runner adds only the GPU index)",
+  "v18G_fundus_ungated_s1337: recorded arguments = those of the D-31 run of the same seed except the keep fraction (and name, GPU)",
+  "v18G_fundus_ungated_s1337: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18G_fundus_ungated_s1337: labeled slices identical to those of its threshold reference (v18B_fundus_fixmatch_split1337_init1337)",
+  "v18G_fundus_ungated_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18G_fundus_ungated_s1337: rule 0 (Amendment 1): all 60 logged windows show w_mean=1.000, so every pixel enters the pseudo-label term",
+  "v18G_fundus_ungated_s42: one training from iteration 0 to the last iteration, no resume event",
+  "v18G_fundus_ungated_s42: configuration = percentile rule with keep fraction 1.0 (no gate), headline settings",
+  "v18G_fundus_ungated_s42: the command in its log equals its line of jobs_D32.txt (the runner adds only the GPU index)",
+  "v18G_fundus_ungated_s42: recorded arguments = those of the D-31 run of the same seed except the keep fraction (and name, GPU)",
+  "v18G_fundus_ungated_s42: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18G_fundus_ungated_s42: labeled slices identical to those of its threshold reference (v18B_fundus_fixmatch_s42)",
+  "v18G_fundus_ungated_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18G_fundus_ungated_s42: rule 0 (Amendment 1): all 60 logged windows show w_mean=1.000, so every pixel enters the pseudo-label term",
+  "v18G_fundus_ungated_s2024: one training from iteration 0 to the last iteration, no resume event",
+  "v18G_fundus_ungated_s2024: configuration = percentile rule with keep fraction 1.0 (no gate), headline settings",
+  "v18G_fundus_ungated_s2024: the command in its log equals its line of jobs_D32.txt (the runner adds only the GPU index)",
+  "v18G_fundus_ungated_s2024: recorded arguments = those of the D-31 run of the same seed except the keep fraction (and name, GPU)",
+  "v18G_fundus_ungated_s2024: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18G_fundus_ungated_s2024: labeled slices identical to those of its threshold reference (v18B_fundus_fixmatch_s2024)",
+  "v18G_fundus_ungated_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18G_fundus_ungated_s2024: rule 0 (Amendment 1): all 60 logged windows show w_mean=1.000, so every pixel enters the pseudo-label term",
+  "prostate: TOST and the paired tests use the same differences",
+  "prostate: the references and the D-31 values are those of ADJUDICATION_S29",
+  "fundus: TOST and the paired tests use the same differences",
+  "fundus: the references and the D-31 values are those of ADJUDICATION_S29",
+  "complete logs: the 121 of facts_s30_counts.json plus the six of D-32 (smoke runs excluded)",
+  "prostate: the best-checkpoint line equals rule 1",
+  "fundus: the best-checkpoint line equals rule 1",
+  "prostate: the logs reproduce the S30 selection counts exactly (n 55, median 1.6716)",
+  "fundus: the logs reproduce the S30 selection counts exactly (n 37, median 0.2784)",
+  "MNMS: the logs reproduce the S30 selection counts exactly (n 11, median 0.2798)",
+  "BUSI: the logs reproduce the S30 selection counts exactly (n 11, median 0.8541)",
+  "counted runs after D-32: Prostate 58, Fundus 40",
+  "six harness JSONs, EMA teachers",
+  "v18B_prostate_fixmatch_split1337_init1337: w_mean logged at every evaluation interval",
+  "v18A_prostate_daep_default_s1337: w_mean logged at every evaluation interval",
+  "v18B_prostate_fixmatch_s42: w_mean logged at every evaluation interval",
+  "v18A_prostate_daep_default_s42: w_mean logged at every evaluation interval",
+  "v18B_prostate_fixmatch_s2024: w_mean logged at every evaluation interval",
+  "v18A_prostate_daep_default_s2024: w_mean logged at every evaluation interval",
+  "v18B_fundus_fixmatch_split1337_init1337: w_mean logged at every evaluation interval",
+  "v18A_fundus_daep_default_s1337: w_mean logged at every evaluation interval",
+  "v18B_fundus_fixmatch_s42: w_mean logged at every evaluation interval",
+  "v18A_fundus_daep_default_s42: w_mean logged at every evaluation interval",
+  "v18B_fundus_fixmatch_s2024: w_mean logged at every evaluation interval",
+  "v18A_fundus_daep_default_s2024: w_mean logged at every evaluation interval",
+  "v18F_prostate_percentile_s1337: w_mean logged at every evaluation interval",
+  "v18F_prostate_percentile_s42: w_mean logged at every evaluation interval",
+  "v18F_prostate_percentile_s2024: w_mean logged at every evaluation interval",
+  "v18F_fundus_percentile_s1337: w_mean logged at every evaluation interval",
+  "v18F_fundus_percentile_s42: w_mean logged at every evaluation interval",
+  "v18F_fundus_percentile_s2024: w_mean logged at every evaluation interval",
+  "after the first fifth neither the threshold gate nor DAEP removes more than 1.5 % of the pseudo-label term",
+  "no gate is within seed noise of the code-matched DAEP trainings at the three checkpoints on both benchmarks"
+ ]
+}

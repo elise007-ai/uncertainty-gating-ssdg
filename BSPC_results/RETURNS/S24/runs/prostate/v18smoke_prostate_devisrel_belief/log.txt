@@ -1,0 +1,64 @@
+[07:48:19.345] python train_fourierfuse_v18_revision.py --dataset prostate --lb_num 20 --lb_domain 5 --domain_num 6 --max_iterations 20 --num_eval_iter 10 --base_lr 0.0005 --label_bs 4 --unlabel_bs 4 --swad_start_iter 15000 --swad_update_every 100 --swad_bn_recalib_batches 20 --warmup --warmup_period 150 --AdamW --amp 1 --ff_base_features 64 --ff_spec_consistency_weight 0.5 --ff_fda_beta 0.05 --consistency 1.0 --consistency_rampup 150.0 --ema_decay 0.995 --daep_alpha 1.0 --daep_beta 1.0 --daep_gamma 1.0 --proto_per_domain 2 --proto_ema 0.99 --evid_lambda_kl_max 0.02 --evid_anneal_iters 10000 --save_model --overwrite --method devis --devis_gate soft --devis_variant released --seed 43 --save_name v18smoke_prostate_devisrel_belief --gpu 0
+[07:48:19.345] Namespace(dataset='prostate', save_name='v18smoke_prostate_devisrel_belief', overwrite=True, max_iterations=20, num_eval_iter=10, deterministic=1, base_lr=0.0005, seed=43, gpu='0', amp=1, label_bs=4, unlabel_bs=4, test_bs=1, domain_num=6, lb_domain=5, lb_num=20, lb_ratio=0, ema_decay=0.995, consistency=1.0, consistency_rampup=150.0, consistency_weight_cap=0.5, consistency_ramp_frac=-1.0, selftest_ramp=False, save_model=True, img_size=512, AdamW=True, warmup=True, warmup_period=150, ff_base_features=64, ff_bilinear=False, ff_spec_consistency_weight=0.5, ff_fda_beta=0.05, ff_fda_prob=0.5, ff_no_fda=False, ff_no_spec_consistency=False, swad_enable=True, swad_start_iter=15000, swad_update_every=100, swad_bn_recalib_batches=20, daep_alpha=1.0, daep_beta=1.0, daep_gamma=1.0, daep_no_ale=False, daep_no_epi=False, daep_no_dom=False, daep_threshold_baseline=False, method='devis', cadg_n_bins=20, cadg_refit_every=200, cadg_min_count=50000, cadg_recalibrate_ale=False, cadg_seed_split=True, cg_n_views=3, cg_agree_frac=1.0, cg_conf_floor=0.0, pg_keep_frac=0.8, proto_per_domain=2, proto_ema=0.99, evid_lambda_kl_max=0.02, evid_anneal_iters=10000, split_seed=-1, head='evidential', evid_activation='softplus', evid_loss='mse', evid_kl_schedule='linear', evid_prior_w=1.0, evid_temperature=1.0, evid_max_evidence=0.0, mc_dropout_p=0.0, mc_dropout_place='uamt', mc_target='teacher', mc_T=8, devis_beta0=0.01, devis_cup_weight=1.0, devis_gate='soft', devis_u_thr=0.2, devis_variant='released', devis_rel_epochs=99, devis_rel_lambda_epochs=50, medl_arch2='resunet', medl_xi=1.0, medl_rel_thr=0.5, medl_lambda_fisher=0.1, medl_lambda1=0.5, medl_report='net1', resume='auto', resume_every_epochs=2, die_after_epoch=-1, grad_clip=5.0, _resume_from=None)
+[07:48:19.345] [v18] DEviS uses the digamma (ce) Bayes risk; you passed --evid_loss mse. Forcing 'ce' to stay faithful.
+[07:48:19.346] [v18] DEviS keeps lambda_KL fixed at 0.02 (no annealing); forcing --evid_kl_schedule const.
+[07:48:19.346] [v18] DEviS variant 'released' (v11): supervised objective = dce_evidence_u_loss of the released code (KL weight 0 -> 1 over 50/99 of training; its calibration penalty and DiceLoss). --evid_lambda_kl_max, --evid_kl_schedule and --devis_cup_weight do not enter the supervised term.
+[07:48:19.390] [v16 DATASET] prostate: num_classes=1, K=2, num_channels=1, patch_size=384, min_v/max_v=0.1/2, fillcolor=255, lb_bs=4, ulb_bs=4
+[07:48:19.391] [v18] DEviS variant 'released' (v11): supervised objective = dce_evidence_u_loss of the released code (KL weight 0 -> 1 over 50/99 of training; its calibration penalty and DiceLoss). --evid_lambda_kl_max, --evid_kl_schedule and --devis_cup_weight do not enter the supervised term.
+[07:48:20.473] [v18 CFG] head=evidential act=softplus loss=ce kl=const/0.02/10000 W=1.0 T=1.0 cap=0.0 dropout=0.0 place=uamt mc_target=teacher method=devis split_seed=-1
+[07:48:20.473] [v16 MODEL] trainable params = 31,036,546 (SynFoC foundation-backed ~ 6x this)
+[07:48:20.473] [v16 DAEP] alpha=1.0, beta=1.0, gamma=1.0 | ablations: no_ale=False, no_epi=False, no_dom=False, threshold_baseline=False
+[07:48:20.473] [v16 OPT] base_lr=0.0005, AdamW=True, warmup=True, warmup_period=150, amp=1, grad_clip=5.0
+[07:48:20.473] [v16 CW] consistency=1.0, rampup=150.0, cap=0.5, ramp_frac=-1.0 (v16 whole-run schedule (E-28))
+[07:48:20.473] [CADG] disabled (method=devis).
+[07:48:20.474] [seed_split] seed=43 data_num=338 lb_num=20 labeled_idxs=[9, 19, 49, 73, 90, 146, 189, 190, 201, 221, 222, 232, 236, 255, 263, 280, 295, 306, 311, 319]
+[07:48:21.778] 10 iterations per epoch, 2 epochs total, max_iterations=20
+[07:48:29.316] iter 10: loss=1.6101, sup=1.5669, unsup=1.7228, spec=0.0534, cw=0.009, w_mean=0.520, w_min=0.379, U_ale=0.117, U_epi=0.612, U_dom=0.172, S_mean=3.40, devis_beta_t=0.03426, devis_cup=0.05986, devis_kl_w=0.4455
+[07:48:29.316] Testing student...
+[07:48:30.973] domain1 epoch 1: val_base_dice=0.0003 hd=101.85
+[07:48:34.091] domain2 epoch 1: val_base_dice=0.0014 hd=132.08
+[07:48:35.513] domain3 epoch 1: val_base_dice=0.0004 hd=75.98
+[07:48:39.695] domain4 epoch 1: val_base_dice=0.0029 hd=132.18
+[07:48:43.737] domain5 epoch 1: val_base_dice=0.0015 hd=190.37
+[07:48:45.851] domain6 epoch 1: val_base_dice=0.0016 hd=177.55
+[07:48:45.852] epoch 1: avg val_base_dice=0.0013 DSDV=0.0000
+[07:48:45.853] Testing EMA teacher...
+[07:48:47.043] domain1 epoch 1: val_base_dice=0.0003 hd=103.85
+[07:48:49.594] domain2 epoch 1: val_base_dice=0.0016 hd=135.32
+[07:48:50.418] domain3 epoch 1: val_base_dice=0.0004 hd=75.78
+[07:48:54.002] domain4 epoch 1: val_base_dice=0.0043 hd=142.80
+[07:48:57.232] domain5 epoch 1: val_base_dice=0.0014 hd=213.13
+[07:48:58.873] domain6 epoch 1: val_base_dice=0.0016 hd=205.15
+[07:48:58.873] epoch 1: avg val_base_dice=0.0016 DSDV=0.0000
+[07:48:59.607] [epoch 1] student_avg=0.0013  ema_avg=0.0016  best_avg=0.0013 @ iter 10  swad_best=0.0000 @ iter -1  best_DSDV=0.0000
+[07:49:03.940] iter 20: loss=1.5101, sup=1.4791, unsup=1.6708, spec=0.0024, cw=0.017, w_mean=0.537, w_min=0.186, U_ale=0.114, U_epi=0.596, U_dom=0.062, S_mean=3.41, devis_beta_t=0.3348, devis_cup=0.1618, devis_kl_w=0.999
+[07:49:03.940] Testing student...
+[07:49:05.303] domain1 epoch 2: val_base_dice=0.0068 hd=105.55
+[07:49:08.870] domain2 epoch 2: val_base_dice=0.0703 hd=173.00
+[07:49:09.794] domain3 epoch 2: val_base_dice=0.0163 hd=199.83
+[07:49:14.015] domain4 epoch 2: val_base_dice=0.0438 hd=186.99
+[07:49:17.721] domain5 epoch 2: val_base_dice=0.1102 hd=186.30
+[07:49:19.601] domain6 epoch 2: val_base_dice=0.0814 hd=192.29
+[07:49:19.602] epoch 2: avg val_base_dice=0.0548 DSDV=0.0013
+[07:49:19.603] Testing EMA teacher...
+[07:49:21.098] domain1 epoch 2: val_base_dice=0.0236 hd=227.14
+[07:49:24.796] domain2 epoch 2: val_base_dice=0.0792 hd=188.24
+[07:49:25.769] domain3 epoch 2: val_base_dice=0.0389 hd=195.31
+[07:49:30.251] domain4 epoch 2: val_base_dice=0.0656 hd=192.43
+[07:49:34.182] domain5 epoch 2: val_base_dice=0.0992 hd=187.31
+[07:49:36.185] domain6 epoch 2: val_base_dice=0.0674 hd=190.41
+[07:49:36.186] epoch 2: avg val_base_dice=0.0623 DSDV=0.0006
+[07:49:37.052] [epoch 2] student_avg=0.0548  ema_avg=0.0623  best_avg=0.0548 @ iter 20  swad_best=0.0000 @ iter -1  best_DSDV=0.0013
+[07:49:37.053] ============================================================
+[07:49:37.054] TRAINING COMPLETE — FourierFuse v16 summary
+[07:49:37.054]   Best avg dice (student): 0.054789 at iter 20
+[07:49:37.054]   Best base dice: 0.054789
+[07:49:37.054]   Best DSDV: 0.001321
+[07:49:37.055]   --- Per-domain metrics at best avg dice (iter 20) ---
+[07:49:37.055]     Domain 1 — base: Dice=0.006759, HD95=105.5521, ASD=44.6916
+[07:49:37.055]     Domain 2 — base: Dice=0.070304, HD95=173.0012, ASD=105.9076
+[07:49:37.055]     Domain 3 — base: Dice=0.016296, HD95=199.8339, ASD=111.6543
+[07:49:37.056]     Domain 4 — base: Dice=0.043768, HD95=186.9903, ASD=106.7857
+[07:49:37.056]     Domain 5 — base: Dice=0.110184, HD95=186.3022, ASD=99.6523
+[07:49:37.056]     Domain 6 — base: Dice=0.081424, HD95=192.2873, ASD=106.9885
+[07:49:37.056] ============================================================

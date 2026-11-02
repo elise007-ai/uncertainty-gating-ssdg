@@ -1,0 +1,13 @@
+dataset,comparison,checkpoint,delta_points,p_paired,per_seed_points
+prostate,oracle_minus_threshold,best,+2.23,0.009,+1.85;+2.29;+2.56
+prostate,oracle_minus_nogate,best,+2.36,0.032,+2.23;+1.67;+3.17
+prostate,oracle_minus_threshold,last,+6.88,0.166,+1.89;+5.87;+12.88
+prostate,oracle_minus_nogate,last,+7.54,0.101,+9.33;+2.42;+10.86
+prostate,oracle_minus_threshold,swad,+2.13,0.075,+1.38;+3.35;+1.65
+prostate,oracle_minus_nogate,swad,+1.63,0.036,+1.15;+2.23;+1.51
+fundus,oracle_minus_threshold,best,+1.73,0.015,+2.09;+1.35;+1.74
+fundus,oracle_minus_nogate,best,+1.82,0.003,+2.00;+1.79;+1.68
+fundus,oracle_minus_threshold,last,+1.95,0.013,+2.20;+1.50;+2.16
+fundus,oracle_minus_nogate,last,+2.08,0.002,+2.26;+1.93;+2.06
+fundus,oracle_minus_threshold,swad,+1.59,0.060,+2.32;+0.90;+1.56
+fundus,oracle_minus_nogate,swad,+1.60,0.006,+1.79;+1.62;+1.38

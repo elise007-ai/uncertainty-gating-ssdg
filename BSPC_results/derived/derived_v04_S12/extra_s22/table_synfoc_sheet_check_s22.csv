@@ -1,0 +1,9 @@
+dataset,method,sheet_avg,published_avg,avg_match,n_columns_compared,columns_match
+prostate,SynFoC-UNet,86.9,86.90,True,6,True
+prostate,SynFoC-MedSAM,87.16,87.16,True,6,True
+fundus,SynFoC-UNet,87.5,87.50,True,4,True
+fundus,SynFoC-MedSAM,88.6,88.60,True,4,True
+MNMS,SynFoC-UNet,79.55,79.55,True,4,True
+MNMS,SynFoC-MedSAM,80.84,80.84,True,4,True
+BUSI,SynFoC-UNet,66.13,66.13,True,0,True
+BUSI,SynFoC-MedSAM,71.61,71.61,True,0,True

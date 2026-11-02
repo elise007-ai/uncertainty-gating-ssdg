@@ -1,0 +1,25 @@
+teacher,vendor,dice_span_points
+v18B_prostate_fixmatch_s2024,BIDMC,0.33
+v18B_prostate_fixmatch_s2024,BMC,0.74
+v18B_prostate_fixmatch_s2024,HK,0.50
+v18B_prostate_fixmatch_s2024,I2CVB,1.10
+v18B_prostate_fixmatch_s2024,RUNMC,0.16
+v18B_prostate_fixmatch_s2024,UCL,0.36
+v18B_prostate_fixmatch_s42,BIDMC,0.70
+v18B_prostate_fixmatch_s42,BMC,0.65
+v18B_prostate_fixmatch_s42,HK,0.57
+v18B_prostate_fixmatch_s42,I2CVB,1.46
+v18B_prostate_fixmatch_s42,RUNMC,0.17
+v18B_prostate_fixmatch_s42,UCL,0.07
+v18B_prostate_fixmatch_split1337_init1337,BIDMC,0.09
+v18B_prostate_fixmatch_split1337_init1337,BMC,0.24
+v18B_prostate_fixmatch_split1337_init1337,HK,0.41
+v18B_prostate_fixmatch_split1337_init1337,I2CVB,0.58
+v18B_prostate_fixmatch_split1337_init1337,RUNMC,0.12
+v18B_prostate_fixmatch_split1337_init1337,UCL,0.07
+mean curve,BIDMC,0.34
+mean curve,BMC,0.54
+mean curve,HK,0.49
+mean curve,I2CVB,1.05
+mean curve,RUNMC,0.10
+mean curve,UCL,0.15

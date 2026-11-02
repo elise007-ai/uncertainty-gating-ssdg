@@ -1,0 +1,7 @@
+dataset,seed,run,best_avg,best_iter,student_avg_last,threshold_reference,ref_best_avg,ref_last,oracle_minus_threshold,nogate_d32_best_avg,oracle_minus_nogate,r34_flag,n_nonfinite
+prostate,1337,v18H_prostate_oracle_s1337,0.880456,59000,0.8782,v18B_prostate_fixmatch_split1337_init1337,0.861977,0.8593,+0.018479,0.858165,+0.022291,ok,0
+prostate,42,v18H_prostate_oracle_s42,0.880977,54000,0.8799,v18B_prostate_fixmatch_s42,0.858066,0.8212,+0.022911,0.864230,+0.016747,ok,0
+prostate,2024,v18H_prostate_oracle_s2024,0.882660,47500,0.8814,v18B_prostate_fixmatch_s2024,0.857017,0.7526,+0.025643,0.850997,+0.031663,ok,0
+fundus,1337,v18H_fundus_oracle_s1337,0.902968,27500,0.9007,v18B_fundus_fixmatch_split1337_init1337,0.882081,0.8787,+0.020887,0.882935,+0.020033,ok,0
+fundus,42,v18H_fundus_oracle_s42,0.900992,26500,0.8998,v18B_fundus_fixmatch_s42,0.887454,0.8848,+0.013538,0.883125,+0.017867,ok,0
+fundus,2024,v18H_fundus_oracle_s2024,0.903669,30000,0.9037,v18B_fundus_fixmatch_s2024,0.886255,0.8821,+0.017414,0.886822,+0.016847,ok,0

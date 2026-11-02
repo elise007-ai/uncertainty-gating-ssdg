@@ -1,0 +1,7 @@
+dataset,seed,run,best_avg,best_frac,student_avg_last,best_minus_last_points,d28_best_minus_last_points,d28_best_frac,threshold_ref_best_minus_last_points
+prostate,1337,v18E_prostate_devisrel_belief_s1337,0.8504,0.392,0.7318,11.86,17.99,0.608,0.27
+prostate,42,v18E_prostate_devisrel_belief_s42,0.8609,0.433,0.7212,13.97,4.84,0.658,3.69
+prostate,2024,v18E_prostate_devisrel_belief_s2024,0.8668,0.600,0.6710,19.58,22.86,0.583,10.44
+fundus,1337,v18E_fundus_devisrel_belief_s1337,0.8811,0.583,0.8770,0.41,0.26,0.583,0.34
+fundus,42,v18E_fundus_devisrel_belief_s42,0.8823,0.717,0.8803,0.20,0.19,0.817,0.27
+fundus,2024,v18E_fundus_devisrel_belief_s2024,0.8884,0.633,0.8845,0.39,0.18,0.600,0.42

@@ -1,0 +1,789 @@
+{
+ "session": "S32",
+ "reader": "make_extra_s31_d33.py",
+ "preregistration": "DOCS/D33_PREREGISTRATION_S31.md (+ Amendment 1)",
+ "code_sha256": {
+  "train_fourierfuse_v18_revision.py": "915347736f4855da",
+  "revision_modules.py": "a6fe4357a39d0020",
+  "fourierfuse_v16_modules.py": "4a343f191bbbf1e0",
+  "diag_uncertainty_harness_v18.py": "7eb2db7ec9353de7"
+ },
+ "manifest_files_verified": 67,
+ "mask_census": {
+  "prostate": [
+   "[0, 255]"
+  ],
+  "fundus": [
+   "[0, 128, 255]"
+  ]
+ },
+ "runner": {
+  "jobs": 6,
+  "final_pass": 6,
+  "first_start": "2026-10-22 04:42:24",
+  "last_end": "2026-10-22 22:06:36",
+  "wall_clock_hours": 17.4
+ },
+ "prostate_rule1": {
+  "mean": 0.8813643333333333,
+  "std": 0.0011519220170364461,
+  "ref_mean": 0.85902,
+  "ref_std": 0.0026139982784998015,
+  "delta": 0.022344333333333338,
+  "per_seed_delta": [
+   0.018479000000000023,
+   0.022911000000000015,
+   0.02564299999999997
+  ],
+  "t": 10.704450121443404,
+  "p": 0.008614519174874375,
+  "n_pos": 3,
+  "sign_p_greater": 0.125,
+  "sign_p_two_sided": 0.25,
+  "beats": true,
+  "verdict": "above the threshold gate",
+  "mean_points": 2.2344333333333335,
+  "sd_points": 0.361546087426391,
+  "ci90_points": [
+   1.6249192490433813,
+   2.8439474176232857
+  ],
+  "p_tost_0.5": 0.9929115979817795,
+  "equivalent_at_0.5": false,
+  "mde_points": 1.1801021745707863,
+  "r34_flags": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "unstable": [
+   false,
+   false,
+   false
+  ]
+ },
+ "prostate_rule2_oracle_minus_nogate": {
+  "mean": 0.8813643333333333,
+  "std": 0.0011519220170364461,
+  "ref_mean": 0.8577973333333334,
+  "ref_std": 0.006624157028130722,
+  "delta": 0.023567000000000005,
+  "per_seed_delta": [
+   0.02229100000000006,
+   0.016746999999999956,
+   0.031663
+  ],
+  "t": 5.4141069576844005,
+  "p": 0.03246299555718245,
+  "n_pos": 3,
+  "sign_p_greater": 0.125,
+  "sign_p_two_sided": 0.25,
+  "beats": true,
+  "verdict": "above the no-gate runs",
+  "mean_points": 2.3567000000000005,
+  "sd_points": 0.7539422789577476,
+  "ci90_points": [
+   1.085663045797112,
+   3.6277369542028888
+  ],
+  "p_tost_0.5": 0.9745947618485264,
+  "equivalent_at_0.5": false,
+  "mde_points": 2.4609004324518837
+ },
+ "prostate_per_seed": {
+  "1337": {
+   "run": "v18H_prostate_oracle_s1337",
+   "best": 0.880456,
+   "best_iter": 59000,
+   "last": 0.8782,
+   "ref": 0.861977,
+   "refname": "v18B_prostate_fixmatch_split1337_init1337",
+   "ref_last": 0.8593,
+   "nogate": 0.858165,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "at_best": {
+    "BIDMC": 0.83804,
+    "BMC": 0.885428,
+    "HK": 0.913182,
+    "I2CVB": 0.900731,
+    "RUNMC": 0.855691,
+    "UCL": 0.889665
+   },
+   "ref_at_best": {
+    "BIDMC": 0.80826,
+    "BMC": 0.878652,
+    "HK": 0.898773,
+    "I2CVB": 0.859933,
+    "RUNMC": 0.844686,
+    "UCL": 0.88156
+   },
+   "w_first": 0.943,
+   "w_first_fifth_mean": 0.9816249999999999,
+   "w_after_mean": 0.9949062500000002,
+   "w_after_median": 0.995,
+   "w_after_min": 0.991,
+   "w_after_max": 0.996
+  },
+  "42": {
+   "run": "v18H_prostate_oracle_s42",
+   "best": 0.880977,
+   "best_iter": 54000,
+   "last": 0.8799,
+   "ref": 0.858066,
+   "refname": "v18B_prostate_fixmatch_s42",
+   "ref_last": 0.8212,
+   "nogate": 0.86423,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "at_best": {
+    "BIDMC": 0.849888,
+    "BMC": 0.887176,
+    "HK": 0.911003,
+    "I2CVB": 0.89624,
+    "RUNMC": 0.866782,
+    "UCL": 0.874771
+   },
+   "ref_at_best": {
+    "BIDMC": 0.843439,
+    "BMC": 0.862413,
+    "HK": 0.892514,
+    "I2CVB": 0.817403,
+    "RUNMC": 0.866726,
+    "UCL": 0.865898
+   },
+   "w_first": 0.943,
+   "w_first_fifth_mean": 0.9788333333333332,
+   "w_after_mean": 0.9943125000000003,
+   "w_after_median": 0.995,
+   "w_after_min": 0.987,
+   "w_after_max": 0.996
+  },
+  "2024": {
+   "run": "v18H_prostate_oracle_s2024",
+   "best": 0.88266,
+   "best_iter": 47500,
+   "last": 0.8814,
+   "ref": 0.857017,
+   "refname": "v18B_prostate_fixmatch_s2024",
+   "ref_last": 0.7526,
+   "nogate": 0.850997,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "at_best": {
+    "BIDMC": 0.859377,
+    "BMC": 0.890819,
+    "HK": 0.904018,
+    "I2CVB": 0.896467,
+    "RUNMC": 0.858327,
+    "UCL": 0.88695
+   },
+   "ref_at_best": {
+    "BIDMC": 0.814601,
+    "BMC": 0.86114,
+    "HK": 0.880514,
+    "I2CVB": 0.858489,
+    "RUNMC": 0.844323,
+    "UCL": 0.883037
+   },
+   "w_first": 0.933,
+   "w_first_fifth_mean": 0.9777916666666666,
+   "w_after_mean": 0.9948437500000002,
+   "w_after_median": 0.995,
+   "w_after_min": 0.99,
+   "w_after_max": 0.996
+  }
+ },
+ "prostate_descriptive": {
+  "best_minus_last_points": [
+   0.22560000000000358,
+   0.10769999999999946,
+   0.1260000000000039
+  ],
+  "ref_best_minus_last_points": [
+   0.26770000000000405,
+   3.6865999999999954,
+   10.441699999999997
+  ],
+  "best_frac": [
+   0.9833333333333333,
+   0.9,
+   0.7916666666666666
+  ],
+  "per_vendor_delta_points": {
+   "BIDMC": [
+    2.978000000000003,
+    0.6448999999999927,
+    4.477599999999993
+   ],
+   "BMC": [
+    0.6776000000000004,
+    2.476299999999998,
+    2.967900000000001
+   ],
+   "HK": [
+    1.4409000000000005,
+    1.8488999999999978,
+    2.350399999999997
+   ],
+   "I2CVB": [
+    4.0798000000000005,
+    7.883700000000005,
+    3.7978000000000067
+   ],
+   "RUNMC": [
+    1.1004999999999932,
+    0.0056000000000056005,
+    1.4003999999999905
+   ],
+   "UCL": [
+    0.8105000000000029,
+    0.887300000000002,
+    0.39130000000000553
+   ]
+  }
+ },
+ "fundus_rule1": {
+  "mean": 0.902543,
+  "std": 0.0013881826248732228,
+  "ref_mean": 0.8852633333333332,
+  "ref_std": 0.002820431586359304,
+  "delta": 0.017279666666666655,
+  "per_seed_delta": [
+   0.02088699999999999,
+   0.01353800000000005,
+   0.01741399999999993
+  ],
+  "t": 8.141045483105675,
+  "p": 0.014755159083292136,
+  "n_pos": 3,
+  "sign_p_greater": 0.125,
+  "sign_p_two_sided": 0.25,
+  "beats": true,
+  "verdict": "above the threshold gate",
+  "mean_points": 1.7279666666666655,
+  "sd_points": 0.36763411611727626,
+  "ci90_points": [
+   1.1081890520504132,
+   2.347744281282918
+  ],
+  "p_tost_0.5": 0.985699287095022,
+  "equivalent_at_0.5": false,
+  "mde_points": 1.1999737653494467,
+  "r34_flags": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "unstable": [
+   false,
+   false,
+   false
+  ]
+ },
+ "fundus_rule2_oracle_minus_nogate": {
+  "mean": 0.902543,
+  "std": 0.0013881826248732228,
+  "ref_mean": 0.884294,
+  "ref_std": 0.0021913724010308943,
+  "delta": 0.01824899999999996,
+  "per_seed_delta": [
+   0.020032999999999967,
+   0.017866999999999966,
+   0.016846999999999945
+  ],
+  "t": 19.42742230482345,
+  "p": 0.00263905109569638,
+  "n_pos": 3,
+  "sign_p_greater": 0.125,
+  "sign_p_two_sided": 0.25,
+  "beats": true,
+  "verdict": "above the no-gate runs",
+  "mean_points": 1.824899999999996,
+  "sd_points": 0.16269886293395022,
+  "ci90_points": [
+   1.5506133961478852,
+   2.0991866038521065
+  ],
+  "p_tost_0.5": 0.9975054513045817,
+  "equivalent_at_0.5": false,
+  "mde_points": 0.5310561740974157
+ },
+ "fundus_per_seed": {
+  "1337": {
+   "run": "v18H_fundus_oracle_s1337",
+   "best": 0.902968,
+   "best_iter": 27500,
+   "last": 0.9007,
+   "ref": 0.882081,
+   "refname": "v18B_fundus_fixmatch_split1337_init1337",
+   "ref_last": 0.8787,
+   "nogate": 0.882935,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "at_best": {
+    "Domain1": 0.917497,
+    "Domain2": 0.8644815,
+    "Domain3": 0.9147365,
+    "Domain4": 0.9151575
+   },
+   "ref_at_best": {
+    "Domain1": 0.8892945,
+    "Domain2": 0.838482,
+    "Domain3": 0.9062665,
+    "Domain4": 0.8942825
+   },
+   "w_first": 0.88,
+   "w_first_fifth_mean": 0.9704166666666665,
+   "w_after_mean": 0.9862916666666667,
+   "w_after_median": 0.987,
+   "w_after_min": 0.982,
+   "w_after_max": 0.988
+  },
+  "42": {
+   "run": "v18H_fundus_oracle_s42",
+   "best": 0.900992,
+   "best_iter": 26500,
+   "last": 0.8998,
+   "ref": 0.887454,
+   "refname": "v18B_fundus_fixmatch_s42",
+   "ref_last": 0.8848,
+   "nogate": 0.883125,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "at_best": {
+    "Domain1": 0.920689,
+    "Domain2": 0.8548235,
+    "Domain3": 0.912384,
+    "Domain4": 0.9160710000000001
+   },
+   "ref_at_best": {
+    "Domain1": 0.9068320000000001,
+    "Domain2": 0.8324355,
+    "Domain3": 0.9097865,
+    "Domain4": 0.9007615
+   },
+   "w_first": 0.91,
+   "w_first_fifth_mean": 0.9698333333333333,
+   "w_after_mean": 0.9863333333333334,
+   "w_after_median": 0.987,
+   "w_after_min": 0.982,
+   "w_after_max": 0.988
+  },
+  "2024": {
+   "run": "v18H_fundus_oracle_s2024",
+   "best": 0.903669,
+   "best_iter": 30000,
+   "last": 0.9037,
+   "ref": 0.886255,
+   "refname": "v18B_fundus_fixmatch_s2024",
+   "ref_last": 0.8821,
+   "nogate": 0.886822,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "at_best": {
+    "Domain1": 0.919219,
+    "Domain2": 0.8698365,
+    "Domain3": 0.91201,
+    "Domain4": 0.913611
+   },
+   "ref_at_best": {
+    "Domain1": 0.893667,
+    "Domain2": 0.8342965,
+    "Domain3": 0.90718,
+    "Domain4": 0.9098765
+   },
+   "w_first": 0.892,
+   "w_first_fifth_mean": 0.9706666666666667,
+   "w_after_mean": 0.9865,
+   "w_after_median": 0.987,
+   "w_after_min": 0.982,
+   "w_after_max": 0.988
+  }
+ },
+ "fundus_descriptive": {
+  "best_minus_last_points": [
+   0.22680000000000478,
+   0.11919999999999709,
+   -0.0031000000000003247
+  ],
+  "ref_best_minus_last_points": [
+   0.33809999999999674,
+   0.2653999999999934,
+   0.415500000000002
+  ],
+  "best_frac": [
+   0.9166666666666666,
+   0.8833333333333333,
+   1.0
+  ],
+  "per_vendor_delta_points": {
+   "Domain1": [
+    2.820250000000002,
+    1.3856999999999897,
+    2.555200000000002
+   ],
+   "Domain2": [
+    2.5999500000000064,
+    2.2387999999999963,
+    3.5540000000000016
+   ],
+   "Domain3": [
+    0.8469999999999978,
+    0.25974999999999193,
+    0.4830000000000001
+   ],
+   "Domain4": [
+    2.0874999999999977,
+    1.5309500000000087,
+    0.3734499999999974
+   ]
+  }
+ },
+ "expectation": {
+  "registered": "the oracle is not below the threshold gate on either benchmark",
+  "failed_on": [],
+  "holds": true
+ },
+ "checkpoints": {
+  "prostate_oracle_minus_threshold_best": {
+   "delta_points": 2.234433333333334,
+   "p": 0.008614519174874375,
+   "per_seed_points": [
+    1.8479000000000023,
+    2.2911000000000015,
+    2.564299999999997
+   ]
+  },
+  "prostate_oracle_minus_nogate_best": {
+   "delta_points": 2.3567000000000005,
+   "p": 0.03246299555718245,
+   "per_seed_points": [
+    2.229100000000006,
+    1.6746999999999956,
+    3.1662999999999997
+   ]
+  },
+  "prostate_oracle_minus_threshold_last": {
+   "delta_points": 6.879999999999997,
+   "p": 0.1655207657796576,
+   "per_seed_points": [
+    1.8900000000000028,
+    5.869999999999997,
+    12.879999999999992
+   ]
+  },
+  "prostate_oracle_minus_nogate_last": {
+   "delta_points": 7.536666666666663,
+   "p": 0.10100270560660363,
+   "per_seed_points": [
+    9.329999999999995,
+    2.42,
+    10.859999999999992
+   ]
+  },
+  "prostate_oracle_minus_threshold_swad": {
+   "delta_points": 2.127777777777777,
+   "p": 0.07512185999130686,
+   "per_seed_points": [
+    1.378333333333348,
+    3.354999999999997,
+    1.6499999999999848
+   ]
+  },
+  "prostate_oracle_minus_nogate_swad": {
+   "delta_points": 1.6283333333333354,
+   "p": 0.035640435065264056,
+   "per_seed_points": [
+    1.1499999999999955,
+    2.2250000000000103,
+    1.5100000000000002
+   ]
+  },
+  "fundus_oracle_minus_threshold_best": {
+   "delta_points": 1.7279666666666655,
+   "p": 0.014755159083292136,
+   "per_seed_points": [
+    2.088699999999999,
+    1.353800000000005,
+    1.741399999999993
+   ]
+  },
+  "fundus_oracle_minus_nogate_best": {
+   "delta_points": 1.824899999999996,
+   "p": 0.00263905109569638,
+   "per_seed_points": [
+    2.0032999999999967,
+    1.7866999999999966,
+    1.6846999999999945
+   ]
+  },
+  "fundus_oracle_minus_threshold_last": {
+   "delta_points": 1.9533333333333291,
+   "p": 0.013233064960617352,
+   "per_seed_points": [
+    2.199999999999991,
+    1.5000000000000013,
+    2.1599999999999953
+   ]
+  },
+  "fundus_oracle_minus_nogate_last": {
+   "delta_points": 2.083333333333333,
+   "p": 0.0021155079535693853,
+   "per_seed_points": [
+    2.2599999999999953,
+    1.9300000000000095,
+    2.059999999999995
+   ]
+  },
+  "fundus_oracle_minus_threshold_swad": {
+   "delta_points": 1.5937499999999976,
+   "p": 0.060055911853740644,
+   "per_seed_points": [
+    2.32,
+    0.9037500000000032,
+    1.5574999999999894
+   ]
+  },
+  "fundus_oracle_minus_nogate_swad": {
+   "delta_points": 1.6004166666666635,
+   "p": 0.005581565241879776,
+   "per_seed_points": [
+    1.794999999999991,
+    1.6249999999999987,
+    1.3812500000000005
+   ]
+  }
+ },
+ "selection": {
+  "prostate": {
+   "n": 61,
+   "median": 1.3588999999999962,
+   "n_gt1": 36,
+   "n_gt5": 15,
+   "n_prev": 58,
+   "median_prev": 1.6956000000000027,
+   "n_gt5_prev": 15
+  },
+  "fundus": {
+   "n": 43,
+   "median": 0.2755000000000063,
+   "n_gt1": 3,
+   "n_gt5": 0,
+   "n_prev": 40,
+   "median_prev": 0.28639999999999777,
+   "n_gt5_prev": 0
+  },
+  "MNMS": {
+   "n": 11,
+   "median": 0.2797999999999967,
+   "n_gt1": 1,
+   "n_gt5": 1,
+   "n_prev": 11,
+   "median_prev": 0.2797999999999967,
+   "n_gt5_prev": 1
+  },
+  "BUSI": {
+   "n": 11,
+   "median": 0.854099999999991,
+   "n_gt1": 5,
+   "n_gt5": 1,
+   "n_prev": 11,
+   "median_prev": 0.854099999999991,
+   "n_gt5_prev": 1
+  }
+ },
+ "n_logs": 133,
+ "signal": {
+  "prostate_s1337": {
+   "u_epi_all": 0.8562,
+   "u_epi_band": 0.7142,
+   "u_epi_range80": 6.832e-05,
+   "conf_all": 0.8562,
+   "conf_band": 0.7142,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": false
+  },
+  "prostate_s42": {
+   "u_epi_all": 0.9026,
+   "u_epi_band": 0.7,
+   "u_epi_range80": 8.373e-05,
+   "conf_all": 0.9026,
+   "conf_band": 0.7002,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "prostate_s2024": {
+   "u_epi_all": 0.9412,
+   "u_epi_band": 0.7111,
+   "u_epi_range80": 4.311e-05,
+   "conf_all": 0.9412,
+   "conf_band": 0.7112,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": false
+  },
+  "fundus_s1337": {
+   "u_epi_all": 0.8982,
+   "u_epi_band": 0.6647,
+   "u_epi_range80": 0.0003325,
+   "conf_all": 0.8981,
+   "conf_band": 0.6644,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "fundus_s42": {
+   "u_epi_all": 0.8995,
+   "u_epi_band": 0.673,
+   "u_epi_range80": 0.0004207,
+   "conf_all": 0.8995,
+   "conf_band": 0.6729,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "fundus_s2024": {
+   "u_epi_all": 0.916,
+   "u_epi_band": 0.6762,
+   "u_epi_range80": 0.0005319,
+   "conf_all": 0.916,
+   "conf_band": 0.676,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  }
+ },
+ "s9": {
+  "n_all": 118,
+  "n_testbed": 85,
+  "n_testbed_identity_holds": 84,
+  "per_benchmark": {
+   "prostate": 47,
+   "fundus": 24,
+   "MNMS": 7,
+   "BUSI": 7
+  },
+  "testbed_band_min_max": [
+   0.5565,
+   0.7265
+  ]
+ },
+ "runs_trained": {
+  "before_d33": 113,
+  "d33": 6,
+  "total": 119
+ },
+ "coverage": {
+  "prostate": {
+   "w_first": [
+    0.933,
+    0.943
+   ],
+   "w_first_fifth_mean": [
+    0.9777916666666666,
+    0.9816249999999999
+   ],
+   "w_after_mean": [
+    0.9943125000000003,
+    0.9949062500000002
+   ]
+  },
+  "fundus": {
+   "w_first": [
+    0.88,
+    0.91
+   ],
+   "w_first_fifth_mean": [
+    0.9698333333333333,
+    0.9706666666666667
+   ],
+   "w_after_mean": [
+    0.9862916666666667,
+    0.9865
+   ]
+  }
+ },
+ "assertions_passed": [
+  "the release copy of trainer v12 is 915347736f4855da",
+  "every file of the S31 sendback (67, four parts) is in the results tier and matches its part manifest (size and sha256)",
+  "no file of an earlier training was sent again (the collector used HELD_MANIFEST_S31.txt)",
+  "the job lists that ran are the registered ones (tools v17)",
+  "step 0 on record: the seven hashes (backed-up trainer v11, trainer v12), the 1,334-line held manifest, no runner lock, no D-33 run before the launch",
+  "step 1: the server self-test passed and was written to a file",
+  "step 1: trainer v12 compiled on the server",
+  "Amendment 1 rule 0: the mask census shows one encoding per benchmark (Prostate {0, 255} in all six domains; Fundus {0, 128, 255} in every folder)",
+  "runner: six jobs, one attempt each, each PASS",
+  "no first-attempt folder; the runner preflight is GREEN",
+  "the smoke run: oracle gate, two logged windows, neither keeps every pixel",
+  "v18H_prostate_oracle_s1337: one training from iteration 0 to the last iteration, no resume event",
+  "v18H_prostate_oracle_s1337: configuration = the oracle gate, headline settings",
+  "v18H_prostate_oracle_s1337: the command in its log equals its line of jobs_D33.txt (the runner adds only the GPU index)",
+  "v18H_prostate_oracle_s1337: recorded arguments = those of the D-32 run of the same seed except the method (and the dropped keep fraction, name, GPU)",
+  "v18H_prostate_oracle_s1337: Amendment 1 rule 0: script_sha256 = trainer v12; code snapshot, recorded hashes and the release code are the same bytes",
+  "v18H_prostate_oracle_s1337: Amendment 1 rule 0: labeled slices identical to those of its threshold reference (v18B_prostate_fixmatch_split1337_init1337)",
+  "v18H_prostate_oracle_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18H_prostate_oracle_s1337: rule 0: the oracle removes pseudo-labels (at least one logged window below 1.000)",
+  "v18H_prostate_oracle_s1337: Amendment 1 rule 0: median w_mean after the first fifth >= 0.90 (no suspected mask fault)",
+  "v18H_prostate_oracle_s42: one training from iteration 0 to the last iteration, no resume event",
+  "v18H_prostate_oracle_s42: configuration = the oracle gate, headline settings",
+  "v18H_prostate_oracle_s42: the command in its log equals its line of jobs_D33.txt (the runner adds only the GPU index)",
+  "v18H_prostate_oracle_s42: recorded arguments = those of the D-32 run of the same seed except the method (and the dropped keep fraction, name, GPU)",
+  "v18H_prostate_oracle_s42: Amendment 1 rule 0: script_sha256 = trainer v12; code snapshot, recorded hashes and the release code are the same bytes",
+  "v18H_prostate_oracle_s42: Amendment 1 rule 0: labeled slices identical to those of its threshold reference (v18B_prostate_fixmatch_s42)",
+  "v18H_prostate_oracle_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18H_prostate_oracle_s42: rule 0: the oracle removes pseudo-labels (at least one logged window below 1.000)",
+  "v18H_prostate_oracle_s42: Amendment 1 rule 0: median w_mean after the first fifth >= 0.90 (no suspected mask fault)",
+  "v18H_prostate_oracle_s2024: one training from iteration 0 to the last iteration, no resume event",
+  "v18H_prostate_oracle_s2024: configuration = the oracle gate, headline settings",
+  "v18H_prostate_oracle_s2024: the command in its log equals its line of jobs_D33.txt (the runner adds only the GPU index)",
+  "v18H_prostate_oracle_s2024: recorded arguments = those of the D-32 run of the same seed except the method (and the dropped keep fraction, name, GPU)",
+  "v18H_prostate_oracle_s2024: Amendment 1 rule 0: script_sha256 = trainer v12; code snapshot, recorded hashes and the release code are the same bytes",
+  "v18H_prostate_oracle_s2024: Amendment 1 rule 0: labeled slices identical to those of its threshold reference (v18B_prostate_fixmatch_s2024)",
+  "v18H_prostate_oracle_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18H_prostate_oracle_s2024: rule 0: the oracle removes pseudo-labels (at least one logged window below 1.000)",
+  "v18H_prostate_oracle_s2024: Amendment 1 rule 0: median w_mean after the first fifth >= 0.90 (no suspected mask fault)",
+  "v18H_fundus_oracle_s1337: one training from iteration 0 to the last iteration, no resume event",
+  "v18H_fundus_oracle_s1337: configuration = the oracle gate, headline settings",
+  "v18H_fundus_oracle_s1337: the command in its log equals its line of jobs_D33.txt (the runner adds only the GPU index)",
+  "v18H_fundus_oracle_s1337: recorded arguments = those of the D-32 run of the same seed except the method (and the dropped keep fraction, name, GPU)",
+  "v18H_fundus_oracle_s1337: Amendment 1 rule 0: script_sha256 = trainer v12; code snapshot, recorded hashes and the release code are the same bytes",
+  "v18H_fundus_oracle_s1337: Amendment 1 rule 0: labeled slices identical to those of its threshold reference (v18B_fundus_fixmatch_split1337_init1337)",
+  "v18H_fundus_oracle_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18H_fundus_oracle_s1337: rule 0: the oracle removes pseudo-labels (at least one logged window below 1.000)",
+  "v18H_fundus_oracle_s1337: Amendment 1 rule 0: median w_mean after the first fifth >= 0.90 (no suspected mask fault)",
+  "v18H_fundus_oracle_s42: one training from iteration 0 to the last iteration, no resume event",
+  "v18H_fundus_oracle_s42: configuration = the oracle gate, headline settings",
+  "v18H_fundus_oracle_s42: the command in its log equals its line of jobs_D33.txt (the runner adds only the GPU index)",
+  "v18H_fundus_oracle_s42: recorded arguments = those of the D-32 run of the same seed except the method (and the dropped keep fraction, name, GPU)",
+  "v18H_fundus_oracle_s42: Amendment 1 rule 0: script_sha256 = trainer v12; code snapshot, recorded hashes and the release code are the same bytes",
+  "v18H_fundus_oracle_s42: Amendment 1 rule 0: labeled slices identical to those of its threshold reference (v18B_fundus_fixmatch_s42)",
+  "v18H_fundus_oracle_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18H_fundus_oracle_s42: rule 0: the oracle removes pseudo-labels (at least one logged window below 1.000)",
+  "v18H_fundus_oracle_s42: Amendment 1 rule 0: median w_mean after the first fifth >= 0.90 (no suspected mask fault)",
+  "v18H_fundus_oracle_s2024: one training from iteration 0 to the last iteration, no resume event",
+  "v18H_fundus_oracle_s2024: configuration = the oracle gate, headline settings",
+  "v18H_fundus_oracle_s2024: the command in its log equals its line of jobs_D33.txt (the runner adds only the GPU index)",
+  "v18H_fundus_oracle_s2024: recorded arguments = those of the D-32 run of the same seed except the method (and the dropped keep fraction, name, GPU)",
+  "v18H_fundus_oracle_s2024: Amendment 1 rule 0: script_sha256 = trainer v12; code snapshot, recorded hashes and the release code are the same bytes",
+  "v18H_fundus_oracle_s2024: Amendment 1 rule 0: labeled slices identical to those of its threshold reference (v18B_fundus_fixmatch_s2024)",
+  "v18H_fundus_oracle_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18H_fundus_oracle_s2024: rule 0: the oracle removes pseudo-labels (at least one logged window below 1.000)",
+  "v18H_fundus_oracle_s2024: Amendment 1 rule 0: median w_mean after the first fifth >= 0.90 (no suspected mask fault)",
+  "prostate: TOST and the paired tests use the same differences",
+  "prostate: the references and the D-32 values are those of ADJUDICATION_S30",
+  "fundus: TOST and the paired tests use the same differences",
+  "fundus: the references and the D-32 values are those of ADJUDICATION_S30",
+  "complete logs: the 127 of facts_s30.json plus the six of D-33 (smoke runs excluded)",
+  "prostate: the best-checkpoint line equals rule 1",
+  "fundus: the best-checkpoint line equals rule 1",
+  "prostate: the logs reproduce the S31 selection counts exactly (n 58, median 1.6956)",
+  "fundus: the logs reproduce the S31 selection counts exactly (n 40, median 0.2864)",
+  "MNMS: the logs reproduce the S31 selection counts exactly (n 11, median 0.2798)",
+  "BUSI: the logs reproduce the S31 selection counts exactly (n 11, median 0.8541)",
+  "counted runs after D-33: Prostate 61, Fundus 43",
+  "six harness JSONs, EMA teachers"
+ ]
+}

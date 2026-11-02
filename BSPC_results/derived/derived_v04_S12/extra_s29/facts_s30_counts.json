@@ -1,0 +1,179 @@
+{
+ "session": "S30",
+ "reader": "make_extra_s30.py",
+ "sources": [
+  "extra_s25_selection/table_selection_runs_s25.csv",
+  "extra_s25_selection/facts_s25.json",
+  "extra_s29/facts_s29.json",
+  "table_signal_identity.csv",
+  "extra_s25_selection/table_signal_identity_s25.csv",
+  "extra_s29/table_signal_identity_s29.csv"
+ ],
+ "selection": {
+  "prostate": {
+   "n_s25": 52,
+   "n": 55,
+   "median_s25": 1.3392999999999988,
+   "median": 1.6716000000000064,
+   "n_gt1_s25": 31,
+   "n_gt1": 34,
+   "n_gt5_s25": 11,
+   "n_gt5": 13,
+   "d31_best_minus_last": [
+    3.0655999999999906,
+    16.2122,
+    16.23549999999999
+   ]
+  },
+  "fundus": {
+   "n_s25": 34,
+   "n": 37,
+   "median_s25": 0.27415000000000633,
+   "median": 0.27840000000000087,
+   "n_gt1_s25": 1,
+   "n_gt1": 3,
+   "n_gt5_s25": 0,
+   "n_gt5": 0,
+   "d31_best_minus_last": [
+    0.7098999999999966,
+    2.3264000000000062,
+    4.396800000000001
+   ]
+  },
+  "MNMS": {
+   "n_s25": 11,
+   "n": 11,
+   "median_s25": 0.2797999999999967,
+   "median": 0.2797999999999967,
+   "n_gt1_s25": 1,
+   "n_gt1": 1,
+   "n_gt5_s25": 1,
+   "n_gt5": 1,
+   "d31_best_minus_last": []
+  },
+  "BUSI": {
+   "n_s25": 11,
+   "n": 11,
+   "median_s25": 0.854099999999991,
+   "median": 0.854099999999991,
+   "n_gt1_s25": 5,
+   "n_gt1": 5,
+   "n_gt5_s25": 1,
+   "n_gt5": 1,
+   "d31_best_minus_last": []
+  }
+ },
+ "n_logs": 121,
+ "percentile_checkpoints": {
+  "prostate_best": {
+   "delta_points": -2.7809000000000044,
+   "p": 0.2814491765073441,
+   "per_seed_points": [
+    -0.6121000000000043,
+    -6.5744000000000025,
+    -1.1562000000000072
+   ]
+  },
+  "prostate_last": {
+   "delta_points": -9.82,
+   "p": 0.1747030748451015,
+   "per_seed_points": [
+    -3.409999999999991,
+    -19.100000000000005,
+    -6.950000000000001
+   ]
+  },
+  "prostate_swad": {
+   "delta_points": -5.949999999999999,
+   "p": 0.25635038377112496,
+   "per_seed_points": [
+    -0.25166666666666115,
+    -13.108333333333333,
+    -4.4900000000000055
+   ]
+  },
+  "fundus_best": {
+   "delta_points": -0.9619666666666656,
+   "p": 0.06621206981334159,
+   "per_seed_points": [
+    -1.0612999999999984,
+    -1.3554999999999984,
+    -0.4691000000000001
+   ]
+  },
+  "fundus_last": {
+   "delta_points": -3.1000000000000028,
+   "p": 0.09394932694956129,
+   "per_seed_points": [
+    -5.120000000000003,
+    -1.8000000000000016,
+    -2.3800000000000043
+   ]
+  },
+  "fundus_swad": {
+   "delta_points": -1.3012499999999982,
+   "p": 0.1055509361518836,
+   "per_seed_points": [
+    -1.7649999999999944,
+    -1.7575000000000007,
+    -0.38124999999999964
+   ]
+  }
+ },
+ "s9": {
+  "n_all": 106,
+  "n_testbed": 73,
+  "n_testbed_identity_holds": 72,
+  "per_benchmark": {
+   "prostate": 41,
+   "fundus": 18,
+   "MNMS": 7,
+   "BUSI": 7
+  },
+  "testbed_band_min_max_s25": [
+   0.5565,
+   0.7265
+  ],
+  "testbed_band_min_max": [
+   0.5565,
+   0.7265
+  ],
+  "n_devis_medl": 30,
+  "n_devis_medl_identity_fails": 22
+ },
+ "runs_trained": {
+  "before_d31": 101,
+  "d31": 6,
+  "total": 107
+ },
+ "assertions_passed": [
+  "complete logs: the 115 that facts_s25.json counts, plus the six of D-31 (smoke runs excluded)",
+  "v18F_fundus_percentile_s1337: the S24 instrument reads the D-31 reader's best and last values; counted",
+  "v18F_fundus_percentile_s2024: the S24 instrument reads the D-31 reader's best and last values; counted",
+  "v18F_fundus_percentile_s42: the S24 instrument reads the D-31 reader's best and last values; counted",
+  "v18F_prostate_percentile_s1337: the S24 instrument reads the D-31 reader's best and last values; counted",
+  "v18F_prostate_percentile_s2024: the S24 instrument reads the D-31 reader's best and last values; counted",
+  "v18F_prostate_percentile_s42: the S24 instrument reads the D-31 reader's best and last values; counted",
+  "prostate: the logs reproduce the S25 counts exactly (n 52, median 1.3393, >1 31, >5 11)",
+  "fundus: the logs reproduce the S25 counts exactly (n 34, median 0.2742, >1 1, >5 0)",
+  "MNMS: the logs reproduce the S25 counts exactly (n 11, median 0.2798, >1 1, >5 1)",
+  "BUSI: the logs reproduce the S25 counts exactly (n 11, median 0.8541, >1 5, >5 1)",
+  "counted runs after D-31: Prostate 55, Fundus 37, M&Ms 11, BUSI 11",
+  "prostate best: the percentile gate does not meet the criterion of Section 4.4 against the threshold reference",
+  "prostate last: the percentile gate does not meet the criterion of Section 4.4 against the threshold reference",
+  "prostate swad: the percentile gate does not meet the criterion of Section 4.4 against the threshold reference",
+  "prostate: the best-checkpoint line equals ADJUDICATION_S29",
+  "fundus best: the percentile gate does not meet the criterion of Section 4.4 against the threshold reference",
+  "fundus last: the percentile gate does not meet the criterion of Section 4.4 against the threshold reference",
+  "fundus swad: the percentile gate does not meet the criterion of Section 4.4 against the threshold reference",
+  "fundus: the best-checkpoint line equals ADJUDICATION_S29",
+  "the identity tables reproduce the S25 counts (83 + 17 = 100 checkpoints, 67 testbed objective)",
+  "the identity fails on 1 of the 67 testbed-objective checkpoints (S25)",
+  "per benchmark the 67 are 38 / 15 / 7 / 7 (Supplementary S9): {'prostate': 38, 'fundus': 15, 'MNMS': 7, 'BUSI': 7}",
+  "the six D-31 teachers are evidential-head teachers trained with the testbed objective",
+  "Supplementary S9 statement holds on the six D-31 teachers: the medians of u_epi and 1 - max p stand in the ratio K/(K-1) to within 1 %",
+  "with D-31: 106 checkpoints, 73 with the testbed objective, the identity holds on 72",
+  "the testbed-objective band range stays 0.56-0.73 with D-31 (its six teachers: 0.61-0.68)",
+  "D-31 adds six trainings"
+ ]
+}

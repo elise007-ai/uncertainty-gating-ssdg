@@ -447,6 +447,83 @@ def devis_cup_loss(belief: torch.Tensor, u: torch.Tensor, pred: torch.Tensor,
     return beta_t * term_c + (1 - beta_t) * term_i
 
 
+# --- DEviS, released-code form (v11, S23, D-28) ------------------------------
+# Supervised objective of the authors' released code (github.com/Cocofeat/DEviS,
+# models/criterions.py: dce_evidence_u_loss, reduced by torch.mean in
+# models/TrustworthySeg.py: TMSU.forward), re-implemented here; parity with the
+# released functions is asserted on the server by test_devis_released_s23.py.
+
+def devis_released_schedule(iter_num: int, max_iter: int, beta0: float = 0.01,
+                            epochs_total: int = 99, epochs_lambda: int = 50) -> Tuple[float, float]:
+    """(KL weight, beta_t) of the released code at training fraction iter_num / max_iter.
+    The released loop passes the 0-based epoch as current_step, with lamda_step = 50 and
+    total_step = end_epochs + 1 = 100 (defaults of trainUMIS.py). An iteration is mapped to
+    the continuous epoch ep = epochs_total * t / T:
+        KL weight = min(1, ep / epochs_lambda)
+        beta_t    = beta0 * exp(-ln(beta0) * ep / (epochs_total + 1))."""
+    t = min(max(iter_num, 0), max_iter)
+    ep = epochs_total * t / max(max_iter, 1)
+    a_t = min(1.0, ep / float(epochs_lambda))
+    beta_t = float(beta0 * math.exp(-math.log(beta0) * ep / float(epochs_total + 1)))
+    return a_t, beta_t
+
+
+def devis_released_dice(evidence: torch.Tensor, target: torch.Tensor) -> torch.Tensor:
+    """DiceLoss of the released code applied to the evidence map: a Tversky-type loss on
+    softmax(evidence) whose FP / FN weights come from the batch (not detached) and are
+    clamped to [0.2, 0.8]; (1 - dice) summed over the classes and divided by their number.
+    evidence [B,K,H,W]; target [B,H,W] hard labels."""
+    K = evidence.shape[1]
+    preds = evidence.float().permute(0, 2, 3, 1).contiguous().view(-1, K)
+    tgt = target.long().view(-1, 1)
+    P = torch.exp(F.log_softmax(preds, dim=1))
+    smooth = 0.00001
+    class_mask = torch.zeros_like(preds) + 1e-8
+    class_mask.scatter_(1, tgt, 1.)
+    P_ = 1.0 - P
+    class_mask_ = 1.0 - class_mask
+    TP = P * class_mask
+    FP = P * class_mask_
+    FN = P_ * class_mask
+    a = FP.sum(dim=0) / ((FP.sum(dim=0) + FN.sum(dim=0)) + smooth)
+    a = torch.clamp(a, min=0.2, max=0.8)
+    b = 1.0 - a
+    num = TP.sum(dim=0)
+    den = num + a * FP.sum(dim=0) + b * FN.sum(dim=0)
+    dice = num / (den + smooth)
+    return (1.0 - dice).sum() / K
+
+
+def devis_released_sup_loss(alpha: torch.Tensor, target: torch.Tensor, iter_num: int, max_iter: int,
+                            beta0: float = 0.01, epochs_total: int = 99, epochs_lambda: int = 50,
+                            eps: float = 1e-10) -> Dict[str, torch.Tensor]:
+    """Released DEviS objective with Uncertainty_Loss=True:
+        mean over pixels of [ L_ace + a_t * KL(Dir(alpha~) || Dir(1)) + L_AU ]  +  (1 - beta_t) * DiceLoss(evidence)
+    alpha [B,K,H,W] (= evidence + 1, i.e. W = 1); target [B,H,W] hard labels in 0..K-1.
+    Returns the total and its parts ('ice_kl', 'au', 'dice_w') with the two schedule values."""
+    alpha = alpha.float()
+    K = alpha.shape[1]
+    a_t, beta_t = devis_released_schedule(iter_num, max_iter, beta0, epochs_total, epochs_lambda)
+    y = F.one_hot(target.long(), num_classes=K).permute(0, 3, 1, 2).float()
+    S = alpha.sum(dim=1, keepdim=True)
+    E = alpha - 1.0
+    l_ace = (y * (torch.digamma(S) - torch.digamma(alpha))).sum(dim=1, keepdim=True)
+    kl = kl_dirichlet_to_prior(E * (1.0 - y) + 1.0, 1.0)
+    p = alpha / S
+    pmax, pcls = torch.max(p, dim=1, keepdim=True)
+    u = K / S
+    match = torch.eq(pcls, target.long().unsqueeze(1)).float()
+    acc_uncertain = -pmax * torch.log(1.0 - u + eps)
+    inacc_certain = -(1.0 - pmax) * torch.log(u + eps)
+    l_au = beta_t * match * acc_uncertain + (1.0 - beta_t) * (1.0 - match) * inacc_certain
+    dice = devis_released_dice(E, target)
+    ice_kl = (l_ace + a_t * kl).mean()
+    au = l_au.mean()
+    dice_w = (1.0 - beta_t) * dice
+    return {'total': ice_kl + au + dice_w, 'ice_kl': ice_kl, 'au': au, 'dice_w': dice_w,
+            'kl_weight': a_t, 'beta_t': beta_t}
+
+
 # --- I-EDL (Deng et al., ICML 2023) used by MEDL eq.7 ----------------------
 
 def dirichlet_log_fisher_det(alpha: torch.Tensor) -> torch.Tensor:
@@ -657,6 +734,14 @@ def _selftest():
     pred = h18['prob'].argmax(1); tgt = torch.randint(0, 3, (2, 16, 16))
     cup = devis_cup_loss(b, u, pred, tgt, beta_t=0.3)
     assert torch.isfinite(cup) and cup >= 0
+    # 4b. DEviS, released-code form (v11): schedule end points and a finite, differentiable loss
+    a0, b0_ = devis_released_schedule(0, 9900); a50, _ = devis_released_schedule(5000, 9900); a98, b98 = devis_released_schedule(9800, 9900)
+    assert a0 == 0.0 and abs(b0_ - 0.01) < 1e-12 and abs(a50 - 1.0) < 1e-12 and a98 == 1.0 and abs(b98 - 0.01 ** 0.02) < 1e-9, (a0, b0_, a50, a98, b98)
+    al_r = (F.softplus(torch.randn(2, 3, 16, 16)) + 1.0).requires_grad_(True)
+    rel = devis_released_sup_loss(al_r, tgt, 3000, 9900)
+    assert torch.isfinite(rel['total']) and abs(float(rel['total']) - float(rel['ice_kl'] + rel['au'] + rel['dice_w'])) < 1e-6
+    rel['total'].backward(); assert torch.isfinite(al_r.grad).all() and float(al_r.grad.abs().sum()) > 0
+    print('[selftest] DEviS released form: schedule and loss OK')
     # 5. I-EDL
     li = iedl_pixel_loss(h18['alpha'], y, lambda_fisher=0.1)
     assert torch.isfinite(li).all()

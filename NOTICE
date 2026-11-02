@@ -1,6 +1,5 @@
 uncertainty-gating-ssdg
-Copyright 2026 the authors of "When Does Uncertainty-Aware Pseudo-Labeling Help? A Foundation-Free Study of
-Semi-Supervised Domain Generalization in Medical Image Segmentation".
+Copyright 2026 the authors of "When Does Uncertainty-Aware Pseudo-Labeling Help? A Foundation-Free Study of Mixed-Domain Semi-Supervised Medical Image Segmentation".
 
 This repository is a derivative work of SynFoC (https://github.com/MQinghe/SynFoC, Apache License 2.0), which is itself
 based on SSL4MIS (https://github.com/HiLab-git/SSL4MIS) and SAMed (https://github.com/hitachinsk/SAMed).

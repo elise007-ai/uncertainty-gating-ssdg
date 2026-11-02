@@ -1,0 +1,7 @@
+dataset,rule,mean_dice,std_dice,threshold_mean,threshold_std,delta_points,per_seed_delta_points_1337_42_2024,p_paired,p_holm_two_benchmarks,n_seeds_positive,sign_test_p_two_sided,ci90_points,p_tost_0.5,mde_points,verdict,verdict_holm,rule0_failures
+prostate,rule1_daep_minus_threshold,0.8669,0.0015,0.8652,0.0075,+0.17,-0.74;+0.72;+0.54,0.7440,1.0000,2,1.0000,-1.17;+1.52,0.2754,2.60,within seed noise,within seed noise,
+fundus,rule1_daep_minus_threshold,0.8868,0.0023,0.8872,0.0022,-0.04,-0.12;+0.14;-0.14,0.7135,1.0000,1,1.0000,-0.31;+0.23,0.0188,0.52,within seed noise,within seed noise,
+prostate,rule2_oracle_minus_threshold,0.8871,0.0018,0.8652,0.0075,+2.20,+1.20;+3.02;+2.38,0.0543,0.0543,3,0.2500,+0.64;+3.76,0.9568,3.02,within seed noise,within seed noise,
+fundus,rule2_oracle_minus_threshold,0.9061,0.0021,0.8872,0.0022,+1.89,+1.95;+1.83;+1.89,0.0003,0.0006,3,0.2500,+1.79;+1.99,0.9997,0.19,above the threshold gate,above the threshold gate,
+prostate,rule3_nogate_minus_threshold,0.8593,0.0024,0.8652,0.0075,-0.58,-1.57;+0.32;-0.50,0.3990,0.7980,1,1.0000,-2.19;+1.02,0.5534,3.10,within seed noise,within seed noise,
+fundus,rule3_nogate_minus_threshold,0.8872,0.0026,0.8872,0.0022,+0.00,-0.02;-0.02;+0.05,0.9081,0.9081,1,1.0000,-0.06;+0.07,0.0010,0.13,within seed noise,within seed noise,

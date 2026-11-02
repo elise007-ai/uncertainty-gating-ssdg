@@ -1,0 +1,13 @@
+dataset,comparison,checkpoint,delta_points,p_paired,per_seed_points
+prostate,ungated_minus_threshold,best,-0.12,0.775,-0.38;+0.62;-0.60
+prostate,percentile_minus_ungated,best,-2.66,0.362,-0.23;-7.19;-0.55
+prostate,ungated_minus_threshold,last,-0.66,0.865,-7.44;+3.45;+2.02
+prostate,percentile_minus_ungated,last,-9.16,0.355,+4.03;-22.55;-8.97
+prostate,ungated_minus_threshold,swad,+0.50,0.255,+0.23;+1.13;+0.14
+prostate,percentile_minus_ungated,swad,-6.45,0.254,-0.48;-14.24;-4.63
+fundus,ungated_minus_threshold,best,-0.10,0.623,+0.09;-0.43;+0.06
+fundus,percentile_minus_ungated,best,-0.87,0.041,-1.15;-0.92;-0.53
+fundus,ungated_minus_threshold,last,-0.13,0.495,-0.06;-0.43;+0.10
+fundus,percentile_minus_ungated,last,-2.97,0.113,-5.06;-1.37;-2.48
+fundus,ungated_minus_threshold,swad,-0.01,0.987,+0.53;-0.72;+0.18
+fundus,percentile_minus_ungated,swad,-1.29,0.129,-2.29;-1.04;-0.56

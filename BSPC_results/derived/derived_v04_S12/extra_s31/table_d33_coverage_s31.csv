@@ -1,0 +1,7 @@
+dataset,seed,run,w_mean_first_window,w_mean_first_fifth,w_mean_after_fifth,w_mean_after_fifth_median,w_mean_after_fifth_min,removed_share_outside_box_approx
+prostate,1337,v18H_prostate_oracle_s1337,0.943,0.9816,0.9949,0.9950,0.991,0.0064
+prostate,42,v18H_prostate_oracle_s42,0.943,0.9788,0.9943,0.9950,0.987,0.0072
+prostate,2024,v18H_prostate_oracle_s2024,0.933,0.9778,0.9948,0.9950,0.990,0.0065
+fundus,1337,v18H_fundus_oracle_s1337,0.880,0.9704,0.9863,0.9870,0.982,0.0174
+fundus,42,v18H_fundus_oracle_s42,0.910,0.9698,0.9863,0.9870,0.982,0.0173
+fundus,2024,v18H_fundus_oracle_s2024,0.892,0.9707,0.9865,0.9870,0.982,0.0171

@@ -1,0 +1,777 @@
+{
+ "session": "S24",
+ "reader": "make_extra_s23.py",
+ "code_sha256": {
+  "train_fourierfuse_v18_revision.py": "20d39982c157ff0e",
+  "revision_modules.py": "a6fe4357a39d0020",
+  "fourierfuse_v16_modules.py": "4a343f191bbbf1e0",
+  "diag_uncertainty_harness_v18.py": "7eb2db7ec9353de7"
+ },
+ "manifest_files_verified": 63,
+ "runner": {
+  "jobs": 6,
+  "final_pass": 6,
+  "failed_on_first_launch": [
+   "v18D_fundus_devisrel_threshold_s2024",
+   "v18D_fundus_devisrel_threshold_s42",
+   "v18D_prostate_devisrel_threshold_s2024"
+  ],
+  "first_launch_fail_minutes": {
+   "v18D_fundus_devisrel_threshold_s2024": 16.0,
+   "v18D_fundus_devisrel_threshold_s42": 17.1,
+   "v18D_prostate_devisrel_threshold_s2024": 13.7
+  },
+  "first_launch_fail_detail": [
+   "no TRAINING COMPLETE rc=1"
+  ],
+  "truncated_checkpoints_seen_by_harness": 3
+ },
+ "prostate_rule": {
+  "mean": 0.8597779999999999,
+  "std": 0.00580672480835797,
+  "ref_mean": 0.85902,
+  "ref_std": 0.0026139982784998015,
+  "delta": 0.0007579999999999995,
+  "per_seed_delta": [
+   -0.0022579999999999822,
+   -0.004064999999999985,
+   0.008596999999999966
+  ],
+  "t": 0.19170173166047183,
+  "p": 0.8656748850206636,
+  "n_pos": 1,
+  "sign_p_greater": 0.875,
+  "sign_p_two_sided": 1.0,
+  "beats": false
+ },
+ "prostate_published_form": {
+  "mean": 0.8379883333333332,
+  "std": 0.004328929467354823,
+  "delta": -0.02103166666666667,
+  "p": 0.029989004689977353,
+  "per_seed_delta": [
+   -0.02817499999999995,
+   -0.01561900000000005,
+   -0.019301000000000013
+  ]
+ },
+ "prostate_released_minus_published": {
+  "delta": 0.02178966666666667,
+  "per_seed": [
+   0.025916999999999968,
+   0.011554000000000064,
+   0.02789799999999998
+  ],
+  "t": 4.231262638974775,
+  "p": 0.051572046854648855,
+  "n_pos": 3
+ },
+ "prostate_per_seed": {
+  "1337": {
+   "best": 0.859719,
+   "best_iter": 36500,
+   "last": 0.6798,
+   "last10": 0.684825,
+   "swad_best": 0.851607,
+   "ref": 0.861977,
+   "ref_last": 0.8593,
+   "pub": 0.833802,
+   "pub_last": 0.8307
+  },
+  "42": {
+   "best": 0.854001,
+   "best_iter": 39500,
+   "last": 0.8056,
+   "last10": 0.8118,
+   "swad_best": 0.837448,
+   "ref": 0.858066,
+   "ref_last": 0.8212,
+   "pub": 0.842447,
+   "pub_last": 0.8384
+  },
+  "2024": {
+   "best": 0.865614,
+   "best_iter": 35000,
+   "last": 0.637,
+   "last10": 0.6402833333333334,
+   "swad_best": 0.857525,
+   "ref": 0.857017,
+   "ref_last": 0.7526,
+   "pub": 0.837716,
+   "pub_last": 0.821
+  }
+ },
+ "fundus_rule": {
+  "mean": 0.8843030000000001,
+  "std": 0.003357744481046781,
+  "ref_mean": 0.8852633333333332,
+  "ref_std": 0.002820431586359304,
+  "delta": -0.0009603333333333408,
+  "per_seed_delta": [
+   -0.0009620000000000184,
+   -0.003475000000000006,
+   0.0015560000000000018
+  ],
+  "t": -0.6612386609886345,
+  "p": 0.5764454074807592,
+  "n_pos": 1,
+  "sign_p_greater": 0.875,
+  "sign_p_two_sided": 1.0,
+  "beats": false
+ },
+ "fundus_published_form": {
+  "mean": 0.8702770000000001,
+  "std": 0.005597396894986129,
+  "delta": -0.014986333333333324,
+  "p": 0.04023159989318425,
+  "per_seed_delta": [
+   -0.012597999999999998,
+   -0.01122499999999993,
+   -0.021136000000000044
+  ]
+ },
+ "fundus_released_minus_published": {
+  "delta": 0.014025999999999983,
+  "per_seed": [
+   0.01163599999999998,
+   0.007749999999999924,
+   0.022692000000000045
+  ],
+  "t": 3.1337008068525134,
+  "p": 0.08851965563667498,
+  "n_pos": 3
+ },
+ "fundus_per_seed": {
+  "1337": {
+   "best": 0.881119,
+   "best_iter": 17500,
+   "last": 0.8785,
+   "last10": 0.8792333333333334,
+   "swad_best": 0.872612,
+   "ref": 0.882081,
+   "ref_last": 0.8787,
+   "pub": 0.869483,
+   "pub_last": 0.8675
+  },
+  "42": {
+   "best": 0.883979,
+   "best_iter": 24500,
+   "last": 0.8821,
+   "last10": 0.8819833333333333,
+   "swad_best": 0.881705,
+   "ref": 0.887454,
+   "ref_last": 0.8848,
+   "pub": 0.876229,
+   "pub_last": 0.8757
+  },
+  "2024": {
+   "best": 0.887811,
+   "best_iter": 18000,
+   "last": 0.886,
+   "last10": 0.8850166666666667,
+   "swad_best": 0.883192,
+   "ref": 0.886255,
+   "ref_last": 0.8821,
+   "pub": 0.865119,
+   "pub_last": 0.8576
+  }
+ },
+ "prostate_late": {
+  "released_best_minus_last": [
+   17.991900000000005,
+   4.840100000000003,
+   22.8614
+  ],
+  "threshold_ref_best_minus_last": [
+   0.26770000000000405,
+   3.6865999999999954,
+   10.441699999999997
+  ],
+  "published_form_best_minus_last": [
+   0.3102000000000049,
+   0.4046999999999912,
+   1.6716000000000064
+  ],
+  "released_best_frac": [
+   0.6083333333333333,
+   0.6583333333333333,
+   0.5833333333333334
+  ],
+  "released_last": [
+   0.6798,
+   0.8056,
+   0.637
+  ],
+  "released_last10": [
+   0.684825,
+   0.8118,
+   0.6402833333333334
+  ],
+  "other_healthy_runs": {
+   "n": 43,
+   "median": 1.169600000000004,
+   "max": 14.4675,
+   "n_above_5": 5,
+   "n_above_10": 3,
+   "above_5": {
+    "v18A_prostate_daep_kl0.1_lin_s1337": 14.28,
+    "v18A_prostate_daep_priorw0.1_s1337": 7.09,
+    "v18B_prostate_fixmatch_s2024": 10.44,
+    "v18B_prostate_softmax_fixmatch_s1337": 6.47,
+    "v18C_prostate_fixmatch_pfda0.25_s1337": 14.47
+   }
+  },
+  "short_ramp": {
+   "v18R_prostate_daep_ramp10_s1337": 22.44,
+   "v18R_prostate_fixmatch_ramp10_s1337": 22.13
+  }
+ },
+ "fundus_late": {
+  "released_best_minus_last": [
+   0.2619000000000038,
+   0.1878999999999964,
+   0.1811000000000007
+  ],
+  "threshold_ref_best_minus_last": [
+   0.33809999999999674,
+   0.2653999999999934,
+   0.415500000000002
+  ],
+  "published_form_best_minus_last": [
+   0.1982999999999957,
+   0.05290000000000017,
+   0.7518999999999942
+  ],
+  "released_best_frac": [
+   0.5833333333333334,
+   0.8166666666666667,
+   0.6
+  ],
+  "released_last": [
+   0.8785,
+   0.8821,
+   0.886
+  ],
+  "released_last10": [
+   0.8792333333333334,
+   0.8819833333333333,
+   0.8850166666666667
+  ],
+  "other_healthy_runs": {
+   "n": 23,
+   "median": 0.27280000000000637,
+   "max": 0.7518999999999942,
+   "n_above_5": 0,
+   "n_above_10": 0,
+   "above_5": {}
+  },
+  "short_ramp": {}
+ },
+ "prostate_per_vendor_drop_best_to_last": {
+  "1337": {
+   "BIDMC": 43.33,
+   "BMC": 20.03,
+   "HK": 42.07,
+   "I2CVB": 1.77,
+   "RUNMC": 0.03,
+   "UCL": 0.72
+  },
+  "42": {
+   "BIDMC": 13.88,
+   "BMC": 4.86,
+   "HK": 5.99,
+   "I2CVB": 0.49,
+   "RUNMC": 0.53,
+   "UCL": 3.26
+  },
+  "2024": {
+   "BIDMC": 71.16,
+   "BMC": 15.21,
+   "HK": 48.26,
+   "I2CVB": -0.81,
+   "RUNMC": 0.73,
+   "UCL": 2.64
+  }
+ },
+ "prostate_per_vendor_last": {
+  "1337": {
+   "BIDMC": 0.3864,
+   "BMC": 0.6687,
+   "HK": 0.4654,
+   "I2CVB": 0.8523,
+   "RUNMC": 0.8427,
+   "UCL": 0.8633
+  },
+  "42": {
+   "BIDMC": 0.721,
+   "BMC": 0.8106,
+   "HK": 0.8214,
+   "I2CVB": 0.7916,
+   "RUNMC": 0.8553,
+   "UCL": 0.8339
+  },
+  "2024": {
+   "BIDMC": 0.1149,
+   "BMC": 0.7151,
+   "HK": 0.4053,
+   "I2CVB": 0.8852,
+   "RUNMC": 0.8471,
+   "UCL": 0.8542
+  }
+ },
+ "schedule": {
+  "v18D_prostate_devisrel_threshold_s1337": {
+   "cup_mean_after_20pct": 0.0006697062499999999,
+   "cup_max_after_20pct": 0.00172,
+   "S_mean_last": 1768.66,
+   "beta_t_logged_last_window": 0.937,
+   "beta_t_at_best_iter": 0.16014006483443535
+  },
+  "v18D_prostate_devisrel_threshold_s42": {
+   "cup_mean_after_20pct": 0.0006023135416666666,
+   "cup_max_after_20pct": 0.001527,
+   "S_mean_last": 1969.25,
+   "beta_t_logged_last_window": 0.937,
+   "beta_t_at_best_iter": 0.20114071982009077
+  },
+  "v18D_prostate_devisrel_threshold_s2024": {
+   "cup_mean_after_20pct": 0.0006952635416666667,
+   "cup_max_after_20pct": 0.001738,
+   "S_mean_last": 1881.9,
+   "beta_t_logged_last_window": 0.937,
+   "beta_t_at_best_iter": 0.14288939585111024
+  },
+  "v18D_fundus_devisrel_threshold_s1337": {
+   "cup_mean_after_20pct": 0.0028712083333333333,
+   "cup_max_after_20pct": 0.00638,
+   "S_mean_last": 629.65,
+   "beta_t_logged_last_window": 0.9195,
+   "beta_t_at_best_iter": 0.14288939585111024
+  },
+  "v18D_fundus_devisrel_threshold_s42": {
+   "cup_mean_after_20pct": 0.002824375,
+   "cup_max_after_20pct": 0.006223,
+   "S_mean_last": 669.25,
+   "beta_t_logged_last_window": 0.9195,
+   "beta_t_at_best_iter": 0.41399967481973016
+  },
+  "v18D_fundus_devisrel_threshold_s2024": {
+   "cup_mean_after_20pct": 0.0026738541666666664,
+   "cup_max_after_20pct": 0.005891,
+   "S_mean_last": 684.86,
+   "beta_t_logged_last_window": 0.9195,
+   "beta_t_at_best_iter": 0.1541700452949559
+  },
+  "largest_relative_difference_logged_vs_function": 0.00041623340811197494,
+  "beta_t_last_iteration": 0.9549925860214349,
+  "beta_t_released_code_last_epoch": 0.9120108393559098,
+  "kl_weight_reaches_1_at_fraction": 0.5050505050505051,
+  "dice_weight_at_fraction": {
+   "0.25": 0.9687392063287604,
+   "0.5": 0.902276277904419,
+   "0.6": 0.8458299547050441,
+   "0.75": 0.6945078886784488,
+   "0.9": 0.3946591252460867,
+   "1.0": 0.045007413978565114
+  }
+ },
+ "prostate_signal": {
+  "per_seed": {
+   "1337": {
+    "auroc_all": 0.9706,
+    "band": 0.7075,
+    "range": 0.0003633,
+    "range_band": 0.05397,
+    "conf_all": 0.9706,
+    "conf_band": 0.7094,
+    "errors_in_band": 0.7501,
+    "identity_holds": true,
+    "gap_all": 0.0003,
+    "gap_band": 0.0052,
+    "median_ratio": 2.0,
+    "K": 2,
+    "band_per_domain": [
+     0.7212,
+     0.6707,
+     0.709,
+     0.7048,
+     0.7206,
+     0.7186
+    ],
+    "ref_all": 0.8286,
+    "ref_band": 0.6968,
+    "ref_range": 9.445e-05,
+    "pub_all": 0.9647,
+    "pub_band": 0.6865,
+    "pub_range": 0.0002832
+   },
+   "42": {
+    "auroc_all": 0.9697,
+    "band": 0.6808,
+    "range": 0.000306,
+    "range_band": 0.04264,
+    "conf_all": 0.9696,
+    "conf_band": 0.6793,
+    "errors_in_band": 0.7256,
+    "identity_holds": true,
+    "gap_all": 0.0004,
+    "gap_band": 0.0041,
+    "median_ratio": 2.0,
+    "K": 2,
+    "band_per_domain": [
+     0.699,
+     0.6575,
+     0.6792,
+     0.6689,
+     0.6931,
+     0.6868
+    ],
+    "ref_all": 0.8813,
+    "ref_band": 0.6627,
+    "ref_range": 8.649e-05,
+    "pub_all": 0.9731,
+    "pub_band": 0.6763,
+    "pub_range": 0.0002436
+   },
+   "2024": {
+    "auroc_all": 0.9734,
+    "band": 0.7161,
+    "range": 0.000256,
+    "range_band": 0.03165,
+    "conf_all": 0.9734,
+    "conf_band": 0.7177,
+    "errors_in_band": 0.7433,
+    "identity_holds": true,
+    "gap_all": 0.0007,
+    "gap_band": 0.0044,
+    "median_ratio": 2.0,
+    "K": 2,
+    "band_per_domain": [
+     0.7181,
+     0.691,
+     0.7078,
+     0.7087,
+     0.7309,
+     0.7403
+    ],
+    "ref_all": 0.9015,
+    "ref_band": 0.6668,
+    "ref_range": 5.304e-05,
+    "pub_all": 0.9776,
+    "pub_band": 0.6821,
+    "pub_range": 0.0009731
+   }
+  },
+  "auroc_all_min_max": [
+   0.9697,
+   0.9734
+  ],
+  "band_min_max": [
+   0.6808,
+   0.7161
+  ],
+  "band_mean": 0.7014666666666667,
+  "range_min_max": [
+   0.000256,
+   0.0003633
+  ],
+  "range_band_max": 0.05397,
+  "n_band_le_070": 1,
+  "n_rule_persists": 1,
+  "n_identity_holds": 3,
+  "gap_band_max": 0.0052,
+  "gap_all_max": 0.0007,
+  "ref_all_min_max": [
+   0.8286,
+   0.9015
+  ],
+  "ref_band_min_max": [
+   0.6627,
+   0.6968
+  ],
+  "ref_range_max": 9.445e-05,
+  "pub_all_min_max": [
+   0.9647,
+   0.9776
+  ],
+  "pub_band_min_max": [
+   0.6763,
+   0.6865
+  ],
+  "pub_range_min_max": [
+   0.0002436,
+   0.0009731
+  ]
+ },
+ "fundus_signal": {
+  "per_seed": {
+   "1337": {
+    "auroc_all": 0.9524,
+    "band": 0.6762,
+    "range": 0.002472,
+    "range_band": 0.02286,
+    "conf_all": 0.9541,
+    "conf_band": 0.6837,
+    "errors_in_band": 0.8428,
+    "identity_holds": false,
+    "gap_all": 0.0042,
+    "gap_band": 0.0153,
+    "median_ratio": 1.5,
+    "K": 3,
+    "band_per_domain": [
+     0.6517,
+     0.5597,
+     0.7431,
+     0.7503
+    ],
+    "ref_all": 0.7909,
+    "ref_band": 0.6234,
+    "ref_range": 0.0002601,
+    "pub_all": 0.9442,
+    "pub_band": 0.6783,
+    "pub_range": 0.004035
+   },
+   "42": {
+    "auroc_all": 0.9236,
+    "band": 0.6662,
+    "range": 0.00226,
+    "range_band": 0.014,
+    "conf_all": 0.9279,
+    "conf_band": 0.6763,
+    "errors_in_band": 0.8701,
+    "identity_holds": false,
+    "gap_all": 0.0104,
+    "gap_band": 0.0159,
+    "median_ratio": 1.5,
+    "K": 3,
+    "band_per_domain": [
+     0.696,
+     0.5672,
+     0.713,
+     0.6884
+    ],
+    "ref_all": 0.8947,
+    "ref_band": 0.6345,
+    "ref_range": 0.0005715,
+    "pub_all": 0.9538,
+    "pub_band": 0.6777,
+    "pub_range": 0.004887
+   },
+   "2024": {
+    "auroc_all": 0.9444,
+    "band": 0.674,
+    "range": 0.002599,
+    "range_band": 0.01493,
+    "conf_all": 0.9464,
+    "conf_band": 0.6811,
+    "errors_in_band": 0.8633,
+    "identity_holds": false,
+    "gap_all": 0.0025,
+    "gap_band": 0.0137,
+    "median_ratio": 1.5,
+    "K": 3,
+    "band_per_domain": [
+     0.6801,
+     0.5181,
+     0.7352,
+     0.7626
+    ],
+    "ref_all": 0.8901,
+    "ref_band": 0.6517,
+    "ref_range": 0.0004138,
+    "pub_all": 0.9528,
+    "pub_band": 0.7034,
+    "pub_range": 0.004798
+   }
+  },
+  "auroc_all_min_max": [
+   0.9236,
+   0.9524
+  ],
+  "band_min_max": [
+   0.6662,
+   0.6762
+  ],
+  "band_mean": 0.6721333333333334,
+  "range_min_max": [
+   0.00226,
+   0.002599
+  ],
+  "range_band_max": 0.02286,
+  "n_band_le_070": 3,
+  "n_rule_persists": 3,
+  "n_identity_holds": 0,
+  "gap_band_max": 0.0159,
+  "gap_all_max": 0.0104,
+  "ref_all_min_max": [
+   0.7909,
+   0.8947
+  ],
+  "ref_band_min_max": [
+   0.6234,
+   0.6517
+  ],
+  "ref_range_max": 0.0005715,
+  "pub_all_min_max": [
+   0.9442,
+   0.9538
+  ],
+  "pub_band_min_max": [
+   0.6777,
+   0.7034
+  ],
+  "pub_range_min_max": [
+   0.004035,
+   0.004887
+  ]
+ },
+ "signal_all_six": {
+  "range_max": 0.002599,
+  "range_factor_below_bound_min": 3.847633705271258,
+  "band_min_max": [
+   0.6662,
+   0.7161
+  ],
+  "n_band_le_070": 4,
+  "n_band_above_070": 2,
+  "band_excess_max": 0.016100000000000003,
+  "n_identity_holds": 3,
+  "median_ratio_dev_max": 0.0
+ },
+ "s9_counts": {
+  "n_all_old": 83,
+  "n_all_new": 89,
+  "n_testbed": 62,
+  "n_devis_medl_old": 18,
+  "n_devis_medl_new": 24,
+  "n_devis_medl_identity_fails_old": 16,
+  "n_devis_medl_identity_fails_new": 19,
+  "devis_medl_band_min_max_old": [
+   0.5068,
+   0.7034
+  ],
+  "devis_medl_band_min_max_new": [
+   0.5068,
+   0.7161
+  ],
+  "testbed_band_min_max": [
+   0.5565,
+   0.7265
+  ],
+  "n_devis_old": 12,
+  "n_devis_new": 18,
+  "devis_gap_band_max_old": 0.0992,
+  "devis_all_min_max_published_form_complete": null
+ },
+ "prostate_all_pixel_ranking": {
+  "released_form": [
+   0.9697,
+   0.9734
+  ],
+  "published_form_threshold_gate": [
+   0.9647,
+   0.9776
+  ],
+  "published_form_all_12": {
+   "v18B_prostate_devis_s1337": 0.9715,
+   "v18B_prostate_devis_s2024": 0.9802,
+   "v18B_prostate_devis_s42": 0.6439,
+   "v18B_prostate_devisobj_threshold_s1337": 0.9647,
+   "v18B_prostate_devisobj_threshold_s2024": 0.9776,
+   "v18B_prostate_devisobj_threshold_s42": 0.9731
+  },
+  "testbed_objective": {
+   "n": 36,
+   "min": 0.6158,
+   "max": 0.9435,
+   "median": 0.8624
+  }
+ },
+ "fundus_all_pixel_ranking": {
+  "released_form": [
+   0.9236,
+   0.9524
+  ],
+  "published_form_threshold_gate": [
+   0.9442,
+   0.9538
+  ],
+  "published_form_all_12": {
+   "v18B_fundus_devis_s1337": 0.9462,
+   "v18B_fundus_devis_s2024": 0.9118,
+   "v18B_fundus_devis_s42": 0.9545,
+   "v18B_fundus_devisobj_threshold_s1337": 0.9442,
+   "v18B_fundus_devisobj_threshold_s2024": 0.9528,
+   "v18B_fundus_devisobj_threshold_s42": 0.9538
+  },
+  "testbed_objective": {
+   "n": 12,
+   "min": 0.3797,
+   "max": 0.8947,
+   "median": 0.7522
+  }
+ },
+ "assertions_passed": [
+  "every file of the S23 sendback present in the results tier matches the collector manifest (sha256)",
+  "runner: six jobs, each ends PASS",
+  "three jobs failed on the first launch, all in one slot of GPU 1, and passed on the second launch",
+  "the harness call between the two launches met three unreadable best_student.pth files (the three failed jobs)",
+  "v18D_prostate_devisrel_threshold_s1337: one training from iteration 0 to the last iteration, no resume",
+  "v18D_prostate_devisrel_threshold_s1337: no skipped iteration; R-34 screen (registered rule, last evaluation) ok",
+  "v18D_prostate_devisrel_threshold_s1337: configuration = released form, threshold gate, headline settings; v11 notice in the log",
+  "v18D_prostate_devisrel_threshold_s1337: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18D_prostate_devisrel_threshold_s1337: labeled slices identical to those of the threshold reference and of the published-form run of the same seed",
+  "v18D_prostate_devisrel_threshold_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18D_prostate_devisrel_threshold_s42: one training from iteration 0 to the last iteration, no resume",
+  "v18D_prostate_devisrel_threshold_s42: no skipped iteration; R-34 screen (registered rule, last evaluation) ok",
+  "v18D_prostate_devisrel_threshold_s42: configuration = released form, threshold gate, headline settings; v11 notice in the log",
+  "v18D_prostate_devisrel_threshold_s42: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18D_prostate_devisrel_threshold_s42: labeled slices identical to those of the threshold reference and of the published-form run of the same seed",
+  "v18D_prostate_devisrel_threshold_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18D_prostate_devisrel_threshold_s2024: one training from iteration 0 to the last iteration, no resume",
+  "v18D_prostate_devisrel_threshold_s2024: no skipped iteration; R-34 screen (registered rule, last evaluation) ok",
+  "v18D_prostate_devisrel_threshold_s2024: configuration = released form, threshold gate, headline settings; v11 notice in the log",
+  "v18D_prostate_devisrel_threshold_s2024: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18D_prostate_devisrel_threshold_s2024: labeled slices identical to those of the threshold reference and of the published-form run of the same seed",
+  "v18D_prostate_devisrel_threshold_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18D_fundus_devisrel_threshold_s1337: one training from iteration 0 to the last iteration, no resume",
+  "v18D_fundus_devisrel_threshold_s1337: no skipped iteration; R-34 screen (registered rule, last evaluation) ok",
+  "v18D_fundus_devisrel_threshold_s1337: configuration = released form, threshold gate, headline settings; v11 notice in the log",
+  "v18D_fundus_devisrel_threshold_s1337: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18D_fundus_devisrel_threshold_s1337: labeled slices identical to those of the threshold reference and of the published-form run of the same seed",
+  "v18D_fundus_devisrel_threshold_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18D_fundus_devisrel_threshold_s42: one training from iteration 0 to the last iteration, no resume",
+  "v18D_fundus_devisrel_threshold_s42: no skipped iteration; R-34 screen (registered rule, last evaluation) ok",
+  "v18D_fundus_devisrel_threshold_s42: configuration = released form, threshold gate, headline settings; v11 notice in the log",
+  "v18D_fundus_devisrel_threshold_s42: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18D_fundus_devisrel_threshold_s42: labeled slices identical to those of the threshold reference and of the published-form run of the same seed",
+  "v18D_fundus_devisrel_threshold_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18D_fundus_devisrel_threshold_s2024: one training from iteration 0 to the last iteration, no resume",
+  "v18D_fundus_devisrel_threshold_s2024: no skipped iteration; R-34 screen (registered rule, last evaluation) ok",
+  "v18D_fundus_devisrel_threshold_s2024: configuration = released form, threshold gate, headline settings; v11 notice in the log",
+  "v18D_fundus_devisrel_threshold_s2024: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18D_fundus_devisrel_threshold_s2024: labeled slices identical to those of the threshold reference and of the published-form run of the same seed",
+  "v18D_fundus_devisrel_threshold_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "prostate: this reader reproduces the published-form row of table_baselines.csv (mean, sd, delta, t, p) from the logs",
+  "prostate: the released form does not meet the pre-registered criterion (paired t p < 0.05 and delta >= 0.5 Dice) against the threshold gate",
+  "prostate: released form within half a Dice point of the threshold gate in the three-seed mean, paired p > 0.5",
+  "prostate: the released form is above the published form in each of the three seeds, by more than one point in the mean",
+  "fundus: this reader reproduces the published-form row of table_baselines.csv (mean, sd, delta, t, p) from the logs",
+  "fundus: the released form does not meet the pre-registered criterion (paired t p < 0.05 and delta >= 0.5 Dice) against the threshold gate",
+  "fundus: released form within half a Dice point of the threshold gate in the three-seed mean, paired p > 0.5",
+  "fundus: the released form is above the published form in each of the three seeds, by more than one point in the mean",
+  "Prostate: each released-form run ends more than 4 points below its best checkpoint, two of them more than 15",
+  "Prostate: the best checkpoint of each released-form run lies between 55 % and 70 % of training",
+  "Fundus: each released-form run ends within half a point of its best checkpoint",
+  "Prostate: the three threshold references end 0.3 to 10.4 points below their best checkpoint",
+  "Prostate: the three published-form runs end less than 2 points below their best checkpoint",
+  "Prostate: at least four other complete, unflagged whole-ramp runs end more than 5 points below their best checkpoint (the behaviour is not specific to the released form)",
+  "Prostate s1337: the loss from best to last is carried by BIDMC, HK and BMC; I2CVB, RUNMC and UCL lose less than 3 points",
+  "Prostate s2024: the loss from best to last is carried by BIDMC, HK and BMC; I2CVB, RUNMC and UCL lose less than 3 points",
+  "the KL weight and beta_t logged every 500 iterations equal the window means of the schedule function (relative 2e-3) in all six runs",
+  "beta_t ends at 0.955 in our runs (continuous epoch 99 t / T); the released loop ends at 0.912 (epoch 98)",
+  "six harness JSONs, EMA teachers",
+  "range condition of the Phase-A rule: the central-80 % range of u_epi is at most half of the 1e-2 bound on all six teachers",
+  "the S12 identity table holds 83 checkpoints: 62 testbed-objective, 18 DEviS / MEDL, 1 clamped-exponential and 2 ensembles"
+ ]
+}

@@ -1,0 +1,6 @@
+dataset,run,n_json_copies,max_gap_all,max_gap_band5
+prostate,v18B_prostate_fixmatch_split1337_init1337,1,0.000016,0.000211
+prostate,v18B_prostate_fixmatch_s42,1,0.000070,0.000991
+prostate,v18B_prostate_fixmatch_s2024,1,0.000027,0.000566
+prostate,v18A_prostate_daep_default_s1337,2,0.000021,0.000660
+fundus,v18B_fundus_fixmatch_split1337_init1337,1,0.005869,0.003873

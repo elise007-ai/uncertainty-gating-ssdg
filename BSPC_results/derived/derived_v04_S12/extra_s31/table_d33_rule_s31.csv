@@ -1,0 +1,5 @@
+dataset,comparison,mean_dice,std_dice,ref_mean,ref_std,delta_points,per_seed_delta_points_1337_42_2024,p_paired,n_seeds_positive,sign_test_p_two_sided,ci90_points,p_tost_0.5,mde_points,verdict
+prostate,oracle_minus_threshold (rule 1),0.8814,0.0012,0.8590,0.0026,+2.23,+1.85;+2.29;+2.56,0.0086,3,0.2500,+1.62;+2.84,0.9929,1.18,above the threshold gate
+prostate,oracle_minus_nogate (rule 2),0.8814,0.0012,0.8578,0.0066,+2.36,+2.23;+1.67;+3.17,0.0325,3,0.2500,+1.09;+3.63,0.9746,2.46,above the no-gate runs
+fundus,oracle_minus_threshold (rule 1),0.9025,0.0014,0.8853,0.0028,+1.73,+2.09;+1.35;+1.74,0.0148,3,0.2500,+1.11;+2.35,0.9857,1.20,above the threshold gate
+fundus,oracle_minus_nogate (rule 2),0.9025,0.0014,0.8843,0.0022,+1.82,+2.00;+1.79;+1.68,0.0026,3,0.2500,+1.55;+2.10,0.9975,0.53,above the no-gate runs

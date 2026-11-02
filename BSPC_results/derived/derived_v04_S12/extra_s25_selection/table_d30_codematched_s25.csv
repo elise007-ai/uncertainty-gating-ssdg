@@ -1,0 +1,9 @@
+dataset,seed,run,source,code_matched_best,submission_digest,code_matched_minus_digest_points
+prostate,1337,v18A_prostate_daep_default_s1337,S06 (the first default run),0.863008,0.857467,+0.55
+prostate,42,v18A_prostate_daep_default_s42,S25 (D-30),0.862797,0.847105,+1.57
+prostate,2024,v18A_prostate_daep_default_s2024,S25 (D-30),0.861760,0.856812,+0.49
+prostate,mean,,,86.25,85.38,+0.87 (code-matched mean minus Table 4 mean 85.38); one-point consequence: not triggered
+fundus,1337,v18A_fundus_daep_default_s1337,S25 (D-30),0.880155,0.885190,-0.50
+fundus,42,v18A_fundus_daep_default_s42,S25 (D-30),0.883884,0.883793,+0.01
+fundus,2024,v18A_fundus_daep_default_s2024,S25 (D-30),0.885832,0.887170,-0.13
+fundus,mean,,,88.33,88.54,-0.21 (code-matched mean minus Table 4 mean 88.54); one-point consequence: not triggered

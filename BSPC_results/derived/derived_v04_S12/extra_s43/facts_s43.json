@@ -1,0 +1,1876 @@
+{
+ "session": "S45",
+ "reader": "make_extra_s43_d35.py",
+ "preregistration": "DOCS/D35_PREREGISTRATION_S43.md",
+ "code_sha256": {
+  "train_fourierfuse_v18_revision.py": "915347736f4855da",
+  "revision_modules.py": "a6fe4357a39d0020",
+  "fourierfuse_v16_modules.py": "4a343f191bbbf1e0",
+  "diag_uncertainty_harness_v18.py": "7eb2db7ec9353de7"
+ },
+ "collection": {
+  "files": 213,
+  "skipped_held": 1459,
+  "held_not_in_tree": 7
+ },
+ "preflight_gpu_mib": {
+  "0": 0,
+  "1": 0
+ },
+ "runner": {
+  "jobs": 24,
+  "first_start": "2026-10-28 09:39:42",
+  "last_end": "2026-10-31 00:33:17"
+ },
+ "failure_branch_record": "state_after_fail.txt only, written before any D-35 run folder existed; the runner launched the 24 jobs once",
+ "schedule": {
+  "cap_iter_short": {
+   "30000": 1884,
+   "60000": 3767
+  },
+  "cap_iter_whole": {
+   "30000": 19000,
+   "60000": 38000
+  },
+  "cap_pct_short": "6.3",
+  "cap_pct_whole": "63"
+ },
+ "prostate_rule1_daep_minus_threshold": {
+  "mean": 0.8668866666666667,
+  "std": 0.001523643440353889,
+  "ref_mean": 0.8651616666666667,
+  "ref_std": 0.007497015561764091,
+  "delta": 0.0017250000000000136,
+  "per_seed_delta": [
+   -0.007426999999999961,
+   0.007213999999999943,
+   0.005388000000000059
+  ],
+  "t": 0.3744903573453917,
+  "p": 0.7440181967052915,
+  "n_pos": 2,
+  "sign_p_greater": 0.5,
+  "sign_p_two_sided": 1.0,
+  "beats": false,
+  "verdict": "within seed noise",
+  "read": true,
+  "not_read_because": [],
+  "mean_points": 0.17250000000000135,
+  "sd_points": 0.7978276568282121,
+  "ci90_points": [
+   -1.1725213142518134,
+   1.5175213142518162
+  ],
+  "p_tost_0.5": 0.2754127028972423,
+  "equivalent_at_0.5": false,
+  "mde_points": 2.604144217014592,
+  "p_holm": 1.0,
+  "verdict_holm": "within seed noise"
+ },
+ "fundus_rule1_daep_minus_threshold": {
+  "mean": 0.886823,
+  "std": 0.0022664573677878687,
+  "ref_mean": 0.887212,
+  "ref_std": 0.0021948011299432204,
+  "delta": -0.0003889999999999727,
+  "per_seed_delta": [
+   -0.0012099999999999334,
+   0.001446999999999976,
+   -0.0014039999999999608
+  ],
+  "t": -0.4229609489139023,
+  "p": 0.7134621324502994,
+  "n_pos": 1,
+  "sign_p_greater": 0.875,
+  "sign_p_two_sided": 1.0,
+  "beats": false,
+  "verdict": "within seed noise",
+  "read": true,
+  "not_read_because": [],
+  "mean_points": -0.03889999999999727,
+  "sd_points": 0.15929786564796974,
+  "ci90_points": [
+   -0.3074530174062057,
+   0.22965301740621114
+  ],
+  "p_tost_0.5": 0.018778520467479708,
+  "equivalent_at_0.5": true,
+  "mde_points": 0.5199551708436823,
+  "p_holm": 1.0,
+  "verdict_holm": "within seed noise"
+ },
+ "prostate_rule2_oracle_minus_threshold": {
+  "mean": 0.8871303333333334,
+  "std": 0.0018052194695751904,
+  "ref_mean": 0.8651616666666667,
+  "ref_std": 0.007497015561764091,
+  "delta": 0.02196866666666671,
+  "per_seed_delta": [
+   0.011952000000000074,
+   0.030185000000000017,
+   0.02376900000000004
+  ],
+  "t": 4.114110632725922,
+  "p": 0.054312554997305265,
+  "n_pos": 3,
+  "sign_p_greater": 0.125,
+  "sign_p_two_sided": 0.25,
+  "beats": false,
+  "verdict": "within seed noise",
+  "read": true,
+  "not_read_because": [],
+  "mean_points": 2.1968666666666707,
+  "sd_points": 0.9248863299526748,
+  "ci90_points": [
+   0.6376429215385417,
+   3.7560904117947995
+  ],
+  "p_tost_0.5": 0.9568054513763623,
+  "equivalent_at_0.5": false,
+  "mde_points": 3.0188692594555078,
+  "p_holm": 0.054312554997305265,
+  "verdict_holm": "within seed noise"
+ },
+ "fundus_rule2_oracle_minus_threshold": {
+  "mean": 0.9061013333333333,
+  "std": 0.0020964640071638382,
+  "ref_mean": 0.887212,
+  "ref_std": 0.0021948011299432204,
+  "delta": 0.01888933333333335,
+  "per_seed_delta": [
+   0.019492000000000065,
+   0.01831399999999994,
+   0.018862000000000045
+  ],
+  "t": 55.50236871583229,
+  "p": 0.0003244632803431677,
+  "n_pos": 3,
+  "sign_p_greater": 0.125,
+  "sign_p_two_sided": 0.25,
+  "beats": true,
+  "verdict": "above the threshold gate",
+  "read": true,
+  "not_read_because": [],
+  "mean_points": 1.8889333333333351,
+  "sd_points": 0.05894754730549905,
+  "ci90_points": [
+   1.7895563477523062,
+   1.988310318914364
+  ],
+  "p_tost_0.5": 0.9997000654396476,
+  "equivalent_at_0.5": false,
+  "mde_points": 0.19240736155109586,
+  "p_holm": 0.0006489265606863354,
+  "verdict_holm": "above the threshold gate"
+ },
+ "prostate_rule3_nogate_minus_threshold": {
+  "mean": 0.859328,
+  "std": 0.0023611768252293102,
+  "ref_mean": 0.8651616666666667,
+  "ref_std": 0.007497015561764091,
+  "delta": -0.005833666666666663,
+  "per_seed_delta": [
+   -0.015712999999999977,
+   0.003237999999999963,
+   -0.005025999999999975
+  ],
+  "t": -1.063457322696607,
+  "p": 0.39898876431139607,
+  "n_pos": 1,
+  "sign_p_greater": 0.875,
+  "sign_p_two_sided": 1.0,
+  "beats": false,
+  "verdict": "within seed noise",
+  "read": true,
+  "not_read_because": [],
+  "mean_points": -0.5833666666666663,
+  "sd_points": 0.9501281194309155,
+  "ci90_points": [
+   -2.1851443951864753,
+   1.0184110618531426
+  ],
+  "p_tost_0.5": 0.5534235351665993,
+  "equivalent_at_0.5": false,
+  "mde_points": 3.101259559583965,
+  "p_holm": 0.7979775286227921,
+  "verdict_holm": "within seed noise"
+ },
+ "fundus_rule3_nogate_minus_threshold": {
+  "mean": 0.8872416666666666,
+  "std": 0.002573287067805204,
+  "ref_mean": 0.887212,
+  "ref_std": 0.0021948011299432204,
+  "delta": 2.966666666666858e-05,
+  "per_seed_delta": [
+   -0.00018099999999998673,
+   -0.00021400000000004749,
+   0.00048400000000003995
+  ],
+  "t": 0.13047959956056873,
+  "p": 0.9081271936363263,
+  "n_pos": 1,
+  "sign_p_greater": 0.875,
+  "sign_p_two_sided": 1.0,
+  "beats": false,
+  "verdict": "within seed noise",
+  "read": true,
+  "not_read_because": [],
+  "mean_points": 0.002966666666666858,
+  "sd_points": 0.03938100218802973,
+  "ci90_points": [
+   -0.06342397154469118,
+   0.06935730487802488
+  ],
+  "p_tost_0.5": 0.0010430152622529902,
+  "equivalent_at_0.5": true,
+  "mde_points": 0.12854130617118784,
+  "p_holm": 0.9081271936363263,
+  "verdict_holm": "within seed noise"
+ },
+ "expectation": {
+  "registered": "DAEP within seed noise of the threshold gate on both benchmarks, and the oracle above it on at least one; no expectation for no gate",
+  "prostate": {
+   "daep_within_noise": true,
+   "oracle_above": false
+  },
+  "fundus": {
+   "daep_within_noise": true,
+   "oracle_above": true
+  },
+  "holds": true
+ },
+ "arms": {
+  "prostate_fixmatch": {
+   "short_mean": 0.8651616666666667,
+   "short_std": 0.007497015561764091,
+   "whole_mean": 0.85902,
+   "whole_std": 0.0026139982784998015,
+   "short_minus_whole_points": 0.6141666666666639,
+   "p": 0.18554258290328304,
+   "per_seed_points": [
+    1.144999999999996,
+    0.07340000000000124,
+    0.6240999999999941
+   ],
+   "w_first": [
+    0.235,
+    0.433,
+    0.329
+   ],
+   "w_after_mean": [
+    0.9997395833333332,
+    0.9998333333333335,
+    0.99971875
+   ],
+   "whole_w_first": [
+    0.225,
+    0.431,
+    0.348
+   ],
+   "whole_w_after_mean": [
+    0.9996041666666667,
+    0.9994479166666667,
+    0.9994895833333334
+   ]
+  },
+  "prostate_daep": {
+   "short_mean": 0.8668866666666667,
+   "short_std": 0.001523643440353889,
+   "whole_mean": 0.8625216666666667,
+   "whole_std": 0.0006680062374958518,
+   "short_minus_whole_points": 0.43649999999999894,
+   "p": 0.07440099104092793,
+   "per_seed_points": [
+    0.29919999999999947,
+    0.32169999999999144,
+    0.6886000000000059
+   ],
+   "w_first": [
+    0.617,
+    0.657,
+    0.63
+   ],
+   "w_after_mean": [
+    0.99703125,
+    0.9952604166666665,
+    0.9941770833333332
+   ],
+   "whole_w_first": [
+    0.608,
+    0.655,
+    0.632
+   ],
+   "whole_w_after_mean": [
+    0.9956875000000002,
+    0.9898020833333335,
+    0.9868541666666665
+   ]
+  },
+  "prostate_ungated": {
+   "short_mean": 0.859328,
+   "short_std": 0.0023611768252293102,
+   "whole_mean": 0.8577973333333334,
+   "whole_std": 0.006624157028130722,
+   "short_minus_whole_points": 0.1530666666666643,
+   "p": 0.6499248150342606,
+   "per_seed_points": [
+    -0.04509999999999792,
+    -0.21920000000000828,
+    0.7234999999999991
+   ],
+   "w_first": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "w_after_mean": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "whole_w_first": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "whole_w_after_mean": [
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "prostate_oracle": {
+   "short_mean": 0.8871303333333334,
+   "short_std": 0.0018052194695751904,
+   "whole_mean": 0.8813643333333333,
+   "whole_std": 0.0011519220170364461,
+   "short_minus_whole_points": 0.5766000000000011,
+   "p": 0.03647494108179955,
+   "per_seed_points": [
+    0.49230000000000107,
+    0.8008000000000015,
+    0.436700000000001
+   ],
+   "w_first": [
+    0.943,
+    0.943,
+    0.933
+   ],
+   "w_after_mean": [
+    0.9955312500000003,
+    0.995604166666667,
+    0.9954895833333337
+   ],
+   "whole_w_first": [
+    0.943,
+    0.943,
+    0.933
+   ],
+   "whole_w_after_mean": [
+    0.9949062500000002,
+    0.9943125000000003,
+    0.9948437500000002
+   ]
+  },
+  "fundus_fixmatch": {
+   "short_mean": 0.887212,
+   "short_std": 0.0021948011299432204,
+   "whole_mean": 0.8852633333333332,
+   "whole_std": 0.002820431586359304,
+   "short_minus_whole_points": 0.19486666666666724,
+   "p": 0.30448144356380125,
+   "per_seed_points": [
+    0.3338999999999981,
+    -0.08979999999999544,
+    0.34049999999999914
+   ],
+   "w_first": [
+    0.207,
+    0.207,
+    0.203
+   ],
+   "w_after_mean": [
+    0.9984999999999999,
+    0.9985833333333334,
+    0.998625
+   ],
+   "whole_w_first": [
+    0.206,
+    0.207,
+    0.203
+   ],
+   "whole_w_after_mean": [
+    0.9980625,
+    0.9982291666666666,
+    0.9981874999999999
+   ]
+  },
+  "fundus_daep": {
+   "short_mean": 0.886823,
+   "short_std": 0.0022664573677878687,
+   "whole_mean": 0.8832903333333334,
+   "whole_std": 0.0028846858292252814,
+   "short_minus_whole_points": 0.3532666666666703,
+   "p": 0.02377456419473304,
+   "per_seed_points": [
+    0.4055000000000031,
+    0.4118999999999984,
+    0.24240000000000927
+   ],
+   "w_first": [
+    0.599,
+    0.619,
+    0.592
+   ],
+   "w_after_mean": [
+    0.9925,
+    0.99375,
+    0.9947708333333333
+   ],
+   "whole_w_first": [
+    0.601,
+    0.616,
+    0.586
+   ],
+   "whole_w_after_mean": [
+    0.9918125,
+    0.993125,
+    0.9888541666666667
+   ]
+  },
+  "fundus_ungated": {
+   "short_mean": 0.8872416666666666,
+   "short_std": 0.002573287067805204,
+   "whole_mean": 0.884294,
+   "whole_std": 0.0021913724010308943,
+   "short_minus_whole_points": 0.2947666666666645,
+   "p": 0.011813840420441294,
+   "per_seed_points": [
+    0.23039999999999727,
+    0.32169999999999144,
+    0.3322000000000047
+   ],
+   "w_first": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "w_after_mean": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "whole_w_first": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "whole_w_after_mean": [
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "fundus_oracle": {
+   "short_mean": 0.9061013333333333,
+   "short_std": 0.0020964640071638382,
+   "whole_mean": 0.902543,
+   "whole_std": 0.0013881826248732228,
+   "short_minus_whole_points": 0.35583333333333667,
+   "p": 0.0531527422142351,
+   "per_seed_points": [
+    0.19440000000000568,
+    0.3877999999999937,
+    0.4853000000000107
+   ],
+   "w_first": [
+    0.878,
+    0.915,
+    0.891
+   ],
+   "w_after_mean": [
+    0.9872083333333332,
+    0.9873541666666666,
+    0.9874999999999999
+   ],
+   "whole_w_first": [
+    0.88,
+    0.91,
+    0.892
+   ],
+   "whole_w_after_mean": [
+    0.9862916666666667,
+    0.9863333333333334,
+    0.9865
+   ]
+  }
+ },
+ "d13_quantity_points": {
+  "prostate": [
+   -0.8457999999999966,
+   0.2482999999999902,
+   0.06450000000001177
+  ],
+  "fundus": [
+   0.07160000000000499,
+   0.5016999999999938,
+   -0.09809999999998986
+  ]
+ },
+ "d13_pair": {
+  "fixmatch": {
+   "d13_best": 0.861279,
+   "d35_s1337_best": 0.873427,
+   "d35_minus_d13_points": 1.2147999999999937,
+   "d13_trainer_sha16": "a273156405341770"
+  },
+  "daep": {
+   "d13_best": 0.8556,
+   "d35_s1337_best": 0.866,
+   "d35_minus_d13_points": 1.0399999999999965,
+   "d13_trainer_sha16": "a273156405341770"
+  }
+ },
+ "d13_shift_points": -0.6709999999999994,
+ "checkpoints": {
+  "prostate_rule1_daep_minus_threshold_best": {
+   "delta_points": 0.17250000000000137,
+   "p": 0.7440181967052915,
+   "per_seed_points": [
+    -0.7426999999999961,
+    0.7213999999999943,
+    0.5388000000000059
+   ],
+   "criterion_met": false
+  },
+  "prostate_rule2_oracle_minus_threshold_best": {
+   "delta_points": 2.1968666666666707,
+   "p": 0.054312554997305265,
+   "per_seed_points": [
+    1.1952000000000074,
+    3.0185000000000017,
+    2.376900000000004
+   ],
+   "criterion_met": false
+  },
+  "prostate_rule3_nogate_minus_threshold_best": {
+   "delta_points": -0.5833666666666664,
+   "p": 0.39898876431139607,
+   "per_seed_points": [
+    -1.5712999999999977,
+    0.3237999999999963,
+    -0.5025999999999975
+   ],
+   "criterion_met": false
+  },
+  "prostate_rule1_daep_minus_threshold_last": {
+   "delta_points": 4.403333333333337,
+   "p": 0.7360706790754761,
+   "per_seed_points": [
+    -18.35,
+    16.170000000000005,
+    15.390000000000004
+   ],
+   "criterion_met": false
+  },
+  "prostate_rule2_oracle_minus_threshold_last": {
+   "delta_points": 16.14,
+   "p": 0.13453663354015766,
+   "per_seed_points": [
+    3.1100000000000017,
+    20.76,
+    24.550000000000004
+   ],
+   "criterion_met": false
+  },
+  "prostate_rule3_nogate_minus_threshold_last": {
+   "delta_points": -11.756666666666664,
+   "p": 0.14790676515615206,
+   "per_seed_points": [
+    -21.79,
+    -8.389999999999997,
+    -5.0899999999999945
+   ],
+   "criterion_met": false
+  },
+  "prostate_rule1_daep_minus_threshold_swad": {
+   "delta_points": 0.8616666666666717,
+   "p": 0.5484147775586665,
+   "per_seed_points": [
+    -1.4833333333333254,
+    2.5066666666666793,
+    1.5616666666666612
+   ],
+   "criterion_met": false
+  },
+  "prostate_rule2_oracle_minus_threshold_swad": {
+   "delta_points": 2.759999999999996,
+   "p": 0.1386294811575643,
+   "per_seed_points": [
+    0.8033333333333226,
+    4.788333333333339,
+    2.688333333333326
+   ],
+   "criterion_met": false
+  },
+  "prostate_rule3_nogate_minus_threshold_swad": {
+   "delta_points": -3.0516666666666787,
+   "p": 0.042064943763100916,
+   "per_seed_points": [
+    -3.9433333333333542,
+    -3.416666666666668,
+    -1.7950000000000133
+   ],
+   "criterion_met": true
+  },
+  "fundus_rule1_daep_minus_threshold_best": {
+   "delta_points": -0.03889999999999727,
+   "p": 0.7134621324502994,
+   "per_seed_points": [
+    -0.12099999999999334,
+    0.1446999999999976,
+    -0.14039999999999608
+   ],
+   "criterion_met": false
+  },
+  "fundus_rule2_oracle_minus_threshold_best": {
+   "delta_points": 1.8889333333333351,
+   "p": 0.0003244632803431677,
+   "per_seed_points": [
+    1.9492000000000065,
+    1.8313999999999941,
+    1.8862000000000045
+   ],
+   "criterion_met": true
+  },
+  "fundus_rule3_nogate_minus_threshold_best": {
+   "delta_points": 0.0029666666666668578,
+   "p": 0.9081271936363263,
+   "per_seed_points": [
+    -0.018099999999998673,
+    -0.02140000000000475,
+    0.048400000000003995
+   ],
+   "criterion_met": false
+  },
+  "fundus_rule1_daep_minus_threshold_last": {
+   "delta_points": 0.10000000000000009,
+   "p": 0.5457672702624974,
+   "per_seed_points": [
+    -0.17000000000000348,
+    0.29000000000000137,
+    0.18000000000000238
+   ],
+   "criterion_met": false
+  },
+  "fundus_rule2_oracle_minus_threshold_last": {
+   "delta_points": 2.1166666666666707,
+   "p": 0.0024412759697179393,
+   "per_seed_points": [
+    2.090000000000003,
+    1.9500000000000073,
+    2.310000000000001
+   ],
+   "criterion_met": true
+  },
+  "fundus_rule3_nogate_minus_threshold_last": {
+   "delta_points": 0.11333333333333566,
+   "p": 0.522498283200616,
+   "per_seed_points": [
+    0.12999999999999678,
+    -0.14999999999999458,
+    0.36000000000000476
+   ],
+   "criterion_met": false
+  },
+  "fundus_rule1_daep_minus_threshold_swad": {
+   "delta_points": -0.08791666666666531,
+   "p": 0.5195889762230491,
+   "per_seed_points": [
+    -0.26249999999999885,
+    0.12500000000000844,
+    -0.12625000000000552
+   ],
+   "criterion_met": false
+  },
+  "fundus_rule2_oracle_minus_threshold_swad": {
+   "delta_points": 1.564583333333332,
+   "p": 0.0013233943157185942,
+   "per_seed_points": [
+    1.5337500000000004,
+    1.485000000000003,
+    1.6749999999999932
+   ],
+   "criterion_met": true
+  },
+  "fundus_rule3_nogate_minus_threshold_swad": {
+   "delta_points": 0.004583333333326353,
+   "p": 0.9368722449278397,
+   "per_seed_points": [
+    -0.007500000000004725,
+    -0.07749999999999702,
+    0.0987499999999808
+   ],
+   "criterion_met": false
+  }
+ },
+ "selection": {
+  "prostate": {
+   "n": 64,
+   "median": 1.6956000000000027,
+   "n_gt1": 39,
+   "n_gt5": 18,
+   "n_prev": 61,
+   "median_prev": 1.3588999999999962,
+   "n_gt5_prev": 15
+  },
+  "fundus": {
+   "n": 46,
+   "median": 0.2769500000000036,
+   "n_gt1": 3,
+   "n_gt5": 0,
+   "n_prev": 43,
+   "median_prev": 0.2755000000000063,
+   "n_gt5_prev": 0
+  },
+  "MNMS": {
+   "n": 11,
+   "median": 0.2797999999999967,
+   "n_gt1": 1,
+   "n_gt5": 1,
+   "n_prev": 11,
+   "median_prev": 0.2797999999999967,
+   "n_gt5_prev": 1
+  },
+  "BUSI": {
+   "n": 11,
+   "median": 0.854099999999991,
+   "n_gt1": 5,
+   "n_gt5": 1,
+   "n_prev": 11,
+   "median_prev": 0.854099999999991,
+   "n_gt5_prev": 1
+  }
+ },
+ "n_short_ramp": 26,
+ "n_logs": 163,
+ "best_minus_last_points": {
+  "prostate_fixmatch": [
+   1.972699999999994,
+   17.890000000000008,
+   22.1858
+  ],
+  "prostate_daep": [
+   19.58,
+   2.4413999999999936,
+   7.334600000000002
+  ],
+  "prostate_ungated": [
+   22.191399999999994,
+   26.6038,
+   26.773199999999996
+  ],
+  "prostate_oracle": [
+   0.05789999999999962,
+   0.14850000000000696,
+   0.012699999999998823
+  ],
+  "fundus_fixmatch": [
+   0.33199999999999896,
+   0.31560000000000477,
+   0.44600000000000195
+  ],
+  "fundus_daep": [
+   0.3810000000000091,
+   0.170300000000001,
+   0.1256000000000035
+  ],
+  "fundus_ungated": [
+   0.1839000000000035,
+   0.4441999999999946,
+   0.13440000000000119
+  ],
+  "fundus_oracle": [
+   0.19120000000000248,
+   0.19699999999999163,
+   0.02220000000000555
+  ]
+ },
+ "best_frac": {
+  "prostate_fixmatch": [
+   0.675,
+   0.49166666666666664,
+   0.525
+  ],
+  "prostate_daep": [
+   0.6166666666666667,
+   0.475,
+   0.675
+  ],
+  "prostate_ungated": [
+   0.48333333333333334,
+   0.35833333333333334,
+   0.475
+  ],
+  "prostate_oracle": [
+   0.875,
+   0.8333333333333334,
+   0.9166666666666666
+  ],
+  "fundus_fixmatch": [
+   0.5,
+   0.43333333333333335,
+   0.48333333333333334
+  ],
+  "fundus_daep": [
+   0.5333333333333333,
+   0.8166666666666667,
+   0.6333333333333333
+  ],
+  "fundus_ungated": [
+   0.5,
+   0.65,
+   0.6166666666666667
+  ],
+  "fundus_oracle": [
+   0.7666666666666667,
+   0.7166666666666667,
+   0.9
+  ]
+ },
+ "runs_trained": {
+  "before_d35": 125,
+  "d35": 24,
+  "total": 149
+ },
+ "signal": {
+  "v18J_prostate_fixmatch_ramp10_s1337": {
+   "u_epi_all": 0.9105,
+   "u_epi_band": 0.7031,
+   "u_epi_range80": 9.339e-05,
+   "conf_all": 0.9105,
+   "conf_band": 0.7034,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": false
+  },
+  "v18J_prostate_daep_ramp10_s1337": {
+   "u_epi_all": 0.8593,
+   "u_epi_band": 0.6908,
+   "u_epi_range80": 0.0001207,
+   "conf_all": 0.8593,
+   "conf_band": 0.6908,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_prostate_ungated_ramp10_s1337": {
+   "u_epi_all": 0.847,
+   "u_epi_band": 0.6793,
+   "u_epi_range80": 0.0001671,
+   "conf_all": 0.847,
+   "conf_band": 0.6797,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_prostate_oracle_ramp10_s1337": {
+   "u_epi_all": 0.8799,
+   "u_epi_band": 0.7034,
+   "u_epi_range80": 0.0001081,
+   "conf_all": 0.8799,
+   "conf_band": 0.7036,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": false
+  },
+  "v18J_prostate_fixmatch_ramp10_s42": {
+   "u_epi_all": 0.8775,
+   "u_epi_band": 0.686,
+   "u_epi_range80": 0.0001424,
+   "conf_all": 0.8775,
+   "conf_band": 0.6862,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_prostate_daep_ramp10_s42": {
+   "u_epi_all": 0.8859,
+   "u_epi_band": 0.6887,
+   "u_epi_range80": 0.0001504,
+   "conf_all": 0.8859,
+   "conf_band": 0.6889,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_prostate_ungated_ramp10_s42": {
+   "u_epi_all": 0.8434,
+   "u_epi_band": 0.6778,
+   "u_epi_range80": 0.0003214,
+   "conf_all": 0.8434,
+   "conf_band": 0.678,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_prostate_oracle_ramp10_s42": {
+   "u_epi_all": 0.8921,
+   "u_epi_band": 0.6811,
+   "u_epi_range80": 8.627e-05,
+   "conf_all": 0.8921,
+   "conf_band": 0.6814,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_prostate_fixmatch_ramp10_s2024": {
+   "u_epi_all": 0.8821,
+   "u_epi_band": 0.6648,
+   "u_epi_range80": 0.0001254,
+   "conf_all": 0.8821,
+   "conf_band": 0.6651,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_prostate_daep_ramp10_s2024": {
+   "u_epi_all": 0.8921,
+   "u_epi_band": 0.6664,
+   "u_epi_range80": 0.0001081,
+   "conf_all": 0.8921,
+   "conf_band": 0.6668,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_prostate_ungated_ramp10_s2024": {
+   "u_epi_all": 0.9182,
+   "u_epi_band": 0.6966,
+   "u_epi_range80": 0.0001579,
+   "conf_all": 0.9182,
+   "conf_band": 0.6969,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_prostate_oracle_ramp10_s2024": {
+   "u_epi_all": 0.899,
+   "u_epi_band": 0.6964,
+   "u_epi_range80": 8.1e-05,
+   "conf_all": 0.899,
+   "conf_band": 0.6964,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_fundus_fixmatch_ramp10_s1337": {
+   "u_epi_all": 0.8773,
+   "u_epi_band": 0.623,
+   "u_epi_range80": 0.0003837,
+   "conf_all": 0.8773,
+   "conf_band": 0.623,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_fundus_daep_ramp10_s1337": {
+   "u_epi_all": 0.6656,
+   "u_epi_band": 0.5998,
+   "u_epi_range80": 0.0002567,
+   "conf_all": 0.6657,
+   "conf_band": 0.6001,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_fundus_ungated_ramp10_s1337": {
+   "u_epi_all": 0.5696,
+   "u_epi_band": 0.6227,
+   "u_epi_range80": 0.0002887,
+   "conf_all": 0.5703,
+   "conf_band": 0.6231,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_fundus_oracle_ramp10_s1337": {
+   "u_epi_all": 0.9134,
+   "u_epi_band": 0.6573,
+   "u_epi_range80": 0.0004317,
+   "conf_all": 0.9134,
+   "conf_band": 0.6572,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_fundus_fixmatch_ramp10_s42": {
+   "u_epi_all": 0.8104,
+   "u_epi_band": 0.6388,
+   "u_epi_range80": 0.000542,
+   "conf_all": 0.8104,
+   "conf_band": 0.6387,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_fundus_daep_ramp10_s42": {
+   "u_epi_all": 0.8772,
+   "u_epi_band": 0.6234,
+   "u_epi_range80": 0.000537,
+   "conf_all": 0.8772,
+   "conf_band": 0.6233,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_fundus_ungated_ramp10_s42": {
+   "u_epi_all": 0.8841,
+   "u_epi_band": 0.6427,
+   "u_epi_range80": 0.0003873,
+   "conf_all": 0.8841,
+   "conf_band": 0.6426,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_fundus_oracle_ramp10_s42": {
+   "u_epi_all": 0.8991,
+   "u_epi_band": 0.6689,
+   "u_epi_range80": 0.0004495,
+   "conf_all": 0.8991,
+   "conf_band": 0.6689,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_fundus_fixmatch_ramp10_s2024": {
+   "u_epi_all": 0.8632,
+   "u_epi_band": 0.6356,
+   "u_epi_range80": 0.0003836,
+   "conf_all": 0.8632,
+   "conf_band": 0.6356,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_fundus_daep_ramp10_s2024": {
+   "u_epi_all": 0.8587,
+   "u_epi_band": 0.6335,
+   "u_epi_range80": 0.0005458,
+   "conf_all": 0.8587,
+   "conf_band": 0.6337,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_fundus_ungated_ramp10_s2024": {
+   "u_epi_all": 0.8742,
+   "u_epi_band": 0.631,
+   "u_epi_range80": 0.0006325,
+   "conf_all": 0.8742,
+   "conf_band": 0.6312,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "v18J_fundus_oracle_ramp10_s2024": {
+   "u_epi_all": 0.8794,
+   "u_epi_band": 0.6702,
+   "u_epi_range80": 0.000375,
+   "conf_all": 0.8794,
+   "conf_band": 0.6702,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  }
+ },
+ "s9": {
+  "n_all": 148,
+  "n_testbed": 115,
+  "n_testbed_identity_holds": 114,
+  "per_benchmark": {
+   "prostate": 62,
+   "fundus": 39,
+   "MNMS": 7,
+   "BUSI": 7
+  },
+  "testbed_band_min_max": [
+   "0.56",
+   "0.73"
+  ],
+  "d35_band_min_max": [
+   "0.60",
+   "0.70"
+  ],
+  "d35_range_max": 0.0006325,
+  "d35_phaseA_persists": 22
+ },
+ "per_run": {
+  "v18J_prostate_fixmatch_ramp10_s1337": {
+   "run": "v18J_prostate_fixmatch_ramp10_s1337",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.00036495937351256787,
+   "fail": "",
+   "w_first": 0.235,
+   "w_first_fifth_mean": 0.9644166666666667,
+   "w_after_mean": 0.9997395833333332,
+   "w_after_median": 1.0,
+   "whole_w_first": 0.225,
+   "whole_w_first_fifth_mean": 0.9638333333333332,
+   "whole_w_after_mean": 0.9996041666666667,
+   "best": 0.873427,
+   "best_iter": 40500,
+   "last": 0.8537,
+   "whole": "v18B_prostate_fixmatch_split1337_init1337",
+   "whole_best": 0.861977
+  },
+  "v18J_prostate_daep_ramp10_s1337": {
+   "run": "v18J_prostate_daep_ramp10_s1337",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.00036495937351256787,
+   "fail": "",
+   "w_first": 0.617,
+   "w_first_fifth_mean": 0.9514583333333334,
+   "w_after_mean": 0.99703125,
+   "w_after_median": 0.997,
+   "whole_w_first": 0.608,
+   "whole_w_first_fifth_mean": 0.9434583333333334,
+   "whole_w_after_mean": 0.9956875000000002,
+   "best": 0.866,
+   "best_iter": 37000,
+   "last": 0.6702,
+   "whole": "v18A_prostate_daep_default_s1337",
+   "whole_best": 0.863008
+  },
+  "v18J_prostate_ungated_ramp10_s1337": {
+   "run": "v18J_prostate_ungated_ramp10_s1337",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.00036495937351256787,
+   "fail": "",
+   "w_first": 1.0,
+   "w_first_fifth_mean": 1.0,
+   "w_after_mean": 1.0,
+   "w_after_median": 1.0,
+   "whole_w_first": 1.0,
+   "whole_w_first_fifth_mean": 1.0,
+   "whole_w_after_mean": 1.0,
+   "best": 0.857714,
+   "best_iter": 29000,
+   "last": 0.6358,
+   "whole": "v18G_prostate_ungated_s1337",
+   "whole_best": 0.858165
+  },
+  "v18J_prostate_oracle_ramp10_s1337": {
+   "run": "v18J_prostate_oracle_ramp10_s1337",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.00036495937351256787,
+   "fail": "",
+   "w_first": 0.943,
+   "w_first_fifth_mean": 0.9868333333333332,
+   "w_after_mean": 0.9955312500000003,
+   "w_after_median": 0.996,
+   "whole_w_first": 0.943,
+   "whole_w_first_fifth_mean": 0.9816249999999999,
+   "whole_w_after_mean": 0.9949062500000002,
+   "best": 0.885379,
+   "best_iter": 52500,
+   "last": 0.8848,
+   "whole": "v18H_prostate_oracle_s1337",
+   "whole_best": 0.880456
+  },
+  "v18J_prostate_fixmatch_ramp10_s42": {
+   "run": "v18J_prostate_fixmatch_ramp10_s42",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.00036495937351256787,
+   "fail": "",
+   "w_first": 0.433,
+   "w_first_fifth_mean": 0.9750416666666667,
+   "w_after_mean": 0.9998333333333335,
+   "w_after_median": 1.0,
+   "whole_w_first": 0.431,
+   "whole_w_first_fifth_mean": 0.9747916666666666,
+   "whole_w_after_mean": 0.9994479166666667,
+   "best": 0.8588,
+   "best_iter": 29500,
+   "last": 0.6799,
+   "whole": "v18B_prostate_fixmatch_s42",
+   "whole_best": 0.858066
+  },
+  "v18J_prostate_daep_ramp10_s42": {
+   "run": "v18J_prostate_daep_ramp10_s42",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.00036495937351256787,
+   "fail": "",
+   "w_first": 0.657,
+   "w_first_fifth_mean": 0.9534166666666667,
+   "w_after_mean": 0.9952604166666665,
+   "w_after_median": 0.995,
+   "whole_w_first": 0.655,
+   "whole_w_first_fifth_mean": 0.9430833333333334,
+   "whole_w_after_mean": 0.9898020833333335,
+   "best": 0.866014,
+   "best_iter": 28500,
+   "last": 0.8416,
+   "whole": "v18A_prostate_daep_default_s42",
+   "whole_best": 0.862797
+  },
+  "v18J_prostate_ungated_ramp10_s42": {
+   "run": "v18J_prostate_ungated_ramp10_s42",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.00036495937351256787,
+   "fail": "",
+   "w_first": 1.0,
+   "w_first_fifth_mean": 1.0,
+   "w_after_mean": 1.0,
+   "w_after_median": 1.0,
+   "whole_w_first": 1.0,
+   "whole_w_first_fifth_mean": 1.0,
+   "whole_w_after_mean": 1.0,
+   "best": 0.862038,
+   "best_iter": 21500,
+   "last": 0.596,
+   "whole": "v18G_prostate_ungated_s42",
+   "whole_best": 0.86423
+  },
+  "v18J_prostate_oracle_ramp10_s42": {
+   "run": "v18J_prostate_oracle_ramp10_s42",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.00036495937351256787,
+   "fail": "",
+   "w_first": 0.943,
+   "w_first_fifth_mean": 0.9858333333333333,
+   "w_after_mean": 0.995604166666667,
+   "w_after_median": 0.996,
+   "whole_w_first": 0.943,
+   "whole_w_first_fifth_mean": 0.9788333333333332,
+   "whole_w_after_mean": 0.9943125000000003,
+   "best": 0.888985,
+   "best_iter": 50000,
+   "last": 0.8875,
+   "whole": "v18H_prostate_oracle_s42",
+   "whole_best": 0.880977
+  },
+  "v18J_prostate_fixmatch_ramp10_s2024": {
+   "run": "v18J_prostate_fixmatch_ramp10_s2024",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.00036495937351256787,
+   "fail": "",
+   "w_first": 0.329,
+   "w_first_fifth_mean": 0.9702500000000001,
+   "w_after_mean": 0.99971875,
+   "w_after_median": 1.0,
+   "whole_w_first": 0.348,
+   "whole_w_first_fifth_mean": 0.970875,
+   "whole_w_after_mean": 0.9994895833333334,
+   "best": 0.863258,
+   "best_iter": 31500,
+   "last": 0.6414,
+   "whole": "v18B_prostate_fixmatch_s2024",
+   "whole_best": 0.857017
+  },
+  "v18J_prostate_daep_ramp10_s2024": {
+   "run": "v18J_prostate_daep_ramp10_s2024",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.00036495937351256787,
+   "fail": "",
+   "w_first": 0.63,
+   "w_first_fifth_mean": 0.9501249999999999,
+   "w_after_mean": 0.9941770833333332,
+   "w_after_median": 0.994,
+   "whole_w_first": 0.632,
+   "whole_w_first_fifth_mean": 0.9362499999999999,
+   "whole_w_after_mean": 0.9868541666666665,
+   "best": 0.868646,
+   "best_iter": 40500,
+   "last": 0.7953,
+   "whole": "v18A_prostate_daep_default_s2024",
+   "whole_best": 0.86176
+  },
+  "v18J_prostate_ungated_ramp10_s2024": {
+   "run": "v18J_prostate_ungated_ramp10_s2024",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.00036495937351256787,
+   "fail": "",
+   "w_first": 1.0,
+   "w_first_fifth_mean": 1.0,
+   "w_after_mean": 1.0,
+   "w_after_median": 1.0,
+   "whole_w_first": 1.0,
+   "whole_w_first_fifth_mean": 1.0,
+   "whole_w_after_mean": 1.0,
+   "best": 0.858232,
+   "best_iter": 28500,
+   "last": 0.5905,
+   "whole": "v18G_prostate_ungated_s2024",
+   "whole_best": 0.850997
+  },
+  "v18J_prostate_oracle_ramp10_s2024": {
+   "run": "v18J_prostate_oracle_ramp10_s2024",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.00036495937351256787,
+   "fail": "",
+   "w_first": 0.933,
+   "w_first_fifth_mean": 0.9860833333333333,
+   "w_after_mean": 0.9954895833333337,
+   "w_after_median": 0.996,
+   "whole_w_first": 0.933,
+   "whole_w_first_fifth_mean": 0.9777916666666666,
+   "whole_w_after_mean": 0.9948437500000002,
+   "best": 0.887027,
+   "best_iter": 55000,
+   "last": 0.8869,
+   "whole": "v18H_prostate_oracle_s2024",
+   "whole_best": 0.88266
+  },
+  "v18J_fundus_fixmatch_ramp10_s1337": {
+   "run": "v18J_fundus_fixmatch_ramp10_s1337",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.0004666331945076263,
+   "fail": "",
+   "w_first": 0.207,
+   "w_first_fifth_mean": 0.8915000000000001,
+   "w_after_mean": 0.9984999999999999,
+   "w_after_median": 0.999,
+   "whole_w_first": 0.206,
+   "whole_w_first_fifth_mean": 0.89075,
+   "whole_w_after_mean": 0.9980625,
+   "best": 0.88542,
+   "best_iter": 15000,
+   "last": 0.8821,
+   "whole": "v18B_fundus_fixmatch_split1337_init1337",
+   "whole_best": 0.882081
+  },
+  "v18J_fundus_daep_ramp10_s1337": {
+   "run": "v18J_fundus_daep_ramp10_s1337",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.0004666331945076263,
+   "fail": "",
+   "w_first": 0.599,
+   "w_first_fifth_mean": 0.9024166666666668,
+   "w_after_mean": 0.9925,
+   "w_after_median": 0.994,
+   "whole_w_first": 0.601,
+   "whole_w_first_fifth_mean": 0.89525,
+   "whole_w_after_mean": 0.9918125,
+   "best": 0.88421,
+   "best_iter": 16000,
+   "last": 0.8804,
+   "whole": "v18A_fundus_daep_default_s1337",
+   "whole_best": 0.880155
+  },
+  "v18J_fundus_ungated_ramp10_s1337": {
+   "run": "v18J_fundus_ungated_ramp10_s1337",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.0004666331945076263,
+   "fail": "",
+   "w_first": 1.0,
+   "w_first_fifth_mean": 1.0,
+   "w_after_mean": 1.0,
+   "w_after_median": 1.0,
+   "whole_w_first": 1.0,
+   "whole_w_first_fifth_mean": 1.0,
+   "whole_w_after_mean": 1.0,
+   "best": 0.885239,
+   "best_iter": 15000,
+   "last": 0.8834,
+   "whole": "v18G_fundus_ungated_s1337",
+   "whole_best": 0.882935
+  },
+  "v18J_fundus_oracle_ramp10_s1337": {
+   "run": "v18J_fundus_oracle_ramp10_s1337",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.0004666331945076263,
+   "fail": "",
+   "w_first": 0.878,
+   "w_first_fifth_mean": 0.9731666666666664,
+   "w_after_mean": 0.9872083333333332,
+   "w_after_median": 0.987,
+   "whole_w_first": 0.88,
+   "whole_w_first_fifth_mean": 0.9704166666666665,
+   "whole_w_after_mean": 0.9862916666666667,
+   "best": 0.904912,
+   "best_iter": 23000,
+   "last": 0.903,
+   "whole": "v18H_fundus_oracle_s1337",
+   "whole_best": 0.902968
+  },
+  "v18J_fundus_fixmatch_ramp10_s42": {
+   "run": "v18J_fundus_fixmatch_ramp10_s42",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.0004666331945076263,
+   "fail": "",
+   "w_first": 0.207,
+   "w_first_fifth_mean": 0.8974166666666666,
+   "w_after_mean": 0.9985833333333334,
+   "w_after_median": 0.999,
+   "whole_w_first": 0.207,
+   "whole_w_first_fifth_mean": 0.89575,
+   "whole_w_after_mean": 0.9982291666666666,
+   "best": 0.886556,
+   "best_iter": 13000,
+   "last": 0.8834,
+   "whole": "v18B_fundus_fixmatch_s42",
+   "whole_best": 0.887454
+  },
+  "v18J_fundus_daep_ramp10_s42": {
+   "run": "v18J_fundus_daep_ramp10_s42",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.0004666331945076263,
+   "fail": "",
+   "w_first": 0.619,
+   "w_first_fifth_mean": 0.9064166666666668,
+   "w_after_mean": 0.99375,
+   "w_after_median": 0.9955,
+   "whole_w_first": 0.616,
+   "whole_w_first_fifth_mean": 0.9028333333333333,
+   "whole_w_after_mean": 0.993125,
+   "best": 0.888003,
+   "best_iter": 24500,
+   "last": 0.8863,
+   "whole": "v18A_fundus_daep_default_s42",
+   "whole_best": 0.883884
+  },
+  "v18J_fundus_ungated_ramp10_s42": {
+   "run": "v18J_fundus_ungated_ramp10_s42",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.0004666331945076263,
+   "fail": "",
+   "w_first": 1.0,
+   "w_first_fifth_mean": 1.0,
+   "w_after_mean": 1.0,
+   "w_after_median": 1.0,
+   "whole_w_first": 1.0,
+   "whole_w_first_fifth_mean": 1.0,
+   "whole_w_after_mean": 1.0,
+   "best": 0.886342,
+   "best_iter": 19500,
+   "last": 0.8819,
+   "whole": "v18G_fundus_ungated_s42",
+   "whole_best": 0.883125
+  },
+  "v18J_fundus_oracle_ramp10_s42": {
+   "run": "v18J_fundus_oracle_ramp10_s42",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.0004666331945076263,
+   "fail": "",
+   "w_first": 0.915,
+   "w_first_fifth_mean": 0.9758333333333332,
+   "w_after_mean": 0.9873541666666666,
+   "w_after_median": 0.9875,
+   "whole_w_first": 0.91,
+   "whole_w_first_fifth_mean": 0.9698333333333333,
+   "whole_w_after_mean": 0.9863333333333334,
+   "best": 0.90487,
+   "best_iter": 21500,
+   "last": 0.9029,
+   "whole": "v18H_fundus_oracle_s42",
+   "whole_best": 0.900992
+  },
+  "v18J_fundus_fixmatch_ramp10_s2024": {
+   "run": "v18J_fundus_fixmatch_ramp10_s2024",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.0004666331945076263,
+   "fail": "",
+   "w_first": 0.203,
+   "w_first_fifth_mean": 0.8985,
+   "w_after_mean": 0.998625,
+   "w_after_median": 0.999,
+   "whole_w_first": 0.203,
+   "whole_w_first_fifth_mean": 0.8971666666666667,
+   "whole_w_after_mean": 0.9981874999999999,
+   "best": 0.88966,
+   "best_iter": 14500,
+   "last": 0.8852,
+   "whole": "v18B_fundus_fixmatch_s2024",
+   "whole_best": 0.886255
+  },
+  "v18J_fundus_daep_ramp10_s2024": {
+   "run": "v18J_fundus_daep_ramp10_s2024",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.0004666331945076263,
+   "fail": "",
+   "w_first": 0.592,
+   "w_first_fifth_mean": 0.9050833333333334,
+   "w_after_mean": 0.9947708333333333,
+   "w_after_median": 0.996,
+   "whole_w_first": 0.586,
+   "whole_w_first_fifth_mean": 0.8911666666666666,
+   "whole_w_after_mean": 0.9888541666666667,
+   "best": 0.888256,
+   "best_iter": 19000,
+   "last": 0.887,
+   "whole": "v18A_fundus_daep_default_s2024",
+   "whole_best": 0.885832
+  },
+  "v18J_fundus_ungated_ramp10_s2024": {
+   "run": "v18J_fundus_ungated_ramp10_s2024",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.0004666331945076263,
+   "fail": "",
+   "w_first": 1.0,
+   "w_first_fifth_mean": 1.0,
+   "w_after_mean": 1.0,
+   "w_after_median": 1.0,
+   "whole_w_first": 1.0,
+   "whole_w_first_fifth_mean": 1.0,
+   "whole_w_after_mean": 1.0,
+   "best": 0.890144,
+   "best_iter": 18500,
+   "last": 0.8888,
+   "whole": "v18G_fundus_ungated_s2024",
+   "whole_best": 0.886822
+  },
+  "v18J_fundus_oracle_ramp10_s2024": {
+   "run": "v18J_fundus_oracle_ramp10_s2024",
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "sched_ok": true,
+   "cw_max_dev": 0.0004666331945076263,
+   "fail": "",
+   "w_first": 0.891,
+   "w_first_fifth_mean": 0.9750000000000002,
+   "w_after_mean": 0.9874999999999999,
+   "w_after_median": 0.988,
+   "whole_w_first": 0.892,
+   "whole_w_first_fifth_mean": 0.9706666666666667,
+   "whole_w_after_mean": 0.9865,
+   "best": 0.908522,
+   "best_iter": 27000,
+   "last": 0.9083,
+   "whole": "v18H_fundus_oracle_s2024",
+   "whole_best": 0.903669
+  }
+ },
+ "assertions_passed": [
+  "the release copy of trainer v12 is 915347736f4855da (unchanged for D-35)",
+  "every file of the S43 collection (213) is in the results tier and matches its part manifest (size and sha256)",
+  "the S43 collection carries no file of an earlier training",
+  "the collection carries no file of an earlier training: only the D-35 runs, the smoke run and the step files",
+  "every file the collector skipped is one I hold, byte for byte (HELD_MANIFEST_S42.txt); none is a D-35 file",
+  "the job lists that ran are the registered ones (tools S43)",
+  "step 0 on record: the four S41 parts, the seven hashes (trainer v12 unchanged), the 1,467-line held manifest with 48 v18I_ lines, no runner lock, no D-35 run before the launch",
+  "step 0: both GPUs at 0 MiB",
+  "step 0 on record: DISK OK",
+  "step 1 on record: the module self-test passed, trainer v12 compiled, the schedule test passed",
+  "step 2 on record: the smoke run passed; it names the evidential gate and the short ramp once; its two windows log \"cw=0.429 cw=0.500\" as registered",
+  "runner: one launch of the 24 jobs, preflight GREEN, nothing resumed or restarted, DONE 24/24 PASS",
+  "status: each of the 24 jobs once, exit code 0, postflight PASS",
+  "step 4 on record: the harness measured the 24 teachers",
+  "the failure branch left only its state file, written while no D-35 run folder existed; no run was relaunched (rule 0 item 5 does not apply)",
+  "the two schedule functions are found in trainer v12",
+  "the registered window means at iteration 500: 0.010 (Prostate), 0.016 (Fundus)",
+  "T = 60000: the window mean is 0.500 from iteration 4,500 on, as registered",
+  "T = 30000: the window mean is 0.500 from iteration 2,500 on, as registered",
+  "v18R_prostate_fixmatch_ramp10_s1337 (D-13): the same computation reproduces its 120 logged cw values exactly",
+  "v18R_prostate_daep_ramp10_s1337 (D-13): the same computation reproduces its 120 logged cw values exactly",
+  "the cap of the consistency weight is reached at 6.3 % of training under the short ramp and at 63 % under the whole-run schedule, on both run lengths (as registered)",
+  "jobs_D35.txt holds the 24 registered runs",
+  "v18J_prostate_fixmatch_ramp10_s1337: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_prostate_fixmatch_ramp10_s1337: rule 0 item 1: the configuration and the log name the threshold gate and the short ramp; --resume off; the headline settings",
+  "v18J_prostate_fixmatch_ramp10_s1337: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_prostate_fixmatch_ramp10_s1337: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_prostate_fixmatch_ramp10_s1337: rule 0 item 2: its labeled slices equal those of v18B_prostate_fixmatch_split1337_init1337",
+  "v18J_prostate_fixmatch_ramp10_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_prostate_fixmatch_ramp10_s1337: R-34 screen readable (ok)",
+  "v18J_prostate_fixmatch_ramp10_s1337 and v18B_prostate_fixmatch_split1337_init1337: 120 gate windows logged each",
+  "v18J_prostate_daep_ramp10_s1337: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_prostate_daep_ramp10_s1337: rule 0 item 1: the configuration and the log name the evidential gate and the short ramp; --resume off; the headline settings",
+  "v18J_prostate_daep_ramp10_s1337: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_prostate_daep_ramp10_s1337: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_prostate_daep_ramp10_s1337: rule 0 item 2: its labeled slices equal those of v18A_prostate_daep_default_s1337",
+  "v18J_prostate_daep_ramp10_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_prostate_daep_ramp10_s1337: R-34 screen readable (ok)",
+  "v18J_prostate_daep_ramp10_s1337 and v18A_prostate_daep_default_s1337: 120 gate windows logged each",
+  "v18J_prostate_ungated_ramp10_s1337: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_prostate_ungated_ramp10_s1337: rule 0 item 1: the configuration and the log name no gate and the short ramp; --resume off; the headline settings",
+  "v18J_prostate_ungated_ramp10_s1337: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_prostate_ungated_ramp10_s1337: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_prostate_ungated_ramp10_s1337: rule 0 item 2: its labeled slices equal those of v18G_prostate_ungated_s1337",
+  "v18J_prostate_ungated_ramp10_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_prostate_ungated_ramp10_s1337: R-34 screen readable (ok)",
+  "v18J_prostate_ungated_ramp10_s1337 and v18G_prostate_ungated_s1337: 120 gate windows logged each",
+  "v18J_prostate_oracle_ramp10_s1337: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_prostate_oracle_ramp10_s1337: rule 0 item 1: the configuration and the log name the oracle gate and the short ramp; --resume off; the headline settings",
+  "v18J_prostate_oracle_ramp10_s1337: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_prostate_oracle_ramp10_s1337: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_prostate_oracle_ramp10_s1337: rule 0 item 2: its labeled slices equal those of v18H_prostate_oracle_s1337",
+  "v18J_prostate_oracle_ramp10_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_prostate_oracle_ramp10_s1337: R-34 screen readable (ok)",
+  "v18J_prostate_oracle_ramp10_s1337 and v18H_prostate_oracle_s1337: 120 gate windows logged each",
+  "v18J_prostate_fixmatch_ramp10_s42: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_prostate_fixmatch_ramp10_s42: rule 0 item 1: the configuration and the log name the threshold gate and the short ramp; --resume off; the headline settings",
+  "v18J_prostate_fixmatch_ramp10_s42: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_prostate_fixmatch_ramp10_s42: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_prostate_fixmatch_ramp10_s42: rule 0 item 2: its labeled slices equal those of v18B_prostate_fixmatch_s42",
+  "v18J_prostate_fixmatch_ramp10_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_prostate_fixmatch_ramp10_s42: R-34 screen readable (ok)",
+  "v18J_prostate_fixmatch_ramp10_s42 and v18B_prostate_fixmatch_s42: 120 gate windows logged each",
+  "v18J_prostate_daep_ramp10_s42: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_prostate_daep_ramp10_s42: rule 0 item 1: the configuration and the log name the evidential gate and the short ramp; --resume off; the headline settings",
+  "v18J_prostate_daep_ramp10_s42: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_prostate_daep_ramp10_s42: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_prostate_daep_ramp10_s42: rule 0 item 2: its labeled slices equal those of v18A_prostate_daep_default_s42",
+  "v18J_prostate_daep_ramp10_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_prostate_daep_ramp10_s42: R-34 screen readable (ok)",
+  "v18J_prostate_daep_ramp10_s42 and v18A_prostate_daep_default_s42: 120 gate windows logged each",
+  "v18J_prostate_ungated_ramp10_s42: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_prostate_ungated_ramp10_s42: rule 0 item 1: the configuration and the log name no gate and the short ramp; --resume off; the headline settings",
+  "v18J_prostate_ungated_ramp10_s42: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_prostate_ungated_ramp10_s42: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_prostate_ungated_ramp10_s42: rule 0 item 2: its labeled slices equal those of v18G_prostate_ungated_s42",
+  "v18J_prostate_ungated_ramp10_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_prostate_ungated_ramp10_s42: R-34 screen readable (ok)",
+  "v18J_prostate_ungated_ramp10_s42 and v18G_prostate_ungated_s42: 120 gate windows logged each",
+  "v18J_prostate_oracle_ramp10_s42: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_prostate_oracle_ramp10_s42: rule 0 item 1: the configuration and the log name the oracle gate and the short ramp; --resume off; the headline settings",
+  "v18J_prostate_oracle_ramp10_s42: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_prostate_oracle_ramp10_s42: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_prostate_oracle_ramp10_s42: rule 0 item 2: its labeled slices equal those of v18H_prostate_oracle_s42",
+  "v18J_prostate_oracle_ramp10_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_prostate_oracle_ramp10_s42: R-34 screen readable (ok)",
+  "v18J_prostate_oracle_ramp10_s42 and v18H_prostate_oracle_s42: 120 gate windows logged each",
+  "v18J_prostate_fixmatch_ramp10_s2024: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_prostate_fixmatch_ramp10_s2024: rule 0 item 1: the configuration and the log name the threshold gate and the short ramp; --resume off; the headline settings",
+  "v18J_prostate_fixmatch_ramp10_s2024: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_prostate_fixmatch_ramp10_s2024: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_prostate_fixmatch_ramp10_s2024: rule 0 item 2: its labeled slices equal those of v18B_prostate_fixmatch_s2024",
+  "v18J_prostate_fixmatch_ramp10_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_prostate_fixmatch_ramp10_s2024: R-34 screen readable (ok)",
+  "v18J_prostate_fixmatch_ramp10_s2024 and v18B_prostate_fixmatch_s2024: 120 gate windows logged each",
+  "v18J_prostate_daep_ramp10_s2024: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_prostate_daep_ramp10_s2024: rule 0 item 1: the configuration and the log name the evidential gate and the short ramp; --resume off; the headline settings",
+  "v18J_prostate_daep_ramp10_s2024: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_prostate_daep_ramp10_s2024: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_prostate_daep_ramp10_s2024: rule 0 item 2: its labeled slices equal those of v18A_prostate_daep_default_s2024",
+  "v18J_prostate_daep_ramp10_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_prostate_daep_ramp10_s2024: R-34 screen readable (ok)",
+  "v18J_prostate_daep_ramp10_s2024 and v18A_prostate_daep_default_s2024: 120 gate windows logged each",
+  "v18J_prostate_ungated_ramp10_s2024: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_prostate_ungated_ramp10_s2024: rule 0 item 1: the configuration and the log name no gate and the short ramp; --resume off; the headline settings",
+  "v18J_prostate_ungated_ramp10_s2024: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_prostate_ungated_ramp10_s2024: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_prostate_ungated_ramp10_s2024: rule 0 item 2: its labeled slices equal those of v18G_prostate_ungated_s2024",
+  "v18J_prostate_ungated_ramp10_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_prostate_ungated_ramp10_s2024: R-34 screen readable (ok)",
+  "v18J_prostate_ungated_ramp10_s2024 and v18G_prostate_ungated_s2024: 120 gate windows logged each",
+  "v18J_prostate_oracle_ramp10_s2024: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_prostate_oracle_ramp10_s2024: rule 0 item 1: the configuration and the log name the oracle gate and the short ramp; --resume off; the headline settings",
+  "v18J_prostate_oracle_ramp10_s2024: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_prostate_oracle_ramp10_s2024: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_prostate_oracle_ramp10_s2024: rule 0 item 2: its labeled slices equal those of v18H_prostate_oracle_s2024",
+  "v18J_prostate_oracle_ramp10_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_prostate_oracle_ramp10_s2024: R-34 screen readable (ok)",
+  "v18J_prostate_oracle_ramp10_s2024 and v18H_prostate_oracle_s2024: 120 gate windows logged each",
+  "v18J_fundus_fixmatch_ramp10_s1337: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_fundus_fixmatch_ramp10_s1337: rule 0 item 1: the configuration and the log name the threshold gate and the short ramp; --resume off; the headline settings",
+  "v18J_fundus_fixmatch_ramp10_s1337: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_fundus_fixmatch_ramp10_s1337: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_fundus_fixmatch_ramp10_s1337: rule 0 item 2: its labeled slices equal those of v18B_fundus_fixmatch_split1337_init1337",
+  "v18J_fundus_fixmatch_ramp10_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_fundus_fixmatch_ramp10_s1337: R-34 screen readable (ok)",
+  "v18J_fundus_fixmatch_ramp10_s1337 and v18B_fundus_fixmatch_split1337_init1337: 60 gate windows logged each",
+  "v18J_fundus_daep_ramp10_s1337: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_fundus_daep_ramp10_s1337: rule 0 item 1: the configuration and the log name the evidential gate and the short ramp; --resume off; the headline settings",
+  "v18J_fundus_daep_ramp10_s1337: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_fundus_daep_ramp10_s1337: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_fundus_daep_ramp10_s1337: rule 0 item 2: its labeled slices equal those of v18A_fundus_daep_default_s1337",
+  "v18J_fundus_daep_ramp10_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_fundus_daep_ramp10_s1337: R-34 screen readable (ok)",
+  "v18J_fundus_daep_ramp10_s1337 and v18A_fundus_daep_default_s1337: 60 gate windows logged each",
+  "v18J_fundus_ungated_ramp10_s1337: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_fundus_ungated_ramp10_s1337: rule 0 item 1: the configuration and the log name no gate and the short ramp; --resume off; the headline settings",
+  "v18J_fundus_ungated_ramp10_s1337: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_fundus_ungated_ramp10_s1337: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_fundus_ungated_ramp10_s1337: rule 0 item 2: its labeled slices equal those of v18G_fundus_ungated_s1337",
+  "v18J_fundus_ungated_ramp10_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_fundus_ungated_ramp10_s1337: R-34 screen readable (ok)",
+  "v18J_fundus_ungated_ramp10_s1337 and v18G_fundus_ungated_s1337: 60 gate windows logged each",
+  "v18J_fundus_oracle_ramp10_s1337: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_fundus_oracle_ramp10_s1337: rule 0 item 1: the configuration and the log name the oracle gate and the short ramp; --resume off; the headline settings",
+  "v18J_fundus_oracle_ramp10_s1337: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_fundus_oracle_ramp10_s1337: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_fundus_oracle_ramp10_s1337: rule 0 item 2: its labeled slices equal those of v18H_fundus_oracle_s1337",
+  "v18J_fundus_oracle_ramp10_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_fundus_oracle_ramp10_s1337: R-34 screen readable (ok)",
+  "v18J_fundus_oracle_ramp10_s1337 and v18H_fundus_oracle_s1337: 60 gate windows logged each",
+  "v18J_fundus_fixmatch_ramp10_s42: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_fundus_fixmatch_ramp10_s42: rule 0 item 1: the configuration and the log name the threshold gate and the short ramp; --resume off; the headline settings",
+  "v18J_fundus_fixmatch_ramp10_s42: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_fundus_fixmatch_ramp10_s42: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_fundus_fixmatch_ramp10_s42: rule 0 item 2: its labeled slices equal those of v18B_fundus_fixmatch_s42",
+  "v18J_fundus_fixmatch_ramp10_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_fundus_fixmatch_ramp10_s42: R-34 screen readable (ok)",
+  "v18J_fundus_fixmatch_ramp10_s42 and v18B_fundus_fixmatch_s42: 60 gate windows logged each",
+  "v18J_fundus_daep_ramp10_s42: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_fundus_daep_ramp10_s42: rule 0 item 1: the configuration and the log name the evidential gate and the short ramp; --resume off; the headline settings",
+  "v18J_fundus_daep_ramp10_s42: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_fundus_daep_ramp10_s42: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_fundus_daep_ramp10_s42: rule 0 item 2: its labeled slices equal those of v18A_fundus_daep_default_s42",
+  "v18J_fundus_daep_ramp10_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_fundus_daep_ramp10_s42: R-34 screen readable (ok)",
+  "v18J_fundus_daep_ramp10_s42 and v18A_fundus_daep_default_s42: 60 gate windows logged each",
+  "v18J_fundus_ungated_ramp10_s42: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_fundus_ungated_ramp10_s42: rule 0 item 1: the configuration and the log name no gate and the short ramp; --resume off; the headline settings",
+  "v18J_fundus_ungated_ramp10_s42: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_fundus_ungated_ramp10_s42: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_fundus_ungated_ramp10_s42: rule 0 item 2: its labeled slices equal those of v18G_fundus_ungated_s42",
+  "v18J_fundus_ungated_ramp10_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_fundus_ungated_ramp10_s42: R-34 screen readable (ok)",
+  "v18J_fundus_ungated_ramp10_s42 and v18G_fundus_ungated_s42: 60 gate windows logged each",
+  "v18J_fundus_oracle_ramp10_s42: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_fundus_oracle_ramp10_s42: rule 0 item 1: the configuration and the log name the oracle gate and the short ramp; --resume off; the headline settings",
+  "v18J_fundus_oracle_ramp10_s42: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_fundus_oracle_ramp10_s42: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_fundus_oracle_ramp10_s42: rule 0 item 2: its labeled slices equal those of v18H_fundus_oracle_s42",
+  "v18J_fundus_oracle_ramp10_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_fundus_oracle_ramp10_s42: R-34 screen readable (ok)",
+  "v18J_fundus_oracle_ramp10_s42 and v18H_fundus_oracle_s42: 60 gate windows logged each",
+  "v18J_fundus_fixmatch_ramp10_s2024: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_fundus_fixmatch_ramp10_s2024: rule 0 item 1: the configuration and the log name the threshold gate and the short ramp; --resume off; the headline settings",
+  "v18J_fundus_fixmatch_ramp10_s2024: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_fundus_fixmatch_ramp10_s2024: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_fundus_fixmatch_ramp10_s2024: rule 0 item 2: its labeled slices equal those of v18B_fundus_fixmatch_s2024",
+  "v18J_fundus_fixmatch_ramp10_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_fundus_fixmatch_ramp10_s2024: R-34 screen readable (ok)",
+  "v18J_fundus_fixmatch_ramp10_s2024 and v18B_fundus_fixmatch_s2024: 60 gate windows logged each",
+  "v18J_fundus_daep_ramp10_s2024: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_fundus_daep_ramp10_s2024: rule 0 item 1: the configuration and the log name the evidential gate and the short ramp; --resume off; the headline settings",
+  "v18J_fundus_daep_ramp10_s2024: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_fundus_daep_ramp10_s2024: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_fundus_daep_ramp10_s2024: rule 0 item 2: its labeled slices equal those of v18A_fundus_daep_default_s2024",
+  "v18J_fundus_daep_ramp10_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_fundus_daep_ramp10_s2024: R-34 screen readable (ok)",
+  "v18J_fundus_daep_ramp10_s2024 and v18A_fundus_daep_default_s2024: 60 gate windows logged each",
+  "v18J_fundus_ungated_ramp10_s2024: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_fundus_ungated_ramp10_s2024: rule 0 item 1: the configuration and the log name no gate and the short ramp; --resume off; the headline settings",
+  "v18J_fundus_ungated_ramp10_s2024: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_fundus_ungated_ramp10_s2024: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_fundus_ungated_ramp10_s2024: rule 0 item 2: its labeled slices equal those of v18G_fundus_ungated_s2024",
+  "v18J_fundus_ungated_ramp10_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_fundus_ungated_ramp10_s2024: R-34 screen readable (ok)",
+  "v18J_fundus_ungated_ramp10_s2024 and v18G_fundus_ungated_s2024: 60 gate windows logged each",
+  "v18J_fundus_oracle_ramp10_s2024: one training from iteration 0 to the last, one launch, no resume (rule 0 item 2)",
+  "v18J_fundus_oracle_ramp10_s2024: rule 0 item 1: the configuration and the log name the oracle gate and the short ramp; --resume off; the headline settings",
+  "v18J_fundus_oracle_ramp10_s2024: its launch command equals its line of jobs_D35.txt (the runner adds only the GPU index)",
+  "v18J_fundus_oracle_ramp10_s2024: rule 0 item 2: script_sha256 = trainer v12; code snapshot, recorded hashes and release code are the same bytes",
+  "v18J_fundus_oracle_ramp10_s2024: rule 0 item 2: its labeled slices equal those of v18H_fundus_oracle_s2024",
+  "v18J_fundus_oracle_ramp10_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18J_fundus_oracle_ramp10_s2024: R-34 screen readable (ok)",
+  "v18J_fundus_oracle_ramp10_s2024 and v18H_fundus_oracle_s2024: 60 gate windows logged each",
+  "prostate rule1_daep_minus_threshold: TOST and the paired test use the same differences",
+  "prostate rule1_daep_minus_threshold: the verdict follows from p and delta as registered",
+  "fundus rule1_daep_minus_threshold: TOST and the paired test use the same differences",
+  "fundus rule1_daep_minus_threshold: the verdict follows from p and delta as registered",
+  "prostate rule2_oracle_minus_threshold: TOST and the paired test use the same differences",
+  "prostate rule2_oracle_minus_threshold: the verdict follows from p and delta as registered",
+  "fundus rule2_oracle_minus_threshold: TOST and the paired test use the same differences",
+  "fundus rule2_oracle_minus_threshold: the verdict follows from p and delta as registered",
+  "prostate rule3_nogate_minus_threshold: TOST and the paired test use the same differences",
+  "prostate rule3_nogate_minus_threshold: the verdict follows from p and delta as registered",
+  "fundus rule3_nogate_minus_threshold: TOST and the paired test use the same differences",
+  "fundus rule3_nogate_minus_threshold: the verdict follows from p and delta as registered",
+  "the two D-13 runs were trained with an earlier trainer version than v12",
+  "the D-13 shift recomputed from the held logs is the -0.67 of Supplementary S8 (-0.6710)",
+  "complete logs: the 139 of facts_s41.json plus the 24 of D-35 (smoke runs excluded)",
+  "v18J_prostate_fixmatch_ramp10_s1337: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_prostate_daep_ramp10_s1337: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_prostate_ungated_ramp10_s1337: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_prostate_oracle_ramp10_s1337: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_prostate_fixmatch_ramp10_s42: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_prostate_daep_ramp10_s42: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_prostate_ungated_ramp10_s42: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_prostate_oracle_ramp10_s42: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_prostate_fixmatch_ramp10_s2024: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_prostate_daep_ramp10_s2024: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_prostate_ungated_ramp10_s2024: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_prostate_oracle_ramp10_s2024: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_fundus_fixmatch_ramp10_s1337: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_fundus_daep_ramp10_s1337: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_fundus_ungated_ramp10_s1337: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_fundus_oracle_ramp10_s1337: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_fundus_fixmatch_ramp10_s42: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_fundus_daep_ramp10_s42: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_fundus_ungated_ramp10_s42: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_fundus_oracle_ramp10_s42: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_fundus_fixmatch_ramp10_s2024: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_fundus_daep_ramp10_s2024: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_fundus_ungated_ramp10_s2024: the checkpoint loader reads the same best value from RETURNS/S43",
+  "v18J_fundus_oracle_ramp10_s2024: the checkpoint loader reads the same best value from RETURNS/S43",
+  "prostate rule1_daep_minus_threshold: a best value on every run",
+  "prostate rule2_oracle_minus_threshold: a best value on every run",
+  "prostate rule3_nogate_minus_threshold: a best value on every run",
+  "prostate rule1_daep_minus_threshold: a last value on every run",
+  "prostate rule2_oracle_minus_threshold: a last value on every run",
+  "prostate rule3_nogate_minus_threshold: a last value on every run",
+  "prostate rule1_daep_minus_threshold: a swad value on every run",
+  "prostate rule2_oracle_minus_threshold: a swad value on every run",
+  "prostate rule3_nogate_minus_threshold: a swad value on every run",
+  "prostate: the best-checkpoint lines equal rules 1-3",
+  "fundus rule1_daep_minus_threshold: a best value on every run",
+  "fundus rule2_oracle_minus_threshold: a best value on every run",
+  "fundus rule3_nogate_minus_threshold: a best value on every run",
+  "fundus rule1_daep_minus_threshold: a last value on every run",
+  "fundus rule2_oracle_minus_threshold: a last value on every run",
+  "fundus rule3_nogate_minus_threshold: a last value on every run",
+  "fundus rule1_daep_minus_threshold: a swad value on every run",
+  "fundus rule2_oracle_minus_threshold: a swad value on every run",
+  "fundus rule3_nogate_minus_threshold: a swad value on every run",
+  "fundus: the best-checkpoint lines equal rules 1-3",
+  "prostate: the selection counts of the text are unchanged (n 64, median 1.70): the D-35 runs are short-ramp runs, left aside like the D-13 pair",
+  "fundus: the selection counts of the text are unchanged (n 46, median 0.28): the D-35 runs are short-ramp runs, left aside like the D-13 pair",
+  "MNMS: the selection counts of the text are unchanged (n 11, median 0.28): the D-35 runs are short-ramp runs, left aside like the D-13 pair",
+  "BUSI: the selection counts of the text are unchanged (n 11, median 0.85): the D-35 runs are short-ramp runs, left aside like the D-13 pair",
+  "the short-ramp runs left aside by the selection statistics: the two of D-13 and the D-35 runs that are not training failures (26; failures [])",
+  "S9 before D-35: 124 checkpoints, 91 testbed objective ({'prostate': 50, 'fundus': 27, 'MNMS': 7, 'BUSI': 7}), identity on 90 of them",
+  "S9 before D-35: the band AUROC of the 91 testbed-objective checkpoints spans 0.56-0.73 (the text holds)",
+  "the two D-13 teachers are among the 91 testbed-objective checkpoints",
+  "24 harness JSONs, EMA teachers"
+ ]
+}

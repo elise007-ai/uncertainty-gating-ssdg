@@ -163,6 +163,37 @@ def main():
         J['R'].append(job(f'v18R_prostate_{n}_ramp10_s1337', 'prostate',
                           f'{ex} --consistency_ramp_frac 0.10', 1337))
 
+    # ---- D28 (S23): the DEviS objective in the form of the authors' released code, standard threshold gate.
+    # Same seeds and datasets as v18B_*_devisobj_threshold_s* (the published form); new names (v18D_*) match no existing table regex.
+    J['D28'] = []
+    for ds in ['prostate', 'fundus']:
+        for s in (1337, 42, 2024):
+            J['D28'].append(job(f'v18D_{ds}_devisrel_threshold_s{s}', ds,
+                                '--method devis --devis_gate threshold --devis_variant released', s))
+    J['D28smoke'] = [job('v18smoke_prostate_devisrel_thr', 'prostate',
+                         '--method devis --devis_gate threshold --devis_variant released', 43, smoke=True)]
+
+    # ---- D29 (S24): the released-form DEviS objective with the belief-mass gate w = 1 - u (the gate of the v18B_*_devis_s* runs,
+    # which used the published form). Same seeds and datasets as D28; the only difference from a D28 job line is --devis_gate.
+    # New names (v18E_*) match no existing table regex.
+    J['D29'] = []
+    for ds in ['prostate', 'fundus']:
+        for s in (1337, 42, 2024):
+            J['D29'].append(job(f'v18E_{ds}_devisrel_belief_s{s}', ds,
+                                '--method devis --devis_gate soft --devis_variant released', s))
+    J['D29smoke'] = [job('v18smoke_prostate_devisrel_belief', 'prostate',
+                         '--method devis --devis_gate soft --devis_variant released', 43, smoke=True)]
+
+    # ---- D30 (S25, conditional on the owner's approval; D30_PREREGISTRATION_S25.md): the DAEP gate in the v18 code for the
+    # five cells of Table 4 whose original logs were not kept (Prostate seeds 42 / 2024, Fundus seeds 1337 / 42 / 2024).
+    # Each line equals the list-A line `v18A_prostate_daep_default_s1337` except for the dataset block, the seed and the name
+    # (asserted in GATES_S25.txt). The names match no regex of an existing table reader (every reader names its v18A runs).
+    J['D30'] = []
+    for ds, seeds in (('prostate', (42, 2024)), ('fundus', (1337, 42, 2024))):
+        for s in seeds:
+            J['D30'].append(job(f'v18A_{ds}_daep_default_s{s}', ds, '--method daep', s))
+    J['D30smoke'] = [job('v18smoke_fundus_daep_default', 'fundus', '--method daep', 43, smoke=True)]
+
     only = set(a.lists.split(',')) - {''}
     for k, lines in J.items():
         if only and k not in only:

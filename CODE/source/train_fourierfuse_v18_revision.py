@@ -98,6 +98,7 @@ from revision_modules import (
     FourierFuseNetV18,
     evidential_seg_loss_v18, kl_schedule, softmax_seg_loss,
     devis_beta_t, devis_cup_loss, iedl_pixel_loss,
+    devis_released_sup_loss,
     mc_dropout_predict, uamt_entropy_threshold,
     caef_fuse, medl_reliability, medl_asymptotic_weight,
 )
@@ -292,6 +293,12 @@ parser.add_argument('--devis_gate', type=str, default='soft',
                          'threshold: the testbed default gate 1[max prob > 0.80] (isolates the '
                          'DEviS objective from the DEviS gate).')
 parser.add_argument('--devis_u_thr', type=float, default=0.2)
+parser.add_argument('--devis_variant', type=str, default='published', choices=['published', 'released'],
+                    help="published (default; v18 behaviour): the equations of the paper. released (v11, D-28): the "
+                         "supervised objective of the authors' released code (dce_evidence_u_loss): KL weight 0 -> 1 over "
+                         "the first 50/99 of training, its calibration penalty and its DiceLoss.")
+parser.add_argument('--devis_rel_epochs', type=int, default=99, help='released code: --end_epochs default')
+parser.add_argument('--devis_rel_lambda_epochs', type=int, default=50, help='released code: --lambda-epochs default')
 parser.add_argument('--medl_arch2', type=str, default='resunet', choices=['resunet', 'unet'])
 parser.add_argument('--medl_xi', type=float, default=1.0,
                     help='Xi in MEDL eq.6 [UNVERIFIED: not stated in the paper].')
@@ -698,6 +705,13 @@ def normalise_method_args(args):
         logging.warning("[v18] DEviS keeps lambda_KL fixed at 0.02 (no annealing); "
                         "forcing --evid_kl_schedule const.")
         args.evid_kl_schedule = 'const'
+    if args.method == 'devis' and getattr(args, 'devis_variant', 'published') == 'released':
+        if abs(float(args.evid_prior_w) - 1.0) > 1e-12:
+            raise SystemExit('[v18] --devis_variant released needs --evid_prior_w 1 (alpha = evidence + 1)')
+        logging.warning("[v18] DEviS variant 'released' (v11): supervised objective = dce_evidence_u_loss of the released "
+                        f"code (KL weight 0 -> 1 over {args.devis_rel_lambda_epochs}/{args.devis_rel_epochs} of training; its "
+                        "calibration penalty and DiceLoss). --evid_lambda_kl_max, --evid_kl_schedule and "
+                        "--devis_cup_weight do not enter the supervised term.")
     return args
 
 
@@ -1249,6 +1263,18 @@ def train(args, snapshot_path):
                     sup_mse_kl = softmax_seg_loss(lb_out['prob'], lb_onehot)
                     sup_dice = torch.zeros((), device=lb_x_w.device)
                     sup_loss = sup_mse_kl
+                elif args.method == 'devis' and args.devis_variant == 'released':
+                    # v11 (D-28): supervised objective of the authors' released code (float32, no autocast)
+                    with autocast('cuda', enabled=False):
+                        rel = devis_released_sup_loss(lb_alpha.float(), lb_A_mask, iter_num, max_iterations,
+                                                      beta0=args.devis_beta0, epochs_total=args.devis_rel_epochs,
+                                                      epochs_lambda=args.devis_rel_lambda_epochs)
+                    sup_mse_kl = rel['ice_kl'] + rel['au']
+                    sup_dice = rel['dice_w']
+                    sup_loss = rel['total']
+                    extra_diag['devis_beta_t'] = rel['beta_t']
+                    extra_diag['devis_cup'] = float(rel['au'].item())
+                    extra_diag['devis_kl_w'] = rel['kl_weight']
                 elif args.method == 'devis':
                     # DEviS (Zou et al. 2025) eq.21: L_ice + lambda*KL + (1-beta_t)*Dice + CUP
                     beta_t = devis_beta_t(iter_num, max_iterations, args.devis_beta0)

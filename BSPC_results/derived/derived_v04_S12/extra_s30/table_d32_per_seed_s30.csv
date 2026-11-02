@@ -1,0 +1,7 @@
+dataset,seed,run,best_avg,best_iter,student_avg_last,swad_best,threshold_reference,ref_best_avg,ref_last,ungated_minus_threshold,percentile_d31_best_avg,percentile_minus_ungated,r34_flag,n_nonfinite
+prostate,1337,v18G_prostate_ungated_s1337,0.858165,43500,0.7849,0.8542,v18B_prostate_fixmatch_split1337_init1337,0.861977,0.8593,-0.003812,0.855856,-0.002309,ok,0
+prostate,42,v18G_prostate_ungated_s42,0.864230,44000,0.8557,0.8190,v18B_prostate_fixmatch_s42,0.858066,0.8212,+0.006164,0.792322,-0.071908,ok,0
+prostate,2024,v18G_prostate_ungated_s2024,0.850997,33000,0.7728,0.8498,v18B_prostate_fixmatch_s2024,0.857017,0.7526,-0.006020,0.845455,-0.005542,ok,0
+fundus,1337,v18G_fundus_ungated_s1337,0.882935,17000,0.8781,0.8770,v18B_fundus_fixmatch_split1337_init1337,0.882081,0.8787,+0.000854,0.871468,-0.011467,ok,0
+fundus,42,v18G_fundus_ungated_s42,0.883125,19500,0.8805,0.8791,v18B_fundus_fixmatch_s42,0.887454,0.8848,-0.004329,0.873899,-0.009226,ok,0
+fundus,2024,v18G_fundus_ungated_s2024,0.886822,18500,0.8831,0.8827,v18B_fundus_fixmatch_s2024,0.886255,0.8821,+0.000567,0.881564,-0.005258,ok,0

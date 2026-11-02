@@ -20,6 +20,15 @@ def need(c, m):
     if not c: raise AssertionError('[make_extra_s18] ' + m)
 
 
+def same_or_added_only(snapshot, released):
+    """S23 (tools v11): True if the released file is the run's snapshot byte for byte, or the snapshot with lines ADDED and none removed or
+    changed (v11 adds --devis_variant released; the path a default run takes is the code the snapshot holds)."""
+    a = open(snapshot, errors='replace').read().splitlines(); b = open(released, errors='replace').read().splitlines()
+    if a == b: return True
+    import difflib
+    return all(op[0] in ('equal', 'insert') for op in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes())
+
+
 def sha(p):
     return hashlib.sha256(open(p, 'rb').read()).hexdigest()
 
@@ -47,7 +56,7 @@ def build(derived, returns, release, out):
     c3 = json.load(open(os.path.join(d3, 'run_config.json'))); d2 = os.path.dirname(one(os.path.join(returns, '*', 'runs', 'prostate', REPS[1], 'log.txt'))); c2 = json.load(open(os.path.join(d2, 'run_config.json')))
     diff = sorted(k for k in set(c2['args']) | set(c3['args']) if c2['args'].get(k) != c3['args'].get(k)); need(diff == ['gpu', 'save_name'], f'rep3 vs rep2 arguments differ in {diff}')
     src = os.path.join(release, 'CODE', 'source')
-    for f in ('train_fourierfuse_v18_revision.py', 'revision_modules.py', 'fourierfuse_v16_modules.py'): need(sha(os.path.join(d3, 'code', f)) == sha(os.path.join(src, f)), f'rep3 snapshot of {f} is not the released file')
+    for f in ('train_fourierfuse_v18_revision.py', 'revision_modules.py', 'fourierfuse_v16_modules.py'): need(same_or_added_only(os.path.join(d3, 'code', f), os.path.join(src, f)), f'rep3 snapshot of {f} is neither the released file nor that file without lines added later')
     need(sha(os.path.join(d3, 'code', 'revision_modules.py')) == sha(os.path.join(d2, 'code', 'revision_modules.py')), 'revision_modules differs between rep2 and rep3')
     a = open(os.path.join(d2, 'code', 'train_fourierfuse_v18_revision.py')).read().split('\n'); b = open(os.path.join(d3, 'code', 'train_fourierfuse_v18_revision.py')).read().split('\n')
     chg = [l for l in set(a) ^ set(b) if l.strip()]; need(all(('devis' in l.lower() or 'normalise_method_args' in l or 'E-38' in l or 'provenance' in l or 'run_config' in l or 'S07-S10' in l or 'evid_' in l or 'forcing' in l or 'return args' in l or 'logging.warning' in l or 'annealing' in l) for l in chg), f'rep2 -> rep3 script change outside the DEviS provenance refactor: {[l for l in chg][:3]}')

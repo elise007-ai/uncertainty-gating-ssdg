@@ -1,0 +1,967 @@
+{
+ "session": "S42",
+ "reader": "make_extra_s41_d34.py",
+ "preregistration": "DOCS/D34_PREREGISTRATION_S41.md (+ Amendments 1 and 2)",
+ "code_sha256": {
+  "train_fourierfuse_v18_revision.py": "915347736f4855da",
+  "revision_modules.py": "a6fe4357a39d0020",
+  "fourierfuse_v16_modules.py": "4a343f191bbbf1e0",
+  "diag_uncertainty_harness_v18.py": "7eb2db7ec9353de7"
+ },
+ "manifest_files_verified": {
+  "S41": 66,
+  "S41b": 66
+ },
+ "preflight_gpu_mib": {
+  "0": 8773,
+  "1": 8789
+ },
+ "runner": {
+  "jobs": 6,
+  "first_launch_pass": 5,
+  "killed": "v18I_fundus_pctmatch_s2024",
+  "killed_exit_code": -9,
+  "killed_start": "2026-10-25 22:20:52",
+  "killed_end": "2026-10-26 04:31:49",
+  "continued_start": "2026-10-26 14:20:04",
+  "continued_end": "2026-10-26 14:58:53",
+  "continued_gpu": "0",
+  "first_start": "2026-10-24 23:01:50",
+  "preflight_refusals": 3
+ },
+ "continued_run": {
+  "run": "v18I_fundus_pctmatch_s2024",
+  "killed_at_logged_iter": 27500,
+  "resumed_from": 27000,
+  "best_iter": 18000,
+  "n_evals_in_log": 61,
+  "killed_log_sha16": "9f714105e8a48c62",
+  "final_log_sha16": "53cc89b5c52d6741"
+ },
+ "expectation": {
+  "registered": "matched gate within seed noise of the threshold on both benchmarks, and the oracle above the matched gate on at least one",
+  "prostate": {
+   "matched_within_noise": true,
+   "oracle_above_matched": true
+  },
+  "fundus": {
+   "matched_within_noise": true,
+   "oracle_above_matched": true
+  },
+  "holds": true
+ },
+ "prostate_rule1_matched_minus_threshold": {
+  "mean": 0.848954,
+  "std": 0.013276286830285039,
+  "ref_mean": 0.85902,
+  "ref_std": 0.0026139982784998015,
+  "delta": -0.01006600000000002,
+  "per_seed_delta": [
+   -0.004794999999999994,
+   -0.024428000000000005,
+   -0.0009750000000000592
+  ],
+  "t": -1.3855134209593305,
+  "p": 0.30017857487419264,
+  "n_pos": 0,
+  "sign_p_greater": 1.0,
+  "sign_p_two_sided": 0.25,
+  "beats": false,
+  "verdict": "within seed noise",
+  "mean_points": -1.006600000000002,
+  "sd_points": 1.25836553910221,
+  "ci90_points": [
+   -3.1280211574729653,
+   1.1148211574729614
+  ],
+  "p_tost_0.5": 0.7211152605191846,
+  "equivalent_at_0.5": false,
+  "mde_points": 4.107359921027485,
+  "r34_flags": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "unstable": [
+   false,
+   false,
+   false
+  ]
+ },
+ "prostate_rule2_oracle_minus_matched": {
+  "mean": 0.8813643333333333,
+  "std": 0.0011519220170364461,
+  "ref_mean": 0.848954,
+  "ref_std": 0.013276286830285039,
+  "delta": 0.032410333333333353,
+  "per_seed_delta": [
+   0.023274000000000017,
+   0.04733900000000002,
+   0.02661800000000003
+  ],
+  "t": 4.306165284837894,
+  "p": 0.049924467249749034,
+  "n_pos": 3,
+  "sign_p_greater": 0.125,
+  "sign_p_two_sided": 0.25,
+  "beats": true,
+  "verdict": "above the matched gate",
+  "mean_points": 3.2410333333333354,
+  "sd_points": 1.3036272486156972,
+  "ci90_points": [
+   1.0433075209714495,
+   5.438759145695221
+  ],
+  "p_tost_0.5": 0.9660913247470705,
+  "equivalent_at_0.5": false,
+  "mde_points": 4.255096112011802
+ },
+ "prostate_descriptive_matched_minus_nogate": {
+  "mean": 0.848954,
+  "std": 0.013276286830285039,
+  "ref_mean": 0.8577973333333334,
+  "ref_std": 0.006624157028130722,
+  "delta": -0.00884333333333335,
+  "per_seed_delta": [
+   -0.0009829999999999561,
+   -0.030592000000000064,
+   0.005044999999999966
+  ],
+  "t": -0.8030135063763885,
+  "p": 0.506230895822173,
+  "n_pos": 1,
+  "sign_p_greater": 0.875,
+  "sign_p_two_sided": 1.0,
+  "beats": false,
+  "mean_points": -0.8843333333333351,
+  "sd_points": 1.9074526791858681,
+  "ci90_points": [
+   -4.100020941395458,
+   2.3313542747287883
+  ],
+  "p_tost_0.5": 0.6197934825616662,
+  "equivalent_at_0.5": false,
+  "mde_points": 6.226008613788154,
+  "note": "descriptive, not a test (D34 pre-registration, rule 3)"
+ },
+ "prostate_per_seed": {
+  "1337": {
+   "run": "v18I_prostate_pctmatch_s1337",
+   "continued_from": null,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "w_first": 0.994,
+   "w_first_fifth_mean": 0.9953333333333333,
+   "w_after_mean": 0.9960000000000003,
+   "w_after_median": 0.996,
+   "w_after_min": 0.996,
+   "w_after_max": 0.996,
+   "refname": "v18B_prostate_fixmatch_split1337_init1337",
+   "best": 0.857182,
+   "best_iter": 30500,
+   "last": 0.8066,
+   "ref": 0.861977,
+   "ref_last": 0.8593,
+   "oracle": 0.880456,
+   "nogate": 0.858165,
+   "at_best": {
+    "BIDMC": 0.823443,
+    "BMC": 0.862145,
+    "HK": 0.87727,
+    "I2CVB": 0.869474,
+    "RUNMC": 0.829199,
+    "UCL": 0.881558
+   },
+   "ref_at_best": {
+    "BIDMC": 0.80826,
+    "BMC": 0.878652,
+    "HK": 0.898773,
+    "I2CVB": 0.859933,
+    "RUNMC": 0.844686,
+    "UCL": 0.88156
+   }
+  },
+  "42": {
+   "run": "v18I_prostate_pctmatch_s42",
+   "continued_from": null,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "w_first": 0.995,
+   "w_first_fifth_mean": 0.995375,
+   "w_after_mean": 0.9960000000000003,
+   "w_after_median": 0.996,
+   "w_after_min": 0.996,
+   "w_after_max": 0.996,
+   "refname": "v18B_prostate_fixmatch_s42",
+   "best": 0.833638,
+   "best_iter": 26500,
+   "last": 0.6385,
+   "ref": 0.858066,
+   "ref_last": 0.8212,
+   "oracle": 0.880977,
+   "nogate": 0.86423,
+   "at_best": {
+    "BIDMC": 0.751484,
+    "BMC": 0.831195,
+    "HK": 0.861384,
+    "I2CVB": 0.866923,
+    "RUNMC": 0.835389,
+    "UCL": 0.85545
+   },
+   "ref_at_best": {
+    "BIDMC": 0.843439,
+    "BMC": 0.862413,
+    "HK": 0.892514,
+    "I2CVB": 0.817403,
+    "RUNMC": 0.866726,
+    "UCL": 0.865898
+   }
+  },
+  "2024": {
+   "run": "v18I_prostate_pctmatch_s2024",
+   "continued_from": null,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "w_first": 0.994,
+   "w_first_fifth_mean": 0.9954583333333332,
+   "w_after_mean": 0.9960000000000003,
+   "w_after_median": 0.996,
+   "w_after_min": 0.996,
+   "w_after_max": 0.996,
+   "refname": "v18B_prostate_fixmatch_s2024",
+   "best": 0.856042,
+   "best_iter": 28500,
+   "last": 0.6567,
+   "ref": 0.857017,
+   "ref_last": 0.7526,
+   "oracle": 0.88266,
+   "nogate": 0.850997,
+   "at_best": {
+    "BIDMC": 0.816864,
+    "BMC": 0.868812,
+    "HK": 0.883579,
+    "I2CVB": 0.858911,
+    "RUNMC": 0.830707,
+    "UCL": 0.877378
+   },
+   "ref_at_best": {
+    "BIDMC": 0.814601,
+    "BMC": 0.86114,
+    "HK": 0.880514,
+    "I2CVB": 0.858489,
+    "RUNMC": 0.844323,
+    "UCL": 0.883037
+   }
+  }
+ },
+ "prostate_descriptive": {
+  "best_minus_last_points": [
+   5.058200000000001,
+   19.513800000000003,
+   19.9342
+  ],
+  "ref_best_minus_last_points": [
+   0.26770000000000405,
+   3.6865999999999954,
+   10.441699999999997
+  ],
+  "best_frac": [
+   0.5083333333333333,
+   0.44166666666666665,
+   0.475
+  ],
+  "per_vendor_delta_points": {
+   "BIDMC": [
+    1.5183000000000058,
+    -9.195500000000001,
+    0.2263000000000015
+   ],
+   "BMC": [
+    -1.6506999999999938,
+    -3.121799999999997,
+    0.7672000000000012
+   ],
+   "HK": [
+    -2.150300000000005,
+    -3.112999999999999,
+    0.30649999999999844
+   ],
+   "I2CVB": [
+    0.9541000000000022,
+    4.952000000000001,
+    0.042200000000003346
+   ],
+   "RUNMC": [
+    -1.5487000000000029,
+    -3.133699999999995,
+    -1.3616000000000072
+   ],
+   "UCL": [
+    -0.00020000000000575113,
+    -1.0447999999999902,
+    -0.565899999999997
+   ]
+  }
+ },
+ "fundus_rule1_matched_minus_threshold": {
+  "mean": 0.8821179999999998,
+  "std": 0.00419379339023752,
+  "ref_mean": 0.8852633333333332,
+  "ref_std": 0.002820431586359304,
+  "delta": -0.0031453333333333333,
+  "per_seed_delta": [
+   -0.0037639999999999896,
+   -0.006033999999999984,
+   0.00036199999999997345
+  ],
+  "t": -1.6801104714612582,
+  "p": 0.2349505462702029,
+  "n_pos": 1,
+  "sign_p_greater": 0.875,
+  "sign_p_two_sided": 1.0,
+  "beats": false,
+  "verdict": "within seed noise",
+  "mean_points": -0.31453333333333333,
+  "sd_points": 0.32425707907975093,
+  "ci90_points": [
+   -0.861183576561501,
+   0.23211690989483436
+  ],
+  "p_tost_0.5": 0.21312526635184442,
+  "equivalent_at_0.5": false,
+  "mde_points": 1.0583892274035256,
+  "r34_flags": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "unstable": [
+   false,
+   false,
+   false
+  ]
+ },
+ "fundus_rule2_oracle_minus_matched": {
+  "mean": 0.902543,
+  "std": 0.0013881826248732228,
+  "ref_mean": 0.8821179999999998,
+  "ref_std": 0.00419379339023752,
+  "delta": 0.02042499999999999,
+  "per_seed_delta": [
+   0.02465099999999998,
+   0.019572000000000034,
+   0.017051999999999956
+  ],
+  "t": 9.139851595804624,
+  "p": 0.011760011589971494,
+  "n_pos": 3,
+  "sign_p_greater": 0.125,
+  "sign_p_two_sided": 0.25,
+  "beats": true,
+  "verdict": "above the matched gate",
+  "mean_points": 2.042499999999999,
+  "sd_points": 0.3870646845166842,
+  "ci90_points": [
+   1.3899652749707911,
+   2.695034725029207
+  ],
+  "p_tost_0.5": 0.9898246694357147,
+  "equivalent_at_0.5": false,
+  "mde_points": 1.2633959867998616
+ },
+ "fundus_descriptive_matched_minus_nogate": {
+  "mean": 0.8821179999999998,
+  "std": 0.00419379339023752,
+  "ref_mean": 0.884294,
+  "ref_std": 0.0021913724010308943,
+  "delta": -0.00217600000000003,
+  "per_seed_delta": [
+   -0.004618000000000011,
+   -0.0017050000000000676,
+   -0.00020500000000001073
+  ],
+  "t": -1.6796499796063178,
+  "p": 0.23503752468176248,
+  "n_pos": 0,
+  "sign_p_greater": 1.0,
+  "sign_p_two_sided": 0.25,
+  "beats": false,
+  "mean_points": -0.21760000000000299,
+  "sd_points": 0.22438856922757838,
+  "ci90_points": [
+   -0.5958864703956348,
+   0.16068647039562886
+  ],
+  "p_tost_0.5": 0.08054249680497932,
+  "equivalent_at_0.5": false,
+  "mde_points": 0.7324140620058706,
+  "note": "descriptive, not a test (D34 pre-registration, rule 3)"
+ },
+ "fundus_per_seed": {
+  "1337": {
+   "run": "v18I_fundus_pctmatch_s1337",
+   "continued_from": null,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "w_first": 0.989,
+   "w_first_fifth_mean": 0.9890833333333336,
+   "w_after_mean": 0.9896041666666667,
+   "w_after_median": 0.99,
+   "w_after_min": 0.989,
+   "w_after_max": 0.99,
+   "refname": "v18B_fundus_fixmatch_split1337_init1337",
+   "best": 0.878317,
+   "best_iter": 18000,
+   "last": 0.874,
+   "ref": 0.882081,
+   "ref_last": 0.8787,
+   "oracle": 0.902968,
+   "nogate": 0.882935,
+   "at_best": {
+    "Domain1": 0.8786555,
+    "Domain2": 0.8369175,
+    "Domain3": 0.909108,
+    "Domain4": 0.8885865
+   },
+   "ref_at_best": {
+    "Domain1": 0.8892945,
+    "Domain2": 0.838482,
+    "Domain3": 0.9062665,
+    "Domain4": 0.8942825
+   }
+  },
+  "42": {
+   "run": "v18I_fundus_pctmatch_s42",
+   "continued_from": null,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "w_first": 0.99,
+   "w_first_fifth_mean": 0.9890833333333336,
+   "w_after_mean": 0.9899166666666668,
+   "w_after_median": 0.99,
+   "w_after_min": 0.989,
+   "w_after_max": 0.99,
+   "refname": "v18B_fundus_fixmatch_s42",
+   "best": 0.88142,
+   "best_iter": 28000,
+   "last": 0.8808,
+   "ref": 0.887454,
+   "ref_last": 0.8848,
+   "oracle": 0.900992,
+   "nogate": 0.883125,
+   "at_best": {
+    "Domain1": 0.9031184999999999,
+    "Domain2": 0.8322755,
+    "Domain3": 0.9094015,
+    "Domain4": 0.8808860000000001
+   },
+   "ref_at_best": {
+    "Domain1": 0.9068320000000001,
+    "Domain2": 0.8324355,
+    "Domain3": 0.9097865,
+    "Domain4": 0.9007615
+   }
+  },
+  "2024": {
+   "run": "v18I_fundus_pctmatch_s2024",
+   "continued_from": 27000,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "w_first": 0.99,
+   "w_first_fifth_mean": 0.9893333333333336,
+   "w_after_mean": 0.9897708333333335,
+   "w_after_median": 0.99,
+   "w_after_min": 0.989,
+   "w_after_max": 0.99,
+   "refname": "v18B_fundus_fixmatch_s2024",
+   "best": 0.886617,
+   "best_iter": 18000,
+   "last": 0.8792,
+   "ref": 0.886255,
+   "ref_last": 0.8821,
+   "oracle": 0.903669,
+   "nogate": 0.886822,
+   "at_best": {
+    "Domain1": 0.89507,
+    "Domain2": 0.8323875000000001,
+    "Domain3": 0.9089860000000001,
+    "Domain4": 0.9100245
+   },
+   "ref_at_best": {
+    "Domain1": 0.893667,
+    "Domain2": 0.8342965,
+    "Domain3": 0.90718,
+    "Domain4": 0.9098765
+   }
+  }
+ },
+ "fundus_descriptive": {
+  "best_minus_last_points": [
+   0.4317000000000015,
+   0.06199999999999539,
+   0.7417000000000007
+  ],
+  "ref_best_minus_last_points": [
+   0.33809999999999674,
+   0.2653999999999934,
+   0.415500000000002
+  ],
+  "best_frac": [
+   0.6,
+   0.9333333333333333,
+   0.6
+  ],
+  "per_vendor_delta_points": {
+   "Domain1": [
+    -1.0638999999999954,
+    -0.3713500000000147,
+    0.1403000000000043
+   ],
+   "Domain2": [
+    -0.15644999999999687,
+    -0.0160000000000049,
+    -0.19089999999999385
+   ],
+   "Domain3": [
+    0.28415000000000523,
+    -0.03850000000000797,
+    0.18060000000000853
+   ],
+   "Domain4": [
+    -0.5696000000000034,
+    -1.9875499999999935,
+    0.014800000000003699
+   ]
+  }
+ },
+ "checkpoints": {
+  "prostate_matched_minus_threshold_best": {
+   "delta_points": -1.006600000000002,
+   "p": 0.30017857487419264,
+   "per_seed_points": [
+    -0.47949999999999937,
+    -2.4428000000000005,
+    -0.09750000000000592
+   ]
+  },
+  "prostate_oracle_minus_matched_best": {
+   "delta_points": 3.2410333333333354,
+   "p": 0.049924467249749034,
+   "per_seed_points": [
+    2.3274000000000017,
+    4.733900000000002,
+    2.661800000000003
+   ]
+  },
+  "prostate_matched_minus_nogate_best": {
+   "delta_points": -0.8843333333333351,
+   "p": 0.506230895822173,
+   "per_seed_points": [
+    -0.09829999999999561,
+    -3.0592000000000064,
+    0.5044999999999966
+   ]
+  },
+  "prostate_matched_minus_threshold_last": {
+   "delta_points": -11.043333333333338,
+   "p": 0.10183540548315498,
+   "per_seed_points": [
+    -5.269999999999997,
+    -18.27000000000001,
+    -9.59000000000001
+   ]
+  },
+  "prostate_oracle_minus_matched_last": {
+   "delta_points": 17.923333333333336,
+   "p": 0.08011094920012149,
+   "per_seed_points": [
+    7.16,
+    24.140000000000008,
+    22.470000000000002
+   ]
+  },
+  "prostate_matched_minus_nogate_last": {
+   "delta_points": -10.386666666666674,
+   "p": 0.27234746574029806,
+   "per_seed_points": [
+    2.169999999999994,
+    -21.720000000000006,
+    -11.61000000000001
+   ]
+  },
+  "prostate_matched_minus_threshold_swad": {
+   "delta_points": -1.623333333333336,
+   "p": 0.2965082615165784,
+   "per_seed_points": [
+    -0.24833333333331709,
+    -3.928333333333345,
+    -0.6933333333333458
+   ]
+  },
+  "prostate_oracle_minus_matched_swad": {
+   "delta_points": 3.7511111111111126,
+   "p": 0.1693828135577702,
+   "per_seed_points": [
+    1.6266666666666652,
+    7.283333333333342,
+    2.3433333333333306
+   ]
+  },
+  "prostate_matched_minus_nogate_swad": {
+   "delta_points": -2.1227777777777774,
+   "p": 0.2858762603802802,
+   "per_seed_points": [
+    -0.4766666666666697,
+    -5.058333333333332,
+    -0.8333333333333304
+   ]
+  },
+  "fundus_matched_minus_threshold_best": {
+   "delta_points": -0.31453333333333333,
+   "p": 0.2349505462702029,
+   "per_seed_points": [
+    -0.37639999999999896,
+    -0.6033999999999984,
+    0.036199999999997345
+   ]
+  },
+  "fundus_oracle_minus_matched_best": {
+   "delta_points": 2.0424999999999986,
+   "p": 0.011760011589971494,
+   "per_seed_points": [
+    2.465099999999998,
+    1.9572000000000034,
+    1.7051999999999956
+   ]
+  },
+  "fundus_matched_minus_nogate_best": {
+   "delta_points": -0.21760000000000299,
+   "p": 0.23503752468176248,
+   "per_seed_points": [
+    -0.4618000000000011,
+    -0.17050000000000676,
+    -0.020500000000001073
+   ]
+  },
+  "fundus_matched_minus_threshold_last": {
+   "delta_points": -0.3866666666666685,
+   "p": 0.017865684531860358,
+   "per_seed_points": [
+    -0.47000000000000375,
+    -0.40000000000000036,
+    -0.29000000000000137
+   ]
+  },
+  "fundus_oracle_minus_matched_last": {
+   "delta_points": 2.3399999999999976,
+   "p": 0.009440429780970492,
+   "per_seed_points": [
+    2.6699999999999946,
+    1.9000000000000017,
+    2.4499999999999966
+   ]
+  },
+  "fundus_matched_minus_nogate_last": {
+   "delta_points": -0.25666666666666427,
+   "p": 0.215469296199944,
+   "per_seed_points": [
+    -0.40999999999999925,
+    0.030000000000007798,
+    -0.39000000000000146
+   ]
+  },
+  "fundus_matched_minus_threshold_swad": {
+   "delta_points": -0.4174999999999966,
+   "p": 0.3595920824006019,
+   "per_seed_points": [
+    -0.6749999999999923,
+    -0.8599999999999941,
+    0.28249999999999664
+   ]
+  },
+  "fundus_oracle_minus_matched_swad": {
+   "delta_points": 2.0112499999999938,
+   "p": 0.059055585499125915,
+   "per_seed_points": [
+    2.994999999999992,
+    1.7637499999999973,
+    1.2749999999999928
+   ]
+  },
+  "fundus_matched_minus_nogate_swad": {
+   "delta_points": -0.41083333333333066,
+   "p": 0.4132031319368832,
+   "per_seed_points": [
+    -1.200000000000001,
+    -0.1387499999999986,
+    0.10625000000000773
+   ]
+  }
+ },
+ "checkpoints_note": "descriptive (rule 3); for Fundus seed 2024 the last-iteration and SWAD values come from the segment continued at iteration 27,000 (Amendment 2 item 2); its best checkpoint lies before the interruption",
+ "selection": {
+  "prostate": {
+   "n": 64,
+   "median": 1.6956000000000027,
+   "n_gt1": 39,
+   "n_gt5": 18,
+   "n_prev": 61,
+   "median_prev": 1.3588999999999962,
+   "n_gt5_prev": 15
+  },
+  "fundus": {
+   "n": 46,
+   "median": 0.2769500000000036,
+   "n_gt1": 3,
+   "n_gt5": 0,
+   "n_prev": 43,
+   "median_prev": 0.2755000000000063,
+   "n_gt5_prev": 0
+  },
+  "MNMS": {
+   "n": 11,
+   "median": 0.2797999999999967,
+   "n_gt1": 1,
+   "n_gt5": 1,
+   "n_prev": 11,
+   "median_prev": 0.2797999999999967,
+   "n_gt5_prev": 1
+  },
+  "BUSI": {
+   "n": 11,
+   "median": 0.854099999999991,
+   "n_gt1": 5,
+   "n_gt5": 1,
+   "n_prev": 11,
+   "median_prev": 0.854099999999991,
+   "n_gt5_prev": 1
+  }
+ },
+ "n_logs": 139,
+ "signal": {
+  "prostate_s1337": {
+   "u_epi_all": 0.79,
+   "u_epi_band": 0.6834,
+   "u_epi_range80": 8.484e-05,
+   "conf_all": 0.79,
+   "conf_band": 0.6836,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "prostate_s42": {
+   "u_epi_all": 0.8528,
+   "u_epi_band": 0.6342,
+   "u_epi_range80": 0.0001058,
+   "conf_all": 0.8528,
+   "conf_band": 0.6345,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "prostate_s2024": {
+   "u_epi_all": 0.8865,
+   "u_epi_band": 0.6649,
+   "u_epi_range80": 6.743e-05,
+   "conf_all": 0.8865,
+   "conf_band": 0.6652,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "fundus_s1337": {
+   "u_epi_all": 0.8907,
+   "u_epi_band": 0.6169,
+   "u_epi_range80": 0.0006785,
+   "conf_all": 0.8908,
+   "conf_band": 0.6176,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "fundus_s42": {
+   "u_epi_all": 0.9046,
+   "u_epi_band": 0.6248,
+   "u_epi_range80": 0.0004642,
+   "conf_all": 0.9046,
+   "conf_band": 0.6248,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  },
+  "fundus_s2024": {
+   "u_epi_all": 0.8993,
+   "u_epi_band": 0.6313,
+   "u_epi_range80": 0.0007209,
+   "conf_all": 0.8993,
+   "conf_band": 0.6311,
+   "identity_holds": true,
+   "phaseA_rule_collapse_persists": true
+  }
+ },
+ "s9": {
+  "n_all": 124,
+  "n_testbed": 91,
+  "n_testbed_identity_holds": 90,
+  "per_benchmark": {
+   "prostate": 50,
+   "fundus": 27,
+   "MNMS": 7,
+   "BUSI": 7
+  }
+ },
+ "runs_trained": {
+  "before_d34": 119,
+  "d34": 6,
+  "total": 125,
+  "note": "Fundus seed 2024 is one run: killed at iteration 27,500 and continued from its state at 27,000"
+ },
+ "coverage": {
+  "prostate": {
+   "w_first": [
+    0.994,
+    0.995
+   ],
+   "w_after_median": [
+    0.996,
+    0.996
+   ],
+   "removed_share_matched": [
+    0.005063291139240089,
+    0.005063291139240089
+   ],
+   "removed_share_oracle": [
+    0.006447784810126311,
+    0.007199367088607259
+   ],
+   "ratio_matched_to_oracle_mean": 0.7529411764705607
+  },
+  "fundus": {
+   "w_first": [
+    0.989,
+    0.99
+   ],
+   "w_after_median": [
+    0.99,
+    0.99
+   ],
+   "removed_share_matched": [
+    0.012763713080168635,
+    0.01315928270042186
+   ],
+   "removed_share_oracle": [
+    0.017088607594936654,
+    0.01735232067510547
+   ],
+   "ratio_matched_to_oracle_mean": 0.7512742099898004
+  }
+ },
+ "assertions_passed": [
+  "the release copy of trainer v12 is 915347736f4855da (unchanged for D-34)",
+  "every file of the first S41 collection (66) is in the results tier and matches its part manifest (size and sha256)",
+  "the first S41 collection carries no file of an earlier training",
+  "every file of the second S41 (RETURNS/S41b) collection (66) is in the results tier and matches its part manifest (size and sha256)",
+  "the second S41 (RETURNS/S41b) collection carries no file of an earlier training",
+  "the two collections list the same 66 paths; exactly six files differ: the continued run's log, run_config.json and console, the runner log, the status file and the harness log",
+  "the run log, the runner log, the status file and the harness log of the second collection extend those of the first byte for byte",
+  "both collections skipped the same held files",
+  "the job lists that ran are the registered ones (tools S41)",
+  "step 0 on record: the six hashes (trainer v12 unchanged), the 1,401-line held manifest, 48 v18H_ lines, no runner lock, no D-34 run before the launch",
+  "step 1 on record: the server self-test passed; trainer v12 compiled",
+  "the smoke run: percentile gate at keep 0.983, two logged windows, neither keeps every pixel",
+  "runner: six jobs; five passed on the first launch; the Fundus seed-2024 job was killed (exit code -9, no TRAINING COMPLETE), then passed when continued",
+  "first launch: two attempts refused (GPU 0 in use), the third ran on GPU 1 only",
+  "relaunch: the five finished runs skipped; the killed run continued from its state at iteration 27,000 (one attempt refused, GPUs in use; then GREEN); passed",
+  "the harness was not re-run after the relaunch: the six JSONs are those of the first collection",
+  "the killed attempt (first collection): 55 of 60 evaluations, last logged iteration 27,500, R-34 ok, no non-finite iteration, no resume, no error line in its console",
+  "the killed attempt's last saved state is that of iteration 27,000",
+  "the continued run: its log begins with the killed attempt's log, ends with TRAINING COMPLETE; R-34 ok; no non-finite iteration",
+  "two launch headers; exactly one resume, from iteration 27,000 (epoch 55 of 60)",
+  "the continued segment makes six evaluations, the first at the epoch of the killed attempt's last one (iteration 27,500, re-trained); the log holds 61 evaluations, among them the killed attempt's evaluation of the discarded iterations 27,000-27,500",
+  "run_config.json: the launch provenance is unchanged; one resume event, at iteration 27,000",
+  "its best checkpoint (the reported value, E-69) is the same before and after the interruption and lies before iteration 27,000: no later evaluation, the discarded one included, was better",
+  "the relaunch console: no error line; the killed attempt's lock was stale; resumed from iteration 27,000",
+  "the trained trajectory of the continued run: 60 gate windows, iterations 500 to 30,000 (the killed attempt's window at 27,500 belongs to discarded iterations and is not used)",
+  "v18I_prostate_pctmatch_s1337: one training from iteration 0 to the last iteration, no resume event",
+  "v18I_prostate_pctmatch_s1337: configuration = the percentile gate at the registered keep fraction 0.993, headline settings",
+  "v18I_prostate_pctmatch_s1337: every launch command in its log equals its line of jobs_D34.txt (the runner adds only the GPU index)",
+  "v18I_prostate_pctmatch_s1337: recorded arguments = those of the D-31 run of the same seed except the keep fraction (and the name, GPU)",
+  "v18I_prostate_pctmatch_s1337: rule 0: script_sha256 = trainer v12; code snapshot, recorded hashes and the release code are the same bytes",
+  "v18I_prostate_pctmatch_s1337: rule 0: labeled slices identical to those of its threshold reference (v18B_prostate_fixmatch_split1337_init1337)",
+  "v18I_prostate_pctmatch_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18I_prostate_pctmatch_s1337: rule 0 item 3: the median logged w_mean after the first fifth (0.9960) lies in the registered window [0.99, 0.997]",
+  "v18I_prostate_pctmatch_s1337: its threshold reference is the one of ADJUDICATION_S31 (same seed)",
+  "v18I_prostate_pctmatch_s42: one training from iteration 0 to the last iteration, no resume event",
+  "v18I_prostate_pctmatch_s42: configuration = the percentile gate at the registered keep fraction 0.993, headline settings",
+  "v18I_prostate_pctmatch_s42: every launch command in its log equals its line of jobs_D34.txt (the runner adds only the GPU index)",
+  "v18I_prostate_pctmatch_s42: recorded arguments = those of the D-31 run of the same seed except the keep fraction (and the name, GPU)",
+  "v18I_prostate_pctmatch_s42: rule 0: script_sha256 = trainer v12; code snapshot, recorded hashes and the release code are the same bytes",
+  "v18I_prostate_pctmatch_s42: rule 0: labeled slices identical to those of its threshold reference (v18B_prostate_fixmatch_s42)",
+  "v18I_prostate_pctmatch_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18I_prostate_pctmatch_s42: rule 0 item 3: the median logged w_mean after the first fifth (0.9960) lies in the registered window [0.99, 0.997]",
+  "v18I_prostate_pctmatch_s42: its threshold reference is the one of ADJUDICATION_S31 (same seed)",
+  "v18I_prostate_pctmatch_s2024: one training from iteration 0 to the last iteration, no resume event",
+  "v18I_prostate_pctmatch_s2024: configuration = the percentile gate at the registered keep fraction 0.993, headline settings",
+  "v18I_prostate_pctmatch_s2024: every launch command in its log equals its line of jobs_D34.txt (the runner adds only the GPU index)",
+  "v18I_prostate_pctmatch_s2024: recorded arguments = those of the D-31 run of the same seed except the keep fraction (and the name, GPU)",
+  "v18I_prostate_pctmatch_s2024: rule 0: script_sha256 = trainer v12; code snapshot, recorded hashes and the release code are the same bytes",
+  "v18I_prostate_pctmatch_s2024: rule 0: labeled slices identical to those of its threshold reference (v18B_prostate_fixmatch_s2024)",
+  "v18I_prostate_pctmatch_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18I_prostate_pctmatch_s2024: rule 0 item 3: the median logged w_mean after the first fifth (0.9960) lies in the registered window [0.99, 0.997]",
+  "v18I_prostate_pctmatch_s2024: its threshold reference is the one of ADJUDICATION_S31 (same seed)",
+  "v18I_fundus_pctmatch_s1337: one training from iteration 0 to the last iteration, no resume event",
+  "v18I_fundus_pctmatch_s1337: configuration = the percentile gate at the registered keep fraction 0.983, headline settings",
+  "v18I_fundus_pctmatch_s1337: every launch command in its log equals its line of jobs_D34.txt (the runner adds only the GPU index)",
+  "v18I_fundus_pctmatch_s1337: recorded arguments = those of the D-31 run of the same seed except the keep fraction (and the name, GPU)",
+  "v18I_fundus_pctmatch_s1337: rule 0: script_sha256 = trainer v12; code snapshot, recorded hashes and the release code are the same bytes",
+  "v18I_fundus_pctmatch_s1337: rule 0: labeled slices identical to those of its threshold reference (v18B_fundus_fixmatch_split1337_init1337)",
+  "v18I_fundus_pctmatch_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18I_fundus_pctmatch_s1337: rule 0 item 3: the median logged w_mean after the first fifth (0.9900) lies in the registered window [0.98, 0.99]",
+  "v18I_fundus_pctmatch_s1337: its threshold reference is the one of ADJUDICATION_S31 (same seed)",
+  "v18I_fundus_pctmatch_s42: one training from iteration 0 to the last iteration, no resume event",
+  "v18I_fundus_pctmatch_s42: configuration = the percentile gate at the registered keep fraction 0.983, headline settings",
+  "v18I_fundus_pctmatch_s42: every launch command in its log equals its line of jobs_D34.txt (the runner adds only the GPU index)",
+  "v18I_fundus_pctmatch_s42: recorded arguments = those of the D-31 run of the same seed except the keep fraction (and the name, GPU)",
+  "v18I_fundus_pctmatch_s42: rule 0: script_sha256 = trainer v12; code snapshot, recorded hashes and the release code are the same bytes",
+  "v18I_fundus_pctmatch_s42: rule 0: labeled slices identical to those of its threshold reference (v18B_fundus_fixmatch_s42)",
+  "v18I_fundus_pctmatch_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18I_fundus_pctmatch_s42: rule 0 item 3: the median logged w_mean after the first fifth (0.9900) lies in the registered window [0.98, 0.99]",
+  "v18I_fundus_pctmatch_s42: its threshold reference is the one of ADJUDICATION_S31 (same seed)",
+  "v18I_fundus_pctmatch_s2024: complete; continued once from its own state saved at iteration 27,000 (Amendment 2; checked above)",
+  "v18I_fundus_pctmatch_s2024: configuration = the percentile gate at the registered keep fraction 0.983, headline settings",
+  "v18I_fundus_pctmatch_s2024: every launch command in its log equals its line of jobs_D34.txt (the runner adds only the GPU index)",
+  "v18I_fundus_pctmatch_s2024: recorded arguments = those of the D-31 run of the same seed except the keep fraction (and the name, GPU)",
+  "v18I_fundus_pctmatch_s2024: rule 0: script_sha256 = trainer v12; code snapshot, recorded hashes and the release code are the same bytes",
+  "v18I_fundus_pctmatch_s2024: rule 0: labeled slices identical to those of its threshold reference (v18B_fundus_fixmatch_s2024) at both launches",
+  "v18I_fundus_pctmatch_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18I_fundus_pctmatch_s2024: rule 0 item 3: the median logged w_mean after the first fifth (0.9900) lies in the registered window [0.98, 0.99]",
+  "v18I_fundus_pctmatch_s2024: its threshold reference is the one of ADJUDICATION_S31 (same seed)",
+  "prostate: TOST and the paired tests use the same differences",
+  "prostate: the threshold references and the oracle values are those of ADJUDICATION_S31",
+  "prostate: the rule 1 verdict follows from p and delta as registered (p < 0.05 and |delta| >= 0.5)",
+  "prostate: the rule 2 verdict follows from p and delta as registered (p < 0.05 and |delta| >= 0.5)",
+  "fundus: TOST and the paired tests use the same differences",
+  "fundus: the threshold references and the oracle values are those of ADJUDICATION_S31",
+  "fundus: the rule 1 verdict follows from p and delta as registered (p < 0.05 and |delta| >= 0.5)",
+  "fundus: the rule 2 verdict follows from p and delta as registered (p < 0.05 and |delta| >= 0.5)",
+  "complete logs: the 133 of facts_s31.json plus the six D-34 runs (the killed attempt's log is incomplete and not counted; its continuation is the sixth)",
+  "the checkpoint loader reads the continued run from RETURNS/S41b, with its resume, and the same best and last values as the integrity pass",
+  "prostate: a best value on every D-34 run",
+  "prostate: a last value on every D-34 run",
+  "prostate: a swad value on every D-34 run",
+  "prostate: the best-checkpoint lines equal rules 1 and 2",
+  "fundus: a best value on every D-34 run",
+  "fundus: a last value on every D-34 run",
+  "fundus: a swad value on every D-34 run",
+  "fundus: the best-checkpoint lines equal rules 1 and 2",
+  "prostate: the logs reproduce the S32 selection counts exactly (n 61, median 1.3589)",
+  "fundus: the logs reproduce the S32 selection counts exactly (n 43, median 0.2755)",
+  "MNMS: the logs reproduce the S32 selection counts exactly (n 11, median 0.2798)",
+  "BUSI: the logs reproduce the S32 selection counts exactly (n 11, median 0.8541)",
+  "the six D-34 runs are counted, three per benchmark",
+  "six harness JSONs, EMA teachers",
+  "the six harness JSONs are those of the first collection, byte for byte: measured before the relaunch; for Fundus seed 2024 on the checkpoint that stayed its best (Amendment 2 item 3)",
+  "the matched gate removes less than the oracle and more than half its share, on both benchmarks"
+ ]
+}

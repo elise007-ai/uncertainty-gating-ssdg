@@ -1,0 +1,7 @@
+dataset,run,which,K,expected_ratio_K_over_Km1,max_abs_auroc_gap_all,max_abs_auroc_gap_edt5,median_ratio_u_epi_over_conf,range80_ratio_u_epi_over_conf,identity_holds
+fundus,v18I_fundus_pctmatch_s1337,ema,3,1.5000,0.0003,0.0021,1.5000,1.4990,1
+fundus,v18I_fundus_pctmatch_s2024,ema,3,1.5000,0.0003,0.0017,1.5000,1.4984,1
+fundus,v18I_fundus_pctmatch_s42,ema,3,1.5000,0.0001,0.0003,1.5000,1.5001,1
+prostate,v18I_prostate_pctmatch_s1337,ema,2,2.0000,0.0000,0.0007,2.0001,2.0013,1
+prostate,v18I_prostate_pctmatch_s2024,ema,2,2.0000,0.0000,0.0006,2.0000,1.9992,1
+prostate,v18I_prostate_pctmatch_s42,ema,2,2.0000,0.0000,0.0008,2.0000,2.0004,1

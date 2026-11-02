@@ -1,0 +1,7 @@
+dataset,seed,run,w_mean_first_window,w_mean_first_fifth,w_mean_after_fifth,w_mean_after_fifth_median,w_mean_after_fifth_min,w_mean_after_fifth_max,removed_share_outside_box_approx
+prostate,1337,v18I_prostate_pctmatch_s1337,0.994,0.9953,0.9960,0.9960,0.996,0.996,0.0051
+prostate,42,v18I_prostate_pctmatch_s42,0.995,0.9954,0.9960,0.9960,0.996,0.996,0.0051
+prostate,2024,v18I_prostate_pctmatch_s2024,0.994,0.9955,0.9960,0.9960,0.996,0.996,0.0051
+fundus,1337,v18I_fundus_pctmatch_s1337,0.989,0.9891,0.9896,0.9900,0.989,0.990,0.0132
+fundus,42,v18I_fundus_pctmatch_s42,0.990,0.9891,0.9899,0.9900,0.989,0.990,0.0128
+fundus,2024,v18I_fundus_pctmatch_s2024,0.990,0.9893,0.9898,0.9900,0.989,0.990,0.0129

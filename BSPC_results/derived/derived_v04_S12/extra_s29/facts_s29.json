@@ -1,0 +1,542 @@
+{
+ "session": "S30",
+ "reader": "make_extra_s29.py",
+ "preregistration": "DOCS/D31_PREREGISTRATION_S29.md",
+ "code_sha256": {
+  "train_fourierfuse_v18_revision.py": "20d39982c157ff0e",
+  "revision_modules.py": "a6fe4357a39d0020",
+  "fourierfuse_v16_modules.py": "4a343f191bbbf1e0",
+  "diag_uncertainty_harness_v18.py": "7eb2db7ec9353de7"
+ },
+ "manifest_files_verified": 63,
+ "runner": {
+  "jobs": 6,
+  "final_pass": 6,
+  "first_start": "2026-10-20 02:13:43",
+  "last_end": "2026-10-20 19:06:23",
+  "hours_per_job": {
+   "v18F_fundus_percentile_s1337": 6.95,
+   "v18F_prostate_percentile_s2024": 10.74,
+   "v18F_prostate_percentile_s42": 12.3,
+   "v18F_prostate_percentile_s1337": 12.32,
+   "v18F_fundus_percentile_s42": 6.62,
+   "v18F_fundus_percentile_s2024": 6.13
+  },
+  "wall_clock_hours": 16.88,
+  "preflight_green_line": true
+ },
+ "step_files": {
+  "preflight.txt": false,
+  "selftest_revision_modules.txt": false
+ },
+ "table6_main_tex": {
+  "threshold": {
+   "fundus": 88.47,
+   "fundus_sd": 0.23,
+   "prostate": 85.71,
+   "prostate_sd": 0.57
+  },
+  "percentile_probe": {
+   "fundus": 86.97,
+   "fundus_sd": null,
+   "prostate": 85.63,
+   "prostate_sd": null
+  },
+  "daep": {
+   "fundus": 88.54,
+   "fundus_sd": 0.17,
+   "prostate": 85.38,
+   "prostate_sd": 0.58
+  }
+ },
+ "prostate_rule": {
+  "mean": 0.831211,
+  "std": 0.034078012574092396,
+  "ref_mean": 0.85902,
+  "ref_std": 0.0026139982784998015,
+  "delta": -0.027809000000000045,
+  "per_seed_delta": [
+   -0.006121000000000043,
+   -0.06574400000000002,
+   -0.011562000000000072
+  ],
+  "t": -1.4611382434079214,
+  "p": 0.2814491765073441,
+  "n_pos": 0,
+  "sign_p_greater": 1.0,
+  "sign_p_two_sided": 0.25,
+  "beats": false,
+  "mean_points": -2.780900000000005,
+  "sd_points": 3.2965122311315618,
+  "ci90_points": [
+   -8.338339850093416,
+   2.7765398500934055
+  ],
+  "p_tost_0.5": 0.8232518327875746,
+  "equivalent_at_0.5": false,
+  "mde_points": 10.759959484417267,
+  "below": false,
+  "verdict": "within seed noise",
+  "r34_flags": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "n_r34_flagged": 0,
+  "unstable": [
+   false,
+   false,
+   false
+  ]
+ },
+ "prostate_per_seed": {
+  "1337": {
+   "run": "v18F_prostate_percentile_s1337",
+   "best": 0.855856,
+   "best_iter": 30000,
+   "last": 0.8252,
+   "last10": 0.8192833333333334,
+   "swad_best": 0.850959,
+   "ref": 0.861977,
+   "refname": "v18B_prostate_fixmatch_split1337_init1337",
+   "ref_last": 0.8593,
+   "ref_best_iter": 50000,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "mask_after_20pct": 0.8381562499999999,
+   "mask_min": 0.835,
+   "mask_max": 0.842,
+   "ref_mask_after_20pct": 0.9996041666666667,
+   "at_best": {
+    "BIDMC": 0.836896,
+    "BMC": 0.866996,
+    "HK": 0.876776,
+    "I2CVB": 0.856187,
+    "RUNMC": 0.821613,
+    "UCL": 0.876668
+   },
+   "ref_at_best": {
+    "BIDMC": 0.80826,
+    "BMC": 0.878652,
+    "HK": 0.898773,
+    "I2CVB": 0.859933,
+    "RUNMC": 0.844686,
+    "UCL": 0.88156
+   }
+  },
+  "42": {
+   "run": "v18F_prostate_percentile_s42",
+   "best": 0.792322,
+   "best_iter": 25500,
+   "last": 0.6302,
+   "last10": 0.634325,
+   "swad_best": 0.681265,
+   "ref": 0.858066,
+   "refname": "v18B_prostate_fixmatch_s42",
+   "ref_last": 0.8212,
+   "ref_best_iter": 39500,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "mask_after_20pct": 0.8426354166666666,
+   "mask_min": 0.84,
+   "mask_max": 0.845,
+   "ref_mask_after_20pct": 0.9994479166666667,
+   "at_best": {
+    "BIDMC": 0.707887,
+    "BMC": 0.778687,
+    "HK": 0.839806,
+    "I2CVB": 0.844926,
+    "RUNMC": 0.814251,
+    "UCL": 0.768377
+   },
+   "ref_at_best": {
+    "BIDMC": 0.843439,
+    "BMC": 0.862413,
+    "HK": 0.892514,
+    "I2CVB": 0.817403,
+    "RUNMC": 0.866726,
+    "UCL": 0.865898
+   }
+  },
+  "2024": {
+   "run": "v18F_prostate_percentile_s2024",
+   "best": 0.845455,
+   "best_iter": 25000,
+   "last": 0.6831,
+   "last10": 0.6896166666666667,
+   "swad_best": 0.826975,
+   "ref": 0.857017,
+   "refname": "v18B_prostate_fixmatch_s2024",
+   "ref_last": 0.7526,
+   "ref_best_iter": 33000,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "mask_after_20pct": 0.8407708333333334,
+   "mask_min": 0.839,
+   "mask_max": 0.843,
+   "ref_mask_after_20pct": 0.9994895833333334,
+   "at_best": {
+    "BIDMC": 0.821086,
+    "BMC": 0.860486,
+    "HK": 0.874677,
+    "I2CVB": 0.847605,
+    "RUNMC": 0.815702,
+    "UCL": 0.853173
+   },
+   "ref_at_best": {
+    "BIDMC": 0.814601,
+    "BMC": 0.86114,
+    "HK": 0.880514,
+    "I2CVB": 0.858489,
+    "RUNMC": 0.844323,
+    "UCL": 0.883037
+   }
+  }
+ },
+ "prostate_descriptive": {
+  "table6_threshold": 85.71,
+  "table6_daep": 85.38,
+  "table6_probe_s1337": 85.63,
+  "d31_mean_minus_table6_threshold_points": -2.5888999999999953,
+  "d31_s1337_minus_probe_points": -0.044399999999996,
+  "best_minus_last_points": [
+   3.0655999999999906,
+   16.2122,
+   16.23549999999999
+  ],
+  "ref_best_minus_last_points": [
+   0.26770000000000405,
+   3.6865999999999954,
+   10.441699999999997
+  ],
+  "mask_after_20pct": [
+   0.8381562499999999,
+   0.8426354166666666,
+   0.8407708333333334
+  ],
+  "ref_mask_after_20pct": [
+   0.9996041666666667,
+   0.9994479166666667,
+   0.9994895833333334
+  ]
+ },
+ "fundus_rule": {
+  "mean": 0.8756436666666666,
+  "std": 0.005269269430702264,
+  "ref_mean": 0.8852633333333332,
+  "ref_std": 0.002820431586359304,
+  "delta": -0.009619666666666657,
+  "per_seed_delta": [
+   -0.010612999999999984,
+   -0.013554999999999984,
+   -0.004691000000000001
+  ],
+  "t": -3.690542824316464,
+  "p": 0.06621206981334159,
+  "n_pos": 0,
+  "sign_p_greater": 1.0,
+  "sign_p_two_sided": 0.25,
+  "beats": false,
+  "mean_points": -0.9619666666666656,
+  "sd_points": 0.45147156425774204,
+  "ci90_points": [
+   -1.7230820172166421,
+   -0.20085131611668927
+  ],
+  "p_tost_0.5": 0.8908254655820907,
+  "equivalent_at_0.5": false,
+  "mde_points": 1.4736228471727209,
+  "below": false,
+  "verdict": "within seed noise",
+  "r34_flags": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "n_r34_flagged": 0,
+  "unstable": [
+   false,
+   false,
+   false
+  ]
+ },
+ "fundus_per_seed": {
+  "1337": {
+   "run": "v18F_fundus_percentile_s1337",
+   "best": 0.871468,
+   "best_iter": 15500,
+   "last": 0.8275,
+   "last10": 0.8318666666666666,
+   "swad_best": 0.854077,
+   "ref": 0.882081,
+   "refname": "v18B_fundus_fixmatch_split1337_init1337",
+   "ref_last": 0.8787,
+   "ref_best_iter": 20000,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "mask_after_20pct": 0.8354166666666667,
+   "mask_min": 0.832,
+   "mask_max": 0.843,
+   "ref_mask_after_20pct": 0.9980625,
+   "at_best": {
+    "Domain1": 0.8714204999999999,
+    "Domain2": 0.8273815,
+    "Domain3": 0.9096774999999999,
+    "Domain4": 0.877394
+   },
+   "ref_at_best": {
+    "Domain1": 0.8892945,
+    "Domain2": 0.838482,
+    "Domain3": 0.9062665,
+    "Domain4": 0.8942825
+   }
+  },
+  "42": {
+   "run": "v18F_fundus_percentile_s42",
+   "best": 0.873899,
+   "best_iter": 12500,
+   "last": 0.8668,
+   "last10": 0.8667166666666667,
+   "swad_best": 0.869186,
+   "ref": 0.887454,
+   "refname": "v18B_fundus_fixmatch_s42",
+   "ref_last": 0.8848,
+   "ref_best_iter": 25000,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "mask_after_20pct": 0.843375,
+   "mask_min": 0.839,
+   "mask_max": 0.85,
+   "ref_mask_after_20pct": 0.9982291666666666,
+   "at_best": {
+    "Domain1": 0.884436,
+    "Domain2": 0.796204,
+    "Domain3": 0.9114884999999999,
+    "Domain4": 0.9034660000000001
+   },
+   "ref_at_best": {
+    "Domain1": 0.9068320000000001,
+    "Domain2": 0.8324355,
+    "Domain3": 0.9097865,
+    "Domain4": 0.9007615
+   }
+  },
+  "2024": {
+   "run": "v18F_fundus_percentile_s2024",
+   "best": 0.881564,
+   "best_iter": 19000,
+   "last": 0.8583,
+   "last10": 0.8577499999999999,
+   "swad_best": 0.877505,
+   "ref": 0.886255,
+   "refname": "v18B_fundus_fixmatch_s2024",
+   "ref_last": 0.8821,
+   "ref_best_iter": 18500,
+   "flag": "ok",
+   "nf": 0,
+   "nf_frac": 0.0,
+   "mask_after_20pct": 0.8398333333333333,
+   "mask_min": 0.838,
+   "mask_max": 0.842,
+   "ref_mask_after_20pct": 0.9981874999999999,
+   "at_best": {
+    "Domain1": 0.886533,
+    "Domain2": 0.8314765,
+    "Domain3": 0.909559,
+    "Domain4": 0.8986879999999999
+   },
+   "ref_at_best": {
+    "Domain1": 0.893667,
+    "Domain2": 0.8342965,
+    "Domain3": 0.90718,
+    "Domain4": 0.9098765
+   }
+  }
+ },
+ "fundus_descriptive": {
+  "table6_threshold": 88.47,
+  "table6_daep": 88.54,
+  "table6_probe_s1337": 86.97,
+  "d31_mean_minus_table6_threshold_points": -0.9056333333333413,
+  "d31_s1337_minus_probe_points": 0.17680000000000007,
+  "best_minus_last_points": [
+   4.396800000000001,
+   0.7098999999999966,
+   2.3264000000000062
+  ],
+  "ref_best_minus_last_points": [
+   0.33809999999999674,
+   0.2653999999999934,
+   0.415500000000002
+  ],
+  "mask_after_20pct": [
+   0.8354166666666667,
+   0.843375,
+   0.8398333333333333
+  ],
+  "ref_mask_after_20pct": [
+   0.9980625,
+   0.9982291666666666,
+   0.9981874999999999
+  ]
+ },
+ "expectation": {
+  "registered": "within seed noise of the reference on both benchmarks",
+  "failed_on": [],
+  "holds": true
+ },
+ "signal": {
+  "prostate_s1337": {
+   "u_epi_all": 0.7906,
+   "u_epi_band": 0.6821,
+   "u_epi_range80": 9.77e-05,
+   "conf_all": 0.7906,
+   "conf_band": 0.6822,
+   "identity_holds": true,
+   "ref_conf_all": 0.8286,
+   "ref_conf_band": 0.6969,
+   "ref_u_epi_band": 0.6968,
+   "ref_u_epi_range80": 9.445e-05,
+   "phaseA_rule_collapse_persists": true
+  },
+  "prostate_s42": {
+   "u_epi_all": 0.75,
+   "u_epi_band": 0.6089,
+   "u_epi_range80": 0.000221,
+   "conf_all": 0.7501,
+   "conf_band": 0.6092,
+   "identity_holds": true,
+   "ref_conf_all": 0.8813,
+   "ref_conf_band": 0.6632,
+   "ref_u_epi_band": 0.6627,
+   "ref_u_epi_range80": 8.649e-05,
+   "phaseA_rule_collapse_persists": true
+  },
+  "prostate_s2024": {
+   "u_epi_all": 0.8801,
+   "u_epi_band": 0.6566,
+   "u_epi_range80": 0.0001639,
+   "conf_all": 0.8801,
+   "conf_band": 0.6569,
+   "identity_holds": true,
+   "ref_conf_all": 0.9015,
+   "ref_conf_band": 0.667,
+   "ref_u_epi_band": 0.6668,
+   "ref_u_epi_range80": 5.304e-05,
+   "phaseA_rule_collapse_persists": true
+  },
+  "fundus_s1337": {
+   "u_epi_all": 0.859,
+   "u_epi_band": 0.6571,
+   "u_epi_range80": 0.001192,
+   "conf_all": 0.8601,
+   "conf_band": 0.6583,
+   "identity_holds": true,
+   "ref_conf_all": 0.7926,
+   "ref_conf_band": 0.6247,
+   "ref_u_epi_band": 0.6234,
+   "ref_u_epi_range80": 0.0002601,
+   "phaseA_rule_collapse_persists": true
+  },
+  "fundus_s42": {
+   "u_epi_all": 0.7801,
+   "u_epi_band": 0.6479,
+   "u_epi_range80": 0.0009738,
+   "conf_all": 0.78,
+   "conf_band": 0.6478,
+   "identity_holds": true,
+   "ref_conf_all": 0.8947,
+   "ref_conf_band": 0.6345,
+   "ref_u_epi_band": 0.6345,
+   "ref_u_epi_range80": 0.0005715,
+   "phaseA_rule_collapse_persists": true
+  },
+  "fundus_s2024": {
+   "u_epi_all": 0.8347,
+   "u_epi_band": 0.62,
+   "u_epi_range80": 0.0007725,
+   "conf_all": 0.8348,
+   "conf_band": 0.6202,
+   "identity_holds": true,
+   "ref_conf_all": 0.89,
+   "ref_conf_band": 0.6514,
+   "ref_u_epi_band": 0.6517,
+   "ref_u_epi_range80": 0.0004138,
+   "phaseA_rule_collapse_persists": true
+  }
+ },
+ "assertions_passed": [
+  "every file of the S29 sendback (63, four parts) is in the results tier and matches its part manifest (size and sha256)",
+  "the sendback carries no file of an earlier training (the collector used HELD_MANIFEST_S29.txt)",
+  "the job lists that ran are the registered ones (tools v14)",
+  "runner: six jobs, one attempt each, each PASS (no failure branch, no relaunch)",
+  "no S29_first_attempt folder: the failure branch of RUNBOOK S29 was not used",
+  "the smoke run (Fundus, 20 iterations) passed",
+  "recorded absence (V-25): the step-0 preflight file and the step-1 self-test file of RUNBOOK S29 are not in the sendback",
+  "v18F_prostate_percentile_s1337: one training from iteration 0 to the last iteration, no resume event",
+  "v18F_prostate_percentile_s1337: configuration = percentile gate, keep fraction 0.80, headline settings; the gate is named in the log",
+  "v18F_prostate_percentile_s1337: the command in its log equals its line of jobs_D31.txt (the runner adds only the GPU index)",
+  "v18F_prostate_percentile_s1337: recorded arguments = those of the D-30 runs of the dataset except the method (and seed, name, GPU)",
+  "v18F_prostate_percentile_s1337: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18F_prostate_percentile_s1337: labeled slices identical to those of its threshold reference (v18B_prostate_fixmatch_split1337_init1337)",
+  "v18F_prostate_percentile_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18F_prostate_percentile_s1337: the mean of the pseudo-label mask is logged at every evaluation interval",
+  "v18F_prostate_percentile_s1337: its reference value is the one D-29 was read against",
+  "v18F_prostate_percentile_s42: one training from iteration 0 to the last iteration, no resume event",
+  "v18F_prostate_percentile_s42: configuration = percentile gate, keep fraction 0.80, headline settings; the gate is named in the log",
+  "v18F_prostate_percentile_s42: the command in its log equals its line of jobs_D31.txt (the runner adds only the GPU index)",
+  "v18F_prostate_percentile_s42: recorded arguments = those of the D-30 runs of the dataset except the method (and seed, name, GPU)",
+  "v18F_prostate_percentile_s42: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18F_prostate_percentile_s42: labeled slices identical to those of its threshold reference (v18B_prostate_fixmatch_s42)",
+  "v18F_prostate_percentile_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18F_prostate_percentile_s42: the mean of the pseudo-label mask is logged at every evaluation interval",
+  "v18F_prostate_percentile_s42: its reference value is the one D-29 was read against",
+  "v18F_prostate_percentile_s2024: one training from iteration 0 to the last iteration, no resume event",
+  "v18F_prostate_percentile_s2024: configuration = percentile gate, keep fraction 0.80, headline settings; the gate is named in the log",
+  "v18F_prostate_percentile_s2024: the command in its log equals its line of jobs_D31.txt (the runner adds only the GPU index)",
+  "v18F_prostate_percentile_s2024: recorded arguments = those of the D-30 runs of the dataset except the method (and seed, name, GPU)",
+  "v18F_prostate_percentile_s2024: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18F_prostate_percentile_s2024: labeled slices identical to those of its threshold reference (v18B_prostate_fixmatch_s2024)",
+  "v18F_prostate_percentile_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18F_prostate_percentile_s2024: the mean of the pseudo-label mask is logged at every evaluation interval",
+  "v18F_prostate_percentile_s2024: its reference value is the one D-29 was read against",
+  "v18F_fundus_percentile_s1337: one training from iteration 0 to the last iteration, no resume event",
+  "v18F_fundus_percentile_s1337: configuration = percentile gate, keep fraction 0.80, headline settings; the gate is named in the log",
+  "v18F_fundus_percentile_s1337: the command in its log equals its line of jobs_D31.txt (the runner adds only the GPU index)",
+  "v18F_fundus_percentile_s1337: recorded arguments = those of the D-30 runs of the dataset except the method (and seed, name, GPU)",
+  "v18F_fundus_percentile_s1337: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18F_fundus_percentile_s1337: labeled slices identical to those of its threshold reference (v18B_fundus_fixmatch_split1337_init1337)",
+  "v18F_fundus_percentile_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18F_fundus_percentile_s1337: the mean of the pseudo-label mask is logged at every evaluation interval",
+  "v18F_fundus_percentile_s1337: its reference value is the one D-29 was read against",
+  "v18F_fundus_percentile_s42: one training from iteration 0 to the last iteration, no resume event",
+  "v18F_fundus_percentile_s42: configuration = percentile gate, keep fraction 0.80, headline settings; the gate is named in the log",
+  "v18F_fundus_percentile_s42: the command in its log equals its line of jobs_D31.txt (the runner adds only the GPU index)",
+  "v18F_fundus_percentile_s42: recorded arguments = those of the D-30 runs of the dataset except the method (and seed, name, GPU)",
+  "v18F_fundus_percentile_s42: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18F_fundus_percentile_s42: labeled slices identical to those of its threshold reference (v18B_fundus_fixmatch_s42)",
+  "v18F_fundus_percentile_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18F_fundus_percentile_s42: the mean of the pseudo-label mask is logged at every evaluation interval",
+  "v18F_fundus_percentile_s42: its reference value is the one D-29 was read against",
+  "v18F_fundus_percentile_s2024: one training from iteration 0 to the last iteration, no resume event",
+  "v18F_fundus_percentile_s2024: configuration = percentile gate, keep fraction 0.80, headline settings; the gate is named in the log",
+  "v18F_fundus_percentile_s2024: the command in its log equals its line of jobs_D31.txt (the runner adds only the GPU index)",
+  "v18F_fundus_percentile_s2024: recorded arguments = those of the D-30 runs of the dataset except the method (and seed, name, GPU)",
+  "v18F_fundus_percentile_s2024: code snapshot, recorded hashes and the release code are the same bytes",
+  "v18F_fundus_percentile_s2024: labeled slices identical to those of its threshold reference (v18B_fundus_fixmatch_s2024)",
+  "v18F_fundus_percentile_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18F_fundus_percentile_s2024: the mean of the pseudo-label mask is logged at every evaluation interval",
+  "v18F_fundus_percentile_s2024: its reference value is the one D-29 was read against",
+  "Table 6 row \"threshold\" read from main.tex (the body's own words)",
+  "Table 6 row \"percentile_probe\" read from main.tex (the body's own words)",
+  "Table 6 row \"daep\" read from main.tex (the body's own words)",
+  "prostate: TOST and the paired test use the same differences; the TOST verdict equals \"90 % CI inside +-0.5\"",
+  "fundus: TOST and the paired test use the same differences; the TOST verdict equals \"90 % CI inside +-0.5\"",
+  "six harness JSONs, EMA teachers"
+ ]
+}

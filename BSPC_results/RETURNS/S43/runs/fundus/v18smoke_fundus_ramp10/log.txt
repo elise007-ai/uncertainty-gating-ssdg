@@ -1,0 +1,55 @@
+[09:12:38.516] python train_fourierfuse_v18_revision.py --dataset fundus --lb_num 20 --lb_domain 3 --domain_num 4 --max_iterations 20 --num_eval_iter 10 --base_lr 0.0005 --label_bs 4 --unlabel_bs 4 --swad_start_iter 10000 --swad_update_every 100 --swad_bn_recalib_batches 20 --warmup --warmup_period 150 --AdamW --amp 1 --ff_base_features 64 --ff_spec_consistency_weight 0.5 --ff_fda_beta 0.05 --consistency 1.0 --consistency_rampup 150.0 --ema_decay 0.995 --daep_alpha 1.0 --daep_beta 1.0 --daep_gamma 1.0 --proto_per_domain 2 --proto_ema 0.99 --evid_lambda_kl_max 0.02 --evid_anneal_iters 10000 --save_model --overwrite --consistency_ramp_frac 0.10 --resume off --method daep --seed 43 --save_name v18smoke_fundus_ramp10 --gpu 0
+[09:12:38.517] Namespace(dataset='fundus', save_name='v18smoke_fundus_ramp10', overwrite=True, max_iterations=20, num_eval_iter=10, deterministic=1, base_lr=0.0005, seed=43, gpu='0', amp=1, label_bs=4, unlabel_bs=4, test_bs=1, domain_num=4, lb_domain=3, lb_num=20, lb_ratio=0, ema_decay=0.995, consistency=1.0, consistency_rampup=150.0, consistency_weight_cap=0.5, consistency_ramp_frac=0.1, selftest_ramp=False, save_model=True, img_size=512, AdamW=True, warmup=True, warmup_period=150, ff_base_features=64, ff_bilinear=False, ff_spec_consistency_weight=0.5, ff_fda_beta=0.05, ff_fda_prob=0.5, ff_no_fda=False, ff_no_spec_consistency=False, swad_enable=True, swad_start_iter=10000, swad_update_every=100, swad_bn_recalib_batches=20, daep_alpha=1.0, daep_beta=1.0, daep_gamma=1.0, daep_no_ale=False, daep_no_epi=False, daep_no_dom=False, daep_threshold_baseline=False, method='daep', cadg_n_bins=20, cadg_refit_every=200, cadg_min_count=50000, cadg_recalibrate_ale=False, cadg_seed_split=True, cg_n_views=3, cg_agree_frac=1.0, cg_conf_floor=0.0, pg_keep_frac=0.8, proto_per_domain=2, proto_ema=0.99, evid_lambda_kl_max=0.02, evid_anneal_iters=10000, split_seed=-1, head='evidential', evid_activation='softplus', evid_loss='mse', evid_kl_schedule='linear', evid_prior_w=1.0, evid_temperature=1.0, evid_max_evidence=0.0, mc_dropout_p=0.0, mc_dropout_place='uamt', mc_target='teacher', mc_T=8, devis_beta0=0.01, devis_cup_weight=1.0, devis_gate='soft', devis_u_thr=0.2, devis_variant='published', devis_rel_epochs=99, devis_rel_lambda_epochs=50, medl_arch2='resunet', medl_xi=1.0, medl_rel_thr=0.5, medl_lambda_fisher=0.1, medl_lambda1=0.5, medl_report='net1', resume='off', resume_every_epochs=2, die_after_epoch=-1, grad_clip=5.0, _resume_from=None)
+[09:12:38.575] [v16 DATASET] fundus: num_classes=2, K=3, num_channels=3, patch_size=256, min_v/max_v=0.5/1.5, fillcolor=255, lb_bs=4, ulb_bs=4
+[09:12:39.495] [v18 CFG] head=evidential act=softplus loss=mse kl=linear/0.02/10000 W=1.0 T=1.0 cap=0.0 dropout=0.0 place=uamt mc_target=teacher method=daep split_seed=-1
+[09:12:39.495] [v16 MODEL] trainable params = 31,037,763 (SynFoC foundation-backed ~ 6x this)
+[09:12:39.495] [v16 DAEP] alpha=1.0, beta=1.0, gamma=1.0 | ablations: no_ale=False, no_epi=False, no_dom=False, threshold_baseline=False
+[09:12:39.495] [v16 OPT] base_lr=0.0005, AdamW=True, warmup=True, warmup_period=150, amp=1, grad_clip=5.0
+[09:12:39.495] [v16 CW] consistency=1.0, rampup=150.0, cap=0.5, ramp_frac=0.1 (short per-iteration ramp (D-13))
+[09:12:39.495] [CADG] disabled (method=daep).
+[09:12:39.496] [seed_split] seed=43 data_num=320 lb_num=20 labeled_idxs=[9, 19, 49, 73, 90, 146, 189, 190, 201, 221, 222, 232, 236, 255, 263, 280, 295, 306, 311, 319]
+[09:12:42.846] 10 iterations per epoch, 2 epochs total, max_iterations=20
+[09:12:51.977] iter 10: loss=2.5075, sup=1.6496, unsup=1.6816, spec=0.1797, cw=0.429, w_mean=0.537, w_min=0.443, U_ale=0.086, U_epi=0.460, U_dom=0.118, S_mean=5.11
+[09:12:51.977] Testing student...
+[09:12:57.044] domain1 epoch 1: val_cup_dice=0.2331 val_disc_dice=0.4952 hd=98.97 hd=101.15
+[09:13:02.705] domain2 epoch 1: val_cup_dice=0.1344 val_disc_dice=0.2482 hd=104.84 hd=121.96
+[09:13:09.188] domain3 epoch 1: val_cup_dice=0.2560 val_disc_dice=0.6349 hd=102.17 hd=113.23
+[09:13:16.051] domain4 epoch 1: val_cup_dice=0.0675 val_disc_dice=0.3349 hd=144.85 hd=122.35
+[09:13:16.053] epoch 1: avg val_cup_dice=0.1728 val_disc_dice=0.4283 DSDV=0.0117
+[09:13:16.055] Testing EMA teacher...
+[09:13:19.534] domain1 epoch 1: val_cup_dice=0.1885 val_disc_dice=0.3952 hd=99.86 hd=102.01
+[09:13:23.517] domain2 epoch 1: val_cup_dice=0.1187 val_disc_dice=0.2065 hd=103.18 hd=124.27
+[09:13:28.806] domain3 epoch 1: val_cup_dice=0.2065 val_disc_dice=0.5013 hd=111.60 hd=115.48
+[09:13:34.129] domain4 epoch 1: val_cup_dice=0.0449 val_disc_dice=0.3168 hd=147.46 hd=124.79
+[09:13:34.130] epoch 1: avg val_cup_dice=0.1396 val_disc_dice=0.3550 DSDV=0.0062
+[09:13:35.061] [epoch 1] student_avg=0.3005  ema_avg=0.2473  best_avg=0.3005 @ iter 10  swad_best=0.0000 @ iter -1  best_DSDV=0.0117
+[09:13:41.791] iter 20: loss=2.4424, sup=1.5869, unsup=1.5763, spec=0.0254, cw=0.500, w_mean=0.582, w_min=0.319, U_ale=0.086, U_epi=0.466, U_dom=0.036, S_mean=5.14
+[09:13:41.792] Testing student...
+[09:13:45.228] domain1 epoch 2: val_cup_dice=0.2118 val_disc_dice=0.6851 hd=82.12 hd=103.88
+[09:13:49.308] domain2 epoch 2: val_cup_dice=0.0555 val_disc_dice=0.4730 hd=113.38 hd=114.35
+[09:13:54.835] domain3 epoch 2: val_cup_dice=0.4546 val_disc_dice=0.6842 hd=115.45 hd=117.36
+[09:14:00.427] domain4 epoch 2: val_cup_dice=0.1070 val_disc_dice=0.1947 hd=132.24 hd=122.95
+[09:14:00.428] epoch 2: avg val_cup_dice=0.2072 val_disc_dice=0.5092 DSDV=0.0261
+[09:14:00.429] Testing EMA teacher...
+[09:14:04.194] domain1 epoch 2: val_cup_dice=0.0194 val_disc_dice=0.6773 hd=64.13 hd=100.17
+[09:14:08.254] domain2 epoch 2: val_cup_dice=0.0332 val_disc_dice=0.3646 hd=113.77 hd=112.74
+[09:14:13.658] domain3 epoch 2: val_cup_dice=0.0431 val_disc_dice=0.6590 hd=140.76 hd=115.14
+[09:14:19.118] domain4 epoch 2: val_cup_dice=0.0139 val_disc_dice=0.2387 hd=146.14 hd=118.50
+[09:14:19.119] epoch 2: avg val_cup_dice=0.0274 val_disc_dice=0.4849 DSDV=0.0094
+[09:14:20.058] [epoch 2] student_avg=0.3582  ema_avg=0.2561  best_avg=0.3582 @ iter 20  swad_best=0.0000 @ iter -1  best_DSDV=0.0261
+[09:14:20.082] ============================================================
+[09:14:20.083] TRAINING COMPLETE — FourierFuse v16 summary
+[09:14:20.083]   Best avg dice (student): 0.358232 at iter 20
+[09:14:20.083]   Best cup dice: 0.207230
+[09:14:20.083]   Best disc dice: 0.509233
+[09:14:20.084]   Best DSDV: 0.026142
+[09:14:20.084]   --- Per-domain metrics at best avg dice (iter 20) ---
+[09:14:20.084]     Domain 1 — cup: Dice=0.211833, HD95=82.1158, ASD=43.4586
+[09:14:20.084]     Domain 1 — disc: Dice=0.685092, HD95=103.8815, ASD=48.8704
+[09:14:20.085]     Domain 2 — cup: Dice=0.055498, HD95=113.3790, ASD=69.3562
+[09:14:20.085]     Domain 2 — disc: Dice=0.472995, HD95=114.3530, ASD=56.2757
+[09:14:20.085]     Domain 3 — cup: Dice=0.454576, HD95=115.4463, ASD=29.6747
+[09:14:20.085]     Domain 3 — disc: Dice=0.684174, HD95=117.3588, ASD=61.5322
+[09:14:20.085]     Domain 4 — cup: Dice=0.107015, HD95=132.2428, ASD=67.9184
+[09:14:20.086]     Domain 4 — disc: Dice=0.194673, HD95=122.9513, ASD=73.9258
+[09:14:20.086] ============================================================

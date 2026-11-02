@@ -1,0 +1,7 @@
+dataset,comparison,mean_dice,std_dice,ref_mean,ref_std,delta,per_seed_delta_1337_42_2024,t_paired,p_paired,n_seeds_positive,sign_test_p_one_sided,sign_test_p_two_sided,meets_phaseB_rule,gate_changes_result_rule4
+prostate,rule3_belief_gate_released_vs_threshold_reference,0.8594,0.0083,0.8590,0.0026,+0.0004,-0.0115;+0.0029;+0.0098,0.0565,0.9600,2,0.5000,1.0000,0,
+prostate,rule4_belief_gate_vs_threshold_gate_same_released_objective,0.8594,0.0083,0.8598,0.0058,-0.0004,-0.0093;+0.0069;+0.0012,-0.0850,0.9400,2,0.5000,1.0000,,0
+prostate,descriptive_belief_gate_released_vs_published_form_belief_gate,0.8594,0.0083,0.6447,,,-0.0097;+0.6067;+0.0470,,,,,,,
+fundus,rule3_belief_gate_released_vs_threshold_reference,0.8839,0.0039,0.8853,0.0028,-0.0013,-0.0010;-0.0051;+0.0021,-0.6331,0.5914,1,0.8750,1.0000,0,
+fundus,rule4_belief_gate_vs_threshold_gate_same_released_objective,0.8839,0.0039,0.8843,0.0034,-0.0004,-0.0000;-0.0016;+0.0006,-0.5569,0.6336,1,0.8750,1.0000,,0
+fundus,descriptive_belief_gate_released_vs_published_form_belief_gate,0.8839,0.0039,0.8038,,,+0.0159;+0.0116;+0.2129,,,,,,,

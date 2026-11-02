@@ -1,0 +1,7 @@
+dataset,seed,run,best_avg,best_iter,student_avg_last,threshold_reference,ref_best_avg,ref_last,matched_minus_threshold,oracle_d33_best_avg,oracle_minus_matched,nogate_d32_best_avg,matched_minus_nogate,r34_flag,n_nonfinite,continued_from_iter
+prostate,1337,v18I_prostate_pctmatch_s1337,0.857182,30500,0.8066,v18B_prostate_fixmatch_split1337_init1337,0.861977,0.8593,-0.004795,0.880456,+0.023274,0.858165,-0.000983,ok,0,
+prostate,42,v18I_prostate_pctmatch_s42,0.833638,26500,0.6385,v18B_prostate_fixmatch_s42,0.858066,0.8212,-0.024428,0.880977,+0.047339,0.864230,-0.030592,ok,0,
+prostate,2024,v18I_prostate_pctmatch_s2024,0.856042,28500,0.6567,v18B_prostate_fixmatch_s2024,0.857017,0.7526,-0.000975,0.882660,+0.026618,0.850997,+0.005045,ok,0,
+fundus,1337,v18I_fundus_pctmatch_s1337,0.878317,18000,0.8740,v18B_fundus_fixmatch_split1337_init1337,0.882081,0.8787,-0.003764,0.902968,+0.024651,0.882935,-0.004618,ok,0,
+fundus,42,v18I_fundus_pctmatch_s42,0.881420,28000,0.8808,v18B_fundus_fixmatch_s42,0.887454,0.8848,-0.006034,0.900992,+0.019572,0.883125,-0.001705,ok,0,
+fundus,2024,v18I_fundus_pctmatch_s2024,0.886617,18000,0.8792,v18B_fundus_fixmatch_s2024,0.886255,0.8821,+0.000362,0.903669,+0.017052,0.886822,-0.000205,ok,0,27000

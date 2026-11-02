@@ -1,0 +1,661 @@
+{
+ "session": "S43 (for the S43b layer)",
+ "reader": "make_extra_s43b.py",
+ "source": "WRITING/S43b_factcheck.md",
+ "N75": {
+  "table11_max_gap_all": 7.0426799815837e-05,
+  "table11_max_gap_band": 0.0009912135408735034,
+  "exception_run": "v18B_fundus_fixmatch_split1337_init1337",
+  "exception_gap_all": 0.005869151852374355,
+  "exception_gap_band": 0.0038730275179268414
+ },
+ "gate_signals": {
+  "BUSI|v18B_BUSI_softmax_fixmatch_s1337": {
+   "family": "softmax head",
+   "signal": "conf",
+   "band_auroc": 0.6335,
+   "range80_all": 0.009177,
+   "range80_band": 0.1751
+  },
+  "BUSI|v18B_BUSI_softmax_fixmatch_s2024": {
+   "family": "softmax head",
+   "signal": "conf",
+   "band_auroc": 0.6113,
+   "range80_all": 0.00421,
+   "range80_band": 0.1596
+  },
+  "BUSI|v18B_BUSI_softmax_fixmatch_s42": {
+   "family": "softmax head",
+   "signal": "conf",
+   "band_auroc": 0.6136,
+   "range80_all": 0.004386,
+   "range80_band": 0.1423
+  },
+  "MNMS|v18B_MNMS_softmax_fixmatch_s1337": {
+   "family": "softmax head",
+   "signal": "conf",
+   "band_auroc": 0.7936,
+   "range80_all": 9.06e-06,
+   "range80_band": 0.0201
+  },
+  "MNMS|v18B_MNMS_softmax_fixmatch_s2024": {
+   "family": "softmax head",
+   "signal": "conf",
+   "band_auroc": 0.7852,
+   "range80_all": 3.07e-06,
+   "range80_band": 0.01755
+  },
+  "MNMS|v18B_MNMS_softmax_fixmatch_s42": {
+   "family": "softmax head",
+   "signal": "conf",
+   "band_auroc": 0.7688,
+   "range80_all": 3.815e-06,
+   "range80_band": 0.01681
+  },
+  "fundus|ENSEMBLE3_split1337_fixmatch": {
+   "family": "ensemble",
+   "signal": "conf",
+   "band_auroc": 0.6519,
+   "range80_all": 0.0001804,
+   "range80_band": 0.2145
+  },
+  "fundus|v18B_fundus_devis_s1337": {
+   "family": "DEviS",
+   "signal": "u_epi",
+   "band_auroc": 0.6899,
+   "range80_all": 0.004078,
+   "range80_band": 0.02015
+  },
+  "fundus|v18B_fundus_devis_s2024": {
+   "family": "DEviS",
+   "signal": "u_epi",
+   "band_auroc": 0.695,
+   "range80_all": 0.002486,
+   "range80_band": 0.2721
+  },
+  "fundus|v18B_fundus_devis_s42": {
+   "family": "DEviS",
+   "signal": "u_epi",
+   "band_auroc": 0.674,
+   "range80_all": 0.006442,
+   "range80_band": 0.04911
+  },
+  "fundus|v18B_fundus_devisobj_threshold_s1337": {
+   "family": "DEviS",
+   "signal": "conf",
+   "band_auroc": 0.6833,
+   "range80_all": 0.002742,
+   "range80_band": 0.1268
+  },
+  "fundus|v18B_fundus_devisobj_threshold_s2024": {
+   "family": "DEviS",
+   "signal": "conf",
+   "band_auroc": 0.7047,
+   "range80_all": 0.003377,
+   "range80_band": 0.1228
+  },
+  "fundus|v18B_fundus_devisobj_threshold_s42": {
+   "family": "DEviS",
+   "signal": "conf",
+   "band_auroc": 0.6886,
+   "range80_all": 0.003689,
+   "range80_band": 0.1595
+  },
+  "fundus|v18B_fundus_mcdropout2_s1337": {
+   "family": "MC-dropout gate",
+   "signal": "mc_entropy",
+   "band_auroc": 0.5661,
+   "range80_all": 0.004595,
+   "range80_band": 0.01372
+  },
+  "fundus|v18B_fundus_mcdropout2_s2024": {
+   "family": "MC-dropout gate",
+   "signal": "mc_entropy",
+   "band_auroc": 0.6054,
+   "range80_all": 0.002826,
+   "range80_band": 0.01189
+  },
+  "fundus|v18B_fundus_mcdropout2_s42": {
+   "family": "MC-dropout gate",
+   "signal": "mc_entropy",
+   "band_auroc": 0.6,
+   "range80_all": 0.003629,
+   "range80_band": 0.01565
+  },
+  "fundus|v18B_fundus_medl_s1337": {
+   "family": "MEDL",
+   "signal": "caef_u",
+   "band_auroc": 0.6179,
+   "range80_all": 0.003845,
+   "range80_band": 0.01382
+  },
+  "fundus|v18B_fundus_medl_s2024": {
+   "family": "MEDL",
+   "signal": "caef_u",
+   "band_auroc": 0.6179,
+   "range80_all": 0.004772,
+   "range80_band": 0.02356
+  },
+  "fundus|v18B_fundus_medl_s42": {
+   "family": "MEDL",
+   "signal": "caef_u",
+   "band_auroc": 0.6568,
+   "range80_all": 0.002119,
+   "range80_band": 0.01657
+  },
+  "fundus|v18B_fundus_softmax_fixmatch_s1337": {
+   "family": "softmax head",
+   "signal": "conf",
+   "band_auroc": 0.723,
+   "range80_all": 0.0001171,
+   "range80_band": 0.0636
+  },
+  "fundus|v18B_fundus_softmax_fixmatch_s2024": {
+   "family": "softmax head",
+   "signal": "conf",
+   "band_auroc": 0.7067,
+   "range80_all": 0.0001244,
+   "range80_band": 0.05405
+  },
+  "fundus|v18B_fundus_softmax_fixmatch_s42": {
+   "family": "softmax head",
+   "signal": "conf",
+   "band_auroc": 0.699,
+   "range80_all": 0.0001093,
+   "range80_band": 0.03964
+  },
+  "fundus|v18D_fundus_devisrel_threshold_s1337": {
+   "family": "DEviS",
+   "signal": "conf",
+   "band_auroc": 0.6837,
+   "range80_all": 0.001665,
+   "range80_band": 0.06059
+  },
+  "fundus|v18D_fundus_devisrel_threshold_s2024": {
+   "family": "DEviS",
+   "signal": "conf",
+   "band_auroc": 0.6811,
+   "range80_all": 0.001779,
+   "range80_band": 0.07438
+  },
+  "fundus|v18D_fundus_devisrel_threshold_s42": {
+   "family": "DEviS",
+   "signal": "conf",
+   "band_auroc": 0.6763,
+   "range80_all": 0.001627,
+   "range80_band": 0.05002
+  },
+  "fundus|v18E_fundus_devisrel_belief_s1337": {
+   "family": "DEviS",
+   "signal": "u_epi",
+   "band_auroc": 0.6851,
+   "range80_all": 0.002402,
+   "range80_band": 0.03526
+  },
+  "fundus|v18E_fundus_devisrel_belief_s2024": {
+   "family": "DEviS",
+   "signal": "u_epi",
+   "band_auroc": 0.6779,
+   "range80_all": 0.002129,
+   "range80_band": 0.01484
+  },
+  "fundus|v18E_fundus_devisrel_belief_s42": {
+   "family": "DEviS",
+   "signal": "u_epi",
+   "band_auroc": 0.6667,
+   "range80_all": 0.002817,
+   "range80_band": 0.01492
+  },
+  "prostate|ENSEMBLE3_split1337_fixmatch": {
+   "family": "ensemble",
+   "signal": "conf",
+   "band_auroc": 0.7197,
+   "range80_all": 3.54e-05,
+   "range80_band": 0.3223
+  },
+  "prostate|v18B_prostate_devis_s1337": {
+   "family": "DEviS",
+   "signal": "u_epi",
+   "band_auroc": 0.6604,
+   "range80_all": 9.349e-05,
+   "range80_band": 0.02091
+  },
+  "prostate|v18B_prostate_devis_s2024": {
+   "family": "DEviS",
+   "signal": "u_epi",
+   "band_auroc": 0.6765,
+   "range80_all": 0.0005956,
+   "range80_band": 0.1146
+  },
+  "prostate|v18B_prostate_devis_s42": {
+   "family": "DEviS",
+   "signal": "u_epi",
+   "band_auroc": 0.5068,
+   "range80_all": 0.004148,
+   "range80_band": 0.3689
+  },
+  "prostate|v18B_prostate_devisobj_threshold_s1337": {
+   "family": "DEviS",
+   "signal": "conf",
+   "band_auroc": 0.6897,
+   "range80_all": 0.0001416,
+   "range80_band": 0.05857
+  },
+  "prostate|v18B_prostate_devisobj_threshold_s2024": {
+   "family": "DEviS",
+   "signal": "conf",
+   "band_auroc": 0.6899,
+   "range80_all": 0.0004866,
+   "range80_band": 0.304
+  },
+  "prostate|v18B_prostate_devisobj_threshold_s42": {
+   "family": "DEviS",
+   "signal": "conf",
+   "band_auroc": 0.6822,
+   "range80_all": 0.0001219,
+   "range80_band": 0.07253
+  },
+  "prostate|v18B_prostate_mcdropout2_s1337": {
+   "family": "MC-dropout gate",
+   "signal": "mc_entropy",
+   "band_auroc": 0.6927,
+   "range80_all": 0.0006961,
+   "range80_band": 0.01223
+  },
+  "prostate|v18B_prostate_mcdropout2_s2024": {
+   "family": "MC-dropout gate",
+   "signal": "mc_entropy",
+   "band_auroc": 0.6721,
+   "range80_all": 0.0005659,
+   "range80_band": 0.01271
+  },
+  "prostate|v18B_prostate_mcdropout2_s42": {
+   "family": "MC-dropout gate",
+   "signal": "mc_entropy",
+   "band_auroc": 0.6551,
+   "range80_all": 0.00074,
+   "range80_band": 0.01729
+  },
+  "prostate|v18B_prostate_medl_s1337": {
+   "family": "MEDL",
+   "signal": "caef_u",
+   "band_auroc": 0.6596,
+   "range80_all": 0.0001117,
+   "range80_band": 0.00501
+  },
+  "prostate|v18B_prostate_medl_s2024": {
+   "family": "MEDL",
+   "signal": "caef_u",
+   "band_auroc": 0.6917,
+   "range80_all": 5.136e-05,
+   "range80_band": 0.009442
+  },
+  "prostate|v18B_prostate_medl_s42": {
+   "family": "MEDL",
+   "signal": "caef_u",
+   "band_auroc": 0.5942,
+   "range80_all": 3.659e-05,
+   "range80_band": 0.003001
+  },
+  "prostate|v18B_prostate_softmax_fixmatch_s1337": {
+   "family": "softmax head",
+   "signal": "conf",
+   "band_auroc": 0.7218,
+   "range80_all": 4.967e-06,
+   "range80_band": 0.04137
+  },
+  "prostate|v18B_prostate_softmax_fixmatch_s2024": {
+   "family": "softmax head",
+   "signal": "conf",
+   "band_auroc": 0.7126,
+   "range80_all": 9.219e-06,
+   "range80_band": 0.06211
+  },
+  "prostate|v18B_prostate_softmax_fixmatch_s42": {
+   "family": "softmax head",
+   "signal": "conf",
+   "band_auroc": 0.7181,
+   "range80_all": 5.762e-06,
+   "range80_band": 0.0412
+  },
+  "prostate|v18D_prostate_devisrel_threshold_s1337": {
+   "family": "DEviS",
+   "signal": "conf",
+   "band_auroc": 0.7094,
+   "range80_all": 0.0001817,
+   "range80_band": 0.06236
+  },
+  "prostate|v18D_prostate_devisrel_threshold_s2024": {
+   "family": "DEviS",
+   "signal": "conf",
+   "band_auroc": 0.7177,
+   "range80_all": 0.000128,
+   "range80_band": 0.07292
+  },
+  "prostate|v18D_prostate_devisrel_threshold_s42": {
+   "family": "DEviS",
+   "signal": "conf",
+   "band_auroc": 0.6793,
+   "range80_all": 0.000153,
+   "range80_band": 0.04958
+  },
+  "prostate|v18E_prostate_devisrel_belief_s1337": {
+   "family": "DEviS",
+   "signal": "u_epi",
+   "band_auroc": 0.6998,
+   "range80_all": 0.0006025,
+   "range80_band": 0.1017
+  },
+  "prostate|v18E_prostate_devisrel_belief_s2024": {
+   "family": "DEviS",
+   "signal": "u_epi",
+   "band_auroc": 0.7142,
+   "range80_all": 0.0002395,
+   "range80_band": 0.04662
+  },
+  "prostate|v18E_prostate_devisrel_belief_s42": {
+   "family": "DEviS",
+   "signal": "u_epi",
+   "band_auroc": 0.688,
+   "range80_all": 0.000622,
+   "range80_band": 0.08447
+  }
+ },
+ "S9_u_epi_wide": {
+  "n_checkpoints": 30,
+  "n_below_line": 27,
+  "wide": [
+   "v18B_fundus_medl_s1337",
+   "v18B_fundus_medl_s2024",
+   "v18B_fundus_medl_s42"
+  ],
+  "range_min": 0.02916,
+  "range_max": 0.03805,
+  "band_min": 0.5828,
+  "band_max": 0.6208
+ },
+ "families": {
+  "softmax head": {
+   "conf": {
+    "BUSI": {
+     "n": 3,
+     "band_min": 0.6113,
+     "band_max": 0.6335,
+     "range_all_min": 0.00421,
+     "range_all_max": 0.009177,
+     "range_band_min": 0.1423,
+     "range_band_max": 0.1751,
+     "n_phaseA_persists": 3
+    },
+    "MNMS": {
+     "n": 3,
+     "band_min": 0.7688,
+     "band_max": 0.7936,
+     "range_all_min": 3.07e-06,
+     "range_all_max": 9.06e-06,
+     "range_band_min": 0.01681,
+     "range_band_max": 0.0201,
+     "n_phaseA_persists": 0
+    },
+    "fundus": {
+     "n": 3,
+     "band_min": 0.699,
+     "band_max": 0.723,
+     "range_all_min": 0.0001093,
+     "range_all_max": 0.0001244,
+     "range_band_min": 0.03964,
+     "range_band_max": 0.0636,
+     "n_phaseA_persists": 1
+    },
+    "prostate": {
+     "n": 3,
+     "band_min": 0.7126,
+     "band_max": 0.7218,
+     "range_all_min": 4.967e-06,
+     "range_all_max": 9.219e-06,
+     "range_band_min": 0.0412,
+     "range_band_max": 0.06211,
+     "n_phaseA_persists": 0
+    }
+   }
+  },
+  "MC-dropout gate": {
+   "mc_entropy": {
+    "fundus": {
+     "n": 3,
+     "band_min": 0.5661,
+     "band_max": 0.6054,
+     "range_all_min": 0.002826,
+     "range_all_max": 0.004595,
+     "range_band_min": 0.01189,
+     "range_band_max": 0.01565,
+     "n_phaseA_persists": 3
+    },
+    "prostate": {
+     "n": 3,
+     "band_min": 0.6551,
+     "band_max": 0.6927,
+     "range_all_min": 0.0005659,
+     "range_all_max": 0.00074,
+     "range_band_min": 0.01223,
+     "range_band_max": 0.01729,
+     "n_phaseA_persists": 3
+    }
+   },
+   "u_epi": {
+    "fundus": {
+     "n": 3,
+     "band_min": 0.568,
+     "band_max": 0.6055,
+     "range_all_min": 0.0001385,
+     "range_all_max": 0.0004748,
+     "range_band_min": 0.001879,
+     "range_band_max": 0.002471,
+     "n_phaseA_persists": 3
+    },
+    "prostate": {
+     "n": 3,
+     "band_min": 0.6565,
+     "band_max": 0.6912,
+     "range_all_min": 7.249e-05,
+     "range_all_max": 0.0001214,
+     "range_band_min": 0.002671,
+     "range_band_max": 0.003365,
+     "n_phaseA_persists": 3
+    }
+   }
+  },
+  "DEviS": {
+   "u_epi": {
+    "fundus": {
+     "n": 12,
+     "band_min": 0.6662,
+     "band_max": 0.7034,
+     "range_all_min": 0.002129,
+     "range_all_max": 0.006442,
+     "range_band_min": 0.014,
+     "range_band_max": 0.2721,
+     "n_phaseA_persists": 11
+    },
+    "prostate": {
+     "n": 12,
+     "band_min": 0.5068,
+     "band_max": 0.7161,
+     "range_all_min": 9.349e-05,
+     "range_all_max": 0.004148,
+     "range_band_min": 0.02091,
+     "range_band_max": 0.5813,
+     "n_phaseA_persists": 9
+    }
+   },
+   "conf": {
+    "fundus": {
+     "n": 12,
+     "band_min": 0.6761,
+     "band_max": 0.7309,
+     "range_all_min": 0.001549,
+     "range_all_max": 0.004694,
+     "range_band_min": 0.05002,
+     "range_band_max": 0.2613,
+     "n_phaseA_persists": 10
+    },
+    "prostate": {
+     "n": 12,
+     "band_min": 0.5072,
+     "band_max": 0.7184,
+     "range_all_min": 4.683e-05,
+     "range_all_max": 0.002075,
+     "range_band_min": 0.04861,
+     "range_band_max": 0.304,
+     "n_phaseA_persists": 7
+    }
+   }
+  },
+  "MEDL": {
+   "caef_u": {
+    "fundus": {
+     "n": 3,
+     "band_min": 0.6179,
+     "band_max": 0.6568,
+     "range_all_min": 0.002119,
+     "range_all_max": 0.004772,
+     "range_band_min": 0.01382,
+     "range_band_max": 0.02356,
+     "n_phaseA_persists": 3
+    },
+    "prostate": {
+     "n": 3,
+     "band_min": 0.5942,
+     "band_max": 0.6917,
+     "range_all_min": 3.659e-05,
+     "range_all_max": 0.0001117,
+     "range_band_min": 0.003001,
+     "range_band_max": 0.009442,
+     "n_phaseA_persists": 3
+    }
+   },
+   "u_epi": {
+    "fundus": {
+     "n": 3,
+     "band_min": 0.5828,
+     "band_max": 0.6208,
+     "range_all_min": 0.02916,
+     "range_all_max": 0.03805,
+     "range_band_min": 0.06164,
+     "range_band_max": 0.09784,
+     "n_phaseA_persists": 0
+    },
+    "prostate": {
+     "n": 3,
+     "band_min": 0.5801,
+     "band_max": 0.6777,
+     "range_all_min": 0.001079,
+     "range_all_max": 0.003397,
+     "range_band_min": 0.01014,
+     "range_band_max": 0.05641,
+     "n_phaseA_persists": 3
+    }
+   }
+  },
+  "ensemble": {
+   "conf": {
+    "fundus": {
+     "n": 1,
+     "band_min": 0.6519,
+     "band_max": 0.6519,
+     "range_all_min": 0.0001804,
+     "range_all_max": 0.0001804,
+     "range_band_min": 0.2145,
+     "range_band_max": 0.2145,
+     "n_phaseA_persists": 1
+    },
+    "prostate": {
+     "n": 1,
+     "band_min": 0.7197,
+     "band_max": 0.7197,
+     "range_all_min": 3.54e-05,
+     "range_all_max": 3.54e-05,
+     "range_band_min": 0.3223,
+     "range_band_max": 0.3223,
+     "n_phaseA_persists": 0
+    }
+   },
+   "ens_entropy": {
+    "fundus": {
+     "n": 1,
+     "band_min": 0.6518,
+     "band_max": 0.6518,
+     "range_all_min": 0.001246,
+     "range_all_max": 0.001246,
+     "range_band_min": 0.5152,
+     "range_band_max": 0.5152,
+     "n_phaseA_persists": 1
+    },
+    "prostate": {
+     "n": 1,
+     "band_min": 0.7197,
+     "band_max": 0.7197,
+     "range_all_min": 0.0002872,
+     "range_all_max": 0.0002872,
+     "range_band_min": 0.6252,
+     "range_band_max": 0.6252,
+     "n_phaseA_persists": 0
+    }
+   }
+  }
+ },
+ "S9_band_u_epi": [
+  0.5068,
+  0.7161
+ ],
+ "prostate_fundus_band_all_gate_signals": [
+  0.5068,
+  0.723
+ ],
+ "C9": {
+  "per_teacher_max": 1.4600000000000057,
+  "per_teacher_max_at": [
+   "v18B_prostate_fixmatch_s42",
+   "I2CVB"
+  ],
+  "mean_curve_min": 0.09666666666666712,
+  "mean_curve_max": 1.0466666666666624,
+  "consistent": true
+ },
+ "N82": {
+  "busi_domains": {
+   "1": "benign",
+   "2": "malignant"
+  }
+ },
+ "assertions_passed": [
+  "v18B_prostate_fixmatch_split1337_init1337: a harness JSON is held",
+  "v18B_prostate_fixmatch_split1337_init1337: every held copy of its harness JSON gives the same vacuity-confidence gaps",
+  "v18B_prostate_fixmatch_s42: a harness JSON is held",
+  "v18B_prostate_fixmatch_s42: every held copy of its harness JSON gives the same vacuity-confidence gaps",
+  "v18B_prostate_fixmatch_s2024: a harness JSON is held",
+  "v18B_prostate_fixmatch_s2024: every held copy of its harness JSON gives the same vacuity-confidence gaps",
+  "v18A_prostate_daep_default_s1337: a harness JSON is held",
+  "v18A_prostate_daep_default_s1337: every held copy of its harness JSON gives the same vacuity-confidence gaps",
+  "the four Table 11 teachers: confidence and vacuity give the same AUROC to within 1e-3, over all pixels and in the band (the caption holds)",
+  "a testbed-objective teacher (the S9 exception) exceeds 1e-3, by about 0.001 above the 0.005 tolerance: \"for the testbed objective ... to within 10^-3\" (Section 4.6) is false unscoped; the registered tolerance is that of Section 4.5",
+  "the derived band summaries (598 EMA rows) agree wherever a run and signal appear twice",
+  "run counts: softmax head 3 per benchmark on four; MC-dropout gate 3 x 2; DEviS 12 x 2 (published, objective, released, belief gate); MEDL 3 x 2; ensemble 1 x 2",
+  "the 30 DEviS and MEDL checkpoints of S9: band AUROC of U_epi 0.51-0.72 (S9 and Section 4.5 hold)",
+  "F-S43b-1: MEDL's U_epi on Fundus has a central range above the 10^-2 line of the Phase-A rule on all three runs, while its band AUROC stays below 0.65: \"neither escapes the collapse\" (S9, Section 4.5) is false for it as a range statement",
+  "MEDL's fused uncertainty (CAEF; its gate thresholds the reliability computed from it, trainer line 1439) on Fundus stays below the 10^-2 line: the per-network vacuity, not the gate signal, exceeds it",
+  "every run of the five families maps to exactly one gate signal (ambiguous: [])",
+  "the gate signal of every run of the five families: softmax 12, MC dropout 6, DEviS 24, MEDL 6, ensembles 2",
+  "the signal every trained gate acts on stays within the 10^-2 range line of the Phase-A rule, on every benchmark it was trained on",
+  "on Prostate and Fundus the band AUROC of the signal each gate acts on, the ensembles' confidence included, lies in 0.51-0.72",
+  "most of them at or below the 0.70 line (\"at or near\")",
+  "the same, per family",
+  "the U_epi range of the 30 DEviS and MEDL checkpoints: 27 below the 10^-2 line; the three above it are MEDL on Fundus",
+  "the softmax confidence on M&Ms ranks band errors above 0.72 on all three runs: the letter's \"0.51 to 0.72\" is false unscoped",
+  "the ensembles: over all pixels the range stays below 1e-3; in the boundary band the entropy range exceeds 0.5 (Section 4.6: 0.63 / 0.52)",
+  "sweep: 3 teachers x 6 vendors x 19 thresholds",
+  "C9: per teacher, a vendor moves by at most 1.5 points (I2CVB) and by less than 0.8 on the other five (the text holds)",
+  "C9: the mean curve moves by 0.1 to 1.0 points (the Figure 4 caption holds)",
+  "N-82: the two BUSI \"domains\" of the data loader are the benign and malignant subsets (pathology classes, not acquisition sites)"
+ ]
+}

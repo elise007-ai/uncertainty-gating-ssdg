@@ -1,0 +1,5 @@
+[3] revision_modules.devis_released_sup_loss on cpu: 112 values equal to the reference (2e-4)
+[4] against the released functions (third_party/DEviS-main/models/criterions.py): 84 cases, largest value difference 4.77e-07, largest relative gradient difference 1.94e-07
+EPOCHS tested: [0, 1, 25, 49, 50, 75, 98]
+sha256 revision_modules.py a6fe4357a39d0020  test_devis_released_s23.py 486caa754bd11216  criterions.py 9118cabb081d1918
+PARITY ON CPU PASSED (112 + 84 checks; torch 2.5.1+cpu; released code imported from third_party/DEviS-main)

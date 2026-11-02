@@ -1,0 +1,7 @@
+dataset,seed,run,u_epi_all,u_epi_band,u_epi_range80,conf_all,conf_band,identity_holds,phaseA_rule_collapse_persists
+prostate,1337,v18G_prostate_ungated_s1337,0.8758,0.6965,7.642e-05,0.8758,0.6968,1,1
+prostate,42,v18G_prostate_ungated_s42,0.9083,0.6849,8.829e-05,0.9083,0.6852,1,1
+prostate,2024,v18G_prostate_ungated_s2024,0.9092,0.6742,7.143e-05,0.9092,0.6746,1,1
+fundus,1337,v18G_fundus_ungated_s1337,0.9089,0.6399,0.0005387,0.909,0.6403,1,1
+fundus,42,v18G_fundus_ungated_s42,0.8649,0.6454,0.0003592,0.8649,0.6453,1,1
+fundus,2024,v18G_fundus_ungated_s2024,0.8674,0.6352,0.0005013,0.8673,0.6352,1,1

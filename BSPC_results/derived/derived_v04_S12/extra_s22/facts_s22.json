@@ -1,0 +1,500 @@
+{
+ "spectral": {
+  "n_slices": {
+   "BIDMC": 261,
+   "BMC": 384,
+   "HK": 158,
+   "I2CVB": 468,
+   "RUNMC": 421,
+   "UCL": 175
+  },
+  "level_mean": {
+   "BIDMC": 0.6901,
+   "BMC": 1.1298,
+   "HK": 1.0263,
+   "I2CVB": 1.692,
+   "RUNMC": 1.6535,
+   "UCL": 1.6261
+  },
+  "level_z": {
+   "BIDMC": -3.646,
+   "BMC": -1.654,
+   "HK": -1.75,
+   "I2CVB": 2.029,
+   "RUNMC": 1.864,
+   "UCL": 1.448
+  },
+  "raw": {
+   "pc1": 0.99,
+   "pc12": 0.9983,
+   "z_band": {
+    "BIDMC": -4.279,
+    "BMC": -2.446,
+    "HK": -2.172,
+    "I2CVB": 2.045,
+    "RUNMC": 2.619,
+    "UCL": 1.727
+   },
+   "inside_hull": [
+    "BMC",
+    "HK",
+    "UCL"
+   ],
+   "swd_order": [
+    "BIDMC",
+    "HK",
+    "I2CVB",
+    "RUNMC",
+    "BMC",
+    "UCL"
+   ],
+   "frechet_order": [
+    "BIDMC",
+    "HK",
+    "RUNMC",
+    "I2CVB",
+    "UCL",
+    "BMC"
+   ],
+   "swd": {
+    "BIDMC": 0.1194,
+    "BMC": 0.0525,
+    "HK": 0.0765,
+    "I2CVB": 0.074,
+    "RUNMC": 0.0722,
+    "UCL": 0.0521
+   },
+   "frechet": {
+    "BIDMC": 1.699,
+    "BMC": 0.32,
+    "HK": 0.745,
+    "I2CVB": 0.659,
+    "RUNMC": 0.677,
+    "UCL": 0.39
+   },
+   "swd_ci": {
+    "BIDMC": [
+     0.1172,
+     0.1291
+    ],
+    "BMC": [
+     0.0497,
+     0.0606
+    ],
+    "HK": [
+     0.0714,
+     0.0812
+    ],
+    "I2CVB": [
+     0.0666,
+     0.0765
+    ],
+    "RUNMC": [
+     0.0647,
+     0.0749
+    ],
+    "UCL": [
+     0.0413,
+     0.0562
+    ]
+   }
+  },
+  "level_referenced": {
+   "pc1": 0.8788,
+   "pc12": 0.9554,
+   "z_band": {
+    "BIDMC": -1.222,
+    "BMC": -0.222,
+    "HK": 0.13,
+    "I2CVB": -0.172,
+    "RUNMC": 1.02,
+    "UCL": 0.343
+   },
+   "inside_hull": [
+    "BIDMC",
+    "HK"
+   ],
+   "swd_order": [
+    "I2CVB",
+    "BMC",
+    "HK",
+    "RUNMC",
+    "BIDMC",
+    "UCL"
+   ],
+   "frechet_order": [
+    "I2CVB",
+    "BMC",
+    "RUNMC",
+    "HK",
+    "BIDMC",
+    "UCL"
+   ],
+   "swd": {
+    "BIDMC": 0.1982,
+    "BMC": 0.3219,
+    "HK": 0.2616,
+    "I2CVB": 0.5398,
+    "RUNMC": 0.2457,
+    "UCL": 0.1953
+   },
+   "frechet": {
+    "BIDMC": 4.886,
+    "BMC": 15.365,
+    "HK": 6.389,
+    "I2CVB": 32.459,
+    "RUNMC": 8.01,
+    "UCL": 4.41
+   },
+   "swd_ci": {
+    "BIDMC": [
+     0.1721,
+     0.2147
+    ],
+    "BMC": [
+     0.2986,
+     0.3359
+    ],
+    "HK": [
+     0.2159,
+     0.2511
+    ],
+    "I2CVB": [
+     0.5194,
+     0.5616
+    ],
+    "RUNMC": [
+     0.2342,
+     0.29
+    ],
+    "UCL": [
+     0.1791,
+     0.2222
+    ]
+   }
+  },
+  "referenced_z_sensitivity": {
+   "bins_1_3": -1.313,
+   "bins_1_4": -1.278,
+   "bins_1_5": -1.222,
+   "bins_1_6": -1.147,
+   "bins_1_7": -1.053,
+   "geomean_ref_bins_0_5": -2.116
+  },
+  "referenced_restricted": {
+   "bins_1_5": {
+    "swd_order": [
+     "BIDMC",
+     "RUNMC",
+     "HK",
+     "UCL",
+     "BMC",
+     "I2CVB"
+    ],
+    "frechet_order": [
+     "BIDMC",
+     "RUNMC",
+     "HK",
+     "UCL",
+     "BMC",
+     "I2CVB"
+    ],
+    "swd": {
+     "BIDMC": 0.1952,
+     "BMC": 0.0612,
+     "HK": 0.0963,
+     "I2CVB": 0.0581,
+     "RUNMC": 0.151,
+     "UCL": 0.0758
+    },
+    "frechet": {
+     "BIDMC": 0.2813,
+     "BMC": 0.0294,
+     "HK": 0.0626,
+     "I2CVB": 0.0223,
+     "RUNMC": 0.1656,
+     "UCL": 0.032
+    },
+    "ci": {
+     "BIDMC": [
+      0.1738,
+      0.2244,
+      0.2227,
+      0.3385
+     ],
+     "BMC": [
+      0.0483,
+      0.0701,
+      0.0211,
+      0.0412
+     ],
+     "HK": [
+      0.0723,
+      0.1051,
+      0.0493,
+      0.0818
+     ],
+     "I2CVB": [
+      0.0395,
+      0.0693,
+      0.0165,
+      0.0315
+     ],
+     "RUNMC": [
+      0.135,
+      0.1681,
+      0.1431,
+      0.1838
+     ],
+     "UCL": [
+      0.0498,
+      0.0909,
+      0.0191,
+      0.0573
+     ]
+    }
+   },
+   "bins_1_12": {
+    "swd_order": [
+     "RUNMC",
+     "BIDMC",
+     "HK",
+     "I2CVB",
+     "BMC",
+     "UCL"
+    ],
+    "frechet_order": [
+     "RUNMC",
+     "BIDMC",
+     "I2CVB",
+     "HK",
+     "BMC",
+     "UCL"
+    ],
+    "swd": {
+     "BIDMC": 0.1323,
+     "BMC": 0.0725,
+     "HK": 0.116,
+     "I2CVB": 0.1035,
+     "RUNMC": 0.1597,
+     "UCL": 0.0658
+    },
+    "frechet": {
+     "BIDMC": 0.3597,
+     "BMC": 0.1136,
+     "HK": 0.2024,
+     "I2CVB": 0.2029,
+     "RUNMC": 0.5044,
+     "UCL": 0.0572
+    },
+    "ci": {}
+   },
+   "bins_1_31": {
+    "swd_order": [
+     "I2CVB",
+     "RUNMC",
+     "HK",
+     "BIDMC",
+     "BMC",
+     "UCL"
+    ],
+    "frechet_order": [
+     "I2CVB",
+     "RUNMC",
+     "BIDMC",
+     "HK",
+     "BMC",
+     "UCL"
+    ],
+    "swd": {
+     "BIDMC": 0.1501,
+     "BMC": 0.1412,
+     "HK": 0.1771,
+     "I2CVB": 0.3438,
+     "RUNMC": 0.1926,
+     "UCL": 0.1102
+    },
+    "frechet": {
+     "BIDMC": 1.5148,
+     "BMC": 1.254,
+     "HK": 1.2831,
+     "I2CVB": 6.7623,
+     "RUNMC": 2.3259,
+     "UCL": 1.0121
+    },
+    "ci": {}
+   },
+   "bins_1_63": {
+    "swd_order": [
+     "I2CVB",
+     "BMC",
+     "HK",
+     "RUNMC",
+     "BIDMC",
+     "UCL"
+    ],
+    "frechet_order": [
+     "I2CVB",
+     "BMC",
+     "RUNMC",
+     "HK",
+     "BIDMC",
+     "UCL"
+    ],
+    "swd": {
+     "BIDMC": 0.1982,
+     "BMC": 0.3219,
+     "HK": 0.2616,
+     "I2CVB": 0.5398,
+     "RUNMC": 0.2457,
+     "UCL": 0.1953
+    },
+    "frechet": {
+     "BIDMC": 4.8865,
+     "BMC": 15.365,
+     "HK": 6.3894,
+     "I2CVB": 32.4593,
+     "RUNMC": 8.0096,
+     "UCL": 4.4099
+    },
+    "ci": {}
+   }
+  },
+  "always_on_vs_level": {
+   "rho": 0.771,
+   "p_exact_one_sided": 0.0514,
+   "n": 6,
+   "delta": {
+    "BIDMC": -15.07,
+    "HK": -6.42,
+    "BMC": -3.76,
+    "RUNMC": -2.94,
+    "UCL": -1.41,
+    "I2CVB": 1.29
+   }
+  }
+ },
+ "synfoc": {
+  "published_row_by_labelled_domain": {
+   "RUNMC": 88.09,
+   "BMC": 85.22,
+   "I2CVB": 84.97,
+   "UCL": 87.74,
+   "BIDMC": 87.63,
+   "HK": 87.74
+  },
+  "submitted_column": {
+   "BIDMC": 88.1,
+   "BMC": 85.3,
+   "HK": 89.6,
+   "I2CVB": 84.8,
+   "RUNMC": 88.1,
+   "UCL": 85.4
+  },
+  "difference": {
+   "BIDMC": 0.47,
+   "BMC": 0.08,
+   "HK": 1.86,
+   "I2CVB": -0.17,
+   "RUNMC": 0.01,
+   "UCL": -2.34
+  },
+  "mean_published": 86.898,
+  "mean_submitted": 86.883,
+  "max_abs_difference": 2.34
+ },
+ "assertions": [
+  {
+   "ok": true,
+   "statement": "raw profiles: BIDMC rank 1 on SWD and Frechet, outside the hull"
+  },
+  {
+   "ok": true,
+   "statement": "BIDMC has the lowest level (0.69 vs >= 1.03)"
+  },
+  {
+   "ok": true,
+   "statement": "referenced: z of BIDMC in the FDA band is about -1.2 (-1.222)"
+  },
+  {
+   "ok": true,
+   "statement": "referenced (lowest-bin) z of BIDMC between -1.0 and -1.35 for bands of three to seven bins ({'bins_1_3': -1.313, 'bins_1_4': -1.278, 'bins_1_5': -1.222, 'bins_1_6': -1.147, 'bins_1_7': -1.053, 'geomean_ref_bins_0_5': -2.116})"
+  },
+  {
+   "ok": true,
+   "statement": "referenced: BIDMC inside the hull of the other five vendor means"
+  },
+  {
+   "ok": true,
+   "statement": "PCA: referenced PC1+2 = 0.9554; raw PC1 = 0.99"
+  },
+  {
+   "ok": true,
+   "statement": "referenced: I2CVB and BMC are the two most distant vendors on SWD and Frechet"
+  },
+  {
+   "ok": true,
+   "statement": "referenced: BIDMC rank 5 (SWD), 5 (Frechet)"
+  },
+  {
+   "ok": true,
+   "statement": "referenced: BIDMC SWD interval below those of I2CVB and BMC"
+  },
+  {
+   "ok": true,
+   "statement": "referenced, FDA band only: BIDMC first and RUNMC second on SWD and Frechet ({'BIDMC': 0.1952, 'BMC': 0.0612, 'HK': 0.0963, 'I2CVB': 0.0581, 'RUNMC': 0.151, 'UCL': 0.0758}; {'BIDMC': 0.2813, 'BMC': 0.0294, 'HK': 0.0626, 'I2CVB': 0.0223, 'RUNMC': 0.1656, 'UCL': 0.032})"
+  },
+  {
+   "ok": true,
+   "statement": "referenced, FDA band only: bootstrap intervals of BIDMC above those of RUNMC ([0.1738, 0.2244, 0.2227, 0.3385] vs [0.135, 0.1681, 0.1431, 0.1838])"
+  },
+  {
+   "ok": true,
+   "statement": "referenced, wider bands: RUNMC first up to bin 12, I2CVB first beyond"
+  },
+  {
+   "ok": true,
+   "statement": "always-on loss vs level difference from the labelled vendor: rho 0.77, exact p 0.0514 (the same value as with the SWD from the labelled vendor; no new statistic)"
+  },
+  {
+   "ok": true,
+   "statement": "the three lowest-level vendors are the three largest always-on losses"
+  },
+  {
+   "ok": true,
+   "statement": "the owner's sheet agrees with REFERENCE/synfoc_published_tables.csv in every average and every labelled-domain entry it lists"
+  },
+  {
+   "ok": true,
+   "statement": "submitted table row BIDMC prints 88.1"
+  },
+  {
+   "ok": true,
+   "statement": "submitted table row BMC prints 85.3"
+  },
+  {
+   "ok": true,
+   "statement": "submitted table row HK prints 89.6"
+  },
+  {
+   "ok": true,
+   "statement": "submitted table row I2CVB prints 84.8"
+  },
+  {
+   "ok": true,
+   "statement": "submitted table row RUNMC prints 88.1"
+  },
+  {
+   "ok": true,
+   "statement": "submitted table row UCL prints 85.4"
+  },
+  {
+   "ok": true,
+   "statement": "both rows average 86.9 (submitted 86.883, published 86.898)"
+  },
+  {
+   "ok": true,
+   "statement": "three entries within 0.2 of the published row, largest deviation 2.34 ({'BIDMC': 0.47, 'BMC': 0.08, 'HK': 1.86, 'I2CVB': -0.17, 'RUNMC': 0.01, 'UCL': -2.34})"
+  }
+ ]
+}

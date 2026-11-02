@@ -1,0 +1,7 @@
+dataset,run,seed,complete,n_evals,n_resumes,n_nonfinite_skips,r34_flag,config_ok,cmd_keys_differing_from_job_line,arg_keys_differing_from_d30,hashes_ok,harness_meta_ok,torch,hostname,start,end
+prostate,v18F_prostate_percentile_s1337,1337,1,120,0,0,ok,1,--gpu,method;save_name;seed,1,1,2.5.1+cu121,interactive85860,2026-10-20 02:13:43,2026-10-20 14:32:40
+prostate,v18F_prostate_percentile_s42,42,1,120,0,0,ok,1,--gpu,method;save_name,1,1,2.5.1+cu121,interactive85860,2026-10-20 02:14:03,2026-10-20 14:31:48
+prostate,v18F_prostate_percentile_s2024,2024,1,120,0,0,ok,1,--gpu,gpu;method;save_name,1,1,2.5.1+cu121,interactive85860,2026-10-20 02:14:23,2026-10-20 12:58:42
+fundus,v18F_fundus_percentile_s1337,1337,1,60,0,0,ok,1,--gpu,method;save_name,1,1,2.5.1+cu121,interactive85860,2026-10-20 02:14:43,2026-10-20 09:12:00
+fundus,v18F_fundus_percentile_s42,42,1,60,0,0,ok,1,--gpu,method;save_name,1,1,2.5.1+cu121,interactive85860,2026-10-20 09:12:00,2026-10-20 15:49:19
+fundus,v18F_fundus_percentile_s2024,2024,1,60,0,0,ok,1,--gpu,method;save_name,1,1,2.5.1+cu121,interactive85860,2026-10-20 12:58:43,2026-10-20 19:06:23

@@ -1,0 +1,5 @@
+dataset,n_complete_logs,n_training_failures,n_short_ramp,n_counted,n_d28_released_threshold,n_d29_released_belief,n_d30_daep,best_minus_last_median,best_minus_last_max,n_above_1_point,n_above_5_points,best_minus_swad_median,best_minus_swad_min,best_minus_swad_max
+prostate,59,5,2,52,3,3,2,1.34,22.86,31,11,1.21,0.27,15.61
+fundus,34,0,0,34,3,3,3,0.27,1.28,1,0,0.76,0.08,14.52
+MNMS,11,0,0,11,0,0,0,0.28,8.31,1,1,1.18,0.66,2.24
+BUSI,11,0,0,11,0,0,0,0.85,6.89,5,1,0.90,-0.34,2.25

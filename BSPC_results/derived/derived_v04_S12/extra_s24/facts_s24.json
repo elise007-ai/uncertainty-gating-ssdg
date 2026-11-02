@@ -1,0 +1,862 @@
+{
+ "session": "S25",
+ "reader": "make_extra_s24.py",
+ "code_sha256": {
+  "train_fourierfuse_v18_revision.py": "20d39982c157ff0e",
+  "revision_modules.py": "a6fe4357a39d0020",
+  "fourierfuse_v16_modules.py": "4a343f191bbbf1e0",
+  "diag_uncertainty_harness_v18.py": "7eb2db7ec9353de7"
+ },
+ "manifest_files_verified": 66,
+ "runner": {
+  "jobs": 6,
+  "attempts_per_job": {
+   "v18E_fundus_devisrel_belief_s1337": 1,
+   "v18E_prostate_devisrel_belief_s2024": 1,
+   "v18E_prostate_devisrel_belief_s42": 1,
+   "v18E_prostate_devisrel_belief_s1337": 1,
+   "v18E_fundus_devisrel_belief_s42": 1,
+   "v18E_fundus_devisrel_belief_s2024": 1
+  },
+  "final_pass": 6,
+  "first_start": "2026-10-12 07:51:06",
+  "last_end": "2026-10-13 01:38:32",
+  "hours_per_job": {
+   "v18E_fundus_devisrel_belief_s1337": 7.31,
+   "v18E_prostate_devisrel_belief_s2024": 11.09,
+   "v18E_prostate_devisrel_belief_s42": 12.72,
+   "v18E_prostate_devisrel_belief_s1337": 12.72,
+   "v18E_fundus_devisrel_belief_s42": 6.97,
+   "v18E_fundus_devisrel_belief_s2024": 6.69
+  },
+  "wall_clock_hours": 17.79
+ },
+ "prostate_rule3_vs_threshold_reference": {
+  "mean": 0.859375,
+  "std": 0.008284694502514896,
+  "ref_mean": 0.85902,
+  "ref_std": 0.0026139982784998015,
+  "delta": 0.0003549999999999942,
+  "per_seed_delta": [
+   -0.011549000000000031,
+   0.002850000000000019,
+   0.009763999999999995
+  ],
+  "t": 0.056549084013493574,
+  "p": 0.9600456879303949,
+  "n_pos": 2,
+  "sign_p_greater": 0.5,
+  "sign_p_two_sided": 1.0,
+  "beats": false
+ },
+ "prostate_rule4_gate_vs_d28": {
+  "mean": 0.859375,
+  "std": 0.008284694502514896,
+  "ref_mean": 0.8597779999999999,
+  "ref_std": 0.00580672480835797,
+  "delta": -0.0004030000000000052,
+  "per_seed_delta": [
+   -0.00929100000000005,
+   0.0069150000000000045,
+   0.0011670000000000291
+  ],
+  "t": -0.08495527611772524,
+  "p": 0.9400356473867514,
+  "n_pos": 2,
+  "sign_p_greater": 0.5,
+  "sign_p_two_sided": 1.0,
+  "beats": false,
+  "changes": false
+ },
+ "prostate_per_seed": {
+  "1337": {
+   "best": 0.850428,
+   "best_iter": 23500,
+   "last": 0.7318,
+   "last10": 0.7288916666666666,
+   "swad_best": 0.851799,
+   "ref": 0.861977,
+   "ref_last": 0.8593,
+   "d28": 0.859719,
+   "d28_last": 0.6798,
+   "d28_best_iter": 36500,
+   "pub": 0.860116,
+   "pub_last": 0.8601,
+   "pub_flag": "ok"
+  },
+  "42": {
+   "best": 0.860916,
+   "best_iter": 26000,
+   "last": 0.7212,
+   "last10": 0.7334083333333332,
+   "swad_best": 0.831309,
+   "ref": 0.858066,
+   "ref_last": 0.8212,
+   "d28": 0.854001,
+   "d28_last": 0.8056,
+   "d28_best_iter": 39500,
+   "pub": 0.254182,
+   "pub_last": 0.0003,
+   "pub_flag": "DEGENERATE:dom1,2,3,4,5,6"
+  },
+  "2024": {
+   "best": 0.866781,
+   "best_iter": 36000,
+   "last": 0.671,
+   "last10": 0.6778416666666666,
+   "swad_best": 0.856684,
+   "ref": 0.857017,
+   "ref_last": 0.7526,
+   "d28": 0.865614,
+   "d28_last": 0.637,
+   "d28_best_iter": 35000,
+   "pub": 0.819752,
+   "pub_last": 0.7943,
+   "pub_flag": "ok"
+  }
+ },
+ "prostate_vs_published_form_belief_gate": {
+  "published_form_per_seed": [
+   0.860116,
+   0.254182,
+   0.819752
+  ],
+  "published_form_flags": [
+   "ok",
+   "DEGENERATE:dom1,2,3,4,5,6",
+   "ok"
+  ],
+  "released_minus_published_per_seed": [
+   -0.00968800000000003,
+   0.606734,
+   0.04702899999999999
+  ],
+  "baselines_row_mean": 0.6447,
+  "baselines_row_std": 0.3388,
+  "n_published_form_training_failures": 1
+ },
+ "fundus_rule3_vs_threshold_reference": {
+  "mean": 0.8839376666666667,
+  "std": 0.00390179014470712,
+  "ref_mean": 0.8852633333333332,
+  "ref_std": 0.002820431586359304,
+  "delta": -0.0013256666666666694,
+  "per_seed_delta": [
+   -0.0010010000000000296,
+   -0.005103999999999997,
+   0.0021280000000000188
+  ],
+  "t": -0.6330785331028694,
+  "p": 0.5914166708510787,
+  "n_pos": 1,
+  "sign_p_greater": 0.875,
+  "sign_p_two_sided": 1.0,
+  "beats": false
+ },
+ "fundus_rule4_gate_vs_d28": {
+  "mean": 0.8839376666666667,
+  "std": 0.00390179014470712,
+  "ref_mean": 0.8843030000000001,
+  "ref_std": 0.003357744481046781,
+  "delta": -0.0003653333333333286,
+  "per_seed_delta": [
+   -3.900000000001125e-05,
+   -0.0016289999999999916,
+   0.0005720000000000169
+  ],
+  "t": -0.5569186935417062,
+  "p": 0.6335869666223511,
+  "n_pos": 1,
+  "sign_p_greater": 0.875,
+  "sign_p_two_sided": 1.0,
+  "beats": false,
+  "changes": false
+ },
+ "fundus_per_seed": {
+  "1337": {
+   "best": 0.88108,
+   "best_iter": 17500,
+   "last": 0.877,
+   "last10": 0.8771999999999999,
+   "swad_best": 0.868691,
+   "ref": 0.882081,
+   "ref_last": 0.8787,
+   "d28": 0.881119,
+   "d28_last": 0.8785,
+   "d28_best_iter": 17500,
+   "pub": 0.865174,
+   "pub_last": 0.865,
+   "pub_flag": "ok"
+  },
+  "42": {
+   "best": 0.88235,
+   "best_iter": 21500,
+   "last": 0.8803,
+   "last10": 0.8805833333333334,
+   "swad_best": 0.877171,
+   "ref": 0.887454,
+   "ref_last": 0.8848,
+   "d28": 0.883979,
+   "d28_last": 0.8821,
+   "d28_best_iter": 24500,
+   "pub": 0.870729,
+   "pub_last": 0.8689,
+   "pub_flag": "ok"
+  },
+  "2024": {
+   "best": 0.888383,
+   "best_iter": 19000,
+   "last": 0.8845,
+   "last10": 0.8838499999999999,
+   "swad_best": 0.882939,
+   "ref": 0.886255,
+   "ref_last": 0.8821,
+   "d28": 0.887811,
+   "d28_last": 0.886,
+   "d28_best_iter": 18000,
+   "pub": 0.675445,
+   "pub_last": 0.6712,
+   "pub_flag": "ok"
+  }
+ },
+ "fundus_vs_published_form_belief_gate": {
+  "published_form_per_seed": [
+   0.865174,
+   0.870729,
+   0.675445
+  ],
+  "published_form_flags": [
+   "ok",
+   "ok",
+   "ok"
+  ],
+  "released_minus_published_per_seed": [
+   0.015905999999999976,
+   0.011620999999999992,
+   0.21293800000000007
+  ],
+  "baselines_row_mean": 0.8038,
+  "baselines_row_std": 0.1112,
+  "n_published_form_training_failures": 0
+ },
+ "gate_weight": {
+  "v18E_prostate_devisrel_belief_s1337": {
+   "w_mean_after_20pct_mean": 0.9976770833333335,
+   "w_mean_after_20pct_min": 0.99,
+   "w_mean_after_20pct_max": 0.999,
+   "one_minus_w_after_20pct_mean": 0.002322916666666508,
+   "w_mean_first_window": 0.602,
+   "w_mean_min_early": 0.602,
+   "w_mean_at_20pct": 0.989,
+   "w_mean_last": 0.999,
+   "w_min_last": 0.561,
+   "first_iter_w_mean_ge_0.99": 12500,
+   "first_frac_w_mean_ge_0.99": 0.20833333333333334,
+   "d28_threshold_pass_fraction_after_20pct_mean": 0.9986145833333334
+  },
+  "v18E_prostate_devisrel_belief_s42": {
+   "w_mean_after_20pct_mean": 0.9977083333333333,
+   "w_mean_after_20pct_min": 0.991,
+   "w_mean_after_20pct_max": 0.999,
+   "one_minus_w_after_20pct_mean": 0.002291666666666692,
+   "w_mean_first_window": 0.665,
+   "w_mean_min_early": 0.665,
+   "w_mean_at_20pct": 0.99,
+   "w_mean_last": 0.999,
+   "w_min_last": 0.485,
+   "first_iter_w_mean_ge_0.99": 12000,
+   "first_frac_w_mean_ge_0.99": 0.2,
+   "d28_threshold_pass_fraction_after_20pct_mean": 0.9985833333333334
+  },
+  "v18E_prostate_devisrel_belief_s2024": {
+   "w_mean_after_20pct_mean": 0.99765625,
+   "w_mean_after_20pct_min": 0.99,
+   "w_mean_after_20pct_max": 0.999,
+   "one_minus_w_after_20pct_mean": 0.002343749999999978,
+   "w_mean_first_window": 0.599,
+   "w_mean_min_early": 0.599,
+   "w_mean_at_20pct": 0.988,
+   "w_mean_last": 0.999,
+   "w_min_last": 0.579,
+   "first_iter_w_mean_ge_0.99": 12500,
+   "first_frac_w_mean_ge_0.99": 0.20833333333333334,
+   "d28_threshold_pass_fraction_after_20pct_mean": 0.9985729166666667
+  },
+  "v18E_fundus_devisrel_belief_s1337": {
+   "w_mean_after_20pct_mean": 0.9893958333333334,
+   "w_mean_after_20pct_min": 0.959,
+   "w_mean_after_20pct_max": 0.996,
+   "one_minus_w_after_20pct_mean": 0.010604166666666637,
+   "w_mean_first_window": 0.56,
+   "w_mean_min_early": 0.56,
+   "w_mean_at_20pct": 0.954,
+   "w_mean_last": 0.996,
+   "w_min_last": 0.725,
+   "first_iter_w_mean_ge_0.99": 13500,
+   "first_frac_w_mean_ge_0.99": 0.45,
+   "d28_threshold_pass_fraction_after_20pct_mean": 0.9956666666666667
+  },
+  "v18E_fundus_devisrel_belief_s42": {
+   "w_mean_after_20pct_mean": 0.9897708333333334,
+   "w_mean_after_20pct_min": 0.959,
+   "w_mean_after_20pct_max": 0.996,
+   "one_minus_w_after_20pct_mean": 0.010229166666666623,
+   "w_mean_first_window": 0.584,
+   "w_mean_min_early": 0.584,
+   "w_mean_at_20pct": 0.954,
+   "w_mean_last": 0.996,
+   "w_min_last": 0.79,
+   "first_iter_w_mean_ge_0.99": 13500,
+   "first_frac_w_mean_ge_0.99": 0.45,
+   "d28_threshold_pass_fraction_after_20pct_mean": 0.9954583333333332
+  },
+  "v18E_fundus_devisrel_belief_s2024": {
+   "w_mean_after_20pct_mean": 0.9899166666666668,
+   "w_mean_after_20pct_min": 0.96,
+   "w_mean_after_20pct_max": 0.996,
+   "one_minus_w_after_20pct_mean": 0.010083333333333222,
+   "w_mean_first_window": 0.571,
+   "w_mean_min_early": 0.571,
+   "w_mean_at_20pct": 0.955,
+   "w_mean_last": 0.996,
+   "w_min_last": 0.822,
+   "first_iter_w_mean_ge_0.99": 13500,
+   "first_frac_w_mean_ge_0.99": 0.45,
+   "d28_threshold_pass_fraction_after_20pct_mean": 0.9957291666666667
+  }
+ },
+ "gate_weight_summary": {
+  "after_20pct_mean_min_max": [
+   0.9893958333333334,
+   0.9977083333333333
+  ],
+  "after_20pct_min_over_runs": 0.959,
+  "last_min_max": [
+   0.996,
+   0.999
+  ],
+  "first_window_min_max": [
+   0.56,
+   0.665
+  ],
+  "early_min_over_runs": 0.56,
+  "frac_reaching_0.99_min_max": [
+   0.2,
+   0.45
+  ],
+  "d28_pass_fraction_after_20pct_min_max": [
+   0.9954583333333332,
+   0.9986145833333334
+  ]
+ },
+ "prostate_late": {
+  "belief_best_minus_last": [
+   11.862799999999996,
+   13.971600000000006,
+   19.5781
+  ],
+  "d28_best_minus_last": [
+   17.991900000000005,
+   4.840100000000003,
+   22.8614
+  ],
+  "threshold_ref_best_minus_last": [
+   0.26770000000000405,
+   3.6865999999999954,
+   10.441699999999997
+  ],
+  "belief_best_frac": [
+   0.39166666666666666,
+   0.43333333333333335,
+   0.6
+  ],
+  "d28_best_frac": [
+   0.6083333333333333,
+   0.6583333333333333,
+   0.5833333333333334
+  ],
+  "belief_last": [
+   0.7318,
+   0.7212,
+   0.671
+  ],
+  "belief_last10": [
+   0.7288916666666666,
+   0.7334083333333332,
+   0.6778416666666666
+  ]
+ },
+ "fundus_late": {
+  "belief_best_minus_last": [
+   0.40799999999999725,
+   0.20499999999999963,
+   0.3883000000000081
+  ],
+  "d28_best_minus_last": [
+   0.2619000000000038,
+   0.1878999999999964,
+   0.1811000000000007
+  ],
+  "threshold_ref_best_minus_last": [
+   0.33809999999999674,
+   0.2653999999999934,
+   0.415500000000002
+  ],
+  "belief_best_frac": [
+   0.5833333333333334,
+   0.7166666666666667,
+   0.6333333333333333
+  ],
+  "d28_best_frac": [
+   0.5833333333333334,
+   0.8166666666666667,
+   0.6
+  ],
+  "belief_last": [
+   0.877,
+   0.8803,
+   0.8845
+  ],
+  "belief_last10": [
+   0.8771999999999999,
+   0.8805833333333334,
+   0.8838499999999999
+  ]
+ },
+ "prostate_per_vendor_drop_best_to_last": {
+  "1337": {
+   "BIDMC": 33.66,
+   "BMC": 9.14,
+   "HK": 29.32,
+   "I2CVB": 2.1,
+   "RUNMC": -2.36,
+   "UCL": -0.7
+  },
+  "42": {
+   "BIDMC": 33.51,
+   "BMC": 14.82,
+   "HK": 33.09,
+   "I2CVB": -0.33,
+   "RUNMC": 0.25,
+   "UCL": 2.47
+  },
+  "2024": {
+   "BIDMC": 54.65,
+   "BMC": 17.35,
+   "HK": 45.15,
+   "I2CVB": -0.66,
+   "RUNMC": -0.05,
+   "UCL": 1.02
+  }
+ },
+ "prostate_per_vendor_at_best": {
+  "1337": {
+   "BIDMC": 0.8001,
+   "BMC": 0.8597,
+   "HK": 0.8779,
+   "I2CVB": 0.8678,
+   "RUNMC": 0.8195,
+   "UCL": 0.8776
+  },
+  "42": {
+   "BIDMC": 0.8328,
+   "BMC": 0.8701,
+   "HK": 0.8906,
+   "I2CVB": 0.8452,
+   "RUNMC": 0.8614,
+   "UCL": 0.8653
+  },
+  "2024": {
+   "BIDMC": 0.8408,
+   "BMC": 0.8661,
+   "HK": 0.8935,
+   "I2CVB": 0.873,
+   "RUNMC": 0.8513,
+   "UCL": 0.876
+  }
+ },
+ "prostate_top3_losing_vendors": {
+  "1337": [
+   "BIDMC",
+   "HK",
+   "BMC"
+  ],
+  "42": [
+   "BIDMC",
+   "HK",
+   "BMC"
+  ],
+  "2024": [
+   "BIDMC",
+   "HK",
+   "BMC"
+  ]
+ },
+ "schedule_largest_relative_difference_logged_vs_function": 0.00041623340811197494,
+ "prostate_signal": {
+  "per_seed": {
+   "1337": {
+    "auroc_all": 0.9586,
+    "band": 0.6998,
+    "range": 0.0006025,
+    "range_band": 0.1017,
+    "conf_all": 0.9586,
+    "conf_band": 0.7025,
+    "errors_in_band": 0.7148,
+    "identity_holds": true,
+    "gap_all": 0.0002,
+    "gap_band": 0.0045,
+    "median_ratio": 2.0,
+    "K": 2,
+    "band_per_domain": [
+     0.7032,
+     0.6675,
+     0.6822,
+     0.7134,
+     0.7025,
+     0.7301
+    ],
+    "ref_all": 0.8286,
+    "ref_band": 0.6968,
+    "ref_range": 9.445e-05,
+    "d28_all": 0.9706,
+    "d28_band": 0.7075,
+    "d28_range": 0.0003633
+   },
+   "42": {
+    "auroc_all": 0.9694,
+    "band": 0.688,
+    "range": 0.000622,
+    "range_band": 0.08447,
+    "conf_all": 0.9695,
+    "conf_band": 0.6904,
+    "errors_in_band": 0.7263,
+    "identity_holds": true,
+    "gap_all": 0.0006,
+    "gap_band": 0.0098,
+    "median_ratio": 2.0,
+    "K": 2,
+    "band_per_domain": [
+     0.6841,
+     0.677,
+     0.6705,
+     0.6905,
+     0.7084,
+     0.6977
+    ],
+    "ref_all": 0.8813,
+    "ref_band": 0.6627,
+    "ref_range": 8.649e-05,
+    "d28_all": 0.9697,
+    "d28_band": 0.6808,
+    "d28_range": 0.000306
+   },
+   "2024": {
+    "auroc_all": 0.9719,
+    "band": 0.7142,
+    "range": 0.0002395,
+    "range_band": 0.04662,
+    "conf_all": 0.972,
+    "conf_band": 0.7184,
+    "errors_in_band": 0.7627,
+    "identity_holds": true,
+    "gap_all": 0.0006,
+    "gap_band": 0.0062,
+    "median_ratio": 2.0,
+    "K": 2,
+    "band_per_domain": [
+     0.7251,
+     0.6879,
+     0.7093,
+     0.7106,
+     0.7243,
+     0.7279
+    ],
+    "ref_all": 0.9015,
+    "ref_band": 0.6668,
+    "ref_range": 5.304e-05,
+    "d28_all": 0.9734,
+    "d28_band": 0.7161,
+    "d28_range": 0.000256
+   }
+  },
+  "auroc_all_min_max": [
+   0.9586,
+   0.9719
+  ],
+  "band_min_max": [
+   0.688,
+   0.7142
+  ],
+  "band_mean": 0.7006666666666667,
+  "range_min_max": [
+   0.0002395,
+   0.000622
+  ],
+  "n_band_le_070": 2,
+  "n_rule_persists": 2,
+  "n_identity_holds": 3,
+  "gap_band_max": 0.0098,
+  "d28_band_min_max": [
+   0.6808,
+   0.7161
+  ],
+  "d28_all_min_max": [
+   0.9697,
+   0.9734
+  ],
+  "ref_band_min_max": [
+   0.6627,
+   0.6968
+  ],
+  "ref_all_min_max": [
+   0.8286,
+   0.9015
+  ]
+ },
+ "fundus_signal": {
+  "per_seed": {
+   "1337": {
+    "auroc_all": 0.9566,
+    "band": 0.6851,
+    "range": 0.002402,
+    "range_band": 0.03526,
+    "conf_all": 0.9583,
+    "conf_band": 0.6921,
+    "errors_in_band": 0.857,
+    "identity_holds": false,
+    "gap_all": 0.0042,
+    "gap_band": 0.0107,
+    "median_ratio": 1.5,
+    "K": 3,
+    "band_per_domain": [
+     0.6681,
+     0.558,
+     0.7534,
+     0.761
+    ],
+    "ref_all": 0.7909,
+    "ref_band": 0.6234,
+    "ref_range": 0.0002601,
+    "d28_all": 0.9524,
+    "d28_band": 0.6762,
+    "d28_range": 0.002472
+   },
+   "42": {
+    "auroc_all": 0.9352,
+    "band": 0.6667,
+    "range": 0.002817,
+    "range_band": 0.01492,
+    "conf_all": 0.9387,
+    "conf_band": 0.6761,
+    "errors_in_band": 0.8553,
+    "identity_holds": false,
+    "gap_all": 0.0073,
+    "gap_band": 0.0157,
+    "median_ratio": 1.5,
+    "K": 3,
+    "band_per_domain": [
+     0.6879,
+     0.5336,
+     0.7194,
+     0.7261
+    ],
+    "ref_all": 0.8947,
+    "ref_band": 0.6345,
+    "ref_range": 0.0005715,
+    "d28_all": 0.9236,
+    "d28_band": 0.6662,
+    "d28_range": 0.00226
+   },
+   "2024": {
+    "auroc_all": 0.9436,
+    "band": 0.6779,
+    "range": 0.002129,
+    "range_band": 0.01484,
+    "conf_all": 0.9465,
+    "conf_band": 0.6853,
+    "errors_in_band": 0.8596,
+    "identity_holds": false,
+    "gap_all": 0.0092,
+    "gap_band": 0.0141,
+    "median_ratio": 1.5,
+    "K": 3,
+    "band_per_domain": [
+     0.6789,
+     0.5417,
+     0.7258,
+     0.765
+    ],
+    "ref_all": 0.8901,
+    "ref_band": 0.6517,
+    "ref_range": 0.0004138,
+    "d28_all": 0.9444,
+    "d28_band": 0.674,
+    "d28_range": 0.002599
+   }
+  },
+  "auroc_all_min_max": [
+   0.9352,
+   0.9566
+  ],
+  "band_min_max": [
+   0.6667,
+   0.6851
+  ],
+  "band_mean": 0.6765666666666666,
+  "range_min_max": [
+   0.002129,
+   0.002817
+  ],
+  "n_band_le_070": 3,
+  "n_rule_persists": 3,
+  "n_identity_holds": 0,
+  "gap_band_max": 0.0157,
+  "d28_band_min_max": [
+   0.6662,
+   0.6762
+  ],
+  "d28_all_min_max": [
+   0.9236,
+   0.9524
+  ],
+  "ref_band_min_max": [
+   0.6234,
+   0.6517
+  ],
+  "ref_all_min_max": [
+   0.7909,
+   0.8947
+  ]
+ },
+ "signal_all_six": {
+  "range_max": 0.002817,
+  "range_factor_below_bound_min": 3.549875754348598,
+  "band_min_max": [
+   0.6667,
+   0.7142
+  ],
+  "band_mean_of_dataset_means": 0.6886166666666667,
+  "n_band_le_070": 5,
+  "n_band_above_070": 1,
+  "band_excess_max": 0.01419999999999999,
+  "n_identity_holds": 3,
+  "auroc_all_min_max": [
+   0.9352,
+   0.9719
+  ],
+  "per_teacher_rule": {
+   "prostate_s1337": {
+    "band": 0.6998,
+    "margin_to_0.70": -0.0002,
+    "range": 0.0006025,
+    "persists": true
+   },
+   "prostate_s42": {
+    "band": 0.688,
+    "margin_to_0.70": -0.012,
+    "range": 0.000622,
+    "persists": true
+   },
+   "prostate_s2024": {
+    "band": 0.7142,
+    "margin_to_0.70": 0.0142,
+    "range": 0.0002395,
+    "persists": false
+   },
+   "fundus_s1337": {
+    "band": 0.6851,
+    "margin_to_0.70": -0.0149,
+    "range": 0.002402,
+    "persists": true
+   },
+   "fundus_s42": {
+    "band": 0.6667,
+    "margin_to_0.70": -0.0333,
+    "range": 0.002817,
+    "persists": true
+   },
+   "fundus_s2024": {
+    "band": 0.6779,
+    "margin_to_0.70": -0.0221,
+    "range": 0.002129,
+    "persists": true
+   }
+  },
+  "n_rule_persists": 5
+ },
+ "s9_counts": {
+  "n_all_old": 83,
+  "n_all_with_d28": 89,
+  "n_all_with_d28_d29": 95,
+  "n_devis_medl_old": 18,
+  "n_devis_medl_with_d28_d29": 30,
+  "n_devis_medl_identity_fails_old": 16,
+  "n_devis_medl_identity_fails_with_d28_d29": 22,
+  "d29_identity_fails": 3,
+  "d28_identity_fails": 3
+ },
+ "assertions_passed": [
+  "every file of the S24 sendback (66) is present in the results tier and matches the collector manifest (size and sha256)",
+  "runner: six jobs, one attempt each, each PASS (no failure branch, no relaunch)",
+  "no S24_first_attempt folder: the failure branch of RUNBOOK S24 was not used",
+  "both server self-tests of RUNBOOK S24 step 1 passed and were written to files (R-64)",
+  "the smoke run of the new combination (released form + belief-mass gate) passed",
+  "v18E_prostate_devisrel_belief_s1337: one training from iteration 0 to the last iteration, no resume event",
+  "v18E_prostate_devisrel_belief_s1337: no skipped iteration; R-34 screen (registered rule, last evaluation) ok: not a training failure",
+  "v18E_prostate_devisrel_belief_s1337: configuration = released form, belief-mass gate (devis_gate soft), headline settings; v11 notice and gate notice in the log",
+  "v18E_prostate_devisrel_belief_s1337: its recorded arguments equal those of the D-28 run of the same seed except devis_gate, save_name and the GPU index",
+  "v18E_prostate_devisrel_belief_s1337: code snapshot, recorded hashes and the release code are the same bytes (tools v12 = v11 trainer and modules)",
+  "v18E_prostate_devisrel_belief_s1337: labeled slices identical to those of the threshold reference and of the D-28 run of the same seed",
+  "v18E_prostate_devisrel_belief_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18E_prostate_devisrel_belief_s42: one training from iteration 0 to the last iteration, no resume event",
+  "v18E_prostate_devisrel_belief_s42: no skipped iteration; R-34 screen (registered rule, last evaluation) ok: not a training failure",
+  "v18E_prostate_devisrel_belief_s42: configuration = released form, belief-mass gate (devis_gate soft), headline settings; v11 notice and gate notice in the log",
+  "v18E_prostate_devisrel_belief_s42: its recorded arguments equal those of the D-28 run of the same seed except devis_gate, save_name and the GPU index",
+  "v18E_prostate_devisrel_belief_s42: code snapshot, recorded hashes and the release code are the same bytes (tools v12 = v11 trainer and modules)",
+  "v18E_prostate_devisrel_belief_s42: labeled slices identical to those of the threshold reference and of the D-28 run of the same seed",
+  "v18E_prostate_devisrel_belief_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18E_prostate_devisrel_belief_s2024: one training from iteration 0 to the last iteration, no resume event",
+  "v18E_prostate_devisrel_belief_s2024: no skipped iteration; R-34 screen (registered rule, last evaluation) ok: not a training failure",
+  "v18E_prostate_devisrel_belief_s2024: configuration = released form, belief-mass gate (devis_gate soft), headline settings; v11 notice and gate notice in the log",
+  "v18E_prostate_devisrel_belief_s2024: its recorded arguments equal those of the D-28 run of the same seed except devis_gate, save_name and the GPU index",
+  "v18E_prostate_devisrel_belief_s2024: code snapshot, recorded hashes and the release code are the same bytes (tools v12 = v11 trainer and modules)",
+  "v18E_prostate_devisrel_belief_s2024: labeled slices identical to those of the threshold reference and of the D-28 run of the same seed",
+  "v18E_prostate_devisrel_belief_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18E_fundus_devisrel_belief_s1337: one training from iteration 0 to the last iteration, no resume event",
+  "v18E_fundus_devisrel_belief_s1337: no skipped iteration; R-34 screen (registered rule, last evaluation) ok: not a training failure",
+  "v18E_fundus_devisrel_belief_s1337: configuration = released form, belief-mass gate (devis_gate soft), headline settings; v11 notice and gate notice in the log",
+  "v18E_fundus_devisrel_belief_s1337: its recorded arguments equal those of the D-28 run of the same seed except devis_gate, save_name and the GPU index",
+  "v18E_fundus_devisrel_belief_s1337: code snapshot, recorded hashes and the release code are the same bytes (tools v12 = v11 trainer and modules)",
+  "v18E_fundus_devisrel_belief_s1337: labeled slices identical to those of the threshold reference and of the D-28 run of the same seed",
+  "v18E_fundus_devisrel_belief_s1337: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18E_fundus_devisrel_belief_s42: one training from iteration 0 to the last iteration, no resume event",
+  "v18E_fundus_devisrel_belief_s42: no skipped iteration; R-34 screen (registered rule, last evaluation) ok: not a training failure",
+  "v18E_fundus_devisrel_belief_s42: configuration = released form, belief-mass gate (devis_gate soft), headline settings; v11 notice and gate notice in the log",
+  "v18E_fundus_devisrel_belief_s42: its recorded arguments equal those of the D-28 run of the same seed except devis_gate, save_name and the GPU index",
+  "v18E_fundus_devisrel_belief_s42: code snapshot, recorded hashes and the release code are the same bytes (tools v12 = v11 trainer and modules)",
+  "v18E_fundus_devisrel_belief_s42: labeled slices identical to those of the threshold reference and of the D-28 run of the same seed",
+  "v18E_fundus_devisrel_belief_s42: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "v18E_fundus_devisrel_belief_s2024: one training from iteration 0 to the last iteration, no resume event",
+  "v18E_fundus_devisrel_belief_s2024: no skipped iteration; R-34 screen (registered rule, last evaluation) ok: not a training failure",
+  "v18E_fundus_devisrel_belief_s2024: configuration = released form, belief-mass gate (devis_gate soft), headline settings; v11 notice and gate notice in the log",
+  "v18E_fundus_devisrel_belief_s2024: its recorded arguments equal those of the D-28 run of the same seed except devis_gate, save_name and the GPU index",
+  "v18E_fundus_devisrel_belief_s2024: code snapshot, recorded hashes and the release code are the same bytes (tools v12 = v11 trainer and modules)",
+  "v18E_fundus_devisrel_belief_s2024: labeled slices identical to those of the threshold reference and of the D-28 run of the same seed",
+  "v18E_fundus_devisrel_belief_s2024: the measured teacher is the EMA weights of the best checkpoint of this log, measured with the release harness",
+  "prostate: this reader reproduces the D-28 rule row of facts_s23.json (mean, delta, p) from the logs",
+  "prostate: rule 3: the belief-mass gate on the released form does not meet the pre-registered criterion (paired p < 0.05 and delta >= 0.5 Dice) against the threshold reference",
+  "prostate: rule 4: the gate does not change the result under the released objective (not both paired p < 0.05 and |delta| >= 0.5 Dice against the D-28 run of the same seed)",
+  "fundus: this reader reproduces the D-28 rule row of facts_s23.json (mean, delta, p) from the logs",
+  "fundus: rule 3: the belief-mass gate on the released form does not meet the pre-registered criterion (paired p < 0.05 and delta >= 0.5 Dice) against the threshold reference",
+  "fundus: rule 4: the gate does not change the result under the released objective (not both paired p < 0.05 and |delta| >= 0.5 Dice against the D-28 run of the same seed)",
+  "rule 6: after 20 % of training the mean belief-mass weight exceeds 0.95 in every run and ends above 0.99 (the gate removes at most a few hundredths of the pseudo-label term late in training)",
+  "rule 6 (descriptive, contrary to the pre-registration's expectation for the whole run): in the first 500 iterations the mean weight is below 0.8 in every run (the teacher starts vacuous)",
+  "Prostate: each belief-gate run ends more than 4 points below its best checkpoint (the late degradation of O-04 is present with this gate too)",
+  "Fundus: each belief-gate run ends within half a point of its best checkpoint",
+  "the KL weight and beta_t logged every 500 iterations equal the window means of the schedule function (relative 2e-3) in all six runs",
+  "six harness JSONs, EMA teachers",
+  "rule 5: the central-80 % range of u_epi is at most half of the 1e-2 bound on all six teachers (range condition of the Phase-A rule)",
+  "the S12 identity table holds 83 checkpoints, 18 of them DEviS / MEDL (counts as in S23)"
+ ]
+}

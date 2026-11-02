@@ -1,0 +1,7 @@
+dataset,run,seed,complete,n_evals,n_resumes,n_nonfinite_skips,r34_flag,config_ok,cmd_keys_differing_from_job_line,arg_keys_differing_from_d31,hashes_ok,harness_meta_ok,n_gate_windows,every_window_w_mean_1,torch,hostname,start,end
+prostate,v18G_prostate_ungated_s1337,1337,1,120,0,0,ok,1,--gpu,pg_keep_frac;save_name,1,1,120,1,2.5.1+cu121,interactive85860,2026-10-21 03:40:18,2026-10-21 16:01:21
+prostate,v18G_prostate_ungated_s42,42,1,120,0,0,ok,1,--gpu,pg_keep_frac;save_name,1,1,120,1,2.5.1+cu121,interactive85860,2026-10-21 03:40:38,2026-10-21 15:58:19
+prostate,v18G_prostate_ungated_s2024,2024,1,120,0,0,ok,1,--gpu,pg_keep_frac;save_name,1,1,120,1,2.5.1+cu121,interactive85860,2026-10-21 03:40:58,2026-10-21 14:27:05
+fundus,v18G_fundus_ungated_s1337,1337,1,60,0,0,ok,1,--gpu,pg_keep_frac;save_name,1,1,60,1,2.5.1+cu121,interactive85860,2026-10-21 03:41:18,2026-10-21 10:34:59
+fundus,v18G_fundus_ungated_s42,42,1,60,0,0,ok,1,--gpu,pg_keep_frac;save_name,1,1,60,1,2.5.1+cu121,interactive85860,2026-10-21 10:35:00,2026-10-21 17:13:04
+fundus,v18G_fundus_ungated_s2024,2024,1,60,0,0,ok,1,--gpu,pg_keep_frac;save_name,1,1,60,1,2.5.1+cu121,interactive85860,2026-10-21 14:27:05,2026-10-21 20:34:56
